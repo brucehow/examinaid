@@ -15,4 +15,4 @@ Maecenas ac molestie mi. Nam ullamcorper quam ligula, sit amet sodales lectus co
 - [Bruce How](https://github.com/brucehow)
 - [Lachlan D Whang](https://github.com/ForsakenIdol)
 - [Paul O'Sullivan](https://www.github.com/paulosllvn)
-- [Bryan Yeo](https://www.google.com.au/)
+- [Bryan Yeo](https://github.com/Darkstorm1337)
