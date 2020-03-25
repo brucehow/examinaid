@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    {% if site_title %}
+    <title>{{ site_title }} | CITSPrep</title>
+    {% else %}
+    <title>Welcome to CITSPrep!</title>
+    {% endif %}
+    <body>
+        <p>{{ welcome_string }}</p> <!-- This is a required variable -->
+    </body>
+</html>
