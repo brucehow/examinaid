@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="../static/index.css"/>
     {% if site_title %}
     <title>{{ site_title }} | CITSPrep</title>
     {% else %}
     <title>Welcome to CITSPrep!</title>
     {% endif %}
     <body>
-        <p>{{ welcome_string }}</p> <!-- This is a required variable -->
+        <ul>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+        <hr>
+        {% if welcome_string %}
+        <p>{{ welcome_string }}</p>
+        {% else %}
+        <p>No welcome string. Sad :(</p>
+        {% endif %}
+        {% block content %}
+        {% endblock %}
     </body>
 </html>
