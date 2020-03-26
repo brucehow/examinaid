@@ -1,0 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway&display=swap);
+
+body {
+    font-family: 'Raleway', sans-serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+ul > li {
+    display: inline-block;
+    list-style-type: none;
+}
