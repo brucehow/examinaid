@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway&display=swap);
 
 body {
+    margin-top: 1rem;
     font-family: 'Raleway', sans-serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -12,7 +13,12 @@ hr {
     border: 0.5px solid black;
 }
 
-ul > li {
+ul.navigation-bar > li {
     display: inline-block;
     list-style-type: none;
+    margin-left: 1rem;
+}
+
+ul.navigation-bar > li:nth-child(1) {
+    font-weight: bold;
 }
