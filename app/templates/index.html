@@ -10,21 +10,37 @@
     <title>Welcome to CITSPrep!</title>
     {% endif %}
     <body class="container">
-        <nav>
-            <ul class="navigation-bar">
-                <li>CITSPrep</li>
-                <li><a href="/index">Home</a></li>
-                <li><a href="/about">About</a></li>
-            </ul>
-        </nav>
+        <header>
+            <nav>
+                <ul class="navigation-bar">
+                    <li>CITSPrep</li>
+                    <li><a href="/index">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div>
+                <button class="plain-button">Sign Up / Sign In</button>
+            </div>
+        </header>
         <hr>
         <main>
             {% if welcome_string %}
             <p>{{ welcome_string }}</p>
             {% else %}
-            <p>No welcome string. Sad :(</p>
+            <br>
             {% endif %}
             {% block content %}
+            <!-- index.html-specific content goes here -->
+            <div class="about-us">
+                <div class="description">
+                    <h2>Who are we?</h2>
+                    <p>We're the leaders in unit preparation across every course in UWA. Join us today to experience the power of knowledge for yourself.</p>
+                    <button class="plain-button big-text">Learn More</button>
+                </div>
+                <image src="https://a.slack-edge.com/dd0405/marketing/img/solutions/remote-work/img-hero-remote.jpg" alt="placeholder image" class="test-image-1">
+            </div>
+
             {% endblock %}
         </main>
         <script src="https://code.jquery.com/jquery-3.4.1.js" crossorigin="anonymous"></script>
