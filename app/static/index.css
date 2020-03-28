@@ -4,6 +4,14 @@ body {
     font-family: 'Raleway', sans-serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+main {
+    text-align: center;
+}
+
+hr {
+    border: 0.5px solid black;
+}
+
 ul > li {
     display: inline-block;
     list-style-type: none;
