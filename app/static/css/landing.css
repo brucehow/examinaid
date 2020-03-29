@@ -1,0 +1,55 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Spartan&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Montserrat&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Raleway&display=swap);
+
+body {
+  font-family: 'Raleway', 'Montserrat', 'Spartan', 'Roboto', sans-serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../resources/background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+section {
+  position: relative;
+  margin: 0;
+  padding: 21em 0 21em 0;
+  text-align: center;
+  color: #fff;
+}
+
+header {
+  margin-bottom: 1em;
+}
+
+p {
+  margin-top: 0.5em;
+  font-size: 0.75em;
+  line-height: 2em;
+  text-align: center;
+  font-style: italic;
+}
+
+hr {
+  background: white;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 1em;
+}
+
+li > a {
+  font-weight: bold;
+  color: #bbb;
+  transition: 250ms;
+}
+
+li > a:hover {
+  text-decoration: none;
+  color: #555;
+}

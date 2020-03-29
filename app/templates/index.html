@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <meta charset="utf-8">
+  <!-- Bootstrap CDN -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-  <link rel="stylesheet" href="../static/css/index.css"/>
-  {% if site_title %}
-  <title>{{ site_title }} | CITSPrep</title>
-  {% else %}
-  <title>Welcome to CITSPrep!</title>
-  {% endif %}
-  <body class="container">
-    <header>
-      <nav>
-        <ul class="navigation-bar">
-          <li><a href="/main">CITSPrep</a></li>
-          <li><a href="/index">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-      <div>
-        <button class="plain-button" onclick="window.location.href='/login';">Sign Up / Sign In</button>
-      </div>
-    </header>
-    <hr>
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="../static/css/main.css"/>
+  <link rel="stylesheet" href="../static/css/header.css">
+  <title>Temp</title>
+  <header>
+    <nav>
+      <ul class="nav-bar">
+        <li><a href="/main">CITSPrep</a></li>
+        <li><a href="/index">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li>
+          <button class="plain-button" onclick="window.location.href='/login';">Sign Up / Sign In</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <body>
     <main>
       <!-- Get flashed messages -->
       {% with messages = get_flashed_messages() %}
@@ -48,7 +46,6 @@
           <p>We're the leaders in unit preparation across every course in UWA. Join us today to experience the power of knowledge for yourself.</p>
           <button class="plain-button big-text">Learn More</button>
         </div>
-        <image src="https://a.slack-edge.com/dd0405/marketing/img/solutions/remote-work/img-hero-remote.jpg" alt="placeholder image" class="test-image-1">
       </div>
       {% endblock %}
     </main>
