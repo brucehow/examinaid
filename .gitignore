@@ -1,6 +1,11 @@
-/* Virtual Environments */
+# Virtual Environments
 env
 venv
 
-/* Mac OS */
+# Python
+__pycache__
+
+# Mac OS
 .DS_Store
+
+
