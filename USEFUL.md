@@ -10,8 +10,14 @@ These instructions assume a Windows 10 machine, and the **Visual Studio Code** d
 
 The first 3 steps may need to be run if the previous virtual environment is not recognized. If this is the case, remove the previous virtual environment and rerun these steps.
 
+(Windows)
 1. In the terminal window, double check that the working directory is correct, then call `python -m venv venv`. The second `venv` is the name that you wish to give your virtual environment. For the purposes of this repository and to ensure that Git does not track the virtual environment, you must use the name `venv` within this workspace.
 2. Once the virtual environment has been set up, in the same directory, type `source venv/Scripts/activate` to activate the virtual environment, again replacing the `venv` with the name of your virtual environment, if different. Upon successful completion, you can check that the virtual environment has been set up by calling `ls`. The last output of that command should be `(venv)`. This command needs to be called every time a new terminal instance is created.
+
+(Mac)
+1. If you are having issues with the above steps try this. Call `virtualenv venv -p 3.8`.
+2. Then activate the environment using `source venv/bin/activate.
+
 3. In the same directory, call `pip install flask`. This installs several dependencies alongside Flask.
 
 If your editor of choice is Visual Studio Code, you now have to change the python interpreter in the workspace. This is done to avoid meaningless error messages due to the new virtual environment not being initially recognized. Steps 4 - 6 address this; skip these steps if they don't apply to you.
