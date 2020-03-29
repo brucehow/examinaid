@@ -9,11 +9,10 @@ body {
 button.plain-button {
   background-color: darkslategrey;
   color: white;
-  padding: 0.5rem;
+  padding: 0.4% 0.8%;
   border-radius: 5px;
   border: none;
-  font-weight: bold;
-  transition: 250ms;
+  font-weight: 700;
 }
 
 .big-text {

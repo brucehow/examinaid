@@ -1,28 +1,35 @@
 header {
   background-color: white;
   width: 100%;
+  border-bottom: 1px solid #e0e0e0;
+
 }
 
 /* Navigation Bar */
 nav {
-  padding: 1.5%;
+  padding: 1%;
+  text-align: right;
 }
 
 .nav-bar {
   list-style: none;
-  margin: 0;
-  padding: 0 0 0 5%;
+  padding: 0;
+  margin: 0 5% 0 0;
+}
+
+nav a {
+  color: #2c2d30;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: none;
 }
 
 .nav-bar li {
   display: inline;
   letter-spacing: 0.025em;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1em;
   margin: 1%;
-}
-
-.nav-bar a {
-  color: #2c2d30;
-  text-decoration: none;
 }
