@@ -7,7 +7,7 @@ body {
     font-family: 'Raleway', 'Montserrat', 'Spartan', 'Roboto', sans-serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: white;
     text-align: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("background.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../resources/background.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
