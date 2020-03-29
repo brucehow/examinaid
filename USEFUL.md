@@ -19,6 +19,7 @@ The first 3 steps may need to be run if the previous virtual environment is not 
 2. Then activate the environment using `source venv/bin/activate`.
 
 3. In the same directory, call `pip install flask`. This installs several dependencies alongside Flask.
+4. In the same directory, call 'pip install Flask-WTF'. This installs additional form packages for Flask.
 
 If your editor of choice is Visual Studio Code, you now have to change the python interpreter in the workspace. This is done to avoid meaningless error messages due to the new virtual environment not being initially recognized. Steps 4 - 6 address this; skip these steps if they don't apply to you.
 
