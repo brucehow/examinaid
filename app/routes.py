@@ -3,9 +3,9 @@ from flask import render_template, flash, redirect
 from app.forms import LoginForm
 
 @app.route("/")
-@app.route("/main")
-def main():
-    return render_template("main.html")
+@app.route("/landing")
+def landing():
+    return render_template("landing.html")
 
 @app.route("/index")
 def index():
