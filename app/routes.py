@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, flash, redirect
-from app.forms import LoginForm
+from app.forms import LoginForm, RegisterForm
 
 @app.route("/")
 @app.route("/landing")
@@ -20,8 +20,19 @@ def about():
 
 @app.route("/login", methods = ["GET", "POST"])
 def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-        flash('Login requested for user {}, remember_me={}'.format(form.username.data, form.remember_me.data))
+    loginForm = LoginForm()
+    if loginForm.validate_on_submit():
+        flash('Login requested for user {}, remember_me={}'.format(loginForm.username.data, loginForm.remember_me.data))
         return redirect('/index')
-    return render_template('login.html', title='Sign In', form=form)
+    return render_template('login.html', title='Sign In', loginForm=loginForm)
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    registerForm = RegisterForm()
+    if registerForm.validate_on_submit():
+        flash('Registration requested for user {}, remember_me={}'.format(registerForm.username.data, registerForm.remember_me.data))
+        return redirect('/login')
+        
+
+    return render_template('register.html', title='Register', registerForm=registerForm)
+

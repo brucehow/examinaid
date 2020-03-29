@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <body>
+    <h1>Create an account</h1>
+    <form action="" method="post" novalidate>
+        {{ registerForm.hidden_tag() }}
+        <p>
+            {{ registerForm.name.label }}<br>
+            {{ registerForm.name(size=32) }}
+        </p>
+        <p>
+            {{ registerForm.email.label }}<br>
+            {{ registerForm.email(size=32) }}
+        </p>
+        <p>
+            {{ registerForm.password.label }}<br>
+            {{ registerForm.password(size=32) }}
+        </p>
+        <p>{{ registerForm.submit() }}</p>
+    </form>
+    </body>
+{% endblock %}
