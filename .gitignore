@@ -1,1 +1,6 @@
-venv/
+/* Virtual Environments */
+env
+venv
+
+/* Mac OS */
+.DS_Store
