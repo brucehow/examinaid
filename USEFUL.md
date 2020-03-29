@@ -16,7 +16,7 @@ The first 3 steps may need to be run if the previous virtual environment is not 
 
 (Mac)
 1. If you are having issues with the above steps try this. Call `virtualenv venv -p 3.8`.
-2. Then activate the environment using `source venv/bin/activate.
+2. Then activate the environment using `source venv/bin/activate`.
 
 3. In the same directory, call `pip install flask`. This installs several dependencies alongside Flask.
 
