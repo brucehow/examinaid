@@ -1,73 +1,73 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway&display=swap);
 
 body {
-    margin-top: 1rem;
-    font-family: 'Raleway', sans-serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-top: 1rem;
+  font-family: 'Raleway', sans-serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 main {
-    text-align: center;
+  text-align: center;
 }
 
 hr {
-    border: 0.5px solid black;
+  border: 0.5px solid black;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
 }
 
 header > div {
-    align-items: center;
+  align-items: center;
 }
 
 ul.navigation-bar > li {
-    display: inline-block;
-    list-style-type: none;
-    margin-left: 1rem;
-    transition: 250ms;
+  display: inline-block;
+  list-style-type: none;
+  margin-left: 1rem;
+  transition: 250ms;
 }
 
 ul.navigation-bar > li > a {
-    text-transform: capitalize;
-    color: black;
-    transition: 250ms;
+  text-transform: capitalize;
+  color: black;
+  transition: 250ms;
 }
 
 ul.navigation-bar > li:nth-child(1) {
-    margin-left: none;
-    font-weight: bold;
+  margin-left: none;
+  font-weight: bold;
 }
 
 button.plain-button {
-    background-color: darkslategrey;
-    color: white;
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: none;
-    font-weight: bold;
-    transition: 250ms;
+  background-color: darkslategrey;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  transition: 250ms;
 }
 
 ul.navigation-bar > li > a:hover, button.plain-button:hover {
-    color: grey;
-    text-decoration: none;
+  color: grey;
+  text-decoration: none;
 }
 
 .big-text {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .about-us {
-    display: flex;
-    justify-content: space-between;
-    text-align: left;
-    vertical-align: bottom;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  vertical-align: bottom;
 }
 
 .test-image-1 {
-    max-width: 45%;
-    height: auto;
+  max-width: 45%;
+  height: auto;
 }
