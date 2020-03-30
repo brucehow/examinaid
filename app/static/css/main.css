@@ -13,8 +13,24 @@ button.plain-button {
   border-radius: 5px;
   border: none;
   font-weight: 700;
+  transition: 250ms;
+}
+
+button.plain-button:hover {
+  color: darkgrey;
 }
 
 .big-text {
   font-size: 1.2rem;
+}
+
+a.alternate-login {
+  font-weight: bold;
+  color: #333;
+  transition: 250ms;
+}
+
+a.alternate-login:hover {
+  text-decoration: none;
+  color: darkgrey;
 }
