@@ -23,3 +23,14 @@ button.plain-button:hover {
 .big-text {
   font-size: 1.2rem;
 }
+
+a.alternate-login {
+  font-weight: bold;
+  color: #333;
+  transition: 250ms;
+}
+
+a.alternate-login:hover {
+  text-decoration: none;
+  color: darkgrey;
+}
