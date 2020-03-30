@@ -17,13 +17,15 @@ nav {
   margin: 0 5% 0 0;
 }
 
-nav a {
+header a {
   color: #2c2d30;
   text-decoration: none;
+  transition: 250ms;
 }
 
-nav a:hover {
+header a:hover {
   text-decoration: none;
+  color: grey;
 }
 
 .nav-bar li {
