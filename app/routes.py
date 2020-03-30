@@ -32,7 +32,5 @@ def register():
     if registerForm.validate_on_submit():
         flash('Registration requested for user {}, remember_me={}'.format(registerForm.username.data, registerForm.remember_me.data))
         return redirect('/login')
-        
-
     return render_template('register.html', title='Register', registerForm=registerForm)
 
