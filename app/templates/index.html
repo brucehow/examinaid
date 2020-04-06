@@ -12,22 +12,24 @@
     <header>
       <nav class="navbar fixed-top navbar-expand md">
         <div class="container">
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav mr-auto">  <!-- Left side navbar -->
               <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">CITSPrep</a></li>
               <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
           </ul>
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto"> <!-- Right side navbar -->
+            {% if current_user.is_anonymous %}
             <li class="nav-item">
-              {% if current_user.is_anonymous %}
               <a class="nav-link" href="{{ url_for('login') }}">Sign In</a>
-              {% else %}
-              <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
-              {% endif %}
             </li>
             <li class="nav-item">
               <button class="plain-button green" onclick="window.location.href='/register';">Get Started</button>
             </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+            </li>
+            {% endif %}
           </ul>
         </div>
       </nav>
