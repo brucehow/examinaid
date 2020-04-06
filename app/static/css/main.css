@@ -95,8 +95,8 @@ img.img-md {
 
 /* Animation */
 .float-anim {
-  -webkit-animation: action 1s infinite alternate; /* Chrome/Safari etc */
-  animation: action 1s infinite alternate;
+  -webkit-animation: action 3s infinite alternate;
+  animation: action 3s infinite alternate;
 }
   @-webkit-keyframes action {
   0% { transform: translateY(0); }
