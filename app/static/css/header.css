@@ -1,26 +1,30 @@
 header {
   background-color: white;
-  width: 100%;
-  border-bottom: 1px solid #e0e0e0;
-
+  padding-bottom: 71px; /* Prevent fixed nav-bar from overlapping */
+  margin-bottom: 2em;
 }
 
 /* Navigation Bar */
-nav {
-  padding: 1%;
-  text-align: right;
+
+.navbar {
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 15px; /* Navbar size */
 }
 
-.nav-bar {
-  list-style: none;
-  padding: 0;
-  margin: 0 5% 0 0;
+.navbar-nav > li {
+  padding: 0 5px;
+}
+
+.nav-item {
+  margin: auto;
 }
 
 header a {
   color: #2c2d30;
   text-decoration: none;
   transition: 250ms;
+  font-weight: 400;
 }
 
 header a:hover {
@@ -31,7 +35,6 @@ header a:hover {
 .nav-bar li {
   display: inline;
   letter-spacing: 0.025em;
-  font-weight: 400;
   font-size: 1em;
   margin: 1%;
 }

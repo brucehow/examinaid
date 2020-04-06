@@ -8,21 +8,26 @@
   <link rel="stylesheet" href="../static/css/main.css"/>
   <link rel="stylesheet" href="../static/css/header.css">
   <title>Temp</title>
-  <header>
-    <nav>
-      <ul class="nav-bar">
-          <li><a href="/landing">CITSPrep</a></li>
-          <li><a href="/index">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><button class="plain-button" onclick="window.location.href='/login';">Get Started</button>
-        </div>
-        </li>
-      </ul>
-    </nav>
-  </header>
   <body>
-    <main>
+    <header>
+      <nav class="navbar fixed-top navbar-expand md">
+        <div class="container">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('landing') }}">CITSPrep</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Sign In</a></li>
+            <li class="nav-item">
+              <button class="plain-button green" onclick="window.location.href='/login';">Get Started</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
       <!-- Get flashed messages -->
       {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -44,7 +49,7 @@
         <div class="description">
           <h2>Who are we?</h2>
           <p>We're the leaders in unit preparation across every course in UWA. Join us today to experience the power of knowledge for yourself.</p>
-          <button onclick="window.location.href='/about'" class="plain-button big-text">Learn More</button>
+          <button onclick="window.location.href='/about'" class="plain-button green">Learn More</button>
         </div>
       </div>
       {% endblock %}
