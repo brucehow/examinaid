@@ -20,17 +20,20 @@ The first 3 steps may need to be run if the previous virtual environment is not 
 
 3. In the same directory, call `pip install flask`. This installs several dependencies alongside Flask.
 4. In the same directory, call 'pip install Flask-WTF'. This installs additional form packages for Flask.
+5. In the same directory, call 'pip install Flask-sqlalchemy'. This installs additional packages for Flask.
+6. In the same directory, call 'pip install Flask-migrate'. This installs additional packages for Flask.
+7. In the same directory, call 'pip install Flask-login'. This installs additional packages for Flask.
 
 If your editor of choice is Visual Studio Code, you now have to change the python interpreter in the workspace. This is done to avoid meaningless error messages due to the new virtual environment not being initially recognized. Steps 4 - 6 address this; skip these steps if they don't apply to you.
 
-5. Hit "Ctrl + ," to open the settings, and select the Workspace tab.
-6. Search for "pythonPath" in the search bar at the top and navigate down to the section titled "Python: Python Path".
-7. Add the corresponding path to the Python executable in the virtual environment to the python interpreter in this section.
+8. Hit "Ctrl + ," to open the settings, and select the Workspace tab.
+9. Search for "pythonPath" in the search bar at the top and navigate down to the section titled "Python: Python Path".
+10. Add the corresponding path to the Python executable in the virtual environment to the python interpreter in this section.
 
 Back to the terminal, we now need to give the Flask application to the environmental variable.
 
-8. Still in the same directory, once your Flask application is ready to be run, call `set FLASK_APP=index.py`, where `index.py` is the top level python script to run your Flask application. We need to pass the top level script to the environmental variable so it knows what script to look for when we call the function in the next step.
-9. Your application should be ready to be served to a local address! Call `flask run` and navigate to the given address to see the app in action.
+11. Still in the same directory, once your Flask application is ready to be run, call `set FLASK_APP=index.py`, where `index.py` is the top level python script to run your Flask application. We need to pass the top level script to the environmental variable so it knows what script to look for when we call the function in the next step.
+12. Your application should be ready to be served to a local address! Call `flask run` and navigate to the given address to see the app in action.
 
 ## Managing SQLAlchemy databases in Flask Shell
 
