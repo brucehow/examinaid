@@ -5,8 +5,9 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
   <!-- Custom Stylesheets -->
-  <link rel="stylesheet" href="../static/css/main.css"/>
   <link rel="stylesheet" href="../static/css/header.css">
+  <link rel="stylesheet" href="../static/css/main.css"/>
+
   <title>Temp</title>
   <body>
     <header>
@@ -34,7 +35,7 @@
         </div>
       </nav>
     </header>
-    <main class="container">
+    <main>
       <!-- Get flashed messages -->
       {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -50,20 +51,78 @@
       {% else %}
       {% endif %}
       {% block content %}
-      <!-- index.html-specific content goes here -->
-      <div class="about-us">
-        <div class="row vertical-align">
-          <div class="col-sm-6">
-            <h1>Studying for exams has never been easier!</h1>
-            <p>We are the leaders in unit preparation across many courses in UWA. Join us today to experience the power of knowledge for yourself.</p>
-            <button onclick="window.location.href='/about'" class="plain-button green">Learn More</button>
-          </div>
-          <div class="col-sm-1"></div>
-          <div class="col-sm-5">
-            <img class="img-fluid" src="../static/resources/landing.svg" alt=""> 
+      <!-- Landing/Home Section -->
+      <section>
+        <div class="container">
+          <div class="row vertical-align">
+            <div class="col-sm-6">
+              <h1>Studying for exams has never been easier!</h1>
+              <p>We are the leaders in unit preparation across many courses in UWA. Join us today to experience the power of knowledge for yourself.</p>
+              <button onclick="window.location.href='/about'" class="plain-button green">Learn More</button>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+              <img class="img-fluid" src="../static/resources/landing.svg" alt=""> 
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+      <!-- About Section -->
+      <section class="grey">
+        <div class="container">
+          <div class="row vertical-align">
+            <div class="col-sm-4">
+              <h3>Attribute</h3>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate necessitatibus minima inventore maxime illo possimus unde voluptas corporis molestias nihil.</p>
+            </div>
+            <div class="col-sm-4">
+              <h3>Attribute</h3>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero veniam officiis eligendi tempore unde qui rerum maxime quasi delectus autem.</p>
+            </div>
+            <div class="col-sm-4">
+              <h3>Attribute</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero aspernatur doloremque, ab exercitationem at enim rem. Quo reprehenderit dignissimos nostrum?</p>
+            </div>
+        </div>
+      </section>
+      <section class="green">
+        <div class="container">
+          <div class="row vertical-align">
+            <div class="col-sm-6">
+              <h2>Get customised feedback</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, inventore ab quae ad animi fugiat? Dolor, quo, quia, quas ipsa quam sunt sapiente officiis aut animi minus ipsum? Explicabo, deserunt.</p>
+            </div>
+            <div class="col-sm-6">
+              <img class="img-fluid" src="../static/resources/feedback.svg" alt=""> 
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="row vertical-align">
+            <div class="col-sm-6">
+              <img class="img-fluid" src="../static/resources/learn.svg" alt=""> 
+            </div>
+            <div class="col-sm-6">
+              <h2>Learn from previous tests</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, inventore ab quae ad animi fugiat? Dolor, quo, quia, quas ipsa quam sunt sapiente officiis aut animi minus ipsum? Explicabo, deserunt.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section>
+        <div class="container">
+          <div class="row vertical-align">
+            <div class="col-sm-7">
+              <h2>Contact us</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, inventore ab quae ad animi fugiat? Dolor, quo, quia, quas ipsa quam sunt sapiente officiis aut animi minus ipsum? Explicabo, deserunt.</p>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-4">
+              <span>Form Here</span>
+            </div>
+          </div>
+        </div>
+      </section>
       {% endblock %}
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.js" crossorigin="anonymous"></script>

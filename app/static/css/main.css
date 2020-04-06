@@ -7,22 +7,50 @@ body {
   font-size: 1.1rem;
 }
 
-.container { /* Horrizontal padding */
-  margin: 0 auto;
+/* Sections */
+section {
+  padding: 7rem 0;
 }
 
-.vertical-align {
+section.grey {
+  background-color: #fafafa;
+}
+
+section.green {
+  background-color: #087c65;
+  background-image: url(../resources/texture-1.png);
+  color: white;
+}
+
+/* Structure */
+div.container {
+  margin: 0 auto; /* left right padding */
+}
+
+div.vertical-align {
   align-items: center; 
+}
+
+div.divider {
+  margin: 5rem;
 }
 
 /* Headings */
 h1 {
   font-weight: 900;
+  font-size: 3rem;
   margin-bottom: 1rem;
 }
 
 h2 {
-  font-weight: 700;
+  font-weight: 900;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-weight: 900;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
@@ -46,4 +74,18 @@ button.green {
 
 button.green:hover {
   background-color: #005e45;
+}
+
+/* Animation */
+.float-anim {
+  -webkit-animation: action 1s infinite alternate; /* Chrome/Safari etc */
+  animation: action 1s infinite alternate;
+}
+  @-webkit-keyframes action {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+  @keyframes action {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
 }
