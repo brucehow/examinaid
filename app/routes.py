@@ -7,10 +7,6 @@ from app.models import User
 from werkzeug.urls import url_parse
 
 @app.route("/")
-@app.route("/landing")
-def landing():
-    return render_template("landing.html")
-
 @app.route("/index")
 def index():
     site_title = "Site Title"
