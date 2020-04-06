@@ -18,11 +18,16 @@ def about():
     name = "Nobody"
     return render_template("about.html", name=name)
 
+@app.route("/userhomepage")
+def userhomepage():
+    name = "Nothing"
+    return render_template("userhomepage.html", name=name)
+
 @app.route("/login", methods = ["GET", "POST"])
 def login():
     # If there is a user currently logged in, return user to index page
     if (current_user.is_authenticated):
-        return redirect(url_for('index'))
+        return redirect(url_for('userhomepage'))
 
     form = LoginForm()
     if form.validate_on_submit():
@@ -38,7 +43,7 @@ def login():
         # If not, set the next page to the index.
         # The second check below is to prevent malicious intent by checking that the netlog component has been set, which is only true for relative URLs.
         if (not next_page) or (url_parse(next_page).netloc != ''):
-            next_page = url_for('index')
+            next_page = url_for('userhomepage')
         return redirect(next_page)
 
     return render_template('login.html', title='Sign In', loginForm=form)
