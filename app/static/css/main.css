@@ -82,6 +82,17 @@ button.green:hover {
   background-color: #007757;
 }
 
+/* Images */
+img.img-lg {
+  margin: auto;
+  max-width: 100%;
+}
+
+img.img-md {
+  margin: auto;
+  max-width: 75%;
+}
+
 /* Animation */
 .float-anim {
   -webkit-animation: action 1s infinite alternate; /* Chrome/Safari etc */
