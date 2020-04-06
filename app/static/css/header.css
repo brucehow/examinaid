@@ -22,7 +22,6 @@ header {
 header a {
   color: #2c2d30;
   text-decoration: none;
-  transition: 250ms;
   font-weight: 400;
 }
 

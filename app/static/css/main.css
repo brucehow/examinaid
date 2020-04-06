@@ -17,7 +17,7 @@ section.grey {
 }
 
 section.green {
-  background-color: #087c65;
+  background-color: #0b926a;
   background-image: url(../resources/texture-1.png);
   color: white;
 }
@@ -54,11 +54,19 @@ h3 {
   margin-bottom: 1rem;
 }
 
+.sub-heading {
+  margin-bottom: 4rem;
+}
+
 /* Buttons */
 button.plain-btn {
   border-radius: 5px;
   border: none;
   color: white;
+}
+
+button.plain-btn:focus {
+  outline: none;
 }
 
 button.sm {
@@ -71,6 +79,7 @@ button.lg {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   font-weight: 900;
   font-size: 1.25rem;
+  letter-spacing: 0.03rem;
   padding: 1.0rem 1.5rem;
 }
 
@@ -95,8 +104,8 @@ img.img-md {
 
 /* Animation */
 .float-anim {
-  -webkit-animation: action 3s infinite alternate;
-  animation: action 3s infinite alternate;
+  -webkit-animation: action 2s infinite alternate;
+  animation: action 2s infinite alternate;
 }
   @-webkit-keyframes action {
   0% { transform: translateY(0); }
