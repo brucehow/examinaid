@@ -35,6 +35,10 @@ button.plain-button {
   transition: 250ms;
 }
 
+button:focus {
+  outline:0;
+}
+
 button.green {
   background-color: #007a5a;
 }
