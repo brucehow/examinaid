@@ -12,6 +12,10 @@ section {
   padding: 7rem 0;
 }
 
+section.landing {
+  padding: 11rem 0;
+}
+
 section.grey {
   background-color: #fafafa;
 }
