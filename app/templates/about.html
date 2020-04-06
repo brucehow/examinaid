@@ -4,4 +4,11 @@
   <p>Text text text.</p>
   <p><em>More text!</em></p>
   <p>Hello, {{name}}!</p>
+
+  {% if current_user.is_anonymous %}
+  <p>You're not logged in!</p>
+  {% else %}
+  <a href="{{ url_for('logout') }}">Logout</a>
+  {% endif %}
+
 {% endblock %}
