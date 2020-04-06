@@ -45,10 +45,16 @@
       {% block content %}
       <!-- index.html-specific content goes here -->
       <div class="about-us">
-        <div class="description">
-          <h2>Who are we?</h2>
-          <p>We're the leaders in unit preparation across every course in UWA. Join us today to experience the power of knowledge for yourself.</p>
-          <button onclick="window.location.href='/about'" class="plain-button green">Learn More</button>
+        <div class="row vertical-align">
+          <div class="col-sm-6">
+            <h1>Studying for exams has never been easier!</h1>
+            <p>We are the leaders in unit preparation across many courses in UWA. Join us today to experience the power of knowledge for yourself.</p>
+            <button onclick="window.location.href='/about'" class="plain-button green">Learn More</button>
+          </div>
+          <div class="col-sm-1"></div>
+          <div class="col-sm-5">
+            <img class="img-fluid" src="../static/resources/landing.svg" alt=""> 
+          </div>
         </div>
       </div>
       {% endblock %}
