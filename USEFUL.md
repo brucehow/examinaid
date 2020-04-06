@@ -31,3 +31,25 @@ Back to the terminal, we now need to give the Flask application to the environme
 
 8. Still in the same directory, once your Flask application is ready to be run, call `set FLASK_APP=index.py`, where `index.py` is the top level python script to run your Flask application. We need to pass the top level script to the environmental variable so it knows what script to look for when we call the function in the next step.
 9. Your application should be ready to be served to a local address! Call `flask run` and navigate to the given address to see the app in action.
+
+## Managing SQLAlchemy databases in Flask Shell
+
+**SQLAlchemy** provides a useful way to query a database in the python terminal window, using python commands instead of SQL commands. Note that when inside the virtual environemnt containing `flask`, the python command line must be called using `flask shell`, instead of the typical `python` or `python3`, which would otherwise require several import statements at the top of the terminal. The following commands are useful for managing the project database:
+
+**Checking:**
+Call either `db` or `User`. These should return the sources of these objects. If this function returns a `NameError`, make sure you have `set` or `export` the top level flask python script.
+
+**After making any changes to the database:**
+- `db.session.commit()` commits those changes. Use this when you are confident that the changes you've made are the changes you want to make!
+- `db.session.rollback()` rolls back the changes you made.
+
+**Querying the database:**
+- `User.query.all()` returns all the users in the database.
+- `User.query.first()` returns the first user in the database.
+- `u.check_password('test')` checks whether the user `u` has the password `test`. Prints True if the password is correct, False if otherwise.
+
+**Updating the database:**
+- `db.session.delete(u)` deletes the user object `u` from the session.
+- `u = User(username='xxx', email='something@example.com')` creates a new user object.
+  - `u.set_password('somepassword')` sets the password for the user `u`.
+  - `db.session.add(u)` adds the user `u` to the database.
