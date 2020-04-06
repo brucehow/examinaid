@@ -18,5 +18,5 @@
     </p>
     <p>{{ registerForm.submit() }}</p>
   </form>
-  <p>Returning user? <a class="alternate-login" href="/login">Sign In</a></p>
+  <p>Returning user? <a class="alternate-login" href="{{ url_for('login') }}">Sign In</a></p>
 {% endblock %}

@@ -11,9 +11,9 @@
   <header>
     <nav>
       <ul class="nav-bar">
-          <li><a href="/landing">CITSPrep</a></li>
-          <li><a href="/index">Home</a></li>
-          <li><a href="/about">About</a></li>
+          <li><a href="{{ url_for('landing') }}">CITSPrep</a></li>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
           <li><a href="#">Contact</a></li>
           <li><button class="plain-button" onclick="window.location.href='/login';">Get Started</button>
         </div>
