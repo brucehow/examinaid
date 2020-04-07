@@ -1,12 +1,12 @@
 {% extends "index.html" %}
 
 {% block content %}
-  <h1>Create an account</h1>
   <form action="" method="post">
+    <h1>Create an account</h1>
     {{ form.hidden_tag() }}
     <p>
       {{ form.username.label }}<br>
-      {{ form.username(size = 32) }}<br>
+      {{ form.username(size = 32, autocomplete="off") }}<br>
       {% for error in form.username.errors %}
       <span style="color: red;">[{{ error }}]</span>
       {% endfor %}
@@ -33,6 +33,6 @@
       {% endfor %}
   </p>
   <p>{{ form.submit() }}</p>
-  </form>
   <p>Returning user? <a class="alternate-login" href="{{ url_for('login') }}">Sign In</a></p>
+  </form>
 {% endblock %}

@@ -1,0 +1,38 @@
+
+form {
+  text-align: center;
+}
+
+h1.form-header {
+  margin: 3rem 0 3rem;
+}
+
+#username, #password {
+  border: 2px solid #0b926a;
+  border-radius: 1rem;
+  text-align: center;
+  width: 14em;
+  transition: 250ms;
+}
+
+#username:hover, #password:hover {
+  width: 16em;
+}
+
+#username:active, #password:active {
+  border-color: darkgreen;
+}
+
+#submit {
+  background: none;
+  border: none;
+  font-weight: bold;
+  border-radius: 1rem;
+  width: 7rem;
+  margin-bottom: 1rem;
+  transition: 250ms;
+}
+
+#submit:hover {
+  color: darkslategray;
+}

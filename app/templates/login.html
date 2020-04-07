@@ -1,13 +1,15 @@
 {% extends "index.html" %}
 
 {% block content %}
-  <h1>Sign In</h1>
+  <link rel="stylesheet" href="../static/css/forms.css">
   <form action="" method="post" novalidate>
+    <h1 class="form-header">Sign In</h1>
     {{ loginForm.hidden_tag() }}
     <p>
       {{ loginForm.username.label }}<br>
-      {{ loginForm.username(size=32) }}
+      {{ loginForm.username(size=32, autocomplete="off") }}
       {% for error in loginForm.username.errors %}
+      <br>
       <span style="color: red;">[{{ error }}]</span>
       {% endfor %}
     </p>
@@ -15,6 +17,7 @@
       {{ loginForm.password.label }}<br>
       {{ loginForm.password(size=32) }}
       {% for error in loginForm.password.errors %}
+      <br>
       <span style="color: red;">[{{ error }}]</span>
       {% endfor %}
     </p>
