@@ -9,7 +9,12 @@
   <link rel="stylesheet" href="../static/css/header.css">
   <link rel="stylesheet" href="../static/css/forms.css"/>
 
-  <title>Temp</title>
+  {% if title %}
+  <title>{{ title }} - CITSPrep</title>
+  {% else %}
+  <title>Welcome to CITSPrep!</title>
+  {% endif %}
+
   <body>
     <header>
       <nav class="navbar fixed-top navbar-expand md">

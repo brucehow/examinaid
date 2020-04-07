@@ -9,19 +9,16 @@ from werkzeug.urls import url_parse
 @app.route("/")
 @app.route("/index")
 def index():
-    site_title = "Site Title"
     welcome_string = ""
-    return render_template("index.html", welcome_string=welcome_string, site_title=site_title)
+    return render_template("index.html", welcome_string=welcome_string, title="Home")
 
 @app.route("/about")
 def about():
-    name = "Nobody"
-    return render_template("about.html", name=name)
+    return render_template("about.html", title="About")
 
 @app.route("/userhomepage")
 def userhomepage():
-    name = "Nothing"
-    return render_template("userhomepage.html", name=name)
+    return render_template("userhomepage.html", title="My Profile")
 
 @app.route("/login", methods = ["GET", "POST"])
 def login():
@@ -67,5 +64,5 @@ def register():
         db.session.commit()
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
-    return render_template('register.html', title='Register', form=form)
+    return render_template('register.html', title="Register", form=form)
 
