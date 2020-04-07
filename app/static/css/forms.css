@@ -42,3 +42,14 @@ input[type=checkbox] {
 #submit:hover {
   color: darkslategray;
 }
+
+.alternate-login {
+  color: black;
+  font-weight: bold;
+  transition: 250ms;
+}
+
+.alternate-login:hover {
+  color: darkslategray;
+  text-decoration: none;
+}
