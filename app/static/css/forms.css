@@ -1,0 +1,27 @@
+form.login {
+  text-align: left;
+  width: 100%;
+  max-width: 400px;
+  margin: 4rem auto;
+}
+
+.form-input > label {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.form-input > input {
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+  height: 45px;
+  width: 100%;
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+.form-input > #remember_me {
+  width: auto;
+}
+

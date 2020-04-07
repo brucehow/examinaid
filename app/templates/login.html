@@ -1,25 +1,32 @@
 {% extends "index.html" %}
 
 {% block content %}
-  <h1>Sign In</h1>
-  <form action="" method="post" novalidate>
-    {{ loginForm.hidden_tag() }}
-    <p>
-      {{ loginForm.username.label }}<br>
-      {{ loginForm.username(size=32) }}
-      {% for error in loginForm.username.errors %}
-      <span style="color: red;">[{{ error }}]</span>
-      {% endfor %}
-    </p>
-    <p>
-      {{ loginForm.password.label }}<br>
-      {{ loginForm.password(size=32) }}
-      {% for error in loginForm.password.errors %}
-      <span style="color: red;">[{{ error }}]</span>
-      {% endfor %}
-    </p>
-    <p>{{ loginForm.remember_me() }} {{ loginForm.remember_me.label }}</p>
-    <p>{{ loginForm.submit() }}</p>
-    <p>New User? <a class="alternate-login" href="{{ url_for('register') }}">Click to Register!</a></p>
-  </form>
+<section>
+  <div class="container center">
+    <h1>Welcome back</h1>
+    <h4>Sign in to continue</h4>
+    <form class="login" action="" method="post" novalidate>
+      {{ loginForm.hidden_tag() }}
+      <p class="form-input">
+        {{ loginForm.username.label }}
+        {{ loginForm.username(size=32, placeholder="Username") }}
+        {% for error in loginForm.username.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p class="form-input">
+        {{ loginForm.password.label }}
+        {{ loginForm.password(size=32) }}
+        {% for error in loginForm.password.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p class="form-input">
+        {{ loginForm.remember_me() }} {{ loginForm.remember_me.label }}
+      </p>
+      <p class="form-input">{{ loginForm.submit() }}</p>
+      <p>New User? <a class="alternate-login" href="{{ url_for('register') }}">Click to Register!</a></p>
+    </form>
+  </div>
+</section>
 {% endblock %}
