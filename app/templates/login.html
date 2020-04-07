@@ -7,7 +7,7 @@
     {{ loginForm.hidden_tag() }}
     <p>
       {{ loginForm.username.label }}<br>
-      {{ loginForm.username(size=32, autocomplete="off") }}
+      {{ loginForm.username(autocomplete="off") }}
       {% for error in loginForm.username.errors %}
       <br>
       <span style="color: red;">[{{ error }}]</span>
@@ -15,7 +15,7 @@
     </p>
     <p>
       {{ loginForm.password.label }}<br>
-      {{ loginForm.password(size=32) }}
+      {{ loginForm.password() }}
       {% for error in loginForm.password.errors %}
       <br>
       <span style="color: red;">[{{ error }}]</span>

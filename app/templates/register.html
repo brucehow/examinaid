@@ -1,33 +1,34 @@
 {% extends "index.html" %}
 
 {% block content %}
+  <link rel="stylesheet" href="../static/css/forms.css">
   <form action="" method="post">
     <h1>Create an account</h1>
     {{ form.hidden_tag() }}
     <p>
       {{ form.username.label }}<br>
-      {{ form.username(size = 32, autocomplete="off") }}<br>
+      {{ form.username(autocomplete="off") }}<br>
       {% for error in form.username.errors %}
       <span style="color: red;">[{{ error }}]</span>
       {% endfor %}
   </p>
   <p>
       {{ form.email.label }}<br>
-      {{ form.email(size = 32) }}<br>
+      {{ form.email(autocomplete="off") }}<br>
       {% for error in form.email.errors %}
       <span style="color: red;">[{{ error }}]</span>
       {% endfor %}
   </p>
   <p>
       {{ form.password.label }}<br>
-      {{ form.password(size = 32) }}<br>
+      {{ form.password() }}<br>
       {% for error in form.password.errors %}
       <span style="color: red;">[{{ error }}]</span>
       {% endfor %}
   </p>
   <p>
       {{ form.repeat_password.label }}<br>
-      {{ form.repeat_password(size = 32) }}<br>
+      {{ form.repeat_password() }}<br>
       {% for error in form.repeat_password.errors %}
       <span style="color: red;">[{{ error }}]</span>
       {% endfor %}
