@@ -5,6 +5,7 @@ body {
   color: #2c2d30;
   font-family: 'Lato', sans-serif;
   font-size: 1.1rem;
+  letter-spacing: 0.03rem;
 }
 
 /* Sections */
@@ -39,11 +40,15 @@ div.divider {
   margin: 5rem;
 }
 
+div.center {
+  text-align: center;
+}
+
 /* Headings */
 h1 {
   font-weight: 900;
   font-size: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
@@ -56,6 +61,12 @@ h3 {
   font-weight: 900;
   font-size: 1.5rem;
   margin-bottom: 1rem;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .sub-heading {

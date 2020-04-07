@@ -11,10 +11,6 @@ header {
   padding: 15px; /* Navbar static size */
 }
 
-.navbar-nav > li {
-  padding: 0 5px;
-}
-
 .nav-item {
   margin: auto;
 }
@@ -27,7 +23,7 @@ header a {
 
 header a:hover {
   text-decoration: none;
-  color: grey;
+  color: #3a3b3f;
 }
 
 .nav-bar li {
@@ -35,4 +31,12 @@ header a:hover {
   letter-spacing: 0.025em;
   font-size: 1em;
   margin: 1%;
+}
+
+.mr-auto > li { /* Right side nav */
+  padding: 0 10px;
+}
+
+.ml-auto > li { /* Left side nav */
+  padding: 0 5px;
 }

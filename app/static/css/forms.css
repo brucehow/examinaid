@@ -2,11 +2,7 @@
 form {
   margin-top: 2rem;
   text-align: center;
-}
-
-h1.form-header {
-  margin: 3rem 0 3rem;
-}
+} 
 
 #username, #email, #password, #repeat_password {
   border: 2px solid #0b926a;
