@@ -7,7 +7,7 @@ h1.form-header {
   margin: 3rem 0 3rem;
 }
 
-#username, #password {
+#username, #email, #password, #repeat_password {
   border: 2px solid #0b926a;
   border-radius: 1rem;
   text-align: center;
@@ -15,12 +15,18 @@ h1.form-header {
   transition: 250ms;
 }
 
-#username:hover, #password:hover {
+#username:hover, #email:hover, #password:hover, #repeat_password:hover {
   width: 16em;
 }
 
-#username:active, #password:active {
+#username:active, #email:active, #password:active, #repeat_password:active {
   border-color: darkgreen;
+}
+
+input[type=checkbox] {
+  transform: scale(1.5);
+  margin-top: 0.75rem;
+  margin-right: 0.5rem;
 }
 
 #submit {
