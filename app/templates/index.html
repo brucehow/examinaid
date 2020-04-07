@@ -24,7 +24,7 @@
               <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
               {% if current_user.is_authenticated %}
-              <li class="nav-item"><a class="nav-link" href="{{ url_for('userhomepage') }}">My Profile</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">New Test</a></li>
               {% endif %}
           </ul>
           <ul class="navbar-nav ml-auto"> <!-- Right side navbar -->
@@ -37,7 +37,8 @@
             </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('userhomepage') }}">My Profile</a></li>
+              <a class="nav-link" href="{{ url_for('logout') }}"><b>Logout</b></a>
             </li>
             {% endif %}
           </ul>
@@ -48,7 +49,7 @@
       <!-- Get flashed messages -->
       {% with messages = get_flashed_messages() %}
         {% if messages %}
-        <ul class="flashed-messages">
+        <ul class="flashed-messages container">
           {% for message in messages %}
           <li>{{ message }}</li>
           {% endfor %}
