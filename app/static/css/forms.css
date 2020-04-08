@@ -28,6 +28,10 @@ form > input:active {
   border-color: darkgreen;
 }
 
+form > input:focus {
+  outline: none;
+}
+
 input[type=checkbox] {
   margin-right: 0.25rem;
 }
