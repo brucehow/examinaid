@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<form name="submit-to-google-sheet" id="google-sheets-form">
+  <div>
+    <label>Name</label>
+    <input type="text" name="name" placeholder="name" value="Lachlan"/>
+  </div>
+
+  <div>
+    <label>Email</label>
+    <input type="text" name="email" placeholder="something@example.com" value="something@example.com"/>
+  </div>
+  
+  <div>
+    <label>Message</label>
+    <input type="text" name="message" placeholder="message" value="Hello world!"/>
+  </div>
+
+  <div>
+    <button type="submit"id="submit-form">Submit</button>
+  </div>
+</form>
+<!-- The form javascript is imported on index.html -->
+{% endblock %}

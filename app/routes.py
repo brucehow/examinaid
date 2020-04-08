@@ -16,6 +16,10 @@ def index():
 def about():
     return render_template("about.html", title="About")
 
+@app.route("/contact")
+def contact():
+    return render_template("contact.html", title="Contact")
+
 @app.route("/userhomepage")
 def userhomepage():
     return render_template("userhomepage.html", title="My Profile")
