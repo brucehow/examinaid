@@ -10,14 +10,14 @@
     {{ loginForm.username.label }}<br>
     {{ loginForm.username(autocomplete="off") }}
     {% for error in loginForm.username.errors %}
-    <span style="color: red;">[{{ error }}]</span>
+    <br><span style="color: red;">[{{ error }}]</span>
     {% endfor %}
     <br>
 
     {{ loginForm.password.label }}<br>
     {{ loginForm.password() }}
     {% for error in loginForm.password.errors %}
-    <span style="color: red;">[{{ error }}]</span>
+    <br><span style="color: red;">[{{ error }}]</span>
     {% endfor %}
 
     <p>{{ loginForm.remember_me() }} {{ loginForm.remember_me.label }}</p>
