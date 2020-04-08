@@ -3,7 +3,7 @@ form {
   text-align: center;
 } 
 
-#username, #email, #password, #repeat_password {
+form > input {
   border: 2px solid #0b926a;
   border-radius: 1rem;
   text-align: center;
@@ -11,11 +11,11 @@ form {
   transition: 250ms;
 }
 
-#username:hover, #email:hover, #password:hover, #repeat_password:hover {
+form > input:hover {
   width: 16em;
 }
 
-#username:active, #email:active, #password:active, #repeat_password:active {
+form > input:active {
   border-color: darkgreen;
 }
 

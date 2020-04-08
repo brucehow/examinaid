@@ -6,24 +6,25 @@
     <h2>Welcome Back</h2>
     <h4>Sign in to continue</h4>
     {{ loginForm.hidden_tag() }}
-    <p>
-      {{ loginForm.username.label }}<br>
-      {{ loginForm.username(autocomplete="off") }}
-      {% for error in loginForm.username.errors %}
-      <br>
-      <span style="color: red;">[{{ error }}]</span>
-      {% endfor %}
-    </p>
-    <p>
-      {{ loginForm.password.label }}<br>
-      {{ loginForm.password() }}
-      {% for error in loginForm.password.errors %}
-      <br>
-      <span style="color: red;">[{{ error }}]</span>
-      {% endfor %}
-    </p>
-    <p>{{ loginForm.remember_me() }} {{ loginForm.remember_me.label }}</p>
-    <p>{{ loginForm.submit() }}</p>
+    
+    {{ loginForm.username.label }}<br>
+    {{ loginForm.username(autocomplete="off") }}
+
+    {% for error in loginForm.username.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+    <br>
+
+    {{ loginForm.password.label }}<br>
+    {{ loginForm.password() }}
+
+    {% for error in loginForm.password.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+    <br>
+
+    <p>{{ loginForm.remember_me() }} {{ loginForm.remember_me.label }}</p><br>
+    {{ loginForm.submit() }}<br>
     <p>New User? <a class="alternate-login" href="{{ url_for('register') }}">Click to Register!</a></p>
   </form>
 {% endblock %}
