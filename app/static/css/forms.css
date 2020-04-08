@@ -1,14 +1,19 @@
 form {
-  margin-top: 5rem;
+  margin: 5rem 0;
   text-align: center;
 } 
+
+form > label {
+  margin: 0;
+}
 
 form > input {
   border: 2px solid #0b926a;
   border-radius: 1rem;
   text-align: center;
-  width: 14em;
+  width: 14rem;
   transition: 250ms;
+  margin: 0.5rem;
 }
 
 form > input:hover {
@@ -24,9 +29,7 @@ form > input:active {
 }
 
 input[type=checkbox] {
-  transform: scale(1.5);
-  margin-top: 0.75rem;
-  margin-right: 0.5rem;
+  margin-right: 0.25rem;
 }
 
 #submit {
