@@ -7,28 +7,28 @@
     <h4>Enter your details below</h4>
     {{ form.hidden_tag() }}
     <p>
-      {{ form.username.label }}<br>
+      {{ form.username.label }} <span class="red-text">*</span><br>
       {{ form.username(autocomplete="off") }}<br>
       {% for error in form.username.errors %}
       <span style="color: red;">[{{ error }}]</span>
       {% endfor %}
   </p>
   <p>
-      {{ form.email.label }}<br>
+      {{ form.email.label }} <span class="red-text">*</span><br>
       {{ form.email(autocomplete="off") }}<br>
       {% for error in form.email.errors %}
       <span style="color: red;">[{{ error }}]</span>
       {% endfor %}
   </p>
   <p>
-      {{ form.password.label }}<br>
+      {{ form.password.label }} <span class="red-text">*</span><br>
       {{ form.password() }}<br>
       {% for error in form.password.errors %}
       <span style="color: red;">[{{ error }}]</span>
       {% endfor %}
   </p>
   <p>
-      {{ form.repeat_password.label }}<br>
+      {{ form.repeat_password.label }} <span class="red-text">*</span><br>
       {{ form.repeat_password() }}<br>
       {% for error in form.repeat_password.errors %}
       <span style="color: red;">[{{ error }}]</span>

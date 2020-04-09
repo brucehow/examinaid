@@ -135,3 +135,9 @@ img.img-md {
   0% { transform: translateY(0); }
   100% { transform: translateY(-10px); }
 }
+
+/* Miscellaneous */
+
+.red-text {
+  color: red;
+}
