@@ -6,7 +6,7 @@ $(document).ready(() => {
   const scriptURL = 'https://script.google.com/macros/s/AKfycbzBHOF2hcp7c2cWBWc8r2QoeCMHU6HGvN3pCFBlFG0UiPzwdP4/exec'
   const form = document.forms['contact-to-google-sheets']
 
-  form.addEventListener('submit', target => {
+  $(".contact-form-submit-button").click(target => {
     target.preventDefault();
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => {
@@ -21,5 +21,6 @@ $(document).ready(() => {
         console.error('Error!', error.message);
       });
   });
+
 
 });
