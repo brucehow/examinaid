@@ -45,7 +45,7 @@ input[type=checkbox] {
   margin-right: 0.5rem;
 }
 
-#submit, #submit-form {
+#submit {
   background: none;
   border: none;
   font-weight: bold;
@@ -55,7 +55,7 @@ input[type=checkbox] {
   transition: 250ms;
 }
 
-#submit:hover, #submit-form:hover {
+#submit:hover {
   color: darkslategray;
 }
 
