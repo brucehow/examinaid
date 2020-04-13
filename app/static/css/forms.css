@@ -1,11 +1,12 @@
 /* Form structure */
-form {
+form.contact {
   margin: 5rem auto;
   max-width: 350px;
 } 
 
-form .login {
+form.login {
   margin: 8rem auto;
+  max-width: 350px;
 } 
 
 form > h2,
