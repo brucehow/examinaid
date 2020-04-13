@@ -1,5 +1,5 @@
 form {
-  margin-top: 2rem;
+  margin: 5rem 0;
   text-align: center;
 } 
 
@@ -15,8 +15,13 @@ textarea {
   border: 2px solid #0b926a;
   border-radius: 1rem;
   text-align: center;
-  width: 14em;
+  width: 14rem;
   transition: 250ms;
+  margin: 0.5rem;
+}
+
+form > label {
+  margin: 0;
 }
 
 #contact_message {
@@ -39,10 +44,24 @@ textarea {
   border-width: 3px;
 }
 
+form > input:hover {
+  width: 16em;
+}
+
+form > p {
+  margin: 0;
+}
+
+form > input:active {
+  border-color: darkgreen;
+}
+
+form > input:focus {
+  outline: none;
+}
+
 input[type=checkbox] {
-  transform: scale(1.5);
-  margin-top: 0.75rem;
-  margin-right: 0.5rem;
+  margin-right: 0.25rem;
 }
 
 #submit {
@@ -51,7 +70,7 @@ input[type=checkbox] {
   font-weight: bold;
   border-radius: 1rem;
   width: 7rem;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   transition: 250ms;
 }
 
