@@ -17,7 +17,7 @@
 
     <div class="field">
       {{ loginForm.password.label }}
-      {{ loginForm.password(class="userInput", placeholder="Enter your password") }}
+      {{ loginForm.password(class="userInput", placeholder="Password") }}
       {% for error in loginForm.password.errors %}
       <span class="form-error">{{ error }}</span>
       {% endfor %}
