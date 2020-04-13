@@ -3,17 +3,45 @@ form {
   text-align: center;
 } 
 
-form > label {
-  margin: 0;
+input, textarea {
+  margin-bottom: 1rem;
 }
 
-form > input {
+textarea {
+  padding: 0.5em;
+}
+
+#username, #email, #password, #repeat_password, #contact_name, #contact_email {
   border: 2px solid #0b926a;
   border-radius: 1rem;
   text-align: center;
   width: 14rem;
   transition: 250ms;
   margin: 0.5rem;
+}
+
+form > label {
+  margin: 0;
+}
+
+#contact_message {
+  border: 2px solid #0b926a;
+  border-radius: 1rem;
+  width: 16em;
+  height: 12rem;
+  transition: 250ms;
+}
+
+#username:hover, #email:hover, #password:hover, #repeat_password:hover, #contact_name:hover, #contact_email:hover{
+  width: 16em;
+}
+
+#username:active, #email:active, #password:active, #repeat_password:active, #contact_name:active, #contact_email:active, #contact_message:active {
+  border-color: darkgreen;
+}
+
+#contact_message:focus {
+  border-width: 3px;
 }
 
 form > input:hover {

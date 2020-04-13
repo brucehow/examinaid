@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="../static/css/forms.css">
+<form name="contact-to-google-sheets" id="google-sheets-form">
+    <h1>Contact Us</h1>
+    <h4>Leave a message below</h4>
+
+    <label for="contact_name">Name <span class="red-text">*</span></label>
+    <br>
+    <input type="text" name="name" id="contact_name" placeholder="Name" required/>
+    <br>
+    <label for="contact_email">Email</label>
+    <br>
+    <input type="text" name="email" id="contact_email" placeholder="something@example.com"/>
+    <br>
+    <label for="contact_message">Message <span class="red-text">*</span></label>
+    <br>
+    <textarea name="message" id="contact_message" placeholder="What do you want to say?" required></textarea>
+    <br>
+    <button type="submit" class="contact-form-submit-button" id="submit">Submit</button>
+    <p id="contact-form-response">Thank you for your message! We'll get to it as soon as we can.</p>
+</form>
+<!-- The form javascript is imported on index.html -->
+{% endblock %}

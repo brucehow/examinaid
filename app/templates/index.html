@@ -22,7 +22,7 @@
           <ul class="navbar-nav mr-auto">  <!-- Left side navbar -->
               <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">CITSPrep</a></li>
               <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
               {% if current_user.is_authenticated %}
               <li class="nav-item"><a class="nav-link" href="#">New Test</a></li>
               {% endif %}
@@ -144,5 +144,11 @@
     crossorigin="anonymous"></script>
     <!-- Custom JS -->
     <script src="../static/scripts/index.js"></script>
+
+    <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+    <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+    <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+
+    <script src="../static/scripts/contact-form.js"></script>
   </body>
 </html>
