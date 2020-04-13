@@ -5,6 +5,16 @@
 <div class=container>
   <h1>Welcome back, {{ current_user.username }}!</h1>
   <p>Welcome to your unit dashboard! Here you'll be able to see the results of past tests, if you've taken any, as well as start a new test.</p>
+  <div class="dropdown">
+    <button class="plain-btn lg green"> Select Unit</button>
+      <div class="dropdown-content">
+        <a href="#">CITS1401</a>
+        <a href="#">CITS1001</a>
+        <a href="#">CITS3403</a>
+      </div>
+  </div>
 </div>
+
+
 
 {% endblock %}
