@@ -8,9 +8,9 @@
   
   <div class="field">
     {{ form.username.label }} <span class="required">*</span>
-    {{ form.username(class="userInput", autofocus="on", placeholder="Student1") }}
+    {{ form.username(class="userInput", autofocus="on", placeholder="Username") }}
     {% for error in form.username.errors %}
-    <span class="form-error">[{{ error }}]</span>
+    <span class="form-error">{{ error }}</span>
     {% endfor %}
   </div>
 
@@ -18,15 +18,15 @@
     {{ form.email.label }} <span class="required">*</span>
     {{ form.email(class="userInput", placeholder="you@example.com") }}
     {% for error in form.email.errors %}
-    <span class="form-error">[{{ error }}]</span>
+    <span class="form-error">{{ error }}</span>
     {% endfor %}
   </div>
 
   <div class="field">
     {{ form.password.label }} <span class="required">*</span>
-    {{ form.password(class="userInput", placeholder="Enter your password") }}
+    {{ form.password(class="userInput", placeholder="Password") }}
     {% for error in form.password.errors %}
-    <span class="form-error">[{{ error }}]</span>
+    <span class="form-error">{{ error }}</span>
     {% endfor %}
   </div>
 
@@ -34,7 +34,7 @@
     {{ form.repeat_password.label }} <span class="required">*</span>
     {{ form.repeat_password(class="userInput", placeholder="Repeat your password") }}
     {% for error in form.repeat_password.errors %}
-    <span class="form-error">[{{ error }}]</span>
+    <span class="form-error">{{ error }}</span>
     {% endfor %}
   </div>
 
