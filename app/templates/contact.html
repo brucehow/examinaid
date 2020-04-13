@@ -9,17 +9,21 @@
     <label for="contact_name">Name <span class="red-text">*</span></label>
     <br>
     <input type="text" name="name" id="contact_name" placeholder="Name" autocomplete="off"/>
+    <p style="color: red;" id="contact-form-name-error">Name is required.</p>
     <br>
     <label for="contact_email">Email</label>
     <br>
     <input type="text" name="email" id="contact_email" placeholder="something@example.com" autocomplete="off"/>
+    <p style="color: red;" id="contact-form-email-error">Please enter a valid email.</p>
     <br>
     <label for="contact_message">Message <span class="red-text">*</span></label>
     <br>
     <textarea name="message" id="contact_message" placeholder="What do you want to say?"></textarea>
+    <p style="color: red;" id="contact-form-message-error">Message is required.</p>
     <br>
     <button type="submit" class="contact-form-submit-button" id="submit">Submit</button>
-    <p id="contact-form-response">Thank you for your message! We'll get to it as soon as we can.</p>
+    <p style="color: #0b926a;" id="contact-form-response">Thank you for your message! We'll get to it as soon as we can.</p>
+    <p style="color: red;" id="contact-form-error">An error occured during form submission.</p>
 </form>
 <!-- The form javascript is imported on index.html -->
 {% endblock %}
