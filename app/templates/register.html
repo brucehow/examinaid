@@ -1,37 +1,50 @@
-{% extends "index.html" %}
+{% extends "login.html" %}
 
 {% block content %}
-  <link rel="stylesheet" href="../static/css/forms.css">
-  <form action="" method="post">
-    <h2>Create an account</h2>
-    <h4>Enter your details below</h4>
-    {{ form.hidden_tag() }}
-
-    {{ form.username.label }} <span class="red-text">*</span><br>
-    {{ form.username(autocomplete="off") }}<br>
+<form class="login" action="" method="post">
+  <h2>Create an account</h2>
+  <h4>Enter your details below</h4>
+  {{ form.hidden_tag() }}
+  
+  <div class="field">
+    {{ form.username.label }} <span class="required">*</span>
+    {{ form.username(autocomplete="off") }}
     {% for error in form.username.errors %}
-    <span style="color: red;">[{{ error }}]</span>
+    <span class="form-error">[{{ error }}]</span>
     {% endfor %}
+  </div>
 
-    {{ form.email.label }} <span class="red-text">*</span><br>
-    {{ form.email(autocomplete="off") }}<br>
+  <div class="field">
+    {{ form.email.label }} <span class="required">*</span>
+    {{ form.email(autocomplete="off") }}
     {% for error in form.email.errors %}
-    <span style="color: red;">[{{ error }}]</span>
+    <span class="form-error">[{{ error }}]</span>
     {% endfor %}
+  </div>
 
-    {{ form.password.label }} <span class="red-text">*</span><br>
-    {{ form.password() }}<br>
+  <div class="field">
+    {{ form.password.label }} <span class="required">*</span>
+    {{ form.password() }}
     {% for error in form.password.errors %}
-    <span style="color: red;">[{{ error }}]</span>
+    <span class="form-error">[{{ error }}]</span>
     {% endfor %}
+  </div>
 
-    {{ form.repeat_password.label }} <span class="red-text">*</span><br>
-    {{ form.repeat_password() }}<br>
+  <div class="field">
+    {{ form.repeat_password.label }} <span class="required">*</span>
+    {{ form.repeat_password() }}
     {% for error in form.repeat_password.errors %}
-    <span style="color: red;">[{{ error }}]</span>
+    <span class="form-error">[{{ error }}]</span>
     {% endfor %}
+  </div>
 
-  <p>{{ form.submit() }}</p>
-  <p>Returning user? <a class="alternate-login" href="{{ url_for('login') }}">Sign In</a></p>
-  </form>
+  <div class="field">
+    {{ form.submit() }}
+  </div>
+
+  <div class="field-sm center">
+    <span>Returning user? </span>
+    <a class="alternate-login" href="{{ url_for('register') }}">Sign In</a>
+  </div>
+</form>
 {% endblock %}

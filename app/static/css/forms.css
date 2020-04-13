@@ -8,6 +8,7 @@ form > h4 {
   text-align: center;
 }
 
+/* Form structure */
 .field {
   margin-bottom: 1.5rem;
 }
@@ -17,6 +18,7 @@ form > h4 {
   margin-bottom: 0.5rem;
 }
 
+/* Input styling */
 .userInput {
   border: 1px solid #cacaca;
   border-radius: 5px;
@@ -38,6 +40,7 @@ form > h4 {
   border-color: #7e7e7e;
 }
 
+/* Button */
 .form-btn {
   background-color: #008a65;
   border: none;
@@ -64,7 +67,9 @@ form > h4 {
   font-weight: 700;
 }
 
-.form-error {
+/* Form handlers */
+.form-error,
+.required {
   font-size: 1rem;
   color: red;
 }
