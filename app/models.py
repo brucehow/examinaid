@@ -21,10 +21,8 @@ class User(UserMixin, db.Model):
   def check_password(self, password):
     return check_password_hash(self.password_hash, password)
   
-  def set_admin(self):
-    self.admin = True
-  def remove_admin(self):
-    self.admin = False
+  def toggle_admin(self):
+    self.admin = not self.admin
   def check_admin(self):
     return self.admin
 
