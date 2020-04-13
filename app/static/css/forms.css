@@ -1,6 +1,11 @@
+/* Form structure */
 form {
-  margin: 8rem auto;
+  margin: 5rem auto;
   max-width: 350px;
+} 
+
+form .login {
+  margin: 8rem auto;
 } 
 
 form > h2,
@@ -8,7 +13,7 @@ form > h4 {
   text-align: center;
 }
 
-/* Form structure */
+/* Field structure */
 .field {
   margin-bottom: 1.5rem;
 }
