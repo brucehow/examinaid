@@ -30,6 +30,7 @@ form > h4 {
 }
 
 .userInput:focus {
+  border-color: #7e7e7e;
   outline: none;
 }
 

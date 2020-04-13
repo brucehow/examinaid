@@ -9,7 +9,7 @@
 
     <div class="field">
       {{ loginForm.username.label }}
-      {{ loginForm.username(class="userInput", autocomplete="off", placeholder="Username") }}
+      {{ loginForm.username(class="userInput", autofocus="on", placeholder="Username") }}
       {% for error in loginForm.username.errors %}
       <span class="form-error">{{ error }}</span>
       {% endfor %}
@@ -17,7 +17,7 @@
 
     <div class="field">
       {{ loginForm.password.label }}
-      {{ loginForm.password(class="userInput", placeholder="Password") }}
+      {{ loginForm.password(class="userInput", autofocus="on", placeholder="Password") }}
       {% for error in loginForm.password.errors %}
       <span class="form-error">{{ error }}</span>
       {% endfor %}
