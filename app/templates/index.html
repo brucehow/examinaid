@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta charset="utf-8">
-  <!-- Bootstrap CDN -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-  <!-- Custom Stylesheets -->
-  <link rel="stylesheet" href="../static/css/main.css"/>
-  <link rel="stylesheet" href="../static/css/header.css">
-  <link rel="stylesheet" href="../static/css/forms.css"/>
+  <head>
+    <meta charset="utf-8">
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="../static/css/main.css"/>
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/forms.css"/>
 
-  {% if title %}
-  <title>{{ title }} - CITSPrep</title>
-  {% else %}
-  <title>Welcome to CITSPrep!</title>
-  {% endif %}
-
+    {% if title %}
+    <title>{{ title }} - CITSPrep</title>
+    {% else %}
+    <title>Welcome to CITSPrep!</title>
+    {% endif %}
+  </head>
   <body>
     <header>
       <nav class="navbar fixed-top navbar-expand md">
@@ -78,7 +79,6 @@
         </div>
       </section>
       <!-- About Section -->
-      </section>
       <section class="green">
         <div class="container">
           <div class="row vertical-align">
@@ -111,7 +111,7 @@
               <p>Expect results from the day you start your preparation with us. See tangible improvements across all supported topics and feel confident that your education is in the right hands.</p>
             </div>
             <div class="col-sm-4">
-              <h3>Accessibily</h3>
+              <h3>Accessibility</h3>
               <p>With a wide range of features to tailor to your needs, you will never find learning with us a chore. Set your personal study goals and work towards them in your own time.</p>
             </div>
             <div class="col-sm-4">
