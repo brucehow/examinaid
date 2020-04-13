@@ -1,39 +1,58 @@
-{% extends "index.html" %}
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="utf-8">
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="../static/css/main.css"/>
+  <link rel="stylesheet" href="../static/css/forms.css"/>
 
-{% block content %}
-  <link rel="stylesheet" href="../static/css/forms.css">
-  <form class="login" action="" method="post" novalidate>
-    <h2>Welcome back</h2>
-    <h4>Sign in to continue</h4>
-    {{ loginForm.hidden_tag() }}
+  {% if title %}
+  <title>{{ title }} - CITSPrep</title>
+  {% else %}
+  <title>Welcome to CITSPrep!</title>
+  {% endif %}
 
-    <div class="field">
-      {{ loginForm.username.label }}
-      {{ loginForm.username(class="userInput", autofocus="on", placeholder="Username") }}
-      {% for error in loginForm.username.errors %}
-      <span class="form-error">{{ error }}</span>
-      {% endfor %}
-    </div>
+  <body>
+    <main>
+      {% block content %}
+        <link rel="stylesheet" href="../static/css/forms.css">
+        <form class="login" action="" method="post" novalidate>
+          <h2>Welcome back</h2>
+          <h4>Sign in to continue</h4>
+          {{ loginForm.hidden_tag() }}
 
-    <div class="field">
-      {{ loginForm.password.label }}
-      {{ loginForm.password(class="userInput", autofocus="on", placeholder="Password") }}
-      {% for error in loginForm.password.errors %}
-      <span class="form-error">{{ error }}</span>
-      {% endfor %}
-    </div>
+          <div class="field">
+            {{ loginForm.username.label }}
+            {{ loginForm.username(class="userInput", autofocus="on", placeholder="Username") }}
+            {% for error in loginForm.username.errors %}
+            <span class="form-error">{{ error }}</span>
+            {% endfor %}
+          </div>
 
-    <div class="field-sm">
-        {{ loginForm.remember_me() }} {{ loginForm.remember_me.label }}
-    </div>
+          <div class="field">
+            {{ loginForm.password.label }}
+            {{ loginForm.password(class="userInput", autofocus="on", placeholder="Password") }}
+            {% for error in loginForm.password.errors %}
+            <span class="form-error">{{ error }}</span>
+            {% endfor %}
+          </div>
 
-    <div class="field">
-      {{ loginForm.submit(class="form-btn") }}
-    </div>
-    
-    <div class="field-sm center">
-      <span>Need an account? </span>
-      <a class="alternate-login" href="{{ url_for('register') }}">Register</a>
-    </div>
-  </form>
-{% endblock %}
+          <div class="field-sm">
+              {{ loginForm.remember_me() }} {{ loginForm.remember_me.label }}
+          </div>
+
+          <div class="field">
+            {{ loginForm.submit(class="form-btn") }}
+          </div>
+          
+          <div class="field-sm center">
+            <span>Need an account? </span>
+            <a class="alternate-login" href="{{ url_for('register') }}">Register</a>
+          </div>
+        </form>
+      {% endblock %}
+    </main>
+  </body>
+</html>
