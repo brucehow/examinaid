@@ -5,6 +5,13 @@
 <div class=container>
   <h1>Welcome back, {{ current_user.username }}!</h1>
   <p>Welcome to your unit dashboard! Here you'll be able to see the results of past tests, if you've taken any, as well as start a new test.</p>
+
+  {% if current_user.admin %}
+  <p>You are an admin! Hurray!</p>
+  {% else %}
+  <p>You are not an admin. Unlucky.</p>
+  {% endif %}
+
 </div>
 
 {% endblock %}
