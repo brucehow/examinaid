@@ -12,6 +12,11 @@ form > h4 {
   margin-bottom: 1.5rem;
 }
 
+.field-sm {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 .userInput {
   border: 1px solid #cacaca;
   border-radius: 5px;
@@ -50,4 +55,10 @@ form > h4 {
 
 .form-btn:focus {
   outline: none;
+}
+
+.alternate-login,
+.alternate-login:hover {
+  color: #007757;
+  font-weight: 700;
 }

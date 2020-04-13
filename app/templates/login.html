@@ -23,17 +23,17 @@
       {% endfor %}
     </div>
 
+    <div class="field-sm">
+        {{ loginForm.remember_me() }} {{ loginForm.remember_me.label }}
+    </div>
+
     <div class="field">
       {{ loginForm.submit(class="form-btn") }}
     </div>
     
-    <div class="field-sm">
-      <span class="checkbox">
-        {{ loginForm.remember_me() }} {{ loginForm.remember_me.label }}
-      </span>
-      <span class="new-user">
-        New User?<a class="alternate-login" href="{{ url_for('register') }}">Click to Register</a>
-      </span>
+    <div class="field-sm center">
+      <span>Need an account? </span>
+      <a class="alternate-login" href="{{ url_for('register') }}">Register</a>
     </div>
   </form>
 {% endblock %}
