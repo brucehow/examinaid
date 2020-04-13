@@ -8,7 +8,7 @@
   
   <div class="field">
     {{ form.username.label }} <span class="required">*</span>
-    {{ form.username(class="userInput", autofocus="on", placeholder="Username") }}
+    {{ form.username(class="userInput", autofocus="on", placeholder="Student1") }}
     {% for error in form.username.errors %}
     <span class="form-error">[{{ error }}]</span>
     {% endfor %}
@@ -44,7 +44,7 @@
 
   <div class="field-sm center">
     <span>Returning user? </span>
-    <a class="alternate-login" href="{{ url_for('register') }}">Sign In</a>
+    <a class="alternate-login" href="{{ url_for('login') }}">Sign In</a>
   </div>
 </form>
 {% endblock %}
