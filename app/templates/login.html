@@ -11,7 +11,7 @@
       {{ loginForm.username.label }}
       {{ loginForm.username(class="userInput", autocomplete="off", placeholder="Username") }}
       {% for error in loginForm.username.errors %}
-      <span style="color: red;">[{{ error }}]</span>
+      <span class="form-error">{{ error }}</span>
       {% endfor %}
     </div>
 
@@ -19,7 +19,7 @@
       {{ loginForm.password.label }}
       {{ loginForm.password(class="userInput", placeholder="Enter your password") }}
       {% for error in loginForm.password.errors %}
-      <span style="color: red;">[{{ error }}]</span>
+      <span class="form-error">{{ error }}</span>
       {% endfor %}
     </div>
 

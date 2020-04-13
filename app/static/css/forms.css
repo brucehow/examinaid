@@ -62,3 +62,8 @@ form > h4 {
   color: #007757;
   font-weight: 700;
 }
+
+.form-error {
+  font-size: 1rem;
+  color: red;
+}
