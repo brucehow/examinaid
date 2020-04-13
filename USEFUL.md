@@ -43,13 +43,15 @@ Back to the terminal, we now need to give the Flask application to the environme
 Call either `db` or `User`. These should return the sources of these objects. If this function returns a `NameError`, make sure you have `set` or `export` the top level flask python script.
 
 **After making any changes to the database:**
-- `db.session.commit()` commits those changes. Use this when you are confident that the changes you've made are the changes you want to make!
+- `db.session.commit()` commits those changes. Use this when you are confident that the changes you've made are the changes you want to make! The flask instance does not have to be relaunched when attributes changes are committed to the database.
 - `db.session.rollback()` rolls back the changes you made.
 
 **Querying the database:**
 - `User.query.all()` returns all the users in the database.
 - `User.query.first()` returns the first user in the database.
 - `u.check_password('test')` checks whether the user `u` has the password `test`. Prints True if the password is correct, False if otherwise.
+- `u.toggle_admin()` toggles the admin status for a particular user.
+- `u.check_admin()` checks whether the current user `u` is an admin.
 
 **Updating the database:**
 - `db.session.delete(u)` deletes the user object `u` from the session.
