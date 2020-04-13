@@ -2,26 +2,38 @@
 
 {% block content %}
   <link rel="stylesheet" href="../static/css/forms.css">
-  <form action="" method="post" novalidate>
+  <form class="login" action="" method="post" novalidate>
     <h2>Welcome back</h2>
     <h4>Sign in to continue</h4>
     {{ loginForm.hidden_tag() }}
 
-    {{ loginForm.username.label }}<br>
-    {{ loginForm.username(autocomplete="off") }}
-    {% for error in loginForm.username.errors %}
-    <br><span style="color: red;">[{{ error }}]</span>
-    {% endfor %}
-    <br>
+    <div class="field">
+      {{ loginForm.username.label }}
+      {{ loginForm.username(class="userInput", autofocus="on", placeholder="Username") }}
+      {% for error in loginForm.username.errors %}
+      <span class="form-error">{{ error }}</span>
+      {% endfor %}
+    </div>
 
-    {{ loginForm.password.label }}<br>
-    {{ loginForm.password() }}
-    {% for error in loginForm.password.errors %}
-    <br><span style="color: red;">[{{ error }}]</span>
-    {% endfor %}
+    <div class="field">
+      {{ loginForm.password.label }}
+      {{ loginForm.password(class="userInput", autofocus="on", placeholder="Password") }}
+      {% for error in loginForm.password.errors %}
+      <span class="form-error">{{ error }}</span>
+      {% endfor %}
+    </div>
 
-    <p>{{ loginForm.remember_me() }} {{ loginForm.remember_me.label }}</p>
-    {{ loginForm.submit() }}<br>
-    <p>New User? <a class="alternate-login" href="{{ url_for('register') }}">Click to Register!</a></p>
+    <div class="field-sm">
+        {{ loginForm.remember_me() }} {{ loginForm.remember_me.label }}
+    </div>
+
+    <div class="field">
+      {{ loginForm.submit(class="form-btn") }}
+    </div>
+    
+    <div class="field-sm center">
+      <span>Need an account? </span>
+      <a class="alternate-login" href="{{ url_for('register') }}">Register</a>
+    </div>
   </form>
 {% endblock %}
