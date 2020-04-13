@@ -21,6 +21,4 @@ $(document).ready(() => {
         console.error('Error!', error.message);
       });
   });
-
-
 });
