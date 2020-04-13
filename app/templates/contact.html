@@ -2,27 +2,32 @@
 
 {% block content %}
 <link rel="stylesheet" href="../static/css/forms.css">
-<form name="contact-to-google-sheets" id="google-sheets-form">
-    <h1>Contact Us</h1>
-    <h4>Leave a message below</h4>
+<form class="contact" name="contact-to-google-sheets" id="google-sheets-form">
+  <h2>Contact Us</h2>
+  <h4>Leave a message below</h4>
 
-    <label for="contact_name">Name <span class="red-text">*</span></label>
-    <br>
-    <input type="text" name="name" id="contact_name" placeholder="Name" autocomplete="off"/>
+  <div class="field">
+    <label for="contact_name">Name <span class="required">*</span></label>
+    <input class="userInput" type="text" name="name" id="contact_name" placeholder="Name" autocomplete="off"/>
     <p style="color: red;" id="contact-form-name-error"></p>
-    <br>
+  </div>
+
+  <div class="field">
     <label for="contact_email">Email</label>
-    <br>
-    <input type="text" name="email" id="contact_email" placeholder="something@example.com" autocomplete="off"/>
+    <input class="userInput" type="text" name="email" id="contact_email" placeholder="you@example.com"/>
     <p style="color: red;" id="contact-form-email-error"></p>
-    <br>
-    <label for="contact_message">Message <span class="red-text">*</span></label>
-    <br>
-    <textarea name="message" id="contact_message" placeholder="What do you want to say?"></textarea>
+  </div>
+  
+  <div class="field">
+    <label for="contact_message">Message <span class="required">*</span></label>
+    <textarea class="userInput" name="message" id="contact_message" placeholder="What do you want to say?"></textarea>
     <p style="color: red;" id="contact-form-message-error"></p>
-    <br>
-    <button type="submit" class="contact-form-submit-button" id="submit">Submit</button>
-    <p style="color: #0b926a;" id="contact-form-response"></p>
+  </div>
+
+  <div class="field">
+    <button class="form-btn" type="submit" id="submit">Submit</button>
+  </div>
+  <p style="color: #0b926a;" id="contact-form-response"></p>
     <p style="color: red;" id="contact-form-error"></p>
 </form>
 <!-- The form javascript is imported on index.html -->
