@@ -19,16 +19,22 @@
   </head>
   <body>
     <header>
-      <nav class="navbar fixed-top navbar-expand md">
+      <nav class="navbar fixed-top navbar-expand-md">
         <div class="container">
-          <ul class="navbar-nav mr-auto">  <!-- Left side navbar -->
-              <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">CITSPrep</a></li>
-              <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
-              {% if current_user.is_authenticated %}
-              <li class="nav-item"><a class="nav-link" href="#">New Test</a></li>
-              {% endif %}
-          </ul>
+          <!-- Icon when nav collapses -->
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse-target" aria-expanded="false">
+            <span>ICON</span>
+          </button>
+          <div id="collapse-target" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">  <!-- Left side navbar -->
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">CITSPrep</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+                {% if current_user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link" href="#">New Test</a></li>
+                {% endif %}
+            </ul>
+          </div>
           <ul class="navbar-nav ml-auto"> <!-- Right side navbar -->
             {% if current_user.is_anonymous %}
             <li class="nav-item">
@@ -143,6 +149,11 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/84fb170980.js" crossorigin="anonymous"></script>
     <!-- Custom JS -->
     <script src="../static/scripts/index.js"></script>
 
