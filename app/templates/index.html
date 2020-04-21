@@ -16,6 +16,12 @@
   <title>Welcome to CITSPrep!</title>
   {% endif %}
 
+    {% if title %}
+    <title>{{ title }} - CITSPrep</title>
+    {% else %}
+    <title>Welcome to CITSPrep!</title>
+    {% endif %}
+  </head>
   <body>
     <header>
       <nav class="navbar fixed-top navbar-expand md">
@@ -79,7 +85,6 @@
         </div>
       </section>
       <!-- About Section -->
-      </section>
       <section class="green">
         <div class="container">
           <div class="row vertical-align">
@@ -112,7 +117,7 @@
               <p>Expect results from the day you start your preparation with us. See tangible improvements across all supported topics and feel confident that your education is in the right hands.</p>
             </div>
             <div class="col-sm-4">
-              <h3>Accessibily</h3>
+              <h3>Accessibility</h3>
               <p>With a wide range of features to tailor to your needs, you will never find learning with us a chore. Set your personal study goals and work towards them in your own time.</p>
             </div>
             <div class="col-sm-4">

@@ -1,90 +1,81 @@
-form {
-  margin: 5rem 0;
-  text-align: center;
+/* Form structure */
+form.contact {
+  margin: 5rem auto;
+  max-width: 350px;
 } 
 
-input, textarea {
-  margin-bottom: 1rem;
-}
+form.login {
+  margin: 8rem auto;
+  max-width: 350px;
+} 
 
-textarea {
-  padding: 0.5em;
-}
-
-#username, #email, #password, #repeat_password, #contact_name, #contact_email {
-  border: 2px solid #0b926a;
-  border-radius: 1rem;
+form > h2,
+form > h4 {
   text-align: center;
-  width: 14rem;
-  transition: 250ms;
-  margin: 0.5rem;
 }
 
-form > label {
-  margin: 0;
+/* Field structure */
+.field {
+  margin-bottom: 1.5rem;
 }
 
-#contact_message {
-  border: 2px solid #0b926a;
-  border-radius: 1rem;
-  width: 16em;
-  height: 12rem;
-  transition: 250ms;
+.field-sm {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-#username:hover, #email:hover, #password:hover, #repeat_password:hover, #contact_name:hover, #contact_email:hover{
-  width: 16em;
+/* Input styling */
+.userInput {
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  font-size: 1rem;
 }
 
-#username:active, #email:active, #password:active, #repeat_password:active, #contact_name:active, #contact_email:active, #contact_message:active {
-  border-color: darkgreen;
+.userInput::placeholder {
+  opacity: 0.8;
 }
 
-#contact_message:focus {
-  border-width: 3px;
-}
-
-form > input:hover {
-  width: 16em;
-}
-
-form > p {
-  margin: 0;
-}
-
-form > input:active {
-  border-color: darkgreen;
-}
-
-form > input:focus {
+.userInput:focus {
+  border-color: #7e7e7e;
   outline: none;
 }
 
-input[type=checkbox] {
-  margin-right: 0.25rem;
+.userInput:hover {
+  border-color: #7e7e7e;
 }
 
-#submit {
-  background: none;
+/* Button */
+.form-btn {
+  background-color: #008a65;
   border: none;
-  font-weight: bold;
-  border-radius: 1rem;
-  width: 7rem;
-  margin: 1rem 0;
-  transition: 250ms;
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.03rem;
+  width: 100%;
+  padding: 0.7rem 1rem;
 }
 
-#submit:hover {
-  color: darkslategray;
+.form-btn:hover {
+  background-color: #007757;
 }
 
-.alternate-login {
-  color: black;
-  font-weight: bold;
-  transition: 250ms;
+.form-btn:focus {
+  outline: none;
 }
 
+.alternate-login,
 .alternate-login:hover {
-  color: darkslategray;
-  text-decoration: none;
+  color: #007757;
+  font-weight: 700;
+}
+
+/* Form handlers */
+.form-error,
+.required {
+  font-size: 1rem;
+  color: red;
 }
