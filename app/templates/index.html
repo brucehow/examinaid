@@ -22,10 +22,10 @@
       <nav class="navbar fixed-top navbar-expand-md">
         <div class="container">
           <!-- Icon when nav collapses -->
-          <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse-target" aria-expanded="false">
-            <span>ICON</span>
+          <button id="toggler-btn" class="navbar-toggler" data-toggle="collapse" data-target="#collapse-menu" aria-expanded="false">
+            <span class="fas fa-bars nav-icon"></span>
           </button>
-          <div id="collapse-target" class="collapse navbar-collapse">
+          <div id="collapse-menu" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">  <!-- Left side navbar -->
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">CITSPrep</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>

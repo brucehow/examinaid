@@ -11,10 +11,6 @@ header {
   padding: 15px; /* Navbar static size */
 }
 
-.nav-item {
-  margin: auto;
-}
-
 header a {
   color: #2c2d30;
   text-decoration: none;
@@ -39,4 +35,13 @@ header a:hover {
 
 .ml-auto > li { /* Left side nav */
   padding: 0 5px;
+}
+
+/* Nav-bar toggler */
+#toggler-btn {
+  outline: none; /* Remove blue outline on click */
+}
+
+.nav-icon {
+  font-size: 1.8rem;
 }
