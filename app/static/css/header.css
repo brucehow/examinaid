@@ -36,12 +36,9 @@ header a:hover {
 /* Nav-bar toggler */
 #toggler-btn {
   outline: none; /* Remove blue outline on click */
+  padding: 0;
 }
 
 .nav-icon {
   font-size: 1.8rem;
-}
-
-#collapse-menu {
-  padding: 0 0.75rem;
 }
