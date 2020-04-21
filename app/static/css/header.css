@@ -11,15 +11,15 @@ header {
   padding: 15px; /* Navbar static size */
 }
 
-header a {
+.nav-link {
   color: #2c2d30;
   text-decoration: none;
   font-weight: 400;
 }
 
-header a:hover {
+.nav-link:hover {
   text-decoration: none;
-  color: #3a3b3f;
+  color: #2c2d30;
 }
 
 .nav-bar li {
