@@ -29,12 +29,8 @@ header a:hover {
   margin: 1%;
 }
 
-.mr-auto > li { /* Right side nav */
-  padding: 0 10px;
-}
-
-.ml-auto > li { /* Left side nav */
-  padding: 0 5px;
+.nav-item {
+  padding: 0 10px 0 0;
 }
 
 /* Nav-bar toggler */
@@ -44,4 +40,8 @@ header a:hover {
 
 .nav-icon {
   font-size: 1.8rem;
+}
+
+#collapse-menu {
+  padding: 0 0.75rem;
 }

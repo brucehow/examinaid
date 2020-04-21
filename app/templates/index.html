@@ -21,7 +21,7 @@
     <header>
       <nav class="navbar fixed-top navbar-expand-md">
         <div class="container">
-          <!-- Icon when nav collapses -->
+          <!-- Bar icon when nav menu collapses -->
           <button id="toggler-btn" class="navbar-toggler" data-toggle="collapse" data-target="#collapse-menu" aria-expanded="false">
             <span class="fas fa-bars nav-icon"></span>
           </button>
@@ -34,22 +34,22 @@
                 <li class="nav-item"><a class="nav-link" href="#">New Test</a></li>
                 {% endif %}
             </ul>
+            <ul class="navbar-nav ml-auto"> <!-- Right side navbar -->
+              {% if current_user.is_anonymous %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('login') }}">Sign In</a>
+              </li>
+              <li class="nav-item">
+                <button class="plain-btn sm green" onclick="window.location.href='/register';">Register</button>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('userprofile') }}">My Profile</a></li>
+                <a class="nav-link" href="{{ url_for('logout') }}"><b>Logout</b></a>
+              </li>
+              {% endif %}
+            </ul>
           </div>
-          <ul class="navbar-nav ml-auto"> <!-- Right side navbar -->
-            {% if current_user.is_anonymous %}
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('login') }}">Sign In</a>
-            </li>
-            <li class="nav-item">
-              <button class="plain-btn sm green" onclick="window.location.href='/register';">Register</button>
-            </li>
-            {% else %}
-            <li class="nav-item">
-              <li class="nav-item"><a class="nav-link" href="{{ url_for('userprofile') }}">My Profile</a></li>
-              <a class="nav-link" href="{{ url_for('logout') }}"><b>Logout</b></a>
-            </li>
-            {% endif %}
-          </ul>
         </div>
       </nav>
     </header>
