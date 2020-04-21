@@ -8,27 +8,27 @@
 
   <div class="field">
     <label for="contact_name">Name <span class="required">*</span></label>
-    <input class="userInput" type="text" name="name" id="contact_name" placeholder="Name" autocomplete="off"/>
-    <p style="color: red;" id="contact-form-name-error"></p>
+    <input class="userInput" autofocus type="text" name="name" id="contact_name" placeholder="Name" required/>
+    <span class="form-error" id="contact-form-name-error"></span>
   </div>
 
   <div class="field">
     <label for="contact_email">Email</label>
     <input class="userInput" type="text" name="email" id="contact_email" placeholder="you@example.com"/>
-    <p style="color: red;" id="contact-form-email-error"></p>
+    <span class="form-error" id="contact-form-email-error"></span>
   </div>
   
   <div class="field">
     <label for="contact_message">Message <span class="required">*</span></label>
-    <textarea class="userInput" name="message" id="contact_message" placeholder="What do you want to say?"></textarea>
-    <p style="color: red;" id="contact-form-message-error"></p>
+    <textarea class="userInput" name="message" id="contact_message" placeholder="What do you want to say?" required></textarea>
+    <span class="form-error" id="contact-form-message-error"></span>
   </div>
 
   <div class="field">
     <button class="form-btn" type="submit" id="submit">Submit</button>
   </div>
-  <p style="color: #0b926a;" id="contact-form-response"></p>
-    <p style="color: red;" id="contact-form-error"></p>
+  <span style="color: #0b926a;" id="contact-form-response"></span>
+    <span class="form-error" id="contact-form-error"></span>
 </form>
 <!-- The form javascript is imported on index.html -->
 {% endblock %}
