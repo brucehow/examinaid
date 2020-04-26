@@ -30,4 +30,8 @@
     justify-content: flex-end;
 }
 
-
+#userprofile-dropdown-test-units {
+    list-style-type: none; 
+    display: flex; 
+    justify-content: space-around;
+}

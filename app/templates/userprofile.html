@@ -9,18 +9,17 @@
   </div>
 
   <button class="plain-btn green sm" id="new-test-button">New Test</button>
-  <ul style="list-style-type: none; display: flex; justify-content: space-around;" id="userprofile-dropdown-test-units">
-    <li><strong>CITS1001</strong></li>
-    <li><strong>CITS1401</strong></li>
-    <li><strong>CITS3401</strong></li>
-    <li><strong>CITS3403</strong></li>
+  <ul id="userprofile-dropdown-test-units">
+    <li><strong><a class=test-link href="{{ url_for('index') }}">CITS3002</a></strong></li>
+    <li><strong><a class=test-link href="{{ url_for('index') }}">CITS3002</a></strong></li>
+    <li><strong><a class=test-link href="{{ url_for('index') }}">CITS3002</a></strong></li>
+    <li><strong><a class=test-link href="{{ url_for('index') }}">CITS3002</a></strong></li>
   </ul>
 
   <div class=surveylist>
 
     <div id=newtestcontainer>
       <h3 class=h3-underline> Previous Attempts</h3>
-      <button class="button.sm button.green">Start New Test</button>
     </div>
   
     <div id=listcontainer>      
