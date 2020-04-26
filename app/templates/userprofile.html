@@ -3,15 +3,58 @@
 {% block content %}
 
 <div class=container>
-  <h1>Welcome back, {{ current_user.username }}!</h1>
-  <p>Welcome to your unit dashboard! Here you'll be able to see the results of past tests, if you've taken any, as well as start a new test.</p>
-  <div class="dropdown">
-    <button class="plain-btn lg green"> Select Unit</button>
-      <div class="dropdown-content">
-        <a href="#">CITS1401</a>
-        <a href="#">CITS1001</a>
-        <a href="#">CITS3403</a>
+  <div id=greeting>
+    <h1>Welcome back, {{ current_user.username }}!</h1>
+    <p>Welcome to your unit dashboard! Here you'll be able to see the results of past tests, if you've taken any, as well as start a new test.</p>
+  </div>
+
+  <div class=surveylist>
+
+    <div id=newtestcontainer>
+      <h3 class=h3-underline> Previous Attempts</h3>
+      <button class="button.sm button.green">Start New Test</button>
+    </div>
+  
+    <div id=listcontainer>      
+        
+        <div class=window>
+            <div class="leftwindow">
+              <h5>CITS1401</h5>
+              <h6> Started: 7.20pm 1st April 2020 </h6>
+              <h6>Completed: 7.25pm 1st April 2020</h6>
+            </div>
+            <div class="rightcontainer">  
+              <div class=rightwindow>
+                <p>Score: 15/20</p>
+              </div>
+            </div>
+        </div>
+        <div class=window>
+          <div class="leftwindow">
+            <h5>CITS3002</h5>
+            <h6> Started: 7.20pm 25th March 2020 </h6>
+            <h6>Completed: 7.25pm 25th March 2020</h6>
+          </div>
+          <div class="rightcontainer">  
+            <div class=rightwindow>
+              <p>Score: 10/20</p>
+            </div>
+          </div>
       </div>
+      <div class=window>
+        <div class="leftwindow">
+          <h5>CITS3403</h5>
+          <h6> Started: 7.20pm 20th March 2020 </h6>
+          <h6>Completed: 7.25pm 20th March 2020</h6>
+        </div>
+        <div class="rightcontainer">  
+          <div class=rightwindow>
+            <p>Score: 15/20</p>
+          </div>
+        </div>
+    </div>
+    </div>
+
   </div>
 
   {% if current_user.admin %}

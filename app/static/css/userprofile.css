@@ -1,27 +1,33 @@
-.dropdown {
-    position: relative;
-    display: inline-block;
+
+
+.window {
+   margin-top: 1%; 
+   padding: 10px;
+   border: solid thin black;
+   cursor: pointer;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 150px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+.window:hover {
+    background-color: lightgray;
 }
 
-.dropdown-content a {
-    color: #2c2d30;
-    font-weight: 900;
-    font-size: 1.25rem;
-    letter-spacing: 0.03rem;
-    padding: 1.0rem 1.5rem;
-    text-decoration: none;
-    display: block;
-    cursor: pointer;
-  }
+.surveylist {
+    border-bottom: black;
+    margin-top: 5%;
+}
 
-.dropdown-content a:hover {background-color: #807676;}
-.dropdown:hover .dropdown-content {display: block;}
+#newtestcontainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+#greeting {
+    margin-top: 3%;
+}
+
+.rightcontainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
