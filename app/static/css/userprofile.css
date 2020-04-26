@@ -21,6 +21,12 @@
     justify-content: space-between;
 }
 
+#button-container {
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+}
+
 #greeting {
     margin-top: 3%;
 }

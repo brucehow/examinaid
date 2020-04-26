@@ -7,14 +7,18 @@
     <h1>Welcome back, {{ current_user.username }}!</h1>
     <p>Welcome to your unit dashboard! Here you'll be able to see the results of past tests, if you've taken any, as well as start a new test.</p>
   </div>
+  
+  <div id=newtestcontainer>
+    <h3 class=h3-underline> Start New Test</h3>
+  </div>
 
-  <button class="plain-btn green sm" id="new-test-button">New Test</button>
-  <ul id="userprofile-dropdown-test-units">
-    <li><strong><a class=test-link href="{{ url_for('index') }}">CITS3002</a></strong></li>
-    <li><strong><a class=test-link href="{{ url_for('index') }}">CITS3002</a></strong></li>
-    <li><strong><a class=test-link href="{{ url_for('index') }}">CITS3002</a></strong></li>
-    <li><strong><a class=test-link href="{{ url_for('index') }}">CITS3002</a></strong></li>
-  </ul>
+  <div id="button-container">
+    <button class="plain-btn green sm" id="new-test-button">CITS1401</button>
+    <button class="plain-btn green sm" id="new-test-button">CITS2200</button>
+    <button class="plain-btn green sm" id="new-test-button">CITS3002</button>
+    <button class="plain-btn green sm" id="new-test-button">CITS3403</button>
+
+  </div>
 
   <div class=surveylist>
 
