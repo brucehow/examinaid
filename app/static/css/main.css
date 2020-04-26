@@ -36,12 +36,13 @@ div.vertical-align {
   align-items: center; 
 }
 
-div.divider {
-  margin: 5rem;
-}
-
 div.center {
   text-align: center;
+}
+
+hr.divider {
+  margin: 5rem;
+  border: none;
 }
 
 /* Headings */

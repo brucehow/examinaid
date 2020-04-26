@@ -11,19 +11,15 @@ header {
   padding: 15px; /* Navbar static size */
 }
 
-.nav-item {
-  margin: auto;
-}
-
-header a {
+.nav-link {
   color: #2c2d30;
   text-decoration: none;
   font-weight: 400;
 }
 
-header a:hover {
+.nav-link:hover {
   text-decoration: none;
-  color: #3a3b3f;
+  color: #2c2d30;
 }
 
 .nav-bar li {
@@ -33,10 +29,16 @@ header a:hover {
   margin: 1%;
 }
 
-.mr-auto > li { /* Right side nav */
-  padding: 0 10px;
+.nav-item {
+  padding: 0 10px 0 0;
 }
 
-.ml-auto > li { /* Left side nav */
-  padding: 0 5px;
+/* Nav-bar toggler */
+#toggler-btn {
+  outline: none; /* Remove blue outline on click */
+  padding: 0.3rem 0;
+}
+
+.nav-icon {
+  font-size: 1.8rem;
 }
