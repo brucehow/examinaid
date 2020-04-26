@@ -1,15 +1,7 @@
 
-
-.window {
-   margin-top: 1%; 
-   padding: 10px;
-   border: solid thin black;
-   border-radius: 1%;
-   cursor: pointer;
-}
-
-.window:hover {
-    background-color: lightgray;
+/* Containers */
+#greeting {
+    margin-top: 3%;
 }
 
 .surveylist {
@@ -23,17 +15,17 @@
     justify-content: space-between;
 }
 
-#button-container {
-    margin-top: 2%;
-    display: flex;
+/*Previous Test Windows*/
+.window {
+   margin-top: 1%; 
+   padding: 10px;
+   border: solid thin black;
+   border-radius: 1%;
+   cursor: pointer;
 }
 
-.test-links {
-    margin-right: 2%;
-}
-
-#greeting {
-    margin-top: 3%;
+.window:hover {
+    background-color: lightgray;
 }
 
 .rightcontainer {
@@ -42,8 +34,13 @@
     justify-content: flex-end;
 }
 
-#userprofile-dropdown-test-units {
-    list-style-type: none; 
-    display: flex; 
-    justify-content: space-around;
+/*Start Test Buttons */
+#button-container {
+    margin-top: 2%;
 }
+
+.test-links {
+    margin-right: 2%;
+}
+
+
