@@ -75,23 +75,23 @@ h4 {
 }
 
 /* Buttons */
-button.plain-btn {
+.plain-btn {
   border-radius: 5px;
   border: none;
   color: white;
 }
 
-button.plain-btn:focus {
+.plain-btn:focus {
   outline: none;
 }
 
-button.sm {
+.sm {
   font-size: 1rem;
   font-weight: 700;
   padding: 0.5rem 1.0rem;
 }
 
-button.lg {
+.lg {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   font-weight: 900;
   font-size: 1.25rem;
@@ -99,11 +99,11 @@ button.lg {
   padding: 1.0rem 1.5rem;
 }
 
-button.green {
+.green {
   background-color: #008a65;
 }
 
-button.green:hover {
+.green:hover {
   background-color: #007757;
 }
 

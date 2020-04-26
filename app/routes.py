@@ -24,6 +24,10 @@ def contact():
 def userprofile():
     return render_template("userprofile.html", title="My Profile")
 
+@app.route("/quiz")
+def test():
+    return render_template("quiz.html", title="Quiz")
+
 @app.route("/login", methods = ["GET", "POST"])
 def login():
     # If there is a user currently logged in, return user to index page
