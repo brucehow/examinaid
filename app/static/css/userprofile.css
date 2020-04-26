@@ -17,6 +17,7 @@
 }
 
 #newtestcontainer {
+    margin-top: 5%;
     display: flex;
     justify-content: space-between;
 }
@@ -24,7 +25,10 @@
 #button-container {
     margin-top: 2%;
     display: flex;
-    justify-content: space-around;
+}
+
+.test-links {
+    margin-right: 2%;
 }
 
 #greeting {
