@@ -70,3 +70,22 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', title="Register", form=form)
 
+# An example test form layout below
+@app.route('/newtest')
+def newtest():
+    unit_code = "CITS0000"
+    unit_name = "Example Unit"
+    unit = "{}: {}".format(unit_code, unit_name)
+    questions = [
+        {
+            "title": "First",
+            "content": "Something about first",
+            "question_type": "multiChoice"
+        },
+        {
+            "title": "Next",
+            "content": "Something about the next one",
+            "question_type": "openAnswer"
+        }
+    ]
+    return render_template('tests/test_template.html', unit=unit, questions=questions)
