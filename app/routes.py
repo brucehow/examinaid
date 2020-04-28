@@ -6,6 +6,9 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
 from werkzeug.urls import url_parse
 
+from json import load
+from os import listdir # To debug file paths
+
 @app.route("/")
 @app.route("/index")
 def index():
@@ -73,19 +76,7 @@ def register():
 # An example test form layout below
 @app.route('/newtest')
 def newtest():
-    unit_code = "CITS0000"
-    unit_name = "Example Unit"
-    unit = "{}: {}".format(unit_code, unit_name)
-    questions = [
-        {
-            "title": "First",
-            "content": "Something about first",
-            "question_type": "multiChoice"
-        },
-        {
-            "title": "Next",
-            "content": "Something about the next one",
-            "question_type": "openAnswer"
-        }
-    ]
-    return render_template('tests/test_template.html', unit=unit, questions=questions)
+    print(listdir()) # Check our working directory - turns out it's one higher than expected
+    file = open("app/questions/example.json")
+    data = load(file)
+    return render_template('tests/test_template.html', unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"])

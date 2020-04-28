@@ -5,14 +5,15 @@
 <div class=container>
 
   <h2 style="margin-top: 2rem;">{% if unit %}{{ unit }}{% else %}This is an example test.{% endif %}</h2>
-  <p>Please <strong>do not</strong> click away or refresh this page while doing this test, as your answers may not be recorded. When you are finished, please press the
-    submit button.</p>
+  <p>Please <strong>do not</strong> click away or refresh this page while doing this test, as your answers may not be recorded. When you are finished, ensure that you
+    submit your test, so that your results are saved. This test must be completed in one sitting.</p>
   
+  <!-- To serialize a form, the inputs MUST be named. -->
   <form id="example-test-form">
     {% for question in questions %}
-      <p>{{ question.title }}: {{ question.content }}</p>
-      <input type="text" name="{{ question.title }}" placeholder="Sample input" /> <!-- To serialize a form, the inputs MUST be named. -->
-      {% if question.question_type == "multiChoice" %}
+      <p>{{ question.prompt }}</p>
+      <input type="text" name="{{ question.title }}" placeholder="Sample input" />
+      {% if question.questionType == "multipleChoice" %}
         <p>This is a multiple choice question.</p>
       {% endif %}
     {% endfor %}
