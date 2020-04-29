@@ -18,7 +18,7 @@
           <label for="{{ option }}">{{option}}</label>
         {% endfor %}
       {% else %}
-      <input type="text" name="{{ question.title }}" placeholder="Sample input" />
+      <input type="text" name="q{{ question.questionNumber }}" placeholder="Sample input" />
       {% endif %}
     {% endfor %}
     <input type="submit"  id="submit-example-test-form" />

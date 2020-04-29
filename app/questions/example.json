@@ -22,6 +22,13 @@
       "answer": null,
       "questionType": "openAnswer",
       "totalOptions": null
+    },
+    {
+      "questionNumber": 4,
+      "prompt": "How do you feel about our climate?",
+      "answer": null,
+      "questionType": "openAnswer",
+      "totalOptions": null
     }
   ]
 }
