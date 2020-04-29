@@ -11,10 +11,14 @@
   <!-- To serialize a form, the inputs MUST be named. -->
   <form id="example-test-form">
     {% for question in questions %}
-      <p>{{ question.prompt }}</p>
-      <input type="text" name="{{ question.title }}" placeholder="Sample input" />
+      <p><strong>{{ question.questionNumber }}</strong>. {{ question.prompt }}</p>
       {% if question.questionType == "multipleChoice" %}
-        <p>This is a multiple choice question.</p>
+        {% for option in question.totalOptions %}
+          <input type="radio" name="q{{ question.questionNumber }}" value="{{ option }}"/>
+          <label for="{{ option }}">{{option}}</label>
+        {% endfor %}
+      {% else %}
+      <input type="text" name="{{ question.title }}" placeholder="Sample input" />
       {% endif %}
     {% endfor %}
     <input type="submit"  id="submit-example-test-form" />

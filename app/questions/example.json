@@ -7,21 +7,21 @@
       "prompt": "What is 2 + 3?",
       "answer": 5,
       "questionType": "multipleChoice",
-      "otherOptions": [2,3,4]
+      "totalOptions": [2,5,3,4]
     },
     {
       "questionNumber": 2,
       "prompt": "Which of the following is a fruit?",
       "answer": "apple",
       "questionType": "multipleChoice",
-      "otherOptions": ["table","onion","football"]
+      "totalOptions": ["table","onion","football","apple"]
     },
     {
       "questionNumber": 3,
       "prompt": "Which is better, LoL or DotA 2? Provide an explanation.",
       "answer": null,
       "questionType": "openAnswer",
-      "otherOptions": null
+      "totalOptions": null
     }
   ]
 }
