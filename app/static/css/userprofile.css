@@ -35,12 +35,11 @@
 }
 
 /*Start Test Buttons */
-#button-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2%;
-    width: 50%;
+.test-links{
+    text-decoration: none;
 }
+
+
 
 
 
