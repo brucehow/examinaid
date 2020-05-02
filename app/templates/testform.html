@@ -1,0 +1,25 @@
+{% extends "login.html" %}
+
+    {% block content %}
+    <form class="login" action="" method="post">
+        <h2>Choose your test</h2>
+        <h4>Select from the below options</h4>
+        
+        <div class="field">
+          {{ form.unit.label}} <span class="required">*</span>
+          {{ form.unit }}
+          <span class="form-error">{{ error }}</span>
+        </div>
+      
+        <div class="field">
+          {{ form.testtype.label}} <span class="required">*</span>
+          {{ form.testtype }}
+
+          <span class="form-error">{{ error }}</span>
+        </div>
+      
+        <div class="field-sm center">
+          <a class="plain-btn green sm test-links" href="{{ url_for('starttest') }}">Begin Test</a>
+        </div>
+      </form>
+{% endblock %}
