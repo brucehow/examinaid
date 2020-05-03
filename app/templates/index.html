@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta charset="utf-8">
-  <!-- Bootstrap CDN -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-  <!-- Custom Stylesheets -->
-  <link rel="stylesheet" href="../static/css/main.css"/>
-  <link rel="stylesheet" href="../static/css/header.css">
-  <link rel="stylesheet" href="../static/css/forms.css"/>
-  <link rel="stylesheet" href="../static/css/userprofile.css"/>
+  <head>
+    <meta charset="utf-8">
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="../static/css/main.css"/>
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/forms.css"/>
+    <link rel="stylesheet" href="../static/css/userprofile.css"/>
 
-  {% if title %}
-  <title>CITSPrep - {{ title }}</title>
-  {% else %}
-  <title>CITSPrep</title>
-  {% endif %}
-
+    {% if title %}
+    <title>CITSPrep - {{ title }}</title>
+    {% else %}
+    <title>CITSPrep</title>
+    {% endif %}
   </head>
   <body>
     <header>
@@ -30,9 +30,6 @@
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">CITSPrep</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
-                {% if current_user.is_authenticated %}
-                <li class="nav-item"><a class="nav-link" href="#">New Test</a></li>
-                {% endif %}
             </ul>
             <ul class="navbar-nav ml-auto"> <!-- Right side navbar -->
               {% if current_user.is_anonymous %}
