@@ -7,30 +7,12 @@
     <div class="user-msg">
       <h1>Welcome back, {{ current_user.username }}!</h1>
       <p>Welcome to your user dashboard! Here you'll be able to see the results of past tests, if you've taken any, as well as start a new test</p>
-      <div class="stat"> <!-- Statistics -->
-        <div class="row"> 
-          <div class="col-md-3">
-            <h2>24</h2>
-            <p>Tests</p>
-          </div>
-          <div class="col-md-3">
-            <h2>21</h2>
-            <p>Passed</p>
-          </div>
-          <div class="col-md-3">
-            <h2>3</h2>
-            <p>Failed</p>
-          </div>
-          <div class="col-md-3">
-            <h2>79%</h2>
-            <p>Average Mark</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   <!-- Wave separator -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fafafa" fill-opacity="1" d="M0,224L30,224C60,224,120,224,180,202.7C240,181,300,139,360,144C420,149,480,203,540,192C600,181,660,107,720,101.3C780,96,840,160,900,186.7C960,213,1020,203,1080,186.7C1140,171,1200,149,1260,144C1320,139,1380,149,1410,154.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg>
+  <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="#fafafa" fill-opacity="1" d="M0,64L60,74.7C120,85,240,107,360,101.3C480,96,600,64,720,48C840,32,960,32,1080,48C1200,64,1320,96,1380,112L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+  </svg>
 </section>
 <section class="dashboard">
   <div class="container">
@@ -53,6 +35,26 @@
         <h3>View previous attempts</h3>
         <p>Lorem ipsum dolor, sit amet consectetur.</p>
         <button class="plain-btn lg green" onclick="window.location.href='/testform'">View Pevious Tests</button>
+      </div>
+    </div>
+    <div class="stat"> <!-- Statistics -->
+      <div class="row"> 
+        <div class="col-md-3">
+          <h2>24</h2>
+          <p>Tests</p>
+        </div>
+        <div class="col-md-3">
+          <h2>21</h2>
+          <p>Passed</p>
+        </div>
+        <div class="col-md-3">
+          <h2>3</h2>
+          <p>Failed</p>
+        </div>
+        <div class="col-md-3">
+          <h2>79%</h2>
+          <p>Average Mark</p>
+        </div>
       </div>
     </div>
   </div>

@@ -26,6 +26,14 @@ section.dashboard {
   margin: 2rem 0;
 }
 
+/* Waves */
+.wave {
+  margin: 5rem 0 -2rem 0;
+  display: block;
+  height: 15rem;
+  width: 100%;
+}
+
 /* Containers */
 .user-msg {
   max-width: 700px;
