@@ -1,6 +1,6 @@
 /* Images */
 img.thumbnail {
-  margin: 2rem 0;
+  margin: 4rem 0 2rem 0;
   height: 150px;
   width: 200px;
 }
@@ -15,14 +15,27 @@ section.userprofile {
 
 section.dashboard {
   background-color: #fafafa;
-  padding: 0 0 7rem 0;
+  padding: 0 0 10rem 0;
 }
 
-div.wave > svg {
-  display: block;
+.dashboard-item p {
+  margin: auto;
+}
+
+.dashboard-item button {
+  margin: 2rem 0;
 }
 
 /* Containers */
+.user-msg {
+  max-width: 700px;
+}
+
+.stat {
+  max-width: 600px;
+  margin-top: 4rem;
+}
+
 .surveylist {
   border-bottom: black;
   margin-top: 5%;
