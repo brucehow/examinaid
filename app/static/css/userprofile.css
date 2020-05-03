@@ -1,41 +1,56 @@
-/* Containers */
-#greeting {
-    margin-top: 3%;
+/* Images */
+img.thumbnail {
+  margin: 2rem 0;
+  height: 150px;
+  width: 200px;
 }
 
+/* Structuring */
+.dashboard {
+  margin: 2rem 0;
+}
+
+section.userprofile {
+  background-color: #0b926a;
+  background-image: url(../resources/texture-1.png);
+  color: white;
+  padding: 5rem 0;
+}
+
+/* Containers */
 .surveylist {
-    border-bottom: black;
-    margin-top: 5%;
+  border-bottom: black;
+  margin-top: 5%;
 }
 
 #newtestcontainer {
-    margin-top: 5%;
-    display: flex;
-    justify-content: space-between;
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
 }
 
 /*Previous Test Windows*/
 .window {
-   margin-top: 1%; 
-   padding: 10px;
-   border: solid thin black;
-   border-radius: 1%;
-   cursor: pointer;
+  margin-top: 1%; 
+  padding: 10px;
+  border: solid thin black;
+  border-radius: 1%;
+  cursor: pointer;
 }
 
 .window:hover {
-    background-color: lightgray;
+  background-color: lightgray;
 }
 
 .rightcontainer {
-    margin-top: 2%;
-    display: flex;
-    justify-content: flex-end;
+  margin-top: 2%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 /*Start Test Buttons */
 .test-links{
-    text-decoration: none;
+  text-decoration: none;
 }
 
 

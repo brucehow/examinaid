@@ -2,17 +2,46 @@
 
 {% block content %}
 
-<section>
+<section class="userprofile">
   <div class="container">
     <h1>Welcome back, {{ current_user.username }}!</h1>
-    <p>Welcome to your unit dashboard! Here you'll be able to see the results of past tests, if you've taken any, as well as start a new test.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, ut?</p>
+  </div>
 </section>
+
+</div>
+<section class="grey">
+  <div class="container">
+    <h2>Student Dashboard</h2>
+    <p>Welcome to your unit dashboard! Here you'll be able to see the results of past tests, if you've taken any, as well as start a new test.</p>
+    <div class="row center dashboard">
+      <div class="col-md-4">
+        <img class="thumbnail" src="../static/resources/newtest.svg" alt=""> 
+        <h3>Start a new test</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur.</p>
+        <button class="plain-btn sm green" onclick="window.location.href='/testform'">Start New Test</button>
+      </div>
+      <div class="col-md-4">
+        <img class="thumbnail" src="../static/resources/prevtest.svg" alt=""> 
+        <h3>View previous attempts</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur.</p>
+        <button class="plain-btn sm green" onclick="window.location.href='/testform'">View Pevious Tests</button>
+      </div>
+      <div class="col-md-4">
+        <img class="thumbnail" src="../static/resources/prevtest.svg" alt=""> 
+        <h3>View previous attempts</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur.</p>
+        <button class="plain-btn sm green" onclick="window.location.href='/testform'">View Pevious Tests</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="container">
     <div class="surveylist">
       <div id="newtestcontainer">
         <h3> Previous Attempts</h3>
-        <button class="plain-btn sm green" onclick="window.location.href='/testform'">Start New Test!</button>
       </div>
       <div id="listcontainer">      
         <div class="window">
