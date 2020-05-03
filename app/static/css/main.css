@@ -126,14 +126,14 @@ img.img-md {
 
 /* Animation */
 .float-anim {
-  -webkit-animation: action 2s infinite alternate;
-  animation: action 2s infinite alternate;
+  -webkit-animation: floatAnim 2s infinite alternate;
+  animation: floatAnim 2s infinite alternate;
 }
-  @-webkit-keyframes action {
+  @-webkit-keyframes floatAnim {
   0% { transform: translateY(0); }
   100% { transform: translateY(-10px); }
 }
-  @keyframes action {
+  @keyframes floatAnim {
   0% { transform: translateY(0); }
   100% { transform: translateY(-10px); }
 }
