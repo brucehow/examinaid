@@ -2,70 +2,63 @@
 
 {% block content %}
 
-<div class=container>
-  <div id=greeting>
+<section class="green">
+  <div class="container">
     <h1>Welcome back, {{ current_user.username }}!</h1>
     <p>Welcome to your unit dashboard! Here you'll be able to see the results of past tests, if you've taken any, as well as start a new test.</p>
-  </div>
-  
-
-  <div class=surveylist>
-
-    <div id=newtestcontainer>
-      <h3> Previous Attempts</h3>
-      <a class="plain-btn green sm test-links" href="{{ url_for('starttest') }}">Start New Test!</a>
-    </div>
-  
-    <div id=listcontainer>      
-        
-        <div class=window>
+</section>
+<section>
+  <div class="container">
+    <div class="surveylist">
+      <div id="newtestcontainer">
+        <h3> Previous Attempts</h3>
+        <a class="plain-btn green sm test-links" href="{{ url_for('starttest') }}">Start New Test!</a>
+      </div>
+      <div id="listcontainer">      
+        <div class="window">
             <div class="leftwindow">
               <h5>CITS1401</h5>
               <h6> Started: 7.20pm 1st April 2020 </h6>
               <h6>Completed: 7.25pm 1st April 2020</h6>
             </div>
             <div class="rightcontainer">  
-              <div class=rightwindow>
+              <div class="rightwindow">
                 <p>Score: 15/20</p>
               </div>
             </div>
-        </div>
-        <div class=window>
-          <div class="leftwindow">
-            <h5>CITS3002</h5>
-            <h6> Started: 7.20pm 25th March 2020 </h6>
-            <h6>Completed: 7.25pm 25th March 2020</h6>
           </div>
-          <div class="rightcontainer">
-            <div class=rightwindow>
-              <p>Score: 10/20</p>
+          <div class="window">
+            <div class="leftwindow">
+              <h5>CITS3002</h5>
+              <h6> Started: 7.20pm 25th March 2020 </h6>
+              <h6>Completed: 7.25pm 25th March 2020</h6>
+            </div>
+            <div class="rightcontainer">
+              <div class="rightwindow">
+                <p>Score: 10/20</p>
+              </div>
             </div>
           </div>
-      </div>
-      <div class=window>
-        <div class="leftwindow">
-          <h5>CITS3403</h5>
-          <h6> Started: 7.20pm 20th March 2020 </h6>
-          <h6>Completed: 7.25pm 20th March 2020</h6>
-        </div>
-        <div class="rightcontainer">  
-          <div class=rightwindow>
-            <p>Score: 15/20</p>
+          <div class="window">
+            <div class="leftwindow">
+              <h5>CITS3403</h5>
+              <h6> Started: 7.20pm 20th March 2020 </h6>
+              <h6>Completed: 7.25pm 20th March 2020</h6>
+            </div>
+            <div class="rightcontainer">  
+              <div class="rightwindow">
+                <p>Score: 15/20</p>
+            </div>
           </div>
         </div>
+      </div>
     </div>
-    </div>
-
+    {% if current_user.admin %}
+    <p>You are an admin! Hurray!</p>
+    {% else %}
+    <p>You are not an admin. Unlucky.</p>
+    {% endif %}
   </div>
-
-  {% if current_user.admin %}
-  <p>You are an admin! Hurray!</p>
-  {% else %}
-  <p>You are not an admin. Unlucky.</p>
-  {% endif %}
-
-</div>
-
-
+</section>
 
 {% endblock %}
