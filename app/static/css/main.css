@@ -133,7 +133,7 @@ img.img-md {
 }
 
 .wave-top {
-  margin: -7rem 0 0 0;
+  margin: -7rem 0 -4rem 0;
   display: block;
   height: 15rem;
   width: 100%;
@@ -147,9 +147,9 @@ img.img-md {
 }
   @-webkit-keyframes floatAnim {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
+  100% { transform: translateY(-15px); }
 }
   @keyframes floatAnim {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
+  100% { transform: translateY(-15px); }
 }
