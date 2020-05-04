@@ -64,10 +64,6 @@ section.dashboard {
   cursor: pointer;
 }
 
-.window:hover {
-  background-color: lightgray;
-}
-
 .rightcontainer {
   margin-top: 2%;
   display: flex;
