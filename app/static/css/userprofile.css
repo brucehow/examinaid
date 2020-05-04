@@ -6,16 +6,9 @@ img.thumbnail {
 }
 
 /* Structuring */
-section.userprofile {
-  background-color: #0b926a;
-  background-image: url(../resources/texture-1.png);  
-  color: white;
-  padding: 9rem 0 0 0;
-}
-
 section.dashboard {
   background-color: #fafafa;
-  padding: 0 0 10rem 0;
+  padding: 2rem 0 7rem 0;
 }
 
 .dashboard-item p {
@@ -24,14 +17,6 @@ section.dashboard {
 
 .dashboard-item button {
   margin: 2rem 0;
-}
-
-/* Waves */
-.wave {
-  margin: 5rem 0 -2rem 0;
-  display: block;
-  height: 15rem;
-  width: 100%;
 }
 
 /* Containers */
