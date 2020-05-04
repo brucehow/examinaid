@@ -1,6 +1,7 @@
 {
   "unitCode": "CITS9999",
   "unitName": "Example Unit",
+  "testNumber": 1,
   "questions": [
     {
       "questionNumber": 1,
