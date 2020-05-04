@@ -1,0 +1,86 @@
+{
+  "unitCode": "CITS3403",
+  "unitName": "Agile Web Development",
+  "testNumber": 2,
+  "totalMarks": 18,
+  "questions": [
+    {
+      "questionNumber": 1,
+      "marks": 1,
+      "prompt": "What is an appropriate scenario for using an <input> element with the type attribute set to \"radio\"?",
+      "answer": "When you want to present users with multiple options and have them choose only a single one.",
+      "questionType": "",
+      "totalOptions": ["When you want users to add their own options.",
+                       "When you want to present users with multiple options and have them choose any number of options.",
+                       "When you want users to input both numbers and letters.",
+                       "When you want to present users with multiple options and have them choose only a single one."]
+    },
+    {
+      "questionNumber": 2,
+      "marks": 1,
+      "prompt": "How are radio buttons different from checkboxes?",
+      "answer": "Multiple checkboxes can be selected, but only one radio button can be selected at a time.",
+      "questionType": "multipleChoice",
+      "totalOptions": ["Checkboxes can have labels, but radio buttons cannot.",
+                       "Radio buttons cannot be inserted into a form, but checkboxes can.",
+                       "Multiple checkboxes can be selected, but only one radio button can be selected at a time.",
+                       "There is no difference between radio buttons and checkboxes."]
+    },
+    {
+      "questionNumber": 3,
+      "marks": 1,
+      "prompt": "True or False: You can assign default text to a <textarea> element by adding text between the opening and closing <textarea> tags.",
+      "answer": "True",
+      "questionType": "multipleChoice",
+      "totalOptions": ["True", "False"]
+    },
+    {
+      "questionNumber": 4,
+      "marks": 2,
+      "prompt": "What attribute should you add to a HTML form's <input> element if you want to ensure that users provide a response?",
+      "answer": "required",
+      "questionType": "shortAnswer",
+      "totalOptions": null
+    },
+    {
+      "questionNumber": 5,
+      "marks": 2,
+      "prompt": "What form input type creates a large box for users to write text in?",
+      "answer": "textarea",
+      "questionType": "shortAnswer",
+      "totalOptions": null
+    },
+    {
+      "questionNumber": 6,
+      "marks": 2,
+      "prompt": "What form input type restricts users to numeric inputs?",
+      "answer": "number",
+      "questionType": "shortAnswer",
+      "totalOptions": null
+    },
+    {
+      "questionNumber": 7,
+      "marks": 2,
+      "prompt": "What input type clears all input values in a form?",
+      "answer": "reset",
+      "questionType": "shortAnswer",
+      "totalOptions": null
+    },
+    {
+      "questionNumber": 8,
+      "marks": 3,
+      "prompt": "Based on the following code, why will the information from the first <input> element NOT be sent to /processing.html when the form is submitted?\n<form action=\"/processing.html\" method=\"GET\">\n\t<input type=\"text\" id=\"username\">\n\t<input type=\"submit\" value=\"submit\">\n</form>",
+      "answer": null,
+      "questionType": "openAnswer",
+      "totalOptions": null
+    },
+    {
+      "questionNumber": 9,
+      "marks": 4,
+      "prompt": "How would you render a dropdown list in a form? Provide a suitable explanation. You may not use Javascript.",
+      "answer": null,
+      "questionType": "openAnswer",
+      "totalOptions": null
+    }
+  ]
+}
