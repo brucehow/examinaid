@@ -82,7 +82,10 @@
       "prompt": "The following CSS code adds a 1 px (w) border to (x), and a 1px (y) border to (z). What is w, x, y, and z?\ntd, tr { border: 1px solid black; }\nth { border: 1px solid blue; }",
       "answer": "w: black, x: table rows and cells, y: blue, z: table headers",
       "questionType": "multipleChoice",
-      "totalOptions": ["w: black, x: table headers, y: blue, z: table cells","w: black, x: table rows, y: blue, z: table headers","w: black, x: table headers, y: blue, z: table rows and cells","w: black, x: table rows and cells, y: blue, z: table headers"]
+      "totalOptions": ["w: black, x: table headers, y: blue, z: table cells",
+                       "w: black, x: table rows, y: blue, z: table headers",
+                       "w: black, x: table headers, y: blue, z: table rows and cells",
+                       "w: black, x: table rows and cells, y: blue, z: table headers"]
     }
   ]
 }
