@@ -28,15 +28,21 @@
       </div>
       <div class="col-md-4 dashboard-item">
         <img class="thumbnail" src="../static/resources/prevtest.svg" alt=""> 
-        <h3>Previous attempts</h3>
+        <h3>View Previous Tests</h3>
         <p>Lorem ipsum dolor, sit amet consectetur.</p>
         <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Preview</button>
       </div>
       <div class="col-md-4 dashboard-item">
-        <img class="thumbnail" src="../static/resources/overview.svg" alt=""> 
-        <h3>My Performance</h3>
+        <img class="thumbnail" src="../static/resources/manage.svg" alt=""> 
+        <h3>Manage Tests</h3>
         <p>Lorem ipsum dolor, sit amet consectetur.</p>
-        <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Overview</button>
+        <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Manage</button>
+      </div>
+      <div class="col-md-4 dashboard-item">
+        <img class="thumbnail" src="../static/resources/manage.svg" alt=""> 
+        <h3>Manage Tests</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur.</p>
+        <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Manage</button>
       </div>
     </div>
     {% else %}
@@ -65,73 +71,4 @@
     {% endif %}
   </div>
 </section>
-
-<section>
-  <div class="container">
-    <div class="stat"> <!-- Statistics TEMP -->
-      <div class="row"> 
-        <div class="col-md-3">
-          <h2>24</h2>
-          <p>Tests</p>
-        </div>
-        <div class="col-md-3">
-          <h2>21</h2>
-          <p>Passed</p>
-        </div>
-        <div class="col-md-3">
-          <h2>3</h2>
-          <p>Failed</p>
-        </div>
-        <div class="col-md-3">
-          <h2>79%</h2>
-          <p>Average Mark</p>
-        </div>
-      </div>
-    </div>
-    <div class="surveylist">
-      <div id="newtestcontainer">
-        <h3> Previous Attempts</h3>
-      </div>
-      <div id="listcontainer">      
-        <div class="window">
-            <div class="leftwindow">
-              <h5>CITS1401</h5>
-              <h6> Started: 7.20pm 1st April 2020 </h6>
-              <h6>Completed: 7.25pm 1st April 2020</h6>
-            </div>
-            <div class="rightcontainer">  
-              <div class="rightwindow">
-                <p>Score: 15/20</p>
-              </div>
-            </div>
-          </div>
-          <div class="window">
-            <div class="leftwindow">
-              <h5>CITS3002</h5>
-              <h6> Started: 7.20pm 25th March 2020 </h6>
-              <h6>Completed: 7.25pm 25th March 2020</h6>
-            </div>
-            <div class="rightcontainer">
-              <div class="rightwindow">
-                <p>Score: 10/20</p>
-              </div>
-            </div>
-          </div>
-          <div class="window">
-            <div class="leftwindow">
-              <h5>CITS3403</h5>
-              <h6> Started: 7.20pm 20th March 2020 </h6>
-              <h6>Completed: 7.25pm 20th March 2020</h6>
-            </div>
-            <div class="rightcontainer">  
-              <div class="rightwindow">
-                <p>Score: 15/20</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 {% endblock %}
