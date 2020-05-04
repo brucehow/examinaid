@@ -2,26 +2,73 @@
 
 {% block content %}
 
-<div class=container>
-  <h1>Welcome back, {{ current_user.username }}!</h1>
-  <p>Welcome to your unit dashboard! Here you'll be able to see the results of past tests, if you've taken any, as well as start a new test.</p>
-  <div class="dropdown">
-    <button class="plain-btn lg green"> Select Unit</button>
-      <div class="dropdown-content">
-        <a href="#">CITS1401</a>
-        <a href="#">CITS1001</a>
-        <a href="#">CITS3403</a>
-      </div>
+<section class="userprofile">
+  <div class="container">
+    <div class="user-msg">
+      <h1>Welcome back, {{ current_user.username }}!</h1>
+      <p>Welcome to your user dashboard! Here you'll be able to see the results of past tests, if you've taken any, as well as start a new test</p>
+    </div>
   </div>
-
-  {% if current_user.admin %}
-  <p>You are an admin! Hurray!</p>
-  {% else %}
-  <p>You are not an admin. Unlucky.</p>
-  {% endif %}
-
-</div>
-
-
-
+  <!-- Wave separator -->
+  <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="#fafafa" fill-opacity="1" d="M0,64L60,74.7C120,85,240,107,360,101.3C480,96,600,64,720,48C840,32,960,32,1080,48C1200,64,1320,96,1380,112L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+  </svg>
+</section>
+<section class="dashboard">
+  <div class="container">
+    {% if current_user.admin %}
+    <!-- Teacher Dashboard -->
+    <h2>Teacher Dashboard</h2> 
+    <div class="row center">
+      <div class="col-md-4 dashboard-item">
+        <img class="thumbnail" src="../static/resources/mark.svg" alt=""> 
+        <h3>Mark Completed Tests</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur.</p>
+        <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Mark Tests</button>
+      </div>
+      <div class="col-md-4 dashboard-item">
+        <img class="thumbnail" src="../static/resources/prevtest.svg" alt=""> 
+        <h3>View Previous Tests</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur.</p>
+        <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Preview</button>
+      </div>
+      <div class="col-md-4 dashboard-item">
+        <img class="thumbnail" src="../static/resources/manage.svg" alt=""> 
+        <h3>Manage Tests</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur.</p>
+        <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Manage</button>
+      </div>
+      <div class="col-md-4 dashboard-item">
+        <img class="thumbnail" src="../static/resources/manage.svg" alt=""> 
+        <h3>Manage Tests</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur.</p>
+        <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Manage</button>
+      </div>
+    </div>
+    {% else %}
+    <!-- Student Dashboard -->
+    <h2>Student Dashboard</h2> 
+    <div class="row center">
+      <div class="col-md-4 dashboard-item">
+        <img class="thumbnail" src="../static/resources/newtest.svg" alt=""> 
+        <h3>Start a new test</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur.</p>
+        <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Get Started</button>
+      </div>
+      <div class="col-md-4 dashboard-item">
+        <img class="thumbnail" src="../static/resources/prevtest.svg" alt=""> 
+        <h3>Previous attempts</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur.</p>
+        <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Preview</button>
+      </div>
+      <div class="col-md-4 dashboard-item">
+        <img class="thumbnail" src="../static/resources/overview.svg" alt=""> 
+        <h3>My Performance</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur.</p>
+        <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Overview</button>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
 {% endblock %}

@@ -1,6 +1,6 @@
 from app import app, db
 from flask import render_template, flash, redirect, url_for, request
-from app.forms import LoginForm, RegisterForm
+from app.forms import LoginForm, RegisterForm, TestForm
 
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
@@ -23,6 +23,16 @@ def contact():
 @app.route("/userprofile")
 def userprofile():
     return render_template("userprofile.html", title="My Profile")
+
+@app.route("/quiz")
+def quiz():
+    return render_template("quiz.html", title="Quiz")
+
+@app.route("/newtest")
+def newtest():
+    form = TestForm()
+    return render_template("newtest.html", title="Start New Test", form=form)
+
 
 @app.route("/login", methods = ["GET", "POST"])
 def login():

@@ -75,23 +75,23 @@ h4 {
 }
 
 /* Buttons */
-button.plain-btn {
+.plain-btn {
   border-radius: 5px;
   border: none;
   color: white;
 }
 
-button.plain-btn:focus {
+.plain-btn:focus {
   outline: none;
 }
 
-button.sm {
+.sm {
   font-size: 1rem;
   font-weight: 700;
   padding: 0.5rem 1.0rem;
 }
 
-button.lg {
+.lg {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   font-weight: 900;
   font-size: 1.25rem;
@@ -126,14 +126,14 @@ img.img-md {
 
 /* Animation */
 .float-anim {
-  -webkit-animation: action 2s infinite alternate;
-  animation: action 2s infinite alternate;
+  -webkit-animation: floatAnim 2s infinite alternate;
+  animation: floatAnim 2s infinite alternate;
 }
-  @-webkit-keyframes action {
+  @-webkit-keyframes floatAnim {
   0% { transform: translateY(0); }
   100% { transform: translateY(-10px); }
 }
-  @keyframes action {
+  @keyframes floatAnim {
   0% { transform: translateY(0); }
   100% { transform: translateY(-10px); }
 }

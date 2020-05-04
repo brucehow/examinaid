@@ -19,6 +19,11 @@ form > h4 {
   margin-bottom: 1.5rem;
 }
 
+.field1 {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .field-sm {
   font-size: 1rem;
   margin-bottom: 0.5rem;
