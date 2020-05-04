@@ -25,14 +25,13 @@ def userprofile():
     return render_template("userprofile.html", title="My Profile")
 
 @app.route("/quiz")
-def test():
+def quiz():
     return render_template("quiz.html", title="Quiz")
 
-@app.route("/testform")
-def starttest():
-
+@app.route("/newtest")
+def newtest():
     form = TestForm()
-    return render_template("testform.html", title="testform", form=form)
+    return render_template("newtest.html", title="Start New Test", form=form)
 
 
 @app.route("/login", methods = ["GET", "POST"])

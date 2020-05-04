@@ -16,27 +16,53 @@
 </section>
 <section class="dashboard">
   <div class="container">
-    <h2>Student Dashboard</h2> <!-- Dashboard -->
+    {% if current_user.admin %}
+    <!-- Teacher Dashboard -->
+    <h2>Teacher Dashboard</h2> 
+    <div class="row center">
+      <div class="col-md-4 dashboard-item">
+        <img class="thumbnail" src="../static/resources/mark.svg" alt=""> 
+        <h3>Mark Completed Tests</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur.</p>
+        <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Mark Tests</button>
+      </div>
+      <div class="col-md-4 dashboard-item">
+        <img class="thumbnail" src="../static/resources/prevtest.svg" alt=""> 
+        <h3>Previous attempts</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur.</p>
+        <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Preview</button>
+      </div>
+      <div class="col-md-4 dashboard-item">
+        <img class="thumbnail" src="../static/resources/overview.svg" alt=""> 
+        <h3>My Performance</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur.</p>
+        <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Overview</button>
+      </div>
+    </div>
+    {% else %}
+    <!-- Student Dashboard -->
+    <h2>Student Dashboard</h2> 
     <div class="row center">
       <div class="col-md-4 dashboard-item">
         <img class="thumbnail" src="../static/resources/newtest.svg" alt=""> 
         <h3>Start a new test</h3>
         <p>Lorem ipsum dolor, sit amet consectetur.</p>
-        <button class="plain-btn lg green" onclick="window.location.href='/testform'">Start New Test</button>
+        <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Get Started</button>
       </div>
       <div class="col-md-4 dashboard-item">
         <img class="thumbnail" src="../static/resources/prevtest.svg" alt=""> 
-        <h3>View previous attempts</h3>
+        <h3>Previous attempts</h3>
         <p>Lorem ipsum dolor, sit amet consectetur.</p>
-        <button class="plain-btn lg green" onclick="window.location.href='/testform'">View Pevious Tests</button>
+        <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Preview</button>
       </div>
       <div class="col-md-4 dashboard-item">
-        <img class="thumbnail" src="../static/resources/prevtest.svg" alt=""> 
-        <h3>View previous attempts</h3>
+        <img class="thumbnail" src="../static/resources/overview.svg" alt=""> 
+        <h3>My Performance</h3>
         <p>Lorem ipsum dolor, sit amet consectetur.</p>
-        <button class="plain-btn lg green" onclick="window.location.href='/testform'">View Pevious Tests</button>
+        <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Overview</button>
       </div>
     </div>
+    {% endif %}
   </div>
 </section>
 
@@ -105,11 +131,6 @@
         </div>
       </div>
     </div>
-    {% if current_user.admin %}
-    <p>You are an admin! Hurray!</p>
-    {% else %}
-    <p>You are not an admin. Unlucky.</p>
-    {% endif %}
   </div>
 </section>
 
