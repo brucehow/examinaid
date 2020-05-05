@@ -1,27 +1,61 @@
-.dropdown {
-    position: relative;
-    display: inline-block;
+/* Images */
+img.thumbnail {
+  margin: 4rem 0 2rem 0;
+  height: 150px;
+  width: 200px;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 150px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+/* Structuring */
+section.dashboard {
+  background-color: #fafafa;
+  padding: 2rem 0 7rem 0;
 }
 
-.dropdown-content a {
-    color: #2c2d30;
-    font-weight: 900;
-    font-size: 1.25rem;
-    letter-spacing: 0.03rem;
-    padding: 1.0rem 1.5rem;
-    text-decoration: none;
-    display: block;
-    cursor: pointer;
-  }
+.dashboard-item p {
+  margin: auto;
+}
 
-.dropdown-content a:hover {background-color: #807676;}
-.dropdown:hover .dropdown-content {display: block;}
+.dashboard-item button {
+  margin: 2rem 0;
+}
+
+/* Containers */
+.user-msg {
+  max-width: 700px;
+}
+
+.stat {
+  max-width: 600px;
+  margin-top: 4rem;
+}
+
+.surveylist {
+  border-bottom: black;
+  margin-top: 5%;
+}
+
+#newtestcontainer {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*Previous Test Windows*/
+.window {
+  margin-top: 1%; 
+  padding: 10px;
+  border: solid thin black;
+  border-radius: 1%;
+  cursor: pointer;
+}
+
+.rightcontainer {
+  margin-top: 2%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*Start Test Buttons */
+.test-links{
+  text-decoration: none;
+}

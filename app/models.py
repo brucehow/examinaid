@@ -5,9 +5,9 @@ from flask_login import UserMixin
 
 class User(UserMixin, db.Model):
     # column_name = db.Column(variable_type, column_attribute_1, column_attribute_2, column_attribute_3, ...)
-    id = db.Column(db.Integer, primary_key = True)
-    username = db.Column(db.String(64), index = True, unique = True)
-    email = db.Column(db.String(120), index = True, unique = True)
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(64), index=True, unique=True)
+    email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
     admin = db.Column(db.Boolean, default=False)
 
@@ -23,6 +23,7 @@ class User(UserMixin, db.Model):
 
     def toggle_admin(self):
         self.admin = not self.admin
+        
     def check_admin(self):
         return self.admin
 
