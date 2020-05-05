@@ -1,0 +1,83 @@
+{
+  "unitCode": "CITS3403",
+  "unitName": "Agile Web Development",
+  "testNumber": 1,
+  "totalMarks": 14,
+  "questions": [
+    {
+      "questionNumber": 1,
+      "marks": 1,
+      "prompt": "Which tag should surround an entire table of data?",
+      "answer": "<table></table>",
+      "questionType": "multipleChoice",
+      "totalOptions": ["<thead></thead>","<table></table>","<tr></tr>","<td></td>"]
+    },
+    {
+      "questionNumber": 2,
+      "marks": 1,
+      "prompt": "Which tag adds new data to a HTML table?",
+      "answer": "<td></td>",
+      "questionType": "multipleChoice",
+      "totalOptions": ["<tb></tb>","<tr></tr>","<td></td>","<table></table>"]
+    },
+    {
+      "questionNumber": 3,
+      "marks": 1,
+      "prompt": "Which of the following tags is used to separate the body of a table from its headers and footers?",
+      "answer": "<tbody></tbody>",
+      "questionType": "multipleChoice",
+      "totalOptions": ["<tr></tr>","<thead></thead>","<th></th>","<tbody></tbody>"]
+    },
+    {
+      "questionNumber": 4,
+      "marks": 1,
+      "prompt": "Which of the following tags is used to enclose the row of a table containing its headers?",
+      "answer": "<thead></thead>",
+      "questionType": "multipleChoice",
+      "totalOptions": ["<tr></tr>","<thead></thead>","<th></th>","<tbody></tbody>"]
+    },
+    {
+      "questionNumber": 5,
+      "marks": 1,
+      "prompt": "Which tag creates new rows in a HTML table?",
+      "answer": "<tr></tr>",
+      "questionType": "multipleChoice",
+      "totalOptions": ["<td></td>","<thead></thead>","<table></table>","<tr></tr>"]
+    },
+    {
+      "questionNumber": 6,
+      "marks": 1,
+      "prompt": "Which tag adds a new row header to a HTML table?",
+      "answer": "<th scope=\"row\"></th>",
+      "questionType": "",
+      "totalOptions": ["<tr></tr>","<th></th>","<th scope=\"col\"></th>","<th scope=\"row\"></th>"]
+    },
+    {
+      "questionNumber": 7,
+      "marks": 2,
+      "prompt": "What is the name of the tag used to separate the footer of a table from its body?",
+      "answer": "tfoot",
+      "questionType": "shortAnswer",
+      "totalOptions": null
+    },
+    {
+      "questionNumber": 8,
+      "marks": 2,
+      "prompt": "How many columns does the following table row span altogether?\n<tr>\n\t<td colspan=\"2\">Out of Town</td>\n\t<td>Back in Town</td>\n</tr>",
+      "answer": "3",
+      "questionType": "number",
+      "totalOptions": null
+    },
+    {
+      "questionNumber": 9,
+      "marks": 4,
+      "prompt": "The following CSS code adds a 1 px (w) border to (x), and a 1px (y) border to (z). What is w, x, y, and z?\ntd, tr { border: 1px solid black; }\nth { border: 1px solid blue; }",
+      "answer": "w: black, x: table rows and cells, y: blue, z: table headers",
+      "questionType": "multipleChoice",
+      "totalOptions": ["w: black, x: table headers, y: blue, z: table cells",
+                       "w: black, x: table rows, y: blue, z: table headers",
+                       "w: black, x: table headers, y: blue, z: table rows and cells",
+                       "w: black, x: table rows and cells, y: blue, z: table headers"]
+    }
+  ]
+}

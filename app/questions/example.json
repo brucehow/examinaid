@@ -1,0 +1,35 @@
+{
+  "unitCode": "CITS9999",
+  "unitName": "Example Unit",
+  "testNumber": 1,
+  "questions": [
+    {
+      "questionNumber": 1,
+      "prompt": "What is 2 + 3?",
+      "answer": 5,
+      "questionType": "multipleChoice",
+      "totalOptions": [2,5,3,4]
+    },
+    {
+      "questionNumber": 2,
+      "prompt": "Which of the following is a fruit?",
+      "answer": "apple",
+      "questionType": "multipleChoice",
+      "totalOptions": ["table","onion","football","apple"]
+    },
+    {
+      "questionNumber": 3,
+      "prompt": "Which is better, LoL or DotA 2? Provide an explanation.",
+      "answer": null,
+      "questionType": "openAnswer",
+      "totalOptions": null
+    },
+    {
+      "questionNumber": 4,
+      "prompt": "How do you feel about our climate?",
+      "answer": null,
+      "questionType": "openAnswer",
+      "totalOptions": null
+    }
+  ]
+}
