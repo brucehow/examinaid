@@ -31,8 +31,8 @@ def userprofile():
 def quiz():
     return render_template("quiz.html", title="Quiz")
 
-@app.route("/newtest")
-def newtest():
+@app.route("/newtest2")
+def newtest2():
     form = TestForm()
     return render_template("newtest.html", title="Start New Test", form=form)
 
