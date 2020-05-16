@@ -1,0 +1,80 @@
+{
+    "unitCode": "CITS1401",
+    "unitName": "Problem Solving with Python",
+    "testNumber": 1,
+    "totalMarks": 14,
+    "questions": [
+      {
+        "questionNumber": 1,
+        "marks": 1,
+        "prompt": "For a given key value, how many entries can a Python dictionary hold at one time?",
+        "answer": "0 or 1",
+        "questionType": "multipleChoice",
+        "totalOptions": ["0","0 or 1","1","1 or more"]
+      },
+      {
+        "questionNumber": 2,
+        "marks": 1,
+        "prompt": "Which of the following is an invalid variable?",
+        "answer": "1st_string",
+        "questionType": "multipleChoice",
+        "totalOptions": ["my_string_1","1st_strong","foo","_"]
+      },
+      {
+        "questionNumber": 3,
+        "marks": 1,
+        "prompt": "A function with parameters cannot be decorate",
+        "answer": "true",
+        "questionType": "multipleChoice",
+        "totalOptions": ["true","false"]
+      },
+      {
+        "questionNumber": 4,
+        "marks": 1,
+        "prompt": "What is the output of the following code: print(int(2.999))",
+        "answer": "2",
+        "questionType": "number",
+        "totalOptions": null
+      },
+      {
+        "questionNumber": 5,
+        "marks": 1,
+        "prompt": "In Python 3, the integer ranges from -2,147,483,648 to +2,147,483,647",
+        "answer": "false",
+        "questionType": "multipleChoice",
+        "totalOptions": ["true","false"]
+      },
+      {
+        "questionNumber": 6,
+        "marks": 2,
+        "prompt": "What is the output of the expression  print(-18 // 4)",
+        "answer": "-5",
+        "questionType": "number",
+        "totalOptions": null
+      },
+      {
+        "questionNumber": 7,
+        "marks": 1,
+        "prompt": "Bitwise shift operators (<<, >>) has higher precedence than Bitwise And(&) operator",
+        "answer": "true",
+        "questionType": "multiplechoice",
+        "totalOptions": ["true","false"]
+      },
+      {
+        "questionNumber": 8,
+        "marks": 2,
+        "prompt": "In Python 3, what is the type of type(range(5))",
+        "answer": "range",
+        "questionType": "multiplechoice",
+        "totalOptions": ["int","list","range","dictionary"]
+      },
+      {
+        "questionNumber": 9,
+        "marks": 4,
+        "prompt":"Write psudocode or python for a function that takes a list of lists and returns a transposed version of the supplied parameter.",
+        "answer": null,
+        "questionType": "shortanswer",
+        "totalOptions": null
+      }
+    ]
+  }

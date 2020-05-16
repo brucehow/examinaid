@@ -1,24 +1,24 @@
 {
     "unitCode": "CITS1401",
     "unitName": "Problem Solving with Python",
-    "testNumber": 1,
+    "testNumber": 2,
     "totalMarks": 14,
     "questions": [
       {
         "questionNumber": 1,
         "marks": 1,
-        "prompt": "For a given key value, how many entries can a Python dictionary hold at one time?",
-        "answer": "0 or 1",
+        "prompt": "Which statement is not true about objects in an “Object Oriented Program”?",
+        "answer": "Objects cannot mutate",
         "questionType": "multipleChoice",
-        "totalOptions": ["0","0 or 1","1","1 or more"]
+        "totalOptions": ["Objects can contain data.","Objects can have operations.","Objects can contain other objects.","Objects cannot mutate."]
       },
       {
         "questionNumber": 2,
         "marks": 1,
-        "prompt": "If a Python function does not execute a return statement, what value is returned?",
-        "answer": "None",
+        "prompt": "What does the following expression produce? list(range(7))[:-2]",
+        "answer": "[0, 1, 2, 3, 4]",
         "questionType": "multipleChoice",
-        "totalOptions": ["0","''","None","It depends on its type"]
+        "totalOptions": ["[0, 1, 2, 3, 4]","[1, 2, 3, 4, 5]","[0, 1, 2, 3, 4, 5]","[6, 5, 4, 3, 2, 1, 0]"]
       },
       {
         "questionNumber": 3,
