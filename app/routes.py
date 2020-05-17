@@ -1,6 +1,6 @@
 from app import app, db
 from flask import render_template, flash, redirect, url_for, request
-from app.forms import LoginForm, RegisterForm, TestForm
+from app.forms import LoginForm, RegisterForm, TestForm, TestQuestion
 
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
@@ -90,3 +90,11 @@ def newtest():
     file = open("app/questions/cits1401_1.json")
     data = load(file)
     return render_template('tests/test_template.html', unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"])
+
+@app.route('/addQuestions')
+def addQuestions():
+    form = TestQuestion()
+    return render_template("newtest.html", title="Start New Test", form=form)
+
+
+    
