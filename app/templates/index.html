@@ -51,20 +51,6 @@
       </nav>
     </header>
     <main>
-      <!-- Get flashed messages -->
-      {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul class="flashed-messages container">
-          {% for message in messages %}
-          <li>{{ message }}</li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-      {% endwith %}
-      {% if welcome_string %}
-      <p>{{ welcome_string }}</p>
-      {% else %}
-      {% endif %}
       {% block content %}
       <!-- Landing/Home Section -->
       <section class="landing">
