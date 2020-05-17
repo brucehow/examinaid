@@ -40,17 +40,6 @@ div.center {
   text-align: center;
 }
 
-.outer {
-  margin-top: 10%;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-.inner {
-  width: 20%
-}
-
 hr.divider {
   margin: 5rem;
   border: none;

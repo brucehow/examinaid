@@ -1,52 +1,43 @@
 {% extends "index.html" %}
 
 {% block content %}
-  <!-- <p>Text text text.</p>
-  <p><em>More text!</em></p>
-  <p>Hello, {{name}}!</p>
-
-  {% if current_user.is_anonymous %}
-  <p>You're not logged in!</p>
-  {% else %}
-  <a href="{{ url_for('logout') }}">Logout</a>
-  {% endif %}
-  -->
-
-  <div class="container text-center">
-    <h1 style="margin: 2rem 0 2rem 0;">About CITSPrep</h1>
-    <p>CITSPrep is an assesment preparation website designed by 4 junior developers at the University of Western Australia. The project had its foundations as an assessment piece
-      for a web development unit, but has since grown into the multi-faceted support network that we know and love today.
-    </p>
-
+<section>
+  <div class="container">
+    <h2>About CITSPrep</h2>
+    <p>CITSPrep is an assesment preparation website designed by 4 junior developers at the University of Western Australia. The project had its foundations as an assessment piece for a web development unit, but has since grown into the multi-faceted support network that we know and love today.</p>
+  </div>
+</section>
+<section class="grey">
+  <div class="container">
     <h2>Who Are We?</h2>
     <p>The team behind CITSPrep consists of 4 remarkable developers.</p>
-
-    <div class=outer>
-      <div class=inner>
+    <div class="row">
+      <div class="col-md-3">
         <img src="d" alt="test">
-        <h3> Bruce How </h3>
-        <h5> aka. Bruce </h5>
-        <p> A god amongst men when it comes to CSS  </p>
+        <h3>Bruce How</h3>
+        <h5>aka. Bruce</h5>
+        <p>A god amongst men when it comes to CSS</p>
       </div>
-      <div class=inner> 
+      <div class="col-md-3">
         <img src="d" alt="test">
-        <h3> Bryan Yeo </h3>
-        <h5> aka. DarkStorm </h5>
-        <p> No such thing as a clean storm when it comes to Mr. Yeo  </p>
+        <h3>Bryan Yeo</h3>
+        <h5>aka. DarkStorm</h5>
+        <p>No such thing as a clean storm when it comes to Mr. Yeo </p>
       </div>
-      <div class=inner>
+      <div class="col-md-3">
         <img src="d" alt="test">
-        <h3> Lachlan D Whang </h3>
-        <h5> aka. ForsakenIdol </h5>
-        <p> Some say he drinks soup from water bottles becase there's only one true flask </p>
+        <h3>Lachlan D Whang</h3>
+        <h5>aka. ForsakenIdol</h5>
+        <p>Some say he drinks soup from water bottles becase there's only one true flask</p>
       </div>
-      <div class=inner>
+      <div class="col-md-3">
         <img src="d" alt="test">
-        <h3> Paul O'Sullivan </h3>
-        <h5> aka. Shapester </h5>
-        <p> pathetic scrub </p>
+        <h3>Paul O'Sullivan</h3>
+        <h5>aka. Shapester</h5>
+        <p>pathetic scrub</p>
       </div>
     </div> 
   </div>
+</section>
 
 {% endblock %}
