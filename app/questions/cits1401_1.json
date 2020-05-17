@@ -7,7 +7,7 @@
       {
         "questionNumber": 1,
         "marks": 1,
-        "prompt": "Which statement is not true about objects in an “Object Oriented Program”?",
+        "prompt": "Which statement is not true about objects in an \"Object Oriented Program\"?",
         "answer": "Objects cannot mutate",
         "questionType": "multipleChoice",
         "totalOptions": ["Objects can contain data.","Objects can have operations.","Objects can contain other objects.","Objects cannot mutate."]
@@ -40,9 +40,9 @@
         "questionNumber": 5,
         "marks": 1,
         "prompt": "Given a Python list xs of length k, what is the legal range of values with which xs can be indexed?",
-        "answer": "–k up to k–1 inclusive",
+        "answer": "-k up to k-1 inclusive",
         "questionType": "multipleChoice",
-        "totalOptions": ["k–1 or smaller","–k up to k–1 inclusive","–(k–1) up to k–1 inclusive","–(k–1) up to k inclusive","k or smaller"]
+        "totalOptions": ["k-1 or smaller","-k up to k-1 inclusive","-(k-1) up to k-1 inclusive","-(k-1) up to k inclusive","k or smaller"]
       },
       {
         "questionNumber": 6,
@@ -64,9 +64,9 @@
         "questionNumber": 8,
         "marks": 2,
         "prompt": "Which of these statements is true for all positive numbers x and y?",
-        "answer": "y – x < y",
+        "answer": "y - x < y",
         "questionType": "multiplechoice",
-        "totalOptions": ["y + x < y","y / x > y","y – x < y","y ** x > y"]
+        "totalOptions": ["y + x < y","y / x > y","y - x < y","y ** x > y"]
       },
       {
         "questionNumber": 9,
