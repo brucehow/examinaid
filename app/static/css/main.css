@@ -118,6 +118,14 @@ button.green:hover {
   background-color: #007757;
 }
 
+.contact-link {
+  color: #12649f;
+  font-weight: 700;
+}
+
+.contact-link:hover {
+  text-decoration: none;
+}
 
 /* Lists */
 ul.flashed-messages li {
