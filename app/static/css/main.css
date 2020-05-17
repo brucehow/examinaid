@@ -27,11 +27,6 @@ section.green {
   color: white;
 }
 
-section.about {
-  background-color: #fafafa;
-  padding: 2rem 0 7rem 0;
-}
-
 /* Structure */
 div.container {
   margin: 0 auto; /* left right padding */
@@ -48,11 +43,6 @@ div.center {
 hr.divider {
   margin: 5rem;
   border: none;
-}
-
-/* About structure */
-.author {
-  margin: 2rem 0;
 }
 
 /* Headings */
