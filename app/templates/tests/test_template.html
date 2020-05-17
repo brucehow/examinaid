@@ -1,27 +1,32 @@
 {% extends "index.html" %}
 
 {% block content %}
-
+<link rel="stylesheet" href="../../static/css/test.css"/>
 <div class=container>
 
   <h2 style="margin-top: 2rem;">{% if unit %}{{ unit }}{% else %}This is an example test.{% endif %}</h2>
   <p>Please <strong>do not</strong> click away or refresh this page while doing this test, as your answers may not be recorded. When you are finished, ensure that you
-    submit your test, so that your results are saved. This test must be completed in one sitting.</p>
+    submit your test, so that your results are saved.</p>
+  <p><strong>This test must be completed in one sitting.</strong></p>
   
   <!-- To serialize a form, the inputs MUST be named. -->
   <form id="example-test-form">
     {% for question in questions %}
-      <p><strong>{{ question.questionNumber }}</strong>. {{ question.prompt }}</p>
-      {% if question.questionType == "multipleChoice" %}
-        {% for option in question.totalOptions %}
-          <input type="radio" name="q{{ question.questionNumber }}" value="{{ option }}"/>
-          <label for="{{ option }}">{{option}}</label>
-        {% endfor %}
-      {% else %}
-      <input type="text" name="q{{ question.questionNumber }}" placeholder="Sample input" />
-      {% endif %}
+      <div class="question-box">
+        <p><strong>{{ question.questionNumber }}</strong>. {{ question.prompt }}</p>
+        {% if question.questionType == "multipleChoice" %}
+          {% for option in question.totalOptions %}
+            <input type="radio" name="q{{ question.questionNumber }}" value="{{ option }}"/>
+            <label for="{{ option }}">{{ option }}</label>
+            <br>
+          {% endfor %}
+        {% else %}
+        <input type="text" name="q{{ question.questionNumber }}" placeholder="Sample input" />
+        {% endif %}
+      </div>
     {% endfor %}
-    <input type="submit"  id="submit-example-test-form" />
+    <br>
+    <input type="submit" class="submit-test" value="Submit Test"  id="submit-example-test-form" />
   </form>
 
 </div>

@@ -1,0 +1,21 @@
+div.question-box {
+  border: 1px solid grey;
+  padding: 1rem;
+  margin: 0.5rem;
+}
+
+input.submit-test {
+  background-color: #008a65;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 0.8rem;
+  transition: 250ms;
+
+  margin-bottom: 10rem; /* Remove this later, this is just to make more space for scrolling */
+}
+
+input.submit-test:hover {
+  background-color: #007757;
+}
