@@ -6,8 +6,8 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
 from werkzeug.urls import url_parse
 
-from json import load
-from os import listdir # To debug file paths
+from json import load, json
+from os import listdir, path # To debug file paths
 
 @app.route("/")
 @app.route("/index")
@@ -94,7 +94,18 @@ def newtest():
 @app.route('/addQuestions')
 def addQuestions():
     form = TestQuestion()
-    return render_template("newtest.html", title="Start New Test", form=form)
+    
+    dirname = path.dirname(__file__)
+    dictionary = {
+      "unitCode" : form.unitCode.data,
+      "unitName": form.unitName.data,
+      "prompt" : form.prompt.data,
+      "answer" : form.answer.data
+    }
 
+    json_object = json.dumps(dictionary, indent = 4)
+    with open(path.join(dirname, "questions/testing.json"), "w") as outfile:
+        outfile.write(json_object)
+    return render_template("tests/AddQuestion_template.html", title="Add Questions", form=form)
 
     
