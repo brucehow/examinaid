@@ -20,6 +20,10 @@ input.submit-test:hover {
   background-color: #007757;
 }
 
-input.file-upload-btn {
-  
+input[type="file"] {
+  display: none;
+}
+
+.file-upload-btn {
+  cursor: pointer;
 }
