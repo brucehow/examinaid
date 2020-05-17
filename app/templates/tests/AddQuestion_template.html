@@ -31,10 +31,10 @@
     <br><span style="color: red;">[{{ error }}]</span>
     {% endfor %} 
     <br>
-
-    {% for i in range(10) %}
+<!-- CHANGE IT BACK TO 10 WHEN DONE TESTING -->
+    {% for i in range(1) %} 
       <div class="question-box">
-        <p><strong>{{ print("Question:") }}</strong>. {{ i }}</p><br>
+        <p><strong>{% print("Question:") %}</strong>. {{ i }}</p><br>
         {{ form.questionNumber.label }}<br>
         {{ form.questionNumber() }}
         {% for error in form.questionNumber.errors %}
