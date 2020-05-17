@@ -1,21 +1,16 @@
+/* Structure */
+.test-info {
+  margin: 5rem 0 3rem;
+}
+
 div.question-box {
   border: 1px solid grey;
   padding: 1rem;
-  margin: 0.5rem;
+  margin: 1rem 0;
 }
 
-input.submit-test {
+/* Button */
+input.test-btn {
   background-color: #008a65;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-weight: bold;
-  padding: 0.5rem 0.8rem;
-  transition: 250ms;
-
-  margin-bottom: 10rem; /* Remove this later, this is just to make more space for scrolling */
-}
-
-input.submit-test:hover {
-  background-color: #007757;
+  margin: 2.5rem 0 5rem 0;
 }
