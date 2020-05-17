@@ -20,6 +20,12 @@
             <label for="{{ option }}">{{ option }}</label>
             <br>
           {% endfor %}
+        {% elif question.questionType == "number" %}
+        <input type="number" name="q{{ question.questionNumber }}" placeholder="Number" />
+        {% elif question.questionType == "shortAnswer" %}
+        <input type="text" name="q{{ question.questionNumber }}" placeholder="Short Answer" />
+        {% elif question.questionType == "fileUpload" %}
+        <input type="file" name="q{{ question.questionNumber }}" class="file-upload-btn" />
         {% else %}
         <input type="text" name="q{{ question.questionNumber }}" placeholder="Sample input" />
         {% endif %}

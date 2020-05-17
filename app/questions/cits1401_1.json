@@ -57,7 +57,7 @@
         "marks": 1,
         "prompt": "If x is an integer variable whose value is over 1000, which expression returns its third least-significant digit? (e.g. if x = 3847, it should return 8.)",
         "answer": "x // 100 % 10",
-        "questionType": "multiplechoice",
+        "questionType": "multipleChoice",
         "totalOptions": ["x // 100 % 10","x % 100 // 10","x // 100 % 100","x % 100 // 100","x // 1000 % 100"]
       },
       {
@@ -65,7 +65,7 @@
         "marks": 2,
         "prompt": "Which of these statements is true for all positive numbers x and y?",
         "answer": "y - x < y",
-        "questionType": "multiplechoice",
+        "questionType": "multipleChoice",
         "totalOptions": ["y + x < y","y / x > y","y - x < y","y ** x > y"]
       },
       {
@@ -73,7 +73,7 @@
         "marks": 4,
         "prompt":"Your boss asks you to develop a python program to determine an employee's net pay per month. The program will take a single parameter detailing the employee's yearly salary. You must develop a program to subtract super contributions, levies, and taxes in this order. Draw a structure chart outlining the structure of the program and upload it via the below prompt.",
         "answer": null,
-        "questionType": "picture",
+        "questionType": "fileUpload",
         "totalOptions": null
       }
     ]
