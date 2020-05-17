@@ -1,4 +1,10 @@
 import json
+import os.path
+
+dirname = os.path.dirname(__file__)
+
+##OutDated
+##basepath = os.path.abspath(".")
 
 dictionary = {
   "unitCode" : "placeholder",
@@ -11,5 +17,5 @@ dictionary = {
 #serialising json
 json_object = json.dumps(dictionary, indent = 4)
 
-with open("sample.json", "w") as outfile:
+with open(os.path.join(dirname,"questions/testing.json"), "w") as outfile:
   outfile.write(json_object)
