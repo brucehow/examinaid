@@ -16,7 +16,7 @@
         <p><strong>{{ question.questionNumber }}</strong>. {{ question.prompt }}</p>
         {% if question.questionType == "multipleChoice" %}
           {% for option in question.totalOptions %}
-            <input type="radio" name="q{{ question.questionNumber }}" value="{{ option }}"/>
+            <input id="{{ option }}" type="radio" name="q{{ question.questionNumber }}" value="{{ option }}"/>
             <label for="{{ option }}">{{ option }}</label>
             <br>
           {% endfor %}
