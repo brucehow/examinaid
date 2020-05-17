@@ -1,0 +1,72 @@
+{% extends "login.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="../../static/css/test.css"/>
+<div class="container">
+  <div class="test-info">
+    <h2>{% if unit %}{{ unit }}{% else %}This is an example test.{% endif %}</h2>
+    <p>Please <strong>do not</strong> click away or refresh this page while doing this test, as your answers may not be recorded. When you are finished, ensure that you
+      submit your test, so that your results are saved.</p>
+    <p><strong>This test must be completed in one sitting.</strong></p>
+  </div>
+  <!-- To serialize a form, the inputs MUST be named. -->
+  <form id="example-test-form">
+    {{ form.unitName.label }}<br>
+    {{ form.unitName() }}<br>
+    {% for error in form.unitName.errors %}
+    <br><span style="color: red;">[{{ error }}]</span>
+    {% endfor %} 
+    <br>    
+
+    {{ form.unitCode.label }}<br>
+    {{ form.unitCode() }}
+    {% for error in form.unitCode.errors %}
+    <br><span style="color: red;">[{{ error }}]</span>
+    {% endfor %} 
+    <br>
+
+    {{ form.testNumber.label }}<br>
+    {{ form.testNumber() }}
+    {% for error in form.testNumber.errors %}
+    <br><span style="color: red;">[{{ error }}]</span>
+    {% endfor %} 
+    <br>
+
+    {% for i in range(10) %}
+      <div class="question-box">
+        <p><strong>{{ print("Question:") }}</strong>. {{ i }}</p><br>
+        {{ form.questionNumber.label }}<br>
+        {{ form.questionNumber() }}
+        {% for error in form.questionNumber.errors %}
+        <br><span style="color: red;">[{{ error }}]</span>
+        {% endfor %} 
+        <br>
+
+        {{ form.prompt.label }}<br>
+        {{ form.prompt() }}
+        {% for error in form.prompt.errors %}
+        <br><span style="color: red;">[{{ error }}]</span>
+        {% endfor %} 
+        <br>
+
+        {{ form.questionType.label }}<br>
+        {{ form.questionType() }}
+        {% for error in form.questionType.errors %}
+        <br><span style="color: red;">[{{ error }}]</span>
+        {% endfor %} 
+        <br>
+
+        {{ form.options.label }}<br>
+        {{ form.options() }}
+        {% for error in form.options.errors %}
+        <br><span style="color: red;">[{{ error }}]</span>
+        {% endfor %} 
+        <br>
+
+      </div>
+    {% endfor %}
+    <input type="submit" class="plain-btn lg test-btn" value="Submit Test"  id="submit-example-test-form" />
+  </form>
+</div>
+
+{% endblock content %}
