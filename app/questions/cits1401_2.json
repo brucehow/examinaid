@@ -57,7 +57,7 @@
         "marks": 1,
         "prompt": "Bitwise shift operators (<<, >>) has higher precedence than Bitwise And(&) operator",
         "answer": "true",
-        "questionType": "multiplechoice",
+        "questionType": "multipleChoice",
         "totalOptions": ["true","false"]
       },
       {
@@ -65,7 +65,7 @@
         "marks": 2,
         "prompt": "In Python 3, what is the type of type(range(5))",
         "answer": "range",
-        "questionType": "multiplechoice",
+        "questionType": "multipleChoice",
         "totalOptions": ["int","list","range","dictionary"]
       },
       {

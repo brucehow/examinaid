@@ -49,7 +49,7 @@
       "marks": 1,
       "prompt": "Which tag adds a new row header to a HTML table?",
       "answer": "<th scope=\"row\"></th>",
-      "questionType": "",
+      "questionType": "multipleChoice",
       "totalOptions": ["<tr></tr>","<th></th>","<th scope=\"col\"></th>","<th scope=\"row\"></th>"]
     },
     {
