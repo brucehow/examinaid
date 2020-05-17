@@ -24,6 +24,7 @@ def contact():
     return render_template("contact.html", title="Contact")
 
 @app.route("/userprofile")
+@login_required
 def userprofile():
     return render_template("userprofile.html", title="My Profile")
 
@@ -85,6 +86,7 @@ def register():
 
 # An example test form layout below
 @app.route('/newtest')
+@login_required
 def newtest():
     print(listdir()) # Check our working directory - turns out it's one higher than expected
     file = open("app/questions/cits1401_1.json")
