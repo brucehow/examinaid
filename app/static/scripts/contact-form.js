@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  console.log("Form ready!");
+  console.log("Contact form ready!");
 
   // Hide all responses
   $("#contact-form-name-error").hide();

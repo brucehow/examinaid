@@ -36,3 +36,15 @@ input.test-btn {
 .test-input:hover {
   border-color: #7e7e7e;
 }
+
+input.submit-test:hover {
+  background-color: #007757;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.file-upload-btn {
+  cursor: pointer;
+}
