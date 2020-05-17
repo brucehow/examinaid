@@ -1,9 +1,8 @@
-{% extends "index.html" %}
+{% extends "login.html" %}
 
 {% block content %}
 <link rel="stylesheet" href="../../static/css/test.css"/>
 <div class=container>
-
   <h2 style="margin-top: 2rem;">{% if unit %}{{ unit }}{% else %}This is an example test.{% endif %}</h2>
   <p>Please <strong>do not</strong> click away or refresh this page while doing this test, as your answers may not be recorded. When you are finished, ensure that you
     submit your test, so that your results are saved.</p>
@@ -28,7 +27,6 @@
     <br>
     <input type="submit" class="submit-test" value="Submit Test"  id="submit-example-test-form" />
   </form>
-
 </div>
 
 {% endblock content %}
