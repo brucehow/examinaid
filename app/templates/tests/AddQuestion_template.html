@@ -10,7 +10,7 @@
     <p><strong>This test must be completed in one sitting.</strong></p>
   </div>
   <!-- To serialize a form, the inputs MUST be named. -->
-  <form id="example-test-form">
+  <form id="example-test-form" method="POST">
     {{ form.unitName.label }}<br>
     {{ form.unitName() }}<br>
     {% for error in form.unitName.errors %}

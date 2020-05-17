@@ -91,7 +91,7 @@ def newtest():
     data = load(file)
     return render_template('tests/test_template.html', unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"])
 
-@app.route('/addQuestions')
+@app.route('/addQuestions', methods=['GET', 'POST'])
 def addQuestions():
     form = TestQuestion()
     
@@ -102,7 +102,6 @@ def addQuestions():
       "prompt" : form.prompt.data,
       "answer" : form.answer.data
     }
-    print(form.unitCode.data, form.unitName.data)
 
     json_object = dumps(dictionary, indent = 4)
     with open(path.join(dirname, "questions/test.json"), "w") as outfile:
