@@ -89,6 +89,6 @@ def register():
 @login_required
 def newtest():
     print(listdir()) # Check our working directory - turns out it's one higher than expected
-    file = open("app/questions/cits3403_2.json")
+    file = open("app/questions/cits3403_1.json")
     data = load(file)
     return render_template('tests/test_template.html', unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"])
