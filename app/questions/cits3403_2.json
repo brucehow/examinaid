@@ -69,10 +69,11 @@
     {
       "questionNumber": 8,
       "marks": 3,
-      "prompt": "Based on the following code, why will the information from the first <input> element NOT be sent to /processing.html when the form is submitted?\n<form action=\"/processing.html\" method=\"GET\">\n\t<input type=\"text\" id=\"username\">\n\t<input type=\"submit\" value=\"submit\">\n</form>",
+      "prompt": "Based on the following code, why will the information from the first <input> element NOT be sent to /processing.html when the form is submitted?",
       "answer": null,
       "questionType": "openAnswer",
-      "totalOptions": null
+      "totalOptions": null,
+      "image": "https://cdn.discordapp.com/attachments/711889061723373568/711890328852103229/cits3403_2_q8.PNG"
     },
     {
       "questionNumber": 9,

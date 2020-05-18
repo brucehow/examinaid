@@ -14,6 +14,10 @@
     {% for question in questions %}
       <div class="question-box">
         <p><strong>{{ question.questionNumber }}</strong>. {{ question.prompt }}</p>
+        {% if question.image %}
+        <image src="{{ question.image }}" class="question-image" alt="" />
+        <br>
+        {% endif %}
         {% if question.questionType == "multipleChoice" %}
           {% for option in question.totalOptions %}
             <input id="{{ option }}" type="radio" name="q{{ question.questionNumber }}" value="{{ option }}"/>
@@ -28,7 +32,7 @@
         <label for="test-file-upload" class="file-upload-btn" ><strong>Upload a file here...</strong> <span id="name-of-file"></span></label>
         <input type="file" name="q{{ question.questionNumber }}" class="file-upload-btn" id="test-file-upload" />
         {% else %}
-        <input class="test-input" type="text" name="q{{ question.questionNumber }}" placeholder="Sample input" />
+        <textarea class="test-input" name="q{{ question.questionNumber }}" placeholder="Sample input" ></textarea>
         {% endif %}
       </div>
     {% endfor %}
