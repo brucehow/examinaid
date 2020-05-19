@@ -53,4 +53,9 @@ input[type="file"] {
 
 .file-upload-btn {
   cursor: pointer;
+  transition: 250ms;
+}
+
+.file-upload-btn:hover {
+  color: grey;
 }
