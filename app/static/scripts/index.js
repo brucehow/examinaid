@@ -1,10 +1,18 @@
 $(document).ready(() => {
-  console.log("The DOM is ready!");
+  console.log("The main index.js file is ready!");
   // All code must go within the ready callback.
 
-  $("#example-test-form").submit(target => {
+  // Console spam REEEEE
+  /*
+  $(document).mousemove((target) => {
+    console.log("Mouse moved over (" + target.pageX + ", " + target.pageY + ").");
+  });
+  */
+
+  $("#unit-test-form").submit(target => {
+    console.log("Test submitted!")
     target.preventDefault();
-    console.log($("#example-test-form").serialize());
+    console.log($("#unit-test-form").serialize());
   });
   
   $("#test-file-upload").on("change", () => {
