@@ -9,7 +9,7 @@
       "marks": 1,
       "prompt": "What is an appropriate scenario for using an <input> element with the type attribute set to \"radio\"?",
       "answer": "When you want to present users with multiple options and have them choose only a single one.",
-      "questionType": "",
+      "questionType": "multipleChoice",
       "totalOptions": ["When you want users to add their own options.",
                        "When you want to present users with multiple options and have them choose any number of options.",
                        "When you want users to input both numbers and letters.",
