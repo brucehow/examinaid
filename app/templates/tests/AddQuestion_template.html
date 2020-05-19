@@ -63,6 +63,13 @@
         {% endfor %} 
         <br>
 
+        {{ form.answer.label }}<br>
+        {{ form.answer() }}
+        {% for error in form.answer.errors %}
+        <br><span style="color: red;">[{{ error }}]</span>
+        {% endfor %} 
+        <br>
+
       </div>
     {% endfor %}
     <input type="submit" class="plain-btn lg test-btn" value="Submit Test"  id="submit-example-test-form" />

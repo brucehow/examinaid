@@ -10,11 +10,22 @@ dictionary = {
   "unitCode" : "placeholder",
   "unitName" : "placeoholder",
   "testNumber" : "placeholder",
-  "questionNumber" : "placeholder",
-  "prompt" : "placeholder",
-  "answer" : "placeholder",
-  "questionType": "placeholder",
-  "totalOptions": ["1","2"]
+  "questions" : [
+    {
+      "questionNumber": "placeholder",
+      "prompt": "placeholder",
+      "answer" : "placeholder",
+      "questionType" : "placeholder",
+      "totalOptions": ["placeholder","placeholder","placeholder","placeholder"]
+    },
+    {
+      "questionNumber": "placeholder",
+      "prompt": "placeholder",
+      "answer" : "placeholder",
+      "questionType" : "placeholder",
+      "totalOptions": ["placeholder","placeholder","placeholder","placeholder"]      
+    }
+  ]
 }
 
 #serialising json

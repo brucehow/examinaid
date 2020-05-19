@@ -94,18 +94,33 @@ def newtest():
 @app.route('/addQuestions', methods=['GET', 'POST'])
 def addQuestions():
     form = TestQuestion()
-    
+    ##for relative file location
     dirname = path.dirname(__file__)
     dictionary = {
       "unitCode" : form.unitCode.data,
       "unitName": form.unitName.data,
-      "prompt" : form.prompt.data,
-      "answer" : form.answer.data
+      "testNumber": form.testNumber.data,
+      "questions": [
+        {
+          "questionNumber": form.questionNumber.data,
+          "prompt": form.prompt.data,
+          "answer": form.answer.data,
+          "questionType": form.questionType.data,
+          "totalOptions": [form.options.data]
+        }
+      ]
     }
-
+    ##dumps for 4 items, change indent variable if there's more items required
     json_object = dumps(dictionary, indent = 4)
+    #if form.validate_on_submit():
+    ##Form validate doesn't seem to work? Further testing required. 20/05/2020
+
+    #change questions/test.json to be an actual variable for file storage and loading
     with open(path.join(dirname, "questions/test.json"), "w") as outfile:
-        outfile.write(json_object)
+      outfile.write(json_object)
+      flash('Questions added!')
+      ##return redirect(url_for('userprofile'))
+      ##redirects me instantly, need to look at this for page redirect
     return render_template("tests/AddQuestion_template.html", title="Add Questions", form=form)
 
     
