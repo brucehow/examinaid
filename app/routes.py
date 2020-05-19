@@ -32,6 +32,7 @@ def userprofile():
 def quiz():
     return render_template("quiz.html", title="Quiz")
 
+# Test selection page; could be phased into the student profile
 @app.route("/newtest2")
 def newtest2():
     form = TestForm()
