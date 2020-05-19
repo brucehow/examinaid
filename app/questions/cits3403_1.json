@@ -63,21 +63,23 @@
     {
       "questionNumber": 8,
       "marks": 2,
-      "prompt": "How many columns does the following table row span altogether?\n<tr>\n\t<td colspan=\"2\">Out of Town</td>\n\t<td>Back in Town</td>\n</tr>",
+      "prompt": "How many columns does the following table row span altogether?",
       "answer": "3",
       "questionType": "number",
-      "totalOptions": null
+      "totalOptions": null,
+      "image": "https://cdn.discordapp.com/attachments/711889061723373568/711904225868906606/cits3403_1_q8.PNG"
     },
     {
       "questionNumber": 9,
       "marks": 4,
-      "prompt": "The following CSS code adds a 1 px (w) border to (x), and a 1px (y) border to (z). What is w, x, y, and z?\ntd, tr { border: 1px solid black; }\nth { border: 1px solid blue; }",
+      "prompt": "The following CSS code adds a 1 px (w) border to (x), and a 1px (y) border to (z). What is w, x, y, and z?",
       "answer": "w: black, x: table rows and cells, y: blue, z: table headers",
       "questionType": "multipleChoice",
       "totalOptions": ["w: black, x: table headers, y: blue, z: table cells",
                        "w: black, x: table rows, y: blue, z: table headers",
                        "w: black, x: table headers, y: blue, z: table rows and cells",
-                       "w: black, x: table rows and cells, y: blue, z: table headers"]
+                       "w: black, x: table rows and cells, y: blue, z: table headers"],
+      "image": "https://cdn.discordapp.com/attachments/711889061723373568/711904704476741712/cits3403_1_q9.PNG"
     }
   ]
 }

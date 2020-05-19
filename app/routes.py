@@ -24,6 +24,7 @@ def contact():
     return render_template("contact.html", title="Contact")
 
 @app.route("/userprofile")
+@login_required
 def userprofile():
     return render_template("userprofile.html", title="My Profile")
 
@@ -31,6 +32,7 @@ def userprofile():
 def quiz():
     return render_template("quiz.html", title="Quiz")
 
+# Test selection page; could be phased into the student profile
 @app.route("/newtest2")
 def newtest2():
     form = TestForm()
@@ -85,12 +87,14 @@ def register():
 
 # An example test form layout below
 @app.route('/newtest')
+@login_required
 def newtest():
     print(listdir()) # Check our working directory - turns out it's one higher than expected
-    file = open("app/questions/cits1401_1.json")
+    file = open("app/questions/cits3403_1.json")
     data = load(file)
     return render_template('tests/test_template.html', unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"])
 
+# Add Questions function using JSON creation
 @app.route('/addQuestions', methods=['GET', 'POST'])
 def addQuestions():
     form = TestQuestion()
@@ -124,3 +128,11 @@ def addQuestions():
     return render_template("tests/AddQuestion_template.html", title="Add Questions", form=form)
 
     
+# The actual unique test page itself.
+@app.route('/test/<questionset>')
+@login_required
+def test(questionset):
+    questionSetPath = "app/questions/" + questionset + ".json"
+    file = open(questionSetPath)
+    data = load(file)
+    return render_template('tests/test_template.html', title="{} Test".format(data["unitName"]), unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"])
