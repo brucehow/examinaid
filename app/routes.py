@@ -1,13 +1,13 @@
 from app import app, db
 from flask import render_template, flash, redirect, url_for, request
-from app.forms import LoginForm, RegisterForm, TestForm
+from app.forms import LoginForm, RegisterForm, TestForm, TestQuestion
 
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
 from werkzeug.urls import url_parse
 
-from json import load
-from os import listdir # To debug file paths
+from json import load, dumps
+from os import listdir, path # To debug file paths
 
 @app.route("/")
 @app.route("/index")
@@ -97,6 +97,38 @@ def newtest():
                             unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"], unitCode=data["unitCode"],
                             questionset='{}_{}'.format(data["unitCode"].lower(), data["testNumber"]))
 
+# Add Questions function using JSON creation
+@app.route('/addQuestions', methods=['GET', 'POST'])
+def addQuestions():
+    form = TestQuestion()
+    ##for relative file location
+    dirname = path.dirname(__file__)
+    dictionary = {
+      "unitCode" : form.unitCode.data,
+      "unitName": form.unitName.data,
+      "testNumber": form.testNumber.data,
+      "questions": [
+        {
+          "questionNumber": form.questionNumber.data,
+          "prompt": form.prompt.data,
+          "answer": form.answer.data,
+          "questionType": form.questionType.data,
+          "totalOptions": [form.options.data]
+        }
+      ]
+    }
+    ##dumps for 4 items, change indent variable if there's more items required
+    json_object = dumps(dictionary, indent = 4)
+    
+    if form.validate_on_submit():
+    #change questions/test.json to be an actual variable for file storage and loading
+      with open(path.join(dirname, "questions/test.json"), "w") as outfile:
+        outfile.write(json_object)
+        flash('Questions added!')
+        return redirect(url_for('userprofile'))
+    return render_template("tests/AddQuestion_template.html", title="Add Questions", form=form)
+
+    
 # The actual unique test page itself.
 @app.route('/test/<questionset>')
 @login_required

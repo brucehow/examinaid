@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField
+from wtforms import IntegerField, StringField, PasswordField, BooleanField, SubmitField, SelectField, FieldList
 from wtforms.validators import DataRequired
 
 # The following validators and User object are only required for the Register form.
@@ -35,3 +35,16 @@ class RegisterForm(FlaskForm):
 class TestForm(FlaskForm):
     unit = SelectField('Unit', [DataRequired()], choices = [('python','CITS1401'),('dsa','CITS2200'),('ai','CITS3001')])
     testtype = SelectField('Assessment Type', [DataRequired()], choices = [('midsem','Mid-Semester'),('final','Final Examination')])
+
+class TestQuestion(FlaskForm):
+    unitName = StringField('UnitName', validators=[DataRequired()])
+    unitCode = StringField('UnitCode', validators=[DataRequired()])
+    testNumber = StringField('TestName', validators=[DataRequired()])
+
+    questionNumber = IntegerField('QuestionNumber', validators=[DataRequired()])
+    prompt = StringField('Prompt', validators=[DataRequired()])
+    answer = StringField('Answer')
+    questionType = SelectField('Question Type', [DataRequired()], choices = [('1','Multiple Choice'),('2','Open Answer')])
+    options = FieldList(StringField('Options'), min_entries=4) 
+    ##max_entries=4)
+
