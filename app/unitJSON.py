@@ -31,6 +31,7 @@ def get_count(unitCode):
     count = -1
   return count
 
+
 def remove_unit(unitCode):
   """
   Removes a unit from the `app/questions/units.json` file.
@@ -45,7 +46,3 @@ def remove_unit(unitCode):
     return value
   else:
     return -1
-
-#print(add_count("CITS2200", 1))
-#print(remove_unit("CITS1402"))
-print(get_count("CITS1402"))
