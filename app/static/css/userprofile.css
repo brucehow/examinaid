@@ -40,22 +40,18 @@ section.dashboard {
   justify-content: space-between;
 }
 
-/* Previous Test Windows*/
-.window {
-  margin-top: 1%; 
-  padding: 10px;
-  border: solid thin black;
-  border-radius: 1%;
-  cursor: pointer;
-}
-
-.rightcontainer {
-  margin-top: 2%;
-  display: flex;
-  justify-content: flex-end;
-}
-
 /* Start Test Buttons */
-.test-links{
+.test-links {
   text-decoration: none;
+}
+
+/* Attempts */
+.test-attempt {
+  color: #2c2d30;
+  background-color: #fafafa;
+  box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  max-width: 700px;
+  padding: 2rem;
+  margin: 4rem 0;
 }
