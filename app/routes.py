@@ -65,6 +65,7 @@ def login():
     return render_template('login.html', title='Sign In', loginForm=form)
 
 @app.route('/logout')
+@login_required
 def logout():
     logout_user()
     flash("Logged out successfully.")
@@ -92,7 +93,9 @@ def newtest():
     print(listdir()) # Check our working directory - turns out it's one higher than expected
     file = open("app/questions/cits3403_1.json")
     data = load(file)
-    return render_template('tests/test_template.html', unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"])
+    return render_template('test_template.html', title="{} - New Test".format(data["unitName"]),
+                            unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"], unitCode=data["unitCode"],
+                            questionset='{}_{}'.format(data["unitCode"].lower(), data["testNumber"]))
 
 # Add Questions function using JSON creation
 @app.route('/addQuestions', methods=['GET', 'POST'])
@@ -133,4 +136,15 @@ def test(questionset):
     questionSetPath = "app/questions/" + questionset + ".json"
     file = open(questionSetPath)
     data = load(file)
-    return render_template('tests/test_template.html', title="{} Test".format(data["unitName"]), unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"])
+    return render_template('test_template.html', title="{} - New Test".format(data["unitName"]),
+                            unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"], unitCode=data["unitCode"],
+                            questionset=questionset)
+
+# After a test is submitted
+@app.route('/submit/', methods=['POST'])
+@login_required
+def submit():
+    data = request.form
+    print(data)
+    flash("Test submitted!")
+    return redirect(url_for('userprofile'))

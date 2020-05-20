@@ -9,12 +9,15 @@ $(document).ready(() => {
   });
   */
 
+  // Originally preventing form submit
+  /*
   $("#unit-test-form").submit(target => {
     console.log("Test submitted!")
     target.preventDefault();
     console.log($("#unit-test-form").serialize());
   });
-  
+  */
+
   $("#test-file-upload").on("change", () => {
     if ($("#test-file-upload").get(0).files.length === 0) console.log("No files!");
     else {
