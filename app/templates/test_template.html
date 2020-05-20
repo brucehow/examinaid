@@ -10,7 +10,8 @@
     <p><strong>This test must be completed in one sitting.</strong></p>
   </div>
   <!-- To serialize a form, the inputs MUST be named. -->
-  <form id="unit-test-form">
+  <form action="{{ url_for('submit') }}" method="POST" id="unit-test-form">
+    <input type="text" name="questionset" value="{{ questionset }}" readonly hidden>
     {% for question in questions %}
       <div class="question-box">
         <p><strong>{{ question.questionNumber }}</strong>. {{ question.prompt }}</p>
