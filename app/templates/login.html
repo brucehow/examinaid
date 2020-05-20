@@ -7,6 +7,7 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="../static/css/main.css"/>
+    <link rel="stylesheet" href="../static/css/header.css">
     <link rel="stylesheet" href="../static/css/forms.css"/>
 
     {% if title %}
@@ -18,45 +19,58 @@
   <body>
     <main>
       {% block content %}
-        <form class="login" action="" method="post" novalidate>
-          <h2>Welcome back</h2>
-          <h4>Sign in to continue</h4>
-          {{ loginForm.hidden_tag() }}
+      <nav class="navbar-hidden navbar-expand-md">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('index') }}">
+              <span class="far fa-times-circle nav-back"></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <form class="login" action="" method="post" novalidate>
+        <h2>Welcome back</h2>
+        <h4>Sign in to continue</h4>
+        {{ loginForm.hidden_tag() }}
 
-          <div class="field">
-            {{ loginForm.username.label }}
-            {{ loginForm.username(class="userInput", autofocus="on", placeholder="Username") }}
-            {% for error in loginForm.username.errors %}
-            <span class="form-error">{{ error }}</span>
-            {% endfor %}
-          </div>
+        <div class="field">
+          {{ loginForm.username.label }}
+          {{ loginForm.username(class="userInput", autofocus="on", placeholder="Username") }}
+          {% for error in loginForm.username.errors %}
+          <span class="form-error">{{ error }}</span>
+          {% endfor %}
+        </div>
 
-          <div class="field">
-            {{ loginForm.password.label }}
-            {{ loginForm.password(class="userInput", autofocus="on", placeholder="Password") }}
-            {% for error in loginForm.password.errors %}
-            <span class="form-error">{{ error }}</span>
-            {% endfor %}
-          </div>
+        <div class="field">
+          {{ loginForm.password.label }}
+          {{ loginForm.password(class="userInput", autofocus="on", placeholder="Password") }}
+          {% for error in loginForm.password.errors %}
+          <span class="form-error">{{ error }}</span>
+          {% endfor %}
+        </div>
 
-          <div class="field-sm">
-              {{ loginForm.remember_me() }} {{ loginForm.remember_me.label }}
-          </div>
+        <div class="field-sm">
+            {{ loginForm.remember_me() }} {{ loginForm.remember_me.label }}
+        </div>
 
-          <div class="field">
-            {{ loginForm.submit(class="form-btn") }}
-          </div>
-          
-          <div class="field-sm center">
-            <span>Need an account? </span>
-            <a class="alternate-login" href="{{ url_for('register') }}">Register</a>
-          </div>
-        </form>
-      {% endblock %}
+        <div class="field">
+          {{ loginForm.submit(class="form-btn") }}
+        </div>
+        
+        <div class="field-sm center">
+          <span>Need an account? </span>
+          <a class="alternate-login" href="{{ url_for('register') }}">Register</a>
+        </div>
+      </form>
+    {% endblock %}
     </main>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/84fb170980.js" crossorigin="anonymous"></script>
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
+    <!-- Custom Scripts -->
     <script src="../static/scripts/index.js"></script>
   </body>
 </html>
