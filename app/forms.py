@@ -36,15 +36,30 @@ class TestForm(FlaskForm):
     unit = SelectField('Unit', [DataRequired()], choices = [('python','CITS1401'),('dsa','CITS2200'),('ai','CITS3001')])
     testtype = SelectField('Assessment Type', [DataRequired()], choices = [('midsem','Mid-Semester'),('final','Final Examination')])
 
-class TestQuestion(FlaskForm):
+class MultiTestQuestion(FlaskForm):
     unitName = StringField('UnitName', validators=[DataRequired()])
     unitCode = StringField('UnitCode', validators=[DataRequired()])
     testNumber = StringField('TestName', validators=[DataRequired()])
 
-    questionNumber = IntegerField('QuestionNumber', validators=[DataRequired()])
+    ##questionNumber = IntegerField('QuestionNumber', validators=[DataRequired()])
     prompt = StringField('Prompt', validators=[DataRequired()])
     answer = StringField('Answer')
-    questionType = SelectField('Question Type', [DataRequired()], choices = [('1','Multiple Choice'),('2','Open Answer')])
-    options = FieldList(StringField('Options'), min_entries=4) 
+    ##questionType = SelectField('Question Type', [DataRequired()], choices = [('1','Multiple Choice'),('2','Open Answer')])
+    options = FieldList(StringField('Options:'), min_entries=4) 
     ##max_entries=4)
 
+class ShortTestQuestion(FlaskForm):
+    unitName = StringField('UnitName', validators=[DataRequired()])
+    unitCode = StringField('UnitCode', validators=[DataRequired()])
+    testNumber = StringField('TestName', validators=[DataRequired()])
+
+    prompt = StringField('Prompt', validators=[DataRequired()])
+    answer = StringField('Answer')
+    
+class OpenTestQuestion(FlaskForm):
+    unitName = StringField('UnitName', validators=[DataRequired()])
+    unitCode = StringField('UnitCode', validators=[DataRequired()])
+    testNumber = StringField('TestName', validators=[DataRequired()])
+
+    prompt = StringField('Prompt', validators=[DataRequired()])
+    answer = StringField('Answer')
