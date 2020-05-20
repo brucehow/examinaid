@@ -41,12 +41,46 @@ class MultiTestQuestion(FlaskForm):
     unitCode = StringField('UnitCode', validators=[DataRequired()])
     testNumber = StringField('TestName', validators=[DataRequired()])
 
-    ##questionNumber = IntegerField('QuestionNumber', validators=[DataRequired()])
-    prompt = StringField('Prompt', validators=[DataRequired()])
-    answer = StringField('Answer')
-    ##questionType = SelectField('Question Type', [DataRequired()], choices = [('1','Multiple Choice'),('2','Open Answer')])
-    options = FieldList(StringField('Options:'), min_entries=4) 
-    ##max_entries=4)
+    prompt1 = StringField('Prompt', validators=[DataRequired()])
+    answer1 = StringField('Answer')
+    options1 = FieldList(StringField('Options:'), min_entries=4)
+    
+    prompt2 = StringField('Prompt', validators=[DataRequired()])
+    answer2 = StringField('Answer')
+    options2 = FieldList(StringField('Options:'), min_entries=4)
+
+    prompt3 = StringField('Prompt', validators=[DataRequired()])
+    answer3 = StringField('Answer')
+    options3 = FieldList(StringField('Options:'), min_entries=4) 
+
+    prompt4 = StringField('Prompt', validators=[DataRequired()])
+    answer4 = StringField('Answer')
+    options4 = FieldList(StringField('Options:'), min_entries=4)
+
+    prompt5 = StringField('Prompt', validators=[DataRequired()])
+    answer5 = StringField('Answer')
+    options5 = FieldList(StringField('Options:'), min_entries=4) 
+
+    prompt6 = StringField('Prompt', validators=[DataRequired()])
+    answer6 = StringField('Answer')
+    options6 = FieldList(StringField('Options:'), min_entries=4)
+
+    prompt7 = StringField('Prompt', validators=[DataRequired()])
+    answer7 = StringField('Answer')
+    options7 = FieldList(StringField('Options:'), min_entries=4) 
+
+    prompt8 = StringField('Prompt', validators=[DataRequired()])
+    answer8 = StringField('Answer')
+    options8 = FieldList(StringField('Options:'), min_entries=4) 
+
+    prompt9 = StringField('Prompt', validators=[DataRequired()])
+    answer9 = StringField('Answer')
+    options9 = FieldList(StringField('Options:'), min_entries=4) 
+
+    prompt10 = StringField('Prompt', validators=[DataRequired()])
+    answer10 = StringField('Answer')
+    options10 = FieldList(StringField('Options:'), min_entries=4) 
+
 
 class ShortTestQuestion(FlaskForm):
     unitName = StringField('UnitName', validators=[DataRequired()])
