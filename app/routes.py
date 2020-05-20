@@ -28,6 +28,10 @@ def contact():
 def userprofile():
     return render_template("userprofile.html", title="My Profile")
 
+@app.route("/attempts")
+def attempts():
+    return render_template("attempts.html", title="Previous Attempts")
+
 @app.route("/quiz")
 def quiz():
     return render_template("quiz.html", title="Quiz")
