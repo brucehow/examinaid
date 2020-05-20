@@ -93,7 +93,7 @@ def newtest():
     print(listdir()) # Check our working directory - turns out it's one higher than expected
     file = open("app/questions/cits3403_1.json")
     data = load(file)
-    return render_template('tests/test_template.html', title="{} Test".format(data["unitName"]), testNumber=data["testNumber"],
+    return render_template('tests/test_template.html', title="{} - New Test".format(data["unitName"]),
                             unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"], unitCode=data["unitCode"],
                             questionset='{}_{}'.format(data["unitCode"].lower(), data["testNumber"]))
 
@@ -104,7 +104,7 @@ def test(questionset):
     questionSetPath = "app/questions/" + questionset + ".json"
     file = open(questionSetPath)
     data = load(file)
-    return render_template('tests/test_template.html', title="{} Test".format(data["unitName"]), testNumber=data["testNumber"],
+    return render_template('tests/test_template.html', title="{} - New Test".format(data["unitName"]),
                             unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"], unitCode=data["unitCode"],
                             questionset=questionset)
 
