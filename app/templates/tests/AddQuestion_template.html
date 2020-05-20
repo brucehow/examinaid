@@ -11,6 +11,8 @@
   </div>
   <!-- To serialize a form, the inputs MUST be named. -->
   <form id="example-test-form" method="POST">
+    {{ form.hidden_tag() }}
+    
     {{ form.unitName.label }}<br>
     {{ form.unitName() }}<br>
     {% for error in form.unitName.errors %}

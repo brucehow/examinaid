@@ -116,15 +116,14 @@ def addQuestions():
     }
     ##dumps for 4 items, change indent variable if there's more items required
     json_object = dumps(dictionary, indent = 4)
-    #if form.validate_on_submit():
+    
     ##Form validate doesn't seem to work? Further testing required. 20/05/2020
-
+    if form.validate_on_submit():
     #change questions/test.json to be an actual variable for file storage and loading
-    with open(path.join(dirname, "questions/test.json"), "w") as outfile:
-      outfile.write(json_object)
-      flash('Questions added!')
-      ##return redirect(url_for('userprofile'))
-      ##redirects me instantly, need to look at this for page redirect
+      with open(path.join(dirname, "questions/test.json"), "w") as outfile:
+        outfile.write(json_object)
+        flash('Questions added!')
+        return redirect(url_for('userprofile'))
     return render_template("tests/AddQuestion_template.html", title="Add Questions", form=form)
 
     
