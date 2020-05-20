@@ -11,6 +11,7 @@
   </div>
   <!-- To serialize a form, the inputs MUST be named. -->
   <form action="{{ url_for('submit') }}" method="POST" id="unit-test-form">
+    <input type="text" name="questionset" value="{{ questionset }}" readonly hidden>
     {% for question in questions %}
       <div class="question-box">
         <p><strong>{{ question.questionNumber }}</strong>. {{ question.prompt }}</p>
