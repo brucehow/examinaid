@@ -43,7 +43,7 @@ class TestQuestion(FlaskForm):
 
     questionNumber = IntegerField('QuestionNumber', validators=[DataRequired()])
     prompt = StringField('Prompt', validators=[DataRequired()])
-    answer = StringField('Answer', validators=[DataRequired()])
+    answer = StringField('Answer')
     questionType = SelectField('Question Type', [DataRequired()], choices = [('1','Multiple Choice'),('2','Open Answer')])
     options = FieldList(StringField('Options'), min_entries=4) 
     ##max_entries=4)
