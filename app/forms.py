@@ -87,8 +87,41 @@ class ShortTestQuestion(FlaskForm):
     unitCode = StringField('UnitCode', validators=[DataRequired()])
     testNumber = StringField('TestName', validators=[DataRequired()])
 
-    prompt = StringField('Prompt', validators=[DataRequired()])
-    answer = StringField('Answer')
+    prompt1 = StringField('Prompt', validators=[DataRequired()])
+    answer1 = StringField('Answer', validators=[DataRequired()])
+
+    prompt2 = StringField('Prompt', validators=[DataRequired()])
+    answer2 = StringField('Answer', validators=[DataRequired()])
+
+    prompt2 = StringField('Prompt', validators=[DataRequired()])
+    answer2 = StringField('Answer', validators=[DataRequired()])
+
+    prompt2 = StringField('Prompt', validators=[DataRequired()])
+    answer2 = StringField('Answer', validators=[DataRequired()])
+
+    prompt3 = StringField('Prompt', validators=[DataRequired()])
+    answer3 = StringField('Answer', validators=[DataRequired()])
+
+    prompt4 = StringField('Prompt', validators=[DataRequired()])
+    answer4 = StringField('Answer', validators=[DataRequired()])
+
+    prompt5 = StringField('Prompt', validators=[DataRequired()])
+    answer5 = StringField('Answer', validators=[DataRequired()])
+
+    prompt6 = StringField('Prompt', validators=[DataRequired()])
+    answer6 = StringField('Answer', validators=[DataRequired()])
+
+    prompt7 = StringField('Prompt', validators=[DataRequired()])
+    answer7 = StringField('Answer', validators=[DataRequired()])
+
+    prompt8 = StringField('Prompt', validators=[DataRequired()])
+    answer8 = StringField('Answer', validators=[DataRequired()])
+
+    prompt9 = StringField('Prompt', validators=[DataRequired()])
+    answer9 = StringField('Answer', validators=[DataRequired()])
+
+    prompt10 = StringField('Prompt', validators=[DataRequired()])
+    answer10 = StringField('Answer', validators=[DataRequired()])
     
 class OpenTestQuestion(FlaskForm):
     unitName = StringField('UnitName', validators=[DataRequired()])
