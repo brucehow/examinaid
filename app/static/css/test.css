@@ -59,3 +59,15 @@ input[type="file"] {
 .file-upload-btn:hover {
   color: grey;
 }
+
+/* Test selection page */
+.test-selector,
+.test-bg {
+  height: 100vh;
+  width: 100%;
+}
+
+.test-bg {
+  background-color: #0b926a;
+  background-image: url(../resources/texture-1.png);
+}
