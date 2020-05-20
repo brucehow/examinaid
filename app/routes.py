@@ -193,7 +193,7 @@ def addmultiq():
 
 @app.route('/addshortq', methods=['GET', 'POST'])
 def addshortq():
-    form = TestQuestion()
+    form = ShortTestQuestion()
     ##for relative file location
     dirname = path.dirname(__file__)
     dictionary = {
@@ -202,11 +202,74 @@ def addshortq():
       "testNumber": form.testNumber.data,
       "questions": [
         {
-          "questionNumber": form.questionNumber.data,
-          "prompt": form.prompt.data,
-          "answer": form.answer.data,
-          "questionType": form.questionType.data,
-          "totalOptions": [form.options.data]
+          "questionNumber": "1",
+          "prompt": form.prompt1.data,
+          "answer": form.answer1.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": "2",
+          "prompt": form.prompt2.data,
+          "answer": form.answer2.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": "3",
+          "prompt": form.prompt3.data,
+          "answer": form.answer3.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": "4",
+          "prompt": form.prompt4.data,
+          "answer": form.answer4.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": "5",
+          "prompt": form.prompt5.data,
+          "answer": form.answer5.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+                {
+          "questionNumber": "6",
+          "prompt": form.prompt6.data,
+          "answer": form.answer6.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": "7",
+          "prompt": form.prompt7.data,
+          "answer": form.answer7.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": "8",
+          "prompt": form.prompt8.data,
+          "answer": form.answer8.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": "9",
+          "prompt": form.prompt9.data,
+          "answer": form.answer9.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": "10",
+          "prompt": form.prompt10.data,
+          "answer": form.answer10.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
         }
       ]
     }
@@ -220,6 +283,9 @@ def addshortq():
         flash('Questions added!')
         return redirect(url_for('userprofile'))
     return render_template("tests/AddQuestion_template.html", title="Add Questions", form=form)
+    
+
+
     
 # The actual unique test page itself.
 @app.route('/test/<questionset>')
