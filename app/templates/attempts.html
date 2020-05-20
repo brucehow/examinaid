@@ -3,21 +3,21 @@
 {% block content %}
 <section class="grey">
   <div class="container">
-    <div class="user-msg">
-      <h1>Previous Attempts</h1>
-      <p>View all your previous test attempts and scores here.</p>
+    <div class="row vertical-align">
+      <div class="col-md-8">
+        <h1>Previous Attempts</h1>
+        <p>Sit back home, relax, and view all your previous test attempts and outcomes.</p>
+      </div>
+      <div class="col-md-4 d-none d-md-block">
+        <img class="img-lg" src="../static/resources/prevattempts.svg" alt=""> 
+      </div>
     </div>
   </div>
 </section>
 <section class="green">
-  <!-- Wave separator -->
-  <svg class="wave-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-    <path fill="#fafafa" fill-opacity="1" d="M0,64L48,64C96,64,192,64,288,58.7C384,53,480,43,576,74.7C672,107,768,181,864,197.3C960,213,1056,171,1152,154.7C1248,139,1344,149,1392,154.7L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
-  </svg>
-  
   <!-- Load previous tests here -->
-  <!-- Template -->
   <div class="container">
+    <!-- Template -->
     <div class="test-attempt">
       <div class="row">
         <div class="col-sm-6">
@@ -25,7 +25,19 @@
           <p>Started: 1st April 2020 at 15:20</p>
           <p>Completed: 1st April 2020 at 15:45</p>
         </div>
+        <div class="col-sm-6 text-right">
+          <h2>16/25</h2>
+        </div>
+      </div>
+    </div>
+    <div class="test-attempt">
+      <div class="row">
         <div class="col-sm-6">
+          <h3>CITS1401</h3>
+          <p>Started: 1st April 2020 at 15:20</p>
+          <p>Completed: 1st April 2020 at 15:45</p>
+        </div>
+        <div class="col-sm-6 text-right">
           <h2>16/25</h2>
         </div>
       </div>
