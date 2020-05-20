@@ -72,6 +72,28 @@
       {% endfor %} 
       <br>
 
+      {{ form.answer2.label }}<br>
+      {{ form.answer2() }}
+      {% for error in form.answer2.errors %}
+      <br><span style="color: red;">[{{ error }}]</span>
+      {% endfor %} 
+      <br>
+
+      <p><strong>{% print("Question 3:") %}</strong></p><br>
+      {{ form.prompt3.label }}<br>
+      {{ form.prompt3() }}
+      {% for error in form.prompt3.errors %}
+      <br><span style="color: red;">[{{ error }}]</span>
+      {% endfor %} 
+      <br>
+
+      {{ form.options3.label }}<br>
+      {{ form.options3() }}
+      {% for error in form.options3.errors %}
+      <br><span style="color: red;">[{{ error }}]</span>
+      {% endfor %} 
+      <br>
+
       {{ form.answer3.label }}<br>
       {{ form.answer3() }}
       {% for error in form.answer3.errors %}
@@ -90,6 +112,28 @@
       {{ form.options4.label }}<br>
       {{ form.options4() }}
       {% for error in form.options4.errors %}
+      <br><span style="color: red;">[{{ error }}]</span>
+      {% endfor %} 
+      <br>
+
+      {{ form.answer4.label }}<br>
+      {{ form.answer4() }}
+      {% for error in form.answer4.errors %}
+      <br><span style="color: red;">[{{ error }}]</span>
+      {% endfor %} 
+      <br>
+
+      <p><strong>{% print("Question 5:") %}</strong></p><br>
+      {{ form.prompt5.label }}<br>
+      {{ form.prompt5() }}
+      {% for error in form.prompt5.errors %}
+      <br><span style="color: red;">[{{ error }}]</span>
+      {% endfor %} 
+      <br>
+
+      {{ form.options5.label }}<br>
+      {{ form.options5() }}
+      {% for error in form.options5.errors %}
       <br><span style="color: red;">[{{ error }}]</span>
       {% endfor %} 
       <br>
