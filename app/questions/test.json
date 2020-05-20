@@ -1,127 +1,77 @@
 {
-    "unitCode": "unitCode",
-    "unitName": "UnitName",
-    "testNumber": "testname",
+    "unitCode": "is",
+    "unitName": "this",
+    "testNumber": "a ",
     "questions": [
         {
             "questionNumber": "1",
-            "prompt": "1",
-            "answer": "1",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "1",
-                "1",
-                "1",
-                "1"
-            ]
+            "prompt": "test",
+            "answer": "to",
+            "questionType": "shortAnswer",
+            "totalOptions": null
         },
         {
             "questionNumber": "2",
-            "prompt": "2",
-            "answer": "2",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "2",
-                "2",
-                "2",
-                "2"
-            ]
+            "prompt": "check",
+            "answer": "123123",
+            "questionType": "shortAnswer",
+            "totalOptions": null
         },
         {
             "questionNumber": "3",
-            "prompt": "3",
-            "answer": "3",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "3",
-                "3",
-                "3",
-                "3"
-            ]
+            "prompt": "32",
+            "answer": "32",
+            "questionType": "shortAnswer",
+            "totalOptions": null
         },
         {
             "questionNumber": "4",
-            "prompt": "4",
-            "answer": "4",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "4",
-                "4",
-                "4",
-                "4"
-            ]
+            "prompt": "233",
+            "answer": "2",
+            "questionType": "shortAnswer",
+            "totalOptions": null
         },
         {
             "questionNumber": "5",
-            "prompt": "5",
-            "answer": "5",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "5",
-                "5",
-                "5",
-                "5"
-            ]
+            "prompt": "32",
+            "answer": "32",
+            "questionType": "shortAnswer",
+            "totalOptions": null
         },
         {
             "questionNumber": "6",
-            "prompt": "6",
-            "answer": "6",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "6",
-                "66",
-                "6",
-                "6"
-            ]
+            "prompt": "32",
+            "answer": "323",
+            "questionType": "shortAnswer",
+            "totalOptions": null
         },
         {
             "questionNumber": "7",
-            "prompt": "13",
-            "answer": "32",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "3232",
-                "23",
-                "23",
-                "32"
-            ]
+            "prompt": "23",
+            "answer": "2",
+            "questionType": "shortAnswer",
+            "totalOptions": null
         },
         {
             "questionNumber": "8",
-            "prompt": "32",
-            "answer": "23",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "32",
-                "32",
-                "32",
-                "32"
-            ]
+            "prompt": "23",
+            "answer": "323",
+            "questionType": "shortAnswer",
+            "totalOptions": null
         },
         {
             "questionNumber": "9",
-            "prompt": "23",
-            "answer": "23",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "3232",
-                "3",
-                "2",
-                "32"
-            ]
+            "prompt": "2",
+            "answer": "32",
+            "questionType": "shortAnswer",
+            "totalOptions": null
         },
         {
             "questionNumber": "10",
-            "prompt": "23",
-            "answer": "23",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "23",
-                "23",
-                "23",
-                "23"
-            ]
+            "prompt": "32",
+            "answer": "32",
+            "questionType": "shortAnswer",
+            "totalOptions": null
         }
     ]
 }

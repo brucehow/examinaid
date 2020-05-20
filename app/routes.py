@@ -282,7 +282,7 @@ def addshortq():
         outfile.write(json_object)
         flash('Questions added!')
         return redirect(url_for('userprofile'))
-    return render_template("tests/AddQuestion_template.html", title="Add Questions", form=form)
+    return render_template("tests/addshortq_template.html", title="Add Short Questions", form=form)
     
 
 
