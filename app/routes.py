@@ -113,70 +113,70 @@ def addmultiq():
           "prompt": form.prompt1.data,
           "answer": form.answer1.data,
           "questionType": "multipleChoice",
-          "totalOptions": [form.options1.data]
+          "totalOptions": form.options1.data
         },
         {
           "questionNumber": "2",
           "prompt": form.prompt2.data,
           "answer": form.answer2.data,
           "questionType": "multipleChoice",
-          "totalOptions": [form.options2.data]
+          "totalOptions": form.options2.data
         },
         {
           "questionNumber": "3",
           "prompt": form.prompt3.data,
           "answer": form.answer3.data,
           "questionType": "multipleChoice",
-          "totalOptions": [form.options3.data]
+          "totalOptions": form.options3.data
         },
         {
           "questionNumber": "4",
           "prompt": form.prompt4.data,
           "answer": form.answer4.data,
           "questionType": "multipleChoice",
-          "totalOptions": [form.options4.data]
+          "totalOptions": form.options4.data
         },
         {
           "questionNumber": "5",
           "prompt": form.prompt5.data,
           "answer": form.answer5.data,
           "questionType": "multipleChoice",
-          "totalOptions": [form.options5.data]
+          "totalOptions": form.options5.data
         },
                 {
           "questionNumber": "6",
           "prompt": form.prompt6.data,
           "answer": form.answer6.data,
           "questionType": "multipleChoice",
-          "totalOptions": [form.options6.data]
+          "totalOptions": form.options6.data
         },
         {
           "questionNumber": "7",
           "prompt": form.prompt7.data,
           "answer": form.answer7.data,
           "questionType": "multipleChoice",
-          "totalOptions": [form.options7.data]
+          "totalOptions": form.options7.data
         },
         {
           "questionNumber": "8",
           "prompt": form.prompt8.data,
           "answer": form.answer8.data,
           "questionType": "multipleChoice",
-          "totalOptions": [form.options8.data]
+          "totalOptions": form.options8.data
         },
         {
           "questionNumber": "9",
           "prompt": form.prompt9.data,
           "answer": form.answer9.data,
           "questionType": "multipleChoice",
-          "totalOptions": [form.options9.data]
+          "totalOptions": form.options9.data
         },
         {
           "questionNumber": "10",
           "prompt": form.prompt10.data,
           "answer": form.answer10.data,
           "questionType": "multipleChoice",
-          "totalOptions": [form.options10.data]
+          "totalOptions": form.options10.data
         }
       ]
     }
