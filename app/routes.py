@@ -33,10 +33,10 @@ def quiz():
     return render_template("quiz.html", title="Quiz")
 
 # Test selection page; could be phased into the student profile
-@app.route("/newtest2")
+@app.route("/newtest")
 def newtest2():
     form = TestForm()
-    return render_template("newtest.html", title="Start New Test", form=form)
+    return render_template("tests/newtest.html", title="Start New Test", form=form)
 
 
 @app.route("/login", methods = ["GET", "POST"])
@@ -84,17 +84,6 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', title="Register", form=form)
 
-# An example test form layout below
-@app.route('/newtest')
-@login_required
-def newtest():
-    print(listdir()) # Check our working directory - turns out it's one higher than expected
-    file = open("app/questions/cits3403_1.json")
-    data = load(file)
-    return render_template('test_template.html', title="{} - New Test".format(data["unitName"]),
-                            unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"], unitCode=data["unitCode"],
-                            questionset='{}_{}'.format(data["unitCode"].lower(), data["testNumber"]))
-
 # Add Questions function using JSON creation
 @app.route('/addQuestions', methods=['GET', 'POST'])
 def addQuestions():
@@ -131,10 +120,11 @@ def addQuestions():
 @app.route('/test/<questionset>')
 @login_required
 def test(questionset):
+    print(listdir()) # Check our working directory - turns out it's one higher than expected
     questionSetPath = "app/questions/" + questionset + ".json"
     file = open(questionSetPath)
     data = load(file)
-    return render_template('test_template.html', title="{} - New Test".format(data["unitName"]),
+    return render_template('tests/test_template.html', title="{} - New Test".format(data["unitName"]),
                             unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"], unitCode=data["unitCode"],
                             questionset=questionset)
 

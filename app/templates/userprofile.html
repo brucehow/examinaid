@@ -6,7 +6,14 @@
   <div class="container">
     <div class="user-msg">
       <h1>Welcome back, {{ current_user.username }}!</h1>
-      <p>Welcome to your user dashboard! Here you'll be able to see the results of past tests, if you've taken any, as well as start a new test</p>
+      {% if current_user.admin %}
+      <p>This is your user dashboard. Here, you'll be able to view all supported tests, as well as mark any test questions with open answers.
+        You'll also be able to add or remove tests and student logins.
+      </p>
+      {% else %}
+      <p>This is your user dashboard. Here, you'll be able to see the results of any past tests, as well as start a new test.
+        You'll also be able to review your overall performance.</p>
+      {% endif %}
     </div>
   </div>
   <!-- Wave separator -->
