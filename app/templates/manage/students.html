@@ -38,7 +38,7 @@
         <li>{% if user.check_admin() %}Administrator{% else %}Student{% endif %}</li>
         <li>{{ user.email }}</li>
         {% if current_user != user %}
-        <li><button onclick="window.location.href='/managestudents/remove/{{ user.id }}'" class="remove-user" id="remove-user-{{ user.id }}">Remove User</button></li>
+        <li><button onclick="window.location.href='/manageusers/remove/{{ user.id }}'" class="remove-user" id="remove-user-{{ user.id }}">Remove User</button></li>
         {% endif %}
       </ul>
     </div>

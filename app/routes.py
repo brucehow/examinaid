@@ -137,9 +137,9 @@ def submit():
     return redirect(url_for('userprofile'))
 
 # Admin manage student logins
-@app.route('/managestudents')
+@app.route('/manageusers')
 @login_required
-def managestudents():
+def manageusers():
     if not current_user.check_admin(): # Student logins cannot access this page
         return redirect(url_for('userprofile'))
     else:
@@ -153,7 +153,7 @@ def managestudents():
                 num_students += 1
         return render_template('manage/students.html', num_users=len(users), num_admins=num_admins, num_students=num_students, users=users)
 
-@app.route('/managestudents/remove/<user_id>')
+@app.route('/manageusers/remove/<user_id>')
 @login_required
 def remove(user_id):
     user_id = int(user_id) # Manual cast, the id comes in initially as a string
@@ -169,9 +169,9 @@ def remove(user_id):
                 db.session.commit()
                 print("User {} has been removed.".format(user.username))
                 break
-    return redirect(url_for('managestudents'))
+    return redirect(url_for('manageusers'))
 
-@app.route('/managestudents/adduser', methods=['POST'])
+@app.route('/manageusers/adduser', methods=['POST'])
 @login_required
 def adduser():
     data = request.form
@@ -186,4 +186,4 @@ def adduser():
             db.session.commit()
     else:
         print("No data")
-    return redirect(url_for('managestudents'))
+    return redirect(url_for('manageusers'))
