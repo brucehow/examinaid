@@ -107,72 +107,83 @@ def addmultiq():
       "unitCode" : form.unitCode.data,
       "unitName": form.unitName.data,
       "testNumber": form.testNumber.data,
+      "totalMarks": form.totalMarks.data,
       "questions": [
         {
-          "questionNumber": "1",
+          "questionNumber": 1,
+          "marks" : form.marks1.data,
           "prompt": form.prompt1.data,
           "answer": form.answer1.data,
           "questionType": "multipleChoice",
           "totalOptions": form.options1.data
         },
         {
-          "questionNumber": "2",
+          "questionNumber": 2,
+          "marks" : form.marks2.data,
           "prompt": form.prompt2.data,
           "answer": form.answer2.data,
           "questionType": "multipleChoice",
           "totalOptions": form.options2.data
         },
         {
-          "questionNumber": "3",
+          "questionNumber": 3,
+          "marks" : form.marks3.data,
           "prompt": form.prompt3.data,
           "answer": form.answer3.data,
           "questionType": "multipleChoice",
           "totalOptions": form.options3.data
         },
         {
-          "questionNumber": "4",
+          "questionNumber": 4,
+          "marks" : form.marks4.data,
           "prompt": form.prompt4.data,
           "answer": form.answer4.data,
           "questionType": "multipleChoice",
           "totalOptions": form.options4.data
         },
         {
-          "questionNumber": "5",
+          "questionNumber": 5,
+          "marks" : form.marks5.data,
           "prompt": form.prompt5.data,
           "answer": form.answer5.data,
           "questionType": "multipleChoice",
           "totalOptions": form.options5.data
         },
                 {
-          "questionNumber": "6",
+          "questionNumber": 6,
+          "marks" : form.marks6.data,
           "prompt": form.prompt6.data,
           "answer": form.answer6.data,
           "questionType": "multipleChoice",
           "totalOptions": form.options6.data
         },
         {
-          "questionNumber": "7",
+          "questionNumber": 7,
+          "marks" : form.marks7.data,
           "prompt": form.prompt7.data,
           "answer": form.answer7.data,
           "questionType": "multipleChoice",
           "totalOptions": form.options7.data
         },
         {
-          "questionNumber": "8",
+          "questionNumber": 8,
+          "marks" : form.marks8.data,
           "prompt": form.prompt8.data,
           "answer": form.answer8.data,
           "questionType": "multipleChoice",
           "totalOptions": form.options8.data
         },
         {
-          "questionNumber": "9",
+          "questionNumber": 9,
+          "marks" : form.marks9.data,
           "prompt": form.prompt9.data,
           "answer": form.answer9.data,
           "questionType": "multipleChoice",
           "totalOptions": form.options9.data
         },
         {
-          "questionNumber": "10",
+          "questionNumber": 10,
+          "marks" : form.marks10.data,
           "prompt": form.prompt10.data,
           "answer": form.answer10.data,
           "questionType": "multipleChoice",
@@ -200,72 +211,83 @@ def addshortq():
       "unitCode" : form.unitCode.data,
       "unitName": form.unitName.data,
       "testNumber": form.testNumber.data,
+      "totalMarks": form.totalMarks.data,
       "questions": [
         {
-          "questionNumber": "1",
+          "questionNumber": 1,
+          "marks" : form.marks1.data,
           "prompt": form.prompt1.data,
           "answer": form.answer1.data,
           "questionType": "shortAnswer",
           "totalOptions": None
         },
         {
-          "questionNumber": "2",
+          "questionNumber": 2,
+          "marks" : form.marks2.data,
           "prompt": form.prompt2.data,
           "answer": form.answer2.data,
           "questionType": "shortAnswer",
           "totalOptions": None
         },
         {
-          "questionNumber": "3",
+          "questionNumber": 3,
+          "marks" : form.marks3.data,
           "prompt": form.prompt3.data,
           "answer": form.answer3.data,
           "questionType": "shortAnswer",
           "totalOptions": None
         },
         {
-          "questionNumber": "4",
+          "questionNumber": 4,
+          "marks" : form.marks4.data,
           "prompt": form.prompt4.data,
           "answer": form.answer4.data,
           "questionType": "shortAnswer",
           "totalOptions": None
         },
         {
-          "questionNumber": "5",
+          "questionNumber": 5,
+          "marks" : form.marks5.data,
           "prompt": form.prompt5.data,
           "answer": form.answer5.data,
           "questionType": "shortAnswer",
           "totalOptions": None
         },
                 {
-          "questionNumber": "6",
+          "questionNumber": 6,
+          "marks" : form.marks6.data,
           "prompt": form.prompt6.data,
           "answer": form.answer6.data,
           "questionType": "shortAnswer",
           "totalOptions": None
         },
         {
-          "questionNumber": "7",
+          "questionNumber": 7,
+          "marks" : form.marks7.data,
           "prompt": form.prompt7.data,
           "answer": form.answer7.data,
           "questionType": "shortAnswer",
           "totalOptions": None
         },
         {
-          "questionNumber": "8",
+          "questionNumber": 8,
+          "marks" : form.marks8.data,
           "prompt": form.prompt8.data,
           "answer": form.answer8.data,
           "questionType": "shortAnswer",
           "totalOptions": None
         },
         {
-          "questionNumber": "9",
+          "questionNumber": 9,
+          "marks" : form.marks9.data,
           "prompt": form.prompt9.data,
           "answer": form.answer9.data,
           "questionType": "shortAnswer",
           "totalOptions": None
         },
         {
-          "questionNumber": "10",
+          "questionNumber": 10,
+          "marks" : form.marks10.data,
           "prompt": form.prompt10.data,
           "answer": form.answer10.data,
           "questionType": "shortAnswer",

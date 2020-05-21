@@ -36,6 +36,14 @@
 
     <div class="question-box">
       <p><strong>{% print("Question 1:") %}</strong></p><br>
+
+      {{ form.marks1.label }}<br>
+      {{ form.marks1() }}
+      {% for error in form.marks1.errors %}
+      <br><span style="color: red;">[{{ error }}]</span>
+      {% endfor %} 
+      <br>
+
       {{ form.prompt1.label }}<br>
       {{ form.prompt1() }}
       {% for error in form.prompt1.errors %}
@@ -58,6 +66,14 @@
       <br>
 
       <p><strong>{% print("Question 2:") %}</strong></p><br>
+
+      {{ form.marks2.label }}<br>
+      {{ form.marks2() }}
+      {% for error in form.marks2.errors %}
+      <br><span style="color: red;">[{{ error }}]</span>
+      {% endfor %} 
+      <br>
+
       {{ form.prompt2.label }}<br>
       {{ form.prompt2() }}
       {% for error in form.prompt2.errors %}
@@ -80,6 +96,13 @@
       <br>
 
       <p><strong>{% print("Question 3:") %}</strong></p><br>
+      {{ form.marks3.label }}<br>
+      {{ form.marks3() }}
+      {% for error in form.marks3.errors %}
+      <br><span style="color: red;">[{{ error }}]</span>
+      {% endfor %} 
+      <br>
+      
       {{ form.prompt3.label }}<br>
       {{ form.prompt3() }}
       {% for error in form.prompt3.errors %}
@@ -102,6 +125,13 @@
       <br>
 
       <p><strong>{% print("Question 4:") %}</strong></p><br>
+      {{ form.marks4.label }}<br>
+      {{ form.marks4() }}
+      {% for error in form.marks4.errors %}
+      <br><span style="color: red;">[{{ error }}]</span>
+      {% endfor %} 
+      <br>
+      
       {{ form.prompt4.label }}<br>
       {{ form.prompt4() }}
       {% for error in form.prompt4.errors %}
@@ -124,6 +154,13 @@
       <br>
 
       <p><strong>{% print("Question 5:") %}</strong></p><br>
+      {{ form.marks5.label }}<br>
+      {{ form.marks5() }}
+      {% for error in form.marks5.errors %}
+      <br><span style="color: red;">[{{ error }}]</span>
+      {% endfor %} 
+      <br>
+      
       {{ form.prompt5.label }}<br>
       {{ form.prompt5() }}
       {% for error in form.prompt5.errors %}
@@ -146,6 +183,13 @@
       <br>
 
       <p><strong>{% print("Question 6:") %}</strong></p><br>
+      {{ form.marks6.label }}<br>
+      {{ form.marks6() }}
+      {% for error in form.marks6.errors %}
+      <br><span style="color: red;">[{{ error }}]</span>
+      {% endfor %} 
+      <br>
+      
       {{ form.prompt6.label }}<br>
       {{ form.prompt6() }}
       {% for error in form.prompt6.errors %}
@@ -168,6 +212,13 @@
       <br>
 
       <p><strong>{% print("Question 7:") %}</strong></p><br>
+      {{ form.marks7.label }}<br>
+      {{ form.marks7() }}
+      {% for error in form.marks7.errors %}
+      <br><span style="color: red;">[{{ error }}]</span>
+      {% endfor %} 
+      <br>
+      
       {{ form.prompt7.label }}<br>
       {{ form.prompt7() }}
       {% for error in form.prompt7.errors %}
@@ -190,6 +241,13 @@
       <br>
 
       <p><strong>{% print("Question 8:") %}</strong></p><br>
+      {{ form.marks8.label }}<br>
+      {{ form.marks8() }}
+      {% for error in form.marks8.errors %}
+      <br><span style="color: red;">[{{ error }}]</span>
+      {% endfor %} 
+      <br>
+      
       {{ form.prompt8.label }}<br>
       {{ form.prompt8() }}
       {% for error in form.prompt8.errors %}
@@ -212,6 +270,13 @@
       <br>
 
       <p><strong>{% print("Question 9:") %}</strong></p><br>
+      {{ form.marks9.label }}<br>
+      {{ form.marks9() }}
+      {% for error in form.marks9.errors %}
+      <br><span style="color: red;">[{{ error }}]</span>
+      {% endfor %} 
+      <br>
+      
       {{ form.prompt9.label }}<br>
       {{ form.prompt9() }}
       {% for error in form.prompt1.errors %}
@@ -234,6 +299,13 @@
       <br>
 
       <p><strong>{% print("Question 10:") %}</strong></p><br>
+      {{ form.marks10.label }}<br>
+      {{ form.marks10() }}
+      {% for error in form.marks10.errors %}
+      <br><span style="color: red;">[{{ error }}]</span>
+      {% endfor %} 
+      <br>
+      
       {{ form.prompt10.label }}<br>
       {{ form.prompt10() }}
       {% for error in form.prompt10.errors %}
