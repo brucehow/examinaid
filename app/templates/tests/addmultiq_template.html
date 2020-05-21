@@ -4,12 +4,9 @@
 <link rel="stylesheet" href="../../static/css/test.css"/>
 <div class="container">
   <div class="test-info">
-    <h2>{% if unit %}{{ unit }}{% else %}This is an example test.{% endif %}</h2>
-    <p>Please <strong>do not</strong> click away or refresh this page while doing this test, as your answers may not be recorded. When you are finished, ensure that you
-      submit your test, so that your results are saved.</p>
-    <p><strong>This test must be completed in one sitting.</strong></p>
+    <h2>This is to create a Multiple Choice question set.</h2>
+    <p><strong>This submission must be completed in one sitting.</strong></p>
   </div>
-  <!-- To serialize a form, the inputs MUST be named. -->
   <form id="example-test-form" method="POST">
     {{ form.hidden_tag() }}
     
@@ -334,7 +331,7 @@
       {% endfor %} 
       <br>
       </div>
-    <input type="submit" class="plain-btn lg test-btn" value="Submit Test"  id="submit-example-test-form" />
+    <input type="submit" class="plain-btn lg test-btn" value="Submit Question Set"  id="submit-example-test-form" />
   </form>
 </div>
 
