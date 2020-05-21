@@ -34,6 +34,13 @@
     {% endfor %} 
     <br>
 
+    {{ form.totalMarks.label }}<br>
+    {{ form.totalMarks.label() }}<br>
+    {% for error in form.totalMarks.errors %}
+    <br><span style="color: red;">[{{ error }}]</span>
+    {% endfor %} 
+    <br>
+
     <div class="question-box">
       <p><strong>{% print("Question 1:") %}</strong></p><br>
       {{ form.prompt1.label }}<br>
