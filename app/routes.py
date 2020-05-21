@@ -99,7 +99,7 @@ def newtest():
 
 # Add Questions function using JSON creation
 @app.route('/addquestions/add_multiq', methods=['GET', 'POST'])
-def addmultiq():
+def add_multiq():
     form = MultiTestQuestion()
     ##for relative file location
     dirname = path.dirname(__file__)
@@ -203,7 +203,7 @@ def addmultiq():
     return render_template("tests/AddQuestion_template.html", title="Add Questions", form=form)
 
 @app.route('/addquestions/add_shortq', methods=['GET', 'POST'])
-def addshortq():
+def add_shortq():
     form = ShortTestQuestion()
     ##for relative file location
     dirname = path.dirname(__file__)
@@ -307,7 +307,7 @@ def addshortq():
     return render_template("tests/addshortq_template.html", title="Add Short Questions", form=form)
     
 @app.route('/addquestions/add_openq', methods=['GET', 'POST'])
-def addopenq():
+def add_openq():
     form = OpenTestQuestion()
     ##for relative file location
     dirname = path.dirname(__file__)
