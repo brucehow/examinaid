@@ -36,9 +36,15 @@
       {{ num_students }} students.
       {% endif %}
     </strong></p>
+    {% for user in users %}
     <div class="question-box">
-      <p>Hello World!</p>
+      <p><strong>{{ user.username }}</strong></p>
+      <ul>
+        <li>{% if user.check_admin() %}Administrator{% else %}Student{% endif %}</li>
+        <li>{% if current_user != user %}This is not you.{% else %}This is you!{% endif %}</li>
+      </ul>
     </div>
+    {% endfor %}
   </div>
 </section>
 

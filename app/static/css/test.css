@@ -9,6 +9,10 @@ div.question-box {
   margin: 2rem 0;
 }
 
+div.question-box p strong {
+  font-size: 1.5rem;
+}
+
 /* Button */
 input.test-btn {
   background-color: #008a65;
