@@ -1,5 +1,4 @@
-# CITS3403 Project 2 - ExaminAid
-*Semester 1, 2020*
+# ExaminAid &middot; [![Flask 1.1.2](https://img.shields.io/badge/flask-1.0.2-blue.svg)](https://pypi.org/project/Flask/) [![Python 3.7.2](https://img.shields.io/badge/python-3.7.2-blue.svg)](https://www.python.org/downloads/release/python-372/) 
 
 ## Overview
 
@@ -17,6 +16,11 @@ ExaminAid also has a contact form, as mentioned above. This form is a HTML form 
 
 ## Features
 
+
+## Libraries Used
+- [Bootstrap](https://getbootstrap.com/)
+- [jQuery](https://jquery.com/)
+- [Font Awesome](https://fontawesome.com/)
 
 ## Authors
 - [Bruce How](https://github.com/brucehow)
