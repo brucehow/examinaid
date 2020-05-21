@@ -192,22 +192,9 @@ def adduser():
 @login_required
 def changepassword():
     form = ResetPasswordForm()
-
     if form.validate_on_submit():
-        if (form.email.data != current_user.email):
-            print("{} does not match current user's email {}.".format(form.email.data, current_user.email))
-            flash("Incorrect email.")
-            return redirect(url_for('changepassword'))
-        elif (not current_user.check_password(form.currentPassword.data)):
-            print("Current user entered incorrect current password.")
-            flash("Current password is incorrect.")
-            return redirect(url_for('changepassword'))
-        elif (form.currentPassword.data == form.newPassword.data):
-            flash("New password must be different to current password.")
-            return redirect(url_for('changepassword'))
-        else:
-            current_user.set_password(form.newPassword.data)
-            db.session.commit()
-            print("Password for {} updated successfully.".format(current_user.username))
-            return redirect(url_for('userprofile'))
+        current_user.set_password(form.newPassword.data)
+        db.session.commit()
+        print("Password for {} updated successfully.".format(current_user.username))
+        return redirect(url_for('userprofile'))
     return render_template("changepassword.html", title="Change Password", resetPasswordForm=form)

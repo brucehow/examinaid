@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import IntegerField, StringField, PasswordField, BooleanField, SubmitField, SelectField, FieldList
 from wtforms.validators import DataRequired
+from flask_login import current_user
 
 # The following validators and User object are only required for the Register form.
 from wtforms.validators import ValidationError, Email, EqualTo
@@ -55,3 +56,15 @@ class ResetPasswordForm(FlaskForm):
     newPassword = PasswordField('New Password', validators=[DataRequired()])
     repeatPassword = PasswordField('Repeat New Password', validators=[DataRequired(), EqualTo('newPassword')])
     submit = SubmitField('Change Password')
+
+    def validate_email(self, email):
+        if (current_user.email != email.data):
+            raise ValidationError("Incorrect email.")
+
+    def validate_currentPassword(self, currentPassword):
+        if (not current_user.check_password(currentPassword.data)):
+            raise ValidationError("Current password is incorrect.")
+
+    def validate_newPassword(self, newPassword):
+        if (newPassword.data == self.currentPassword.data):
+            raise ValidationError("New password must be different to current password.")
