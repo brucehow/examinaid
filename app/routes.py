@@ -161,8 +161,12 @@ def remove(user_id):
     users = User.query.all()
     for user in users:
         if (user_id == user.id):
-            db.session.delete(user)
-            db.session.commit()
-            print("User {} has been removed.".format(user.username))
-            break
+            if (user != current_user):
+                print("You removed yourself. Oh wait - you can't.")
+                break
+            else:
+                db.session.delete(user)
+                db.session.commit()
+                print("User {} has been removed.".format(user.username))
+                break
     return redirect(url_for('managestudents'))
