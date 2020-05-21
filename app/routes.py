@@ -196,7 +196,7 @@ def add_multiq():
     
     if form.validate_on_submit():
     #change questions/test.json to be an actual variable for file storage and loading
-      with open(path.join(dirname, "questions/test.json"), "w") as outfile:
+      with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
         outfile.write(json_object)
         flash('Questions added!')
         return redirect(url_for('userprofile'))
@@ -300,7 +300,7 @@ def add_shortq():
     
     if form.validate_on_submit():
     #change questions/test.json to be an actual variable for file storage and loading
-      with open(path.join(dirname, "questions/test.json"), "w") as outfile:
+      with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
         outfile.write(json_object)
         flash('Questions added!')
         return redirect(url_for('userprofile'))
@@ -404,7 +404,7 @@ def add_openq():
     
     if form.validate_on_submit():
     #change questions/test.json to be an actual variable for file storage and loading
-      with open(path.join(dirname, "questions/test.json"), "w") as outfile:
+      with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
         outfile.write(json_object)
         flash('Questions added!')
         return redirect(url_for('userprofile'))

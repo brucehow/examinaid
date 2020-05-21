@@ -39,7 +39,7 @@ class TestForm(FlaskForm):
 class MultiTestQuestion(FlaskForm):
     unitName = StringField('UnitName', validators=[DataRequired()])
     unitCode = StringField('UnitCode', validators=[DataRequired()])
-    testNumber = IntegerField('TestName', validators=[DataRequired()])
+    testNumber = IntegerField('TestNumber', validators=[DataRequired()])
     totalMarks = IntegerField('TotalMarks', validators=[DataRequired()])
 
     prompt1 = StringField('Prompt', validators=[DataRequired()])
@@ -96,7 +96,7 @@ class MultiTestQuestion(FlaskForm):
 class ShortTestQuestion(FlaskForm):
     unitName = StringField('UnitName', validators=[DataRequired()])
     unitCode = StringField('UnitCode', validators=[DataRequired()])
-    testNumber = IntegerField('TestName', validators=[DataRequired()])
+    testNumber = IntegerField('TestNumber', validators=[DataRequired()])
     totalMarks = IntegerField('TotalMarks', validators=[DataRequired()])
 
     prompt1 = StringField('Prompt', validators=[DataRequired()])
@@ -142,7 +142,7 @@ class ShortTestQuestion(FlaskForm):
 class OpenTestQuestion(FlaskForm):
     unitName = StringField('UnitName', validators=[DataRequired()])
     unitCode = StringField('UnitCode', validators=[DataRequired()])
-    testNumber = IntegerField('TestName', validators=[DataRequired()])
+    testNumber = IntegerField('TestNumber', validators=[DataRequired()])
     totalMarks = IntegerField('TotalMarks', validators=[DataRequired()])
 
     prompt1 = StringField('Prompt', validators=[DataRequired()])
