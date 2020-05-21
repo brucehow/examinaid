@@ -161,7 +161,7 @@ def remove(user_id):
     users = User.query.all()
     for user in users:
         if (user_id == user.id):
-            if (user != current_user):
+            if (user == current_user):
                 print("You removed yourself. Oh wait - you can't.")
                 break
             else:
@@ -169,4 +169,21 @@ def remove(user_id):
                 db.session.commit()
                 print("User {} has been removed.".format(user.username))
                 break
+    return redirect(url_for('managestudents'))
+
+@app.route('/managestudents/adduser', methods=['POST'])
+@login_required
+def adduser():
+    data = request.form
+    if data:
+        print(data["username"], data["email"])
+        if (data["username"] == '') or (data["email"] == ''):
+            print("Cannot add a user without both a username and an email.")
+        else:
+            user = User(username=data["username"], email=data["email"])
+            user.set_password("password1")
+            db.session.add(user)
+            db.session.commit()
+    else:
+        print("No data")
     return redirect(url_for('managestudents'))

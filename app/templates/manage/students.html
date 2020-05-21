@@ -5,8 +5,8 @@
 <section class="green">
   <div class="container">
     <div class="user-msg">
-      <h1>Manage Students</h1>
-      <p>The following is a list of all registered students. You can manage all student logins on this page.</p>
+      <h1>Manage Users</h1>
+      <p>The following is a list of all registered users. You can manage all user logins on this page. Please don't try to remove yourself.</p>
     </div>
   </div>
   <!-- Wave separator -->
@@ -20,6 +20,17 @@
     <p><strong>There {% if num_users == 1 %}is 1 user{% else %}are {{ num_users }} users{% endif %} registered:
       {% if num_admins == 1 %}1 admin{% else %}{{ num_admins }} admins{% endif %} and {% if num_students == 1 %}1 student.{% else %}{{ num_students }} students.{% endif %}
     </strong></p>
+    <!-- Form to add a user -->
+    <div class="question-box">
+      <form action="{{ url_for('adduser') }}" method="POST" id="add-user-form">
+        <p><strong>Add a User:</strong>
+          (All new users added using this form have the default password "password1" until changed. Please ensure that this user changes their password as soon as possible.)</p>
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="submit" value="Add User" />
+      </form>
+    </div>
+    <!-- List of all users -->
     {% for user in users %}
     <div class="question-box">
       <p><strong>{{ user.username }}</strong></p>
