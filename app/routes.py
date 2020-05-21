@@ -53,7 +53,6 @@ def login():
             return redirect(url_for('login'))
         # Otherwise the login was successful
         login_user(user, remember=form.remember_me.data)
-        flash("Successfully logged in!")
         # Did the user get directed here after trying to access a protected page?
         next_page = request.args.get('next')
         # If not, set the next page to the index.
@@ -68,7 +67,6 @@ def login():
 @login_required
 def logout():
     logout_user()
-    flash("Logged out successfully.")
     return redirect(url_for('index'))
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -82,7 +80,7 @@ def register():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('Congratulations, you are now a registered user!')
+        flash('Registered successfully!')
         return redirect(url_for('login'))
     return render_template('register.html', title="Register", form=form)
 
@@ -146,5 +144,4 @@ def test(questionset):
 def submit():
     data = request.form
     print(data)
-    flash("Test submitted!")
     return redirect(url_for('userprofile'))
