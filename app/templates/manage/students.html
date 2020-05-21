@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="../../static/css/test.css"/>
+<section class="green">
+  <div class="container">
+    <div class="user-msg">
+      <h1>Manage Students</h1>
+      <p>The following is a list of all registered students. You can manage all student logins on this page.</p>
+    </div>
+  </div>
+  <!-- Wave separator -->
+  <svg class="wave-bot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="#fafafa" fill-opacity="1" d="M0,64L60,74.7C120,85,240,107,360,101.3C480,96,600,64,720,48C840,32,960,32,1080,48C1200,64,1320,96,1380,112L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+  </svg>
+</section>
+
+<section class="dashboard">
+  <div class="container">
+    <p><strong>There
+      {% if num_users == 1 %}
+      is 1 user
+      {% else %}
+      are {{ num_users }} users
+      {% endif %}
+      registered:
+      {% if num_admins == 1 %}
+      1 admin
+      {% else %}
+      {{ num_admins }} admins
+      {% endif %}
+      and
+      {% if num_students == 1 %}
+      1 student.
+      {% else %}
+      {{ num_students }} students.
+      {% endif %}
+    </strong></p>
+    <div class="question-box">
+      <p>Hello World!</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

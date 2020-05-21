@@ -135,3 +135,20 @@ def submit():
     data = request.form
     print(data)
     return redirect(url_for('userprofile'))
+
+# Admin manage student logins
+@app.route('/managestudents')
+@login_required
+def managestudents():
+    if not current_user.check_admin(): # Student logins cannot access this page
+        return redirect(url_for('userprofile'))
+    else:
+        users = User.query.all()
+        num_admins = 0
+        num_students = 0
+        for user in users:
+            if user.check_admin():
+                num_admins += 1
+            else:
+                num_students += 1
+        return render_template('manage/students.html', num_users=len(users), num_admins=num_admins, num_students=num_students, users=users)
