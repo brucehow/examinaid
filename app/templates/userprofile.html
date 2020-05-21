@@ -5,7 +5,14 @@
   <div class="container">
     <div class="user-msg">
       <h1>Welcome back, {{ current_user.username }}!</h1>
-      <p>Welcome to your user dashboard! Here you'll be able to see the results of past tests, if you've taken any, as well as start a new test</p>
+      {% if current_user.admin %}
+      <p>This is your user dashboard. Here, you'll be able to view all supported tests, as well as mark any test questions with open answers.
+        You'll also be able to add or remove tests and student logins.
+      </p>
+      {% else %}
+      <p>This is your user dashboard. Here, you'll be able to see the results of any past tests, as well as start a new test.
+        You'll also be able to review your overall performance.</p>
+      {% endif %}
     </div>
   </div>
   <!-- Wave separator -->
@@ -22,26 +29,26 @@
       <div class="col-md-4 dashboard-item">
         <img class="thumbnail" src="../static/resources/mark.svg" alt=""> 
         <h3>Mark Completed Tests</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur.</p>
+        <p>View open answer questions and give your feedback.</p>
         <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Mark Tests</button>
       </div>
       <div class="col-md-4 dashboard-item">
         <img class="thumbnail" src="../static/resources/prevtest.svg" alt=""> 
         <h3>View Previous Tests</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur.</p>
+        <p>See the list of supported tests.</p>
         <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Preview</button>
       </div>
       <div class="col-md-4 dashboard-item">
         <img class="thumbnail" src="../static/resources/manage.svg" alt=""> 
         <h3>Manage Tests</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur.</p>
+        <p>Add or remove tests.</p>
         <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Manage</button>
       </div>
       <div class="col-md-4 dashboard-item">
         <img class="thumbnail" src="../static/resources/manage.svg" alt=""> 
-        <h3>Manage Tests</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur.</p>
-        <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Manage</button>
+        <h3>Manage Users</h3>
+        <p>Add or remove user logins.</p>
+        <button class="plain-btn lg green" onclick="window.location.href='/manageusers'">Manage</button>
       </div>
     </div>
     {% else %}

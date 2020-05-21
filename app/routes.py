@@ -1,9 +1,9 @@
 from app import app, db
 from flask import render_template, flash, redirect, url_for, request
-from app.forms import LoginForm, RegisterForm, TestForm, TestQuestion
+from app.forms import LoginForm, RegisterForm, TestForm, MultiTestQuestion, ShortTestQuestion, OpenTestQuestion
 
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User
+from app.models import User, db
 from werkzeug.urls import url_parse
 
 from json import load, dumps
@@ -37,10 +37,10 @@ def quiz():
     return render_template("quiz.html", title="Quiz")
 
 # Test selection page; could be phased into the student profile
-@app.route("/newtest2")
+@app.route("/newtest")
 def newtest2():
     form = TestForm()
-    return render_template("newtest.html", title="Start New Test", form=form)
+    return render_template("tests/newtest.html", title="Start New Test", form=form)
 
 
 @app.route("/login", methods = ["GET", "POST"])
@@ -57,7 +57,6 @@ def login():
             return redirect(url_for('login'))
         # Otherwise the login was successful
         login_user(user, remember=form.remember_me.data)
-        flash("Successfully logged in!")
         # Did the user get directed here after trying to access a protected page?
         next_page = request.args.get('next')
         # If not, set the next page to the index.
@@ -72,7 +71,6 @@ def login():
 @login_required
 def logout():
     logout_user()
-    flash("Logged out successfully.")
     return redirect(url_for('index'))
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -86,38 +84,103 @@ def register():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('Congratulations, you are now a registered user!')
+        flash('Registered successfully!')
         return redirect(url_for('login'))
     return render_template('register.html', title="Register", form=form)
 
-# An example test form layout below
-@app.route('/newtest')
-@login_required
-def newtest():
-    print(listdir()) # Check our working directory - turns out it's one higher than expected
-    file = open("app/questions/cits3403_1.json")
-    data = load(file)
-    return render_template('test_template.html', title="{} - New Test".format(data["unitName"]),
-                            unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"], unitCode=data["unitCode"],
-                            questionset='{}_{}'.format(data["unitCode"].lower(), data["testNumber"]))
-
 # Add Questions function using JSON creation
-@app.route('/addQuestions', methods=['GET', 'POST'])
-def addQuestions():
-    form = TestQuestion()
+@app.route('/addquestions/add_multiq', methods=['GET', 'POST'])
+@login_required
+def add_multiq():
+  if current_user.check_admin():
+    form = MultiTestQuestion()
     ##for relative file location
     dirname = path.dirname(__file__)
     dictionary = {
       "unitCode" : form.unitCode.data,
       "unitName": form.unitName.data,
       "testNumber": form.testNumber.data,
+      "totalMarks": form.totalMarks.data,
       "questions": [
         {
-          "questionNumber": form.questionNumber.data,
-          "prompt": form.prompt.data,
-          "answer": form.answer.data,
-          "questionType": form.questionType.data,
-          "totalOptions": [form.options.data]
+          "questionNumber": 1,
+          "marks" : form.marks1.data,
+          "prompt": form.prompt1.data,
+          "answer": form.answer1.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options1.data
+        },
+        {
+          "questionNumber": 2,
+          "marks" : form.marks2.data,
+          "prompt": form.prompt2.data,
+          "answer": form.answer2.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options2.data
+        },
+        {
+          "questionNumber": 3,
+          "marks" : form.marks3.data,
+          "prompt": form.prompt3.data,
+          "answer": form.answer3.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options3.data
+        },
+        {
+          "questionNumber": 4,
+          "marks" : form.marks4.data,
+          "prompt": form.prompt4.data,
+          "answer": form.answer4.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options4.data
+        },
+        {
+          "questionNumber": 5,
+          "marks" : form.marks5.data,
+          "prompt": form.prompt5.data,
+          "answer": form.answer5.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options5.data
+        },
+                {
+          "questionNumber": 6,
+          "marks" : form.marks6.data,
+          "prompt": form.prompt6.data,
+          "answer": form.answer6.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options6.data
+        },
+        {
+          "questionNumber": 7,
+          "marks" : form.marks7.data,
+          "prompt": form.prompt7.data,
+          "answer": form.answer7.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options7.data
+        },
+        {
+          "questionNumber": 8,
+          "marks" : form.marks8.data,
+          "prompt": form.prompt8.data,
+          "answer": form.answer8.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options8.data
+        },
+        {
+          "questionNumber": 9,
+          "marks" : form.marks9.data,
+          "prompt": form.prompt9.data,
+          "answer": form.answer9.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options9.data
+        },
+        {
+          "questionNumber": 10,
+          "marks" : form.marks10.data,
+          "prompt": form.prompt10.data,
+          "answer": form.answer10.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options10.data
         }
       ]
     }
@@ -126,21 +189,244 @@ def addQuestions():
     
     if form.validate_on_submit():
     #change questions/test.json to be an actual variable for file storage and loading
-      with open(path.join(dirname, "questions/test.json"), "w") as outfile:
+      with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
         outfile.write(json_object)
         flash('Questions added!')
         return redirect(url_for('userprofile'))
-    return render_template("tests/AddQuestion_template.html", title="Add Questions", form=form)
+  else:
+    flash('Not an admin: Please contact your supervisor')
+    return redirect(url_for('userprofile'))
+  return render_template("tests/addmultiq_template.html", title="Add MultipleChoice Questions", form=form)
+
+@app.route('/addquestions/add_shortq', methods=['GET', 'POST'])
+@login_required
+def add_shortq():
+  if current_user.check_admin():
+    form = ShortTestQuestion()
+    ##for relative file location
+    dirname = path.dirname(__file__)
+    dictionary = {
+      "unitCode" : form.unitCode.data,
+      "unitName": form.unitName.data,
+      "testNumber": form.testNumber.data,
+      "totalMarks": form.totalMarks.data,
+      "questions": [
+        {
+          "questionNumber": 1,
+          "marks" : form.marks1.data,
+          "prompt": form.prompt1.data,
+          "answer": form.answer1.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 2,
+          "marks" : form.marks2.data,
+          "prompt": form.prompt2.data,
+          "answer": form.answer2.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 3,
+          "marks" : form.marks3.data,
+          "prompt": form.prompt3.data,
+          "answer": form.answer3.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 4,
+          "marks" : form.marks4.data,
+          "prompt": form.prompt4.data,
+          "answer": form.answer4.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 5,
+          "marks" : form.marks5.data,
+          "prompt": form.prompt5.data,
+          "answer": form.answer5.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+                {
+          "questionNumber": 6,
+          "marks" : form.marks6.data,
+          "prompt": form.prompt6.data,
+          "answer": form.answer6.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 7,
+          "marks" : form.marks7.data,
+          "prompt": form.prompt7.data,
+          "answer": form.answer7.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 8,
+          "marks" : form.marks8.data,
+          "prompt": form.prompt8.data,
+          "answer": form.answer8.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 9,
+          "marks" : form.marks9.data,
+          "prompt": form.prompt9.data,
+          "answer": form.answer9.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 10,
+          "marks" : form.marks10.data,
+          "prompt": form.prompt10.data,
+          "answer": form.answer10.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        }
+      ]
+    }
+    ##dumps for 4 items, change indent variable if there's more items required
+    json_object = dumps(dictionary, indent = 4)
+    
+    if form.validate_on_submit():
+    #change questions/test.json to be an actual variable for file storage and loading
+      with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
+        outfile.write(json_object)
+        flash('Questions added!')
+        return redirect(url_for('userprofile'))
+  else:
+    flash('Not an admin: Please contact your supervisor')
+    return redirect(url_for('userprofile'))
+  return render_template("tests/addshortq_template.html", title="Add Short Questions", form=form)
+    
+@app.route('/addquestions/add_openq', methods=['GET', 'POST'])
+@login_required
+def add_openq():
+  if current_user.check_admin():
+    form = OpenTestQuestion()
+    ##for relative file location
+    dirname = path.dirname(__file__)
+    dictionary = {
+      "unitCode" : form.unitCode.data,
+      "unitName": form.unitName.data,
+      "testNumber": form.testNumber.data,
+      "totalMarks": form.totalMarks.data,
+      "questions": [
+        {
+          "questionNumber": 1,
+          "marks" : form.marks1.data,
+          "prompt": form.prompt1.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 2,
+          "marks" : form.marks2.data,
+          "prompt": form.prompt2.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 3,
+          "marks" : form.marks3.data,
+          "prompt": form.prompt3.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 4,
+          "marks" : form.marks4.data,
+          "prompt": form.prompt4.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 5,
+          "marks" : form.marks5.data,
+          "prompt": form.prompt5.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 6,
+          "marks" : form.marks6.data,
+          "prompt": form.prompt6.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 7,
+          "marks" : form.marks7.data,
+          "prompt": form.prompt7.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 8,
+          "marks" : form.marks8.data,
+          "prompt": form.prompt8.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 9,
+          "marks" : form.marks9.data,
+          "prompt": form.prompt9.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 10,
+          "marks" : form.marks10.data,
+          "prompt": form.prompt10.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        }
+      ]
+    }
+    ##dumps for 4 items, change indent variable if there's more items required
+    json_object = dumps(dictionary, indent = 4)
+    
+    if form.validate_on_submit():
+    #change questions/test.json to be an actual variable for file storage and loading
+      with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
+        outfile.write(json_object)
+        flash('Questions added!')
+        return redirect(url_for('userprofile'))
+  else:
+    flash('Not an admin: Please contact your supervisor')
+    return redirect(url_for('userprofile'))
+  return render_template("tests/addopenq_template.html", title="Add Open Questions", form=form)
+
 
     
 # The actual unique test page itself.
 @app.route('/test/<questionset>')
 @login_required
 def test(questionset):
+    print(listdir()) # Check our working directory - turns out it's one higher than expected
     questionSetPath = "app/questions/" + questionset + ".json"
     file = open(questionSetPath)
     data = load(file)
-    return render_template('test_template.html', title="{} - New Test".format(data["unitName"]),
+    return render_template('tests/test_template.html', title="{} - New Test".format(data["unitName"]),
                             unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"], unitCode=data["unitCode"],
                             questionset=questionset)
 
@@ -150,5 +436,56 @@ def test(questionset):
 def submit():
     data = request.form
     print(data)
-    flash("Test submitted!")
     return redirect(url_for('userprofile'))
+
+# Admin manage student logins
+@app.route('/manageusers')
+@login_required
+def manageusers():
+    if not current_user.check_admin(): # Student logins cannot access this page
+        return redirect(url_for('userprofile'))
+    else:
+        users = User.query.all()
+        num_admins = 0
+        num_students = 0
+        for user in users:
+            if user.check_admin():
+                num_admins += 1
+            else:
+                num_students += 1
+        return render_template('manage/students.html', num_users=len(users), num_admins=num_admins, num_students=num_students, users=users)
+
+@app.route('/manageusers/remove/<user_id>')
+@login_required
+def remove(user_id):
+    user_id = int(user_id) # Manual cast, the id comes in initially as a string
+    print("Attempting to remove user with ID {}.".format(user_id))
+    users = User.query.all()
+    for user in users:
+        if (user_id == user.id):
+            if (user == current_user):
+                print("You removed yourself. Oh wait - you can't.")
+                break
+            else:
+                db.session.delete(user)
+                db.session.commit()
+                print("User {} has been removed.".format(user.username))
+                break
+    return redirect(url_for('manageusers'))
+
+@app.route('/manageusers/adduser', methods=['POST'])
+@login_required
+def adduser():
+    data = request.form
+    if data:
+        print(data["username"], data["email"])
+        if (data["username"] == '') or (data["email"] == ''):
+            print("Cannot add a user without both a username and an email.")
+        else:
+            user = User(username=data["username"], email=data["email"])
+            user.set_password("password1")
+            db.session.add(user)
+            db.session.commit()
+    else:
+        print("No data")
+    return redirect(url_for('manageusers'))
