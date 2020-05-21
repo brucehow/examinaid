@@ -51,7 +51,7 @@ header {
 /* Hidden style nav icon */
 .nav-back {
   font-size: 3rem;
-  opacity: 0.15;
+  opacity: 0.5;
 }
 
 .nav-back:hover {
