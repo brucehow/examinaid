@@ -1,6 +1,7 @@
 from app import app, db
 from flask import render_template, flash, redirect, url_for, request
-from app.forms import LoginForm, RegisterForm, TestForm, MultiTestQuestion, ShortTestQuestion, OpenTestQuestion
+
+from app.forms import LoginForm, RegisterForm, TestForm, TestQuestion, ResetPasswordForm, MultiTestQuestion, ShortTestQuestion, OpenTestQuestion
 
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, db
@@ -489,3 +490,14 @@ def adduser():
     else:
         print("No data")
     return redirect(url_for('manageusers'))
+
+@app.route('/changepassword', methods=['GET', 'POST'])
+@login_required
+def changepassword():
+    form = ResetPasswordForm()
+    if form.validate_on_submit():
+        current_user.set_password(form.newPassword.data)
+        db.session.commit()
+        print("Password for {} updated successfully.".format(current_user.username))
+        return redirect(url_for('userprofile'))
+    return render_template("changepassword.html", title="Change Password", resetPasswordForm=form)
