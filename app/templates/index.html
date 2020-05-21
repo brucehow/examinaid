@@ -42,9 +42,11 @@
               {% else %}
               <li class="nav-item dropdown">
                 <!-- My profile dropdown toggler -->
-                <a class="nav-link droptown-toggle" href="{{ url_for('userprofile') }}" id="profile-menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Profile</a>
+                <a class="nav-link dropdown-toggle" href="{{ url_for('userprofile') }}" id="profile-menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account</a>
                 <!-- My profile menu -->
                 <div class="dropdown-menu" aria-labelledby="profile-menu">
+                  <a class="dropdown-item" href="{{ url_for('userprofile') }}">Dashboard</a>
+                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="{{ url_for('newtest') }}">Start New Test</a>
                   <a class="dropdown-item" href="{{ url_for('attempts') }}">View Previous Attempts</a>
                   <a class="dropdown-item" href="{{ url_for('userprofile') }}">My Feedback</a>
@@ -152,7 +154,7 @@
     <script src="https://kit.fontawesome.com/84fb170980.js" crossorigin="anonymous"></script>
     <!-- Custom JS -->
     <script src="../static/scripts/index.js"></script>
-
+    
     <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
     <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
     <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>

@@ -59,3 +59,7 @@ header {
   color: #007757;
   transition: 300ms;
 }
+
+.dropdown-menu > .dropdown-item:focus {
+ background-color: #007757;
+}
