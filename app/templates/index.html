@@ -45,6 +45,10 @@
                 <a class="nav-link droptown-toggle" href="{{ url_for('userprofile') }}" id="profile-menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Profile</a>
                 <!-- My profile menu -->
                 <div class="dropdown-menu" aria-labelledby="profile-menu">
+                  <a class="dropdown-item" href="{{ url_for('newtest') }}">Start New Test</a>
+                  <a class="dropdown-item" href="{{ url_for('attempts') }}">View Previous Attempts</a>
+                  <a class="dropdown-item" href="{{ url_for('userprofile') }}">My Feedback</a>
+                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="{{ url_for('changepassword') }}">Change Password</a>
                 </div>
               </li>

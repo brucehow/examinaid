@@ -39,7 +39,7 @@ def quiz():
 
 # Test selection page; could be phased into the student profile
 @app.route("/newtest")
-def newtest2():
+def newtest():
     form = TestForm()
     return render_template("tests/newtest.html", title="Start New Test", form=form)
 
