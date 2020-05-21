@@ -48,3 +48,10 @@ class TestQuestion(FlaskForm):
     options = FieldList(StringField('Options'), min_entries=4) 
     ##max_entries=4)
 
+# Form to reset user password
+class ResetPasswordForm(FlaskForm):
+    email = StringField('Current Email', validators=[DataRequired(), Email()])
+    currentPassword = PasswordField('Current Password', validators=[DataRequired()])
+    newPassword = PasswordField('New Password', validators=[DataRequired()])
+    repeatPassword = PasswordField('Repeat New Password', validators=[DataRequired(), EqualTo('newPassword')])
+    submit = SubmitField('Change Password')
