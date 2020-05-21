@@ -11,6 +11,13 @@ div.question-box {
 
 div.question-box p strong {
   font-size: 1.5rem;
+  margin-left: 2rem;
+}
+
+div.question-box ul li {
+  display: inline-block;
+  list-style-type: none;
+  margin-right: 3rem;
 }
 
 /* Button */
@@ -18,6 +25,17 @@ input.test-btn {
   background-color: #008a65;
   margin: 2rem 0 5rem 0;
   float: right;
+}
+
+button.remove-user {
+  background: none;
+  border: none;
+  font-weight: bold;
+  transition: 250ms;
+}
+
+button.remove-user:hover {
+  color: grey;
 }
 
 /* Images */

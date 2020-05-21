@@ -3,7 +3,7 @@ from flask import render_template, flash, redirect, url_for, request
 from app.forms import LoginForm, RegisterForm, TestForm, TestQuestion
 
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User
+from app.models import User, db
 from werkzeug.urls import url_parse
 
 from json import load, dumps
@@ -152,3 +152,17 @@ def managestudents():
             else:
                 num_students += 1
         return render_template('manage/students.html', num_users=len(users), num_admins=num_admins, num_students=num_students, users=users)
+
+@app.route('/managestudents/remove/<user_id>')
+@login_required
+def remove(user_id):
+    user_id = int(user_id) # Manual cast, the id comes in initially as a string
+    print("Attempting to remove user with ID {}.".format(user_id))
+    users = User.query.all()
+    for user in users:
+        if (user_id == user.id):
+            db.session.delete(user)
+            db.session.commit()
+            print("User {} has been removed.".format(user.username))
+            break
+    return redirect(url_for('managestudents'))
