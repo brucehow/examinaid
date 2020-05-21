@@ -35,7 +35,7 @@
     <br>
 
     {{ form.totalMarks.label }}<br>
-    {{ form.totalMarks.label() }}<br>
+    {{ form.totalMarks() }}<br>
     {% for error in form.totalMarks.errors %}
     <br><span style="color: red;">[{{ error }}]</span>
     {% endfor %} 

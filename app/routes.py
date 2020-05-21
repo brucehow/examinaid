@@ -98,7 +98,7 @@ def newtest():
                             questionset='{}_{}'.format(data["unitCode"].lower(), data["testNumber"]))
 
 # Add Questions function using JSON creation
-@app.route('/addmultiq', methods=['GET', 'POST'])
+@app.route('/addquestions/add_multiq', methods=['GET', 'POST'])
 def addmultiq():
     form = MultiTestQuestion()
     ##for relative file location
@@ -202,7 +202,7 @@ def addmultiq():
         return redirect(url_for('userprofile'))
     return render_template("tests/AddQuestion_template.html", title="Add Questions", form=form)
 
-@app.route('/addshortq', methods=['GET', 'POST'])
+@app.route('/addquestions/add_shortq', methods=['GET', 'POST'])
 def addshortq():
     form = ShortTestQuestion()
     ##for relative file location
@@ -306,6 +306,109 @@ def addshortq():
         return redirect(url_for('userprofile'))
     return render_template("tests/addshortq_template.html", title="Add Short Questions", form=form)
     
+@app.route('/addquestions/add_openq', methods=['GET', 'POST'])
+def addopenq():
+    form = OpenTestQuestion()
+    ##for relative file location
+    dirname = path.dirname(__file__)
+    dictionary = {
+      "unitCode" : form.unitCode.data,
+      "unitName": form.unitName.data,
+      "testNumber": form.testNumber.data,
+      "totalMarks": form.totalMarks.data,
+      "questions": [
+        {
+          "questionNumber": 1,
+          "marks" : form.marks1.data,
+          "prompt": form.prompt1.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 2,
+          "marks" : form.marks2.data,
+          "prompt": form.prompt2.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 3,
+          "marks" : form.marks3.data,
+          "prompt": form.prompt3.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 4,
+          "marks" : form.marks4.data,
+          "prompt": form.prompt4.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 5,
+          "marks" : form.marks5.data,
+          "prompt": form.prompt5.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 6,
+          "marks" : form.marks6.data,
+          "prompt": form.prompt6.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 7,
+          "marks" : form.marks7.data,
+          "prompt": form.prompt7.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 8,
+          "marks" : form.marks8.data,
+          "prompt": form.prompt8.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 9,
+          "marks" : form.marks9.data,
+          "prompt": form.prompt9.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 10,
+          "marks" : form.marks10.data,
+          "prompt": form.prompt10.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        }
+      ]
+    }
+    ##dumps for 4 items, change indent variable if there's more items required
+    json_object = dumps(dictionary, indent = 4)
+    
+    if form.validate_on_submit():
+    #change questions/test.json to be an actual variable for file storage and loading
+      with open(path.join(dirname, "questions/test.json"), "w") as outfile:
+        outfile.write(json_object)
+        flash('Questions added!')
+        return redirect(url_for('userprofile'))
+    return render_template("tests/addshortq_template.html", title="Add Short Questions", form=form)
 
 
     
