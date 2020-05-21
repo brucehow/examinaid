@@ -67,7 +67,7 @@ h3 {
 h4 {
   font-weight: 400;
   font-size: 1.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .sub-heading {
@@ -118,6 +118,7 @@ button.green:hover {
 
 /* Lists */
 ul.flashed-messages li {
+  text-align: center;
   list-style-type: none;
 }
 

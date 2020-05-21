@@ -1,0 +1,49 @@
+{% extends "index.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="../../static/css/test.css"/>
+<section class="green">
+  <div class="container">
+    <div class="user-msg">
+      <h1>Manage Users</h1>
+      <p>The following is a list of all registered users. You can manage all user logins on this page. Please don't try to remove yourself.</p>
+    </div>
+  </div>
+  <!-- Wave separator -->
+  <svg class="wave-bot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="#fafafa" fill-opacity="1" d="M0,64L60,74.7C120,85,240,107,360,101.3C480,96,600,64,720,48C840,32,960,32,1080,48C1200,64,1320,96,1380,112L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+  </svg>
+</section>
+
+<section class="dashboard">
+  <div class="container">
+    <p><strong>There {% if num_users == 1 %}is 1 user{% else %}are {{ num_users }} users{% endif %} registered:
+      {% if num_admins == 1 %}1 admin{% else %}{{ num_admins }} admins{% endif %} and {% if num_students == 1 %}1 student.{% else %}{{ num_students }} students.{% endif %}
+    </strong></p>
+    <!-- Form to add a user -->
+    <div class="question-box">
+      <form action="{{ url_for('adduser') }}" method="POST" id="add-user-form">
+        <p><strong>Add a User:</strong>
+          (All new users added using this form have the default password "password1" until changed. Please ensure that this user changes their password as soon as possible.)</p>
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="submit" value="Add User" />
+      </form>
+    </div>
+    <!-- List of all users -->
+    {% for user in users %}
+    <div class="question-box">
+      <p><strong>{{ user.username }}</strong></p>
+      <ul>
+        <li>{% if user.check_admin() %}Administrator{% else %}Student{% endif %}</li>
+        <li>{{ user.email }}</li>
+        {% if current_user != user %}
+        <li><button onclick="window.location.href='/manageusers/remove/{{ user.id }}'" class="remove-user" id="remove-user-{{ user.id }}">Remove User</button></li>
+        {% endif %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

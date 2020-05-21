@@ -11,6 +11,11 @@ header {
   padding: 15px; /* Navbar static size */
 }
 
+.navbar-hidden {
+  background-color: white;
+  margin: 1rem 0 0 1rem;
+}
+
 .nav-link {
   color: #2c2d30;
   text-decoration: none;
@@ -41,4 +46,15 @@ header {
 
 .nav-icon {
   font-size: 1.8rem;
+}
+
+/* Hidden style nav icon */
+.nav-back {
+  font-size: 3rem;
+  opacity: 0.5;
+}
+
+.nav-back:hover {
+  opacity: 0.7;
+  transition: 300ms;
 }

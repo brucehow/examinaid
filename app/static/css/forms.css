@@ -9,6 +9,10 @@ form.login {
   max-width: 350px;
 } 
 
+form.unit-select {
+  max-width: 350px;
+}
+
 form > h2,
 form > h4 {
   text-align: center;

@@ -3,7 +3,7 @@ from flask import render_template, flash, redirect, url_for, request
 from app.forms import LoginForm, RegisterForm, TestForm, MultiTestQuestion, ShortTestQuestion, OpenTestQuestion
 
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User
+from app.models import User, db
 from werkzeug.urls import url_parse
 
 from json import load, dumps
@@ -33,10 +33,10 @@ def quiz():
     return render_template("quiz.html", title="Quiz")
 
 # Test selection page; could be phased into the student profile
-@app.route("/newtest2")
+@app.route("/newtest")
 def newtest2():
     form = TestForm()
-    return render_template("newtest.html", title="Start New Test", form=form)
+    return render_template("tests/newtest.html", title="Start New Test", form=form)
 
 
 @app.route("/login", methods = ["GET", "POST"])
@@ -53,7 +53,6 @@ def login():
             return redirect(url_for('login'))
         # Otherwise the login was successful
         login_user(user, remember=form.remember_me.data)
-        flash("Successfully logged in!")
         # Did the user get directed here after trying to access a protected page?
         next_page = request.args.get('next')
         # If not, set the next page to the index.
@@ -68,7 +67,6 @@ def login():
 @login_required
 def logout():
     logout_user()
-    flash("Logged out successfully.")
     return redirect(url_for('index'))
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -82,20 +80,9 @@ def register():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('Congratulations, you are now a registered user!')
+        flash('Registered successfully!')
         return redirect(url_for('login'))
     return render_template('register.html', title="Register", form=form)
-
-# An example test form layout below
-@app.route('/newtest')
-@login_required
-def newtest():
-    print(listdir()) # Check our working directory - turns out it's one higher than expected
-    file = open("app/questions/cits3403_1.json")
-    data = load(file)
-    return render_template('test_template.html', title="{} - New Test".format(data["unitName"]),
-                            unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"], unitCode=data["unitCode"],
-                            questionset='{}_{}'.format(data["unitCode"].lower(), data["testNumber"]))
 
 # Add Questions function using JSON creation
 @app.route('/addquestions/add_multiq', methods=['GET', 'POST'])
@@ -431,10 +418,11 @@ def add_openq():
 @app.route('/test/<questionset>')
 @login_required
 def test(questionset):
+    print(listdir()) # Check our working directory - turns out it's one higher than expected
     questionSetPath = "app/questions/" + questionset + ".json"
     file = open(questionSetPath)
     data = load(file)
-    return render_template('test_template.html', title="{} - New Test".format(data["unitName"]),
+    return render_template('tests/test_template.html', title="{} - New Test".format(data["unitName"]),
                             unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"], unitCode=data["unitCode"],
                             questionset=questionset)
 
@@ -444,5 +432,56 @@ def test(questionset):
 def submit():
     data = request.form
     print(data)
-    flash("Test submitted!")
     return redirect(url_for('userprofile'))
+
+# Admin manage student logins
+@app.route('/manageusers')
+@login_required
+def manageusers():
+    if not current_user.check_admin(): # Student logins cannot access this page
+        return redirect(url_for('userprofile'))
+    else:
+        users = User.query.all()
+        num_admins = 0
+        num_students = 0
+        for user in users:
+            if user.check_admin():
+                num_admins += 1
+            else:
+                num_students += 1
+        return render_template('manage/students.html', num_users=len(users), num_admins=num_admins, num_students=num_students, users=users)
+
+@app.route('/manageusers/remove/<user_id>')
+@login_required
+def remove(user_id):
+    user_id = int(user_id) # Manual cast, the id comes in initially as a string
+    print("Attempting to remove user with ID {}.".format(user_id))
+    users = User.query.all()
+    for user in users:
+        if (user_id == user.id):
+            if (user == current_user):
+                print("You removed yourself. Oh wait - you can't.")
+                break
+            else:
+                db.session.delete(user)
+                db.session.commit()
+                print("User {} has been removed.".format(user.username))
+                break
+    return redirect(url_for('manageusers'))
+
+@app.route('/manageusers/adduser', methods=['POST'])
+@login_required
+def adduser():
+    data = request.form
+    if data:
+        print(data["username"], data["email"])
+        if (data["username"] == '') or (data["email"] == ''):
+            print("Cannot add a user without both a username and an email.")
+        else:
+            user = User(username=data["username"], email=data["email"])
+            user.set_password("password1")
+            db.session.add(user)
+            db.session.commit()
+    else:
+        print("No data")
+    return redirect(url_for('manageusers'))

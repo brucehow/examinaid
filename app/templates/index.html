@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="../static/css/userprofile.css"/>
 
     {% if title %}
-    <title>CITSPrep - {{ title }}</title>
+    <title>ExaminAid - {{ title }}</title>
     {% else %}
-    <title>CITSPrep</title>
+    <title>ExaminAid</title>
     {% endif %}
   </head>
   <body>
@@ -27,7 +27,7 @@
           </button>
           <div id="collapse-menu" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">  <!-- Left side navbar -->
-                <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">CITSPrep</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">ExaminAid</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
             </ul>
@@ -119,7 +119,7 @@
           <div class="row vertical-align">
             <div class="col-md-7">
               <h2>Contact us</h2>
-              <p>Want to learn more about CITSPrep? Got a question for our backend team? Looking for individual 1-on-1 support from our professional mentors and tutors? Feel free to message us, and find out just how easy learning can be.</p>
+              <p>Want to learn more about ExaminAid? Got a question for our backend team? Looking for individual 1-on-1 support from our professional mentors and tutors? Feel free to message us, and find out just how easy learning can be.</p>
               <a class="contact-link" href="{{ url_for('contact') }}">Send us a message</a>
             </div>
             <div class="col-md-5 d-none d-md-block">
