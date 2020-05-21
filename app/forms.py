@@ -44,43 +44,53 @@ class MultiTestQuestion(FlaskForm):
     prompt1 = StringField('Prompt', validators=[DataRequired()])
     answer1 = StringField('Answer')
     options1 = FieldList(StringField('Options:'), min_entries=4)
+    marks1 = IntegerField('Marks', validators=[DataRequired()])
     
     prompt2 = StringField('Prompt', validators=[DataRequired()])
     answer2 = StringField('Answer')
     options2 = FieldList(StringField('Options:'), min_entries=4)
-
+    marks2 = IntegerField('Marks', validators=[DataRequired()])
+    
     prompt3 = StringField('Prompt', validators=[DataRequired()])
     answer3 = StringField('Answer')
     options3 = FieldList(StringField('Options:'), min_entries=4) 
-
+    marks3 = IntegerField('Marks', validators=[DataRequired()])
+    
     prompt4 = StringField('Prompt', validators=[DataRequired()])
     answer4 = StringField('Answer')
     options4 = FieldList(StringField('Options:'), min_entries=4)
-
+    marks4 = IntegerField('Marks', validators=[DataRequired()])
+    
     prompt5 = StringField('Prompt', validators=[DataRequired()])
     answer5 = StringField('Answer')
     options5 = FieldList(StringField('Options:'), min_entries=4) 
-
+    marks5 = IntegerField('Marks', validators=[DataRequired()])
+    
     prompt6 = StringField('Prompt', validators=[DataRequired()])
     answer6 = StringField('Answer')
     options6 = FieldList(StringField('Options:'), min_entries=4)
-
+    marks6 = IntegerField('Marks', validators=[DataRequired()])
+    
     prompt7 = StringField('Prompt', validators=[DataRequired()])
     answer7 = StringField('Answer')
     options7 = FieldList(StringField('Options:'), min_entries=4) 
-
+    marks7 = IntegerField('Marks', validators=[DataRequired()])
+    
     prompt8 = StringField('Prompt', validators=[DataRequired()])
     answer8 = StringField('Answer')
     options8 = FieldList(StringField('Options:'), min_entries=4) 
-
+    marks8 = IntegerField('Marks', validators=[DataRequired()])
+    
     prompt9 = StringField('Prompt', validators=[DataRequired()])
     answer9 = StringField('Answer')
     options9 = FieldList(StringField('Options:'), min_entries=4) 
-
+    marks9 = IntegerField('Marks', validators=[DataRequired()])
+    
     prompt10 = StringField('Prompt', validators=[DataRequired()])
     answer10 = StringField('Answer')
     options10 = FieldList(StringField('Options:'), min_entries=4) 
-
+    marks10 = IntegerField('Marks', validators=[DataRequired()])
+    
 
 class ShortTestQuestion(FlaskForm):
     unitName = StringField('UnitName', validators=[DataRequired()])
@@ -89,39 +99,43 @@ class ShortTestQuestion(FlaskForm):
 
     prompt1 = StringField('Prompt', validators=[DataRequired()])
     answer1 = StringField('Answer', validators=[DataRequired()])
-
+    marks1 = IntegerField('Marks', validators=[DataRequired()])
+    
     prompt2 = StringField('Prompt', validators=[DataRequired()])
     answer2 = StringField('Answer', validators=[DataRequired()])
-
-    prompt2 = StringField('Prompt', validators=[DataRequired()])
-    answer2 = StringField('Answer', validators=[DataRequired()])
-
-    prompt2 = StringField('Prompt', validators=[DataRequired()])
-    answer2 = StringField('Answer', validators=[DataRequired()])
-
+    marks2 = IntegerField('Marks', validators=[DataRequired()])
+    
     prompt3 = StringField('Prompt', validators=[DataRequired()])
     answer3 = StringField('Answer', validators=[DataRequired()])
-
+    marks3 = IntegerField('Marks', validators=[DataRequired()])
+    
     prompt4 = StringField('Prompt', validators=[DataRequired()])
     answer4 = StringField('Answer', validators=[DataRequired()])
-
+    marks4 = IntegerField('Marks', validators=[DataRequired()])
+    
     prompt5 = StringField('Prompt', validators=[DataRequired()])
     answer5 = StringField('Answer', validators=[DataRequired()])
-
+    marks5 = IntegerField('Marks', validators=[DataRequired()])
+    
     prompt6 = StringField('Prompt', validators=[DataRequired()])
     answer6 = StringField('Answer', validators=[DataRequired()])
-
+    marks6 = IntegerField('Marks', validators=[DataRequired()])
+    
     prompt7 = StringField('Prompt', validators=[DataRequired()])
     answer7 = StringField('Answer', validators=[DataRequired()])
-
+    marks7 = IntegerField('Marks', validators=[DataRequired()])
+    
     prompt8 = StringField('Prompt', validators=[DataRequired()])
     answer8 = StringField('Answer', validators=[DataRequired()])
-
+    marks8 = IntegerField('Marks', validators=[DataRequired()])
+    
     prompt9 = StringField('Prompt', validators=[DataRequired()])
     answer9 = StringField('Answer', validators=[DataRequired()])
-
+    marks9 = IntegerField('Marks', validators=[DataRequired()])
+    
     prompt10 = StringField('Prompt', validators=[DataRequired()])
     answer10 = StringField('Answer', validators=[DataRequired()])
+    marks10 = IntegerField('Marks', validators=[DataRequired()])
     
 class OpenTestQuestion(FlaskForm):
     unitName = StringField('UnitName', validators=[DataRequired()])
