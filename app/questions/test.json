@@ -1,138 +1,88 @@
 {
-    "unitCode": "2",
-    "unitName": "123321",
-    "testNumber": 22323,
-    "totalMarks": 3,
+    "unitCode": "3",
+    "unitName": "23",
+    "testNumber": 23,
+    "totalMarks": 23,
     "questions": [
         {
             "questionNumber": 1,
-            "marks": 3,
-            "prompt": "232",
-            "answer": "3",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "32",
-                "32",
-                "3",
-                "2232"
-            ]
+            "marks": 233,
+            "prompt": "3",
+            "answer": null,
+            "questionType": "openAnswer",
+            "totalOptions": null
         },
         {
             "questionNumber": 2,
-            "marks": 232,
-            "prompt": "32",
-            "answer": "3",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "3232",
-                "32",
-                "3",
-                "3"
-            ]
+            "marks": 3,
+            "prompt": "3",
+            "answer": null,
+            "questionType": "openAnswer",
+            "totalOptions": null
         },
         {
             "questionNumber": 3,
             "marks": 3,
             "prompt": "3",
-            "answer": "3",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "3",
-                "3",
-                "3",
-                "3"
-            ]
+            "answer": null,
+            "questionType": "openAnswer",
+            "totalOptions": null
         },
         {
             "questionNumber": 4,
             "marks": 3,
-            "prompt": "3",
-            "answer": "2323",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "3",
-                "3",
-                "3",
-                "3"
-            ]
+            "prompt": "testing prompt 3 for wa waht awhi hwia g  ",
+            "answer": null,
+            "questionType": "openAnswer",
+            "totalOptions": null
         },
         {
             "questionNumber": 5,
             "marks": 3,
             "prompt": "3",
-            "answer": "3",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "3",
-                "3",
-                "3",
-                "3"
-            ]
+            "answer": null,
+            "questionType": "openAnswer",
+            "totalOptions": null
         },
         {
             "questionNumber": 6,
             "marks": 3,
             "prompt": "3",
-            "answer": "3",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "3",
-                "3",
-                "2332",
-                "3"
-            ]
+            "answer": null,
+            "questionType": "openAnswer",
+            "totalOptions": null
         },
         {
             "questionNumber": 7,
             "marks": 3,
-            "prompt": "2323",
-            "answer": "3",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "3232",
-                "3",
-                "33",
-                "3"
-            ]
+            "prompt": "2",
+            "answer": null,
+            "questionType": "openAnswer",
+            "totalOptions": null
         },
         {
             "questionNumber": 8,
-            "marks": 3,
-            "prompt": "232",
-            "answer": "2323",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "3",
-                "333",
-                "232",
-                "23"
-            ]
+            "marks": 33,
+            "prompt": "3",
+            "answer": null,
+            "questionType": "openAnswer",
+            "totalOptions": null
         },
         {
             "questionNumber": 9,
             "marks": 3,
-            "prompt": "33",
-            "answer": "2",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "3",
-                "3",
-                "23322",
-                "3"
-            ]
+            "prompt": "3",
+            "answer": null,
+            "questionType": "openAnswer",
+            "totalOptions": null
         },
         {
             "questionNumber": 10,
             "marks": 3,
             "prompt": "3",
-            "answer": "3",
-            "questionType": "multipleChoice",
-            "totalOptions": [
-                "2",
-                "2",
-                "2",
-                "23"
-            ]
+            "answer": null,
+            "questionType": "openAnswer",
+            "totalOptions": null
         }
     ]
 }

@@ -200,7 +200,7 @@ def add_multiq():
         outfile.write(json_object)
         flash('Questions added!')
         return redirect(url_for('userprofile'))
-    return render_template("tests/AddQuestion_template.html", title="Add Questions", form=form)
+    return render_template("tests/addmultiq_template.html", title="Add Questions", form=form)
 
 @app.route('/addquestions/add_shortq', methods=['GET', 'POST'])
 def add_shortq():
@@ -408,7 +408,7 @@ def add_openq():
         outfile.write(json_object)
         flash('Questions added!')
         return redirect(url_for('userprofile'))
-    return render_template("tests/addshortq_template.html", title="Add Short Questions", form=form)
+    return render_template("tests/addopenq_template.html", title="Add Open Questions", form=form)
 
 
     
