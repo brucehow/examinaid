@@ -1,6 +1,6 @@
 from app import app, db
 from flask import render_template, flash, redirect, url_for, request
-from app.forms import LoginForm, RegisterForm, TestForm, TestQuestion
+from app.forms import LoginForm, RegisterForm, TestForm, MultiTestQuestion, ShortTestQuestion, OpenTestQuestion
 
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, db
@@ -85,22 +85,98 @@ def register():
     return render_template('register.html', title="Register", form=form)
 
 # Add Questions function using JSON creation
-@app.route('/addQuestions', methods=['GET', 'POST'])
-def addQuestions():
-    form = TestQuestion()
+@app.route('/addquestions/add_multiq', methods=['GET', 'POST'])
+@login_required
+def add_multiq():
+  if current_user.check_admin():
+    form = MultiTestQuestion()
     ##for relative file location
     dirname = path.dirname(__file__)
     dictionary = {
       "unitCode" : form.unitCode.data,
       "unitName": form.unitName.data,
       "testNumber": form.testNumber.data,
+      "totalMarks": form.totalMarks.data,
       "questions": [
         {
-          "questionNumber": form.questionNumber.data,
-          "prompt": form.prompt.data,
-          "answer": form.answer.data,
-          "questionType": form.questionType.data,
-          "totalOptions": [form.options.data]
+          "questionNumber": 1,
+          "marks" : form.marks1.data,
+          "prompt": form.prompt1.data,
+          "answer": form.answer1.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options1.data
+        },
+        {
+          "questionNumber": 2,
+          "marks" : form.marks2.data,
+          "prompt": form.prompt2.data,
+          "answer": form.answer2.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options2.data
+        },
+        {
+          "questionNumber": 3,
+          "marks" : form.marks3.data,
+          "prompt": form.prompt3.data,
+          "answer": form.answer3.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options3.data
+        },
+        {
+          "questionNumber": 4,
+          "marks" : form.marks4.data,
+          "prompt": form.prompt4.data,
+          "answer": form.answer4.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options4.data
+        },
+        {
+          "questionNumber": 5,
+          "marks" : form.marks5.data,
+          "prompt": form.prompt5.data,
+          "answer": form.answer5.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options5.data
+        },
+                {
+          "questionNumber": 6,
+          "marks" : form.marks6.data,
+          "prompt": form.prompt6.data,
+          "answer": form.answer6.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options6.data
+        },
+        {
+          "questionNumber": 7,
+          "marks" : form.marks7.data,
+          "prompt": form.prompt7.data,
+          "answer": form.answer7.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options7.data
+        },
+        {
+          "questionNumber": 8,
+          "marks" : form.marks8.data,
+          "prompt": form.prompt8.data,
+          "answer": form.answer8.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options8.data
+        },
+        {
+          "questionNumber": 9,
+          "marks" : form.marks9.data,
+          "prompt": form.prompt9.data,
+          "answer": form.answer9.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options9.data
+        },
+        {
+          "questionNumber": 10,
+          "marks" : form.marks10.data,
+          "prompt": form.prompt10.data,
+          "answer": form.answer10.data,
+          "questionType": "multipleChoice",
+          "totalOptions": form.options10.data
         }
       ]
     }
@@ -109,11 +185,233 @@ def addQuestions():
     
     if form.validate_on_submit():
     #change questions/test.json to be an actual variable for file storage and loading
-      with open(path.join(dirname, "questions/test.json"), "w") as outfile:
+      with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
         outfile.write(json_object)
         flash('Questions added!')
         return redirect(url_for('userprofile'))
-    return render_template("tests/AddQuestion_template.html", title="Add Questions", form=form)
+  else:
+    flash('Not an admin: Please contact your supervisor')
+    return redirect(url_for('userprofile'))
+  return render_template("tests/addmultiq_template.html", title="Add MultipleChoice Questions", form=form)
+
+@app.route('/addquestions/add_shortq', methods=['GET', 'POST'])
+@login_required
+def add_shortq():
+  if current_user.check_admin():
+    form = ShortTestQuestion()
+    ##for relative file location
+    dirname = path.dirname(__file__)
+    dictionary = {
+      "unitCode" : form.unitCode.data,
+      "unitName": form.unitName.data,
+      "testNumber": form.testNumber.data,
+      "totalMarks": form.totalMarks.data,
+      "questions": [
+        {
+          "questionNumber": 1,
+          "marks" : form.marks1.data,
+          "prompt": form.prompt1.data,
+          "answer": form.answer1.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 2,
+          "marks" : form.marks2.data,
+          "prompt": form.prompt2.data,
+          "answer": form.answer2.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 3,
+          "marks" : form.marks3.data,
+          "prompt": form.prompt3.data,
+          "answer": form.answer3.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 4,
+          "marks" : form.marks4.data,
+          "prompt": form.prompt4.data,
+          "answer": form.answer4.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 5,
+          "marks" : form.marks5.data,
+          "prompt": form.prompt5.data,
+          "answer": form.answer5.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+                {
+          "questionNumber": 6,
+          "marks" : form.marks6.data,
+          "prompt": form.prompt6.data,
+          "answer": form.answer6.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 7,
+          "marks" : form.marks7.data,
+          "prompt": form.prompt7.data,
+          "answer": form.answer7.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 8,
+          "marks" : form.marks8.data,
+          "prompt": form.prompt8.data,
+          "answer": form.answer8.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 9,
+          "marks" : form.marks9.data,
+          "prompt": form.prompt9.data,
+          "answer": form.answer9.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 10,
+          "marks" : form.marks10.data,
+          "prompt": form.prompt10.data,
+          "answer": form.answer10.data,
+          "questionType": "shortAnswer",
+          "totalOptions": None
+        }
+      ]
+    }
+    ##dumps for 4 items, change indent variable if there's more items required
+    json_object = dumps(dictionary, indent = 4)
+    
+    if form.validate_on_submit():
+    #change questions/test.json to be an actual variable for file storage and loading
+      with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
+        outfile.write(json_object)
+        flash('Questions added!')
+        return redirect(url_for('userprofile'))
+  else:
+    flash('Not an admin: Please contact your supervisor')
+    return redirect(url_for('userprofile'))
+  return render_template("tests/addshortq_template.html", title="Add Short Questions", form=form)
+    
+@app.route('/addquestions/add_openq', methods=['GET', 'POST'])
+@login_required
+def add_openq():
+  if current_user.check_admin():
+    form = OpenTestQuestion()
+    ##for relative file location
+    dirname = path.dirname(__file__)
+    dictionary = {
+      "unitCode" : form.unitCode.data,
+      "unitName": form.unitName.data,
+      "testNumber": form.testNumber.data,
+      "totalMarks": form.totalMarks.data,
+      "questions": [
+        {
+          "questionNumber": 1,
+          "marks" : form.marks1.data,
+          "prompt": form.prompt1.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 2,
+          "marks" : form.marks2.data,
+          "prompt": form.prompt2.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 3,
+          "marks" : form.marks3.data,
+          "prompt": form.prompt3.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 4,
+          "marks" : form.marks4.data,
+          "prompt": form.prompt4.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 5,
+          "marks" : form.marks5.data,
+          "prompt": form.prompt5.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 6,
+          "marks" : form.marks6.data,
+          "prompt": form.prompt6.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 7,
+          "marks" : form.marks7.data,
+          "prompt": form.prompt7.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 8,
+          "marks" : form.marks8.data,
+          "prompt": form.prompt8.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 9,
+          "marks" : form.marks9.data,
+          "prompt": form.prompt9.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        },
+        {
+          "questionNumber": 10,
+          "marks" : form.marks10.data,
+          "prompt": form.prompt10.data,
+          "answer": None,
+          "questionType": "openAnswer",
+          "totalOptions": None
+        }
+      ]
+    }
+    ##dumps for 4 items, change indent variable if there's more items required
+    json_object = dumps(dictionary, indent = 4)
+    
+    if form.validate_on_submit():
+    #change questions/test.json to be an actual variable for file storage and loading
+      with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
+        outfile.write(json_object)
+        flash('Questions added!')
+        return redirect(url_for('userprofile'))
+  else:
+    flash('Not an admin: Please contact your supervisor')
+    return redirect(url_for('userprofile'))
+  return render_template("tests/addopenq_template.html", title="Add Open Questions", form=form)
+
 
     
 # The actual unique test page itself.
