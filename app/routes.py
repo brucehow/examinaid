@@ -99,7 +99,9 @@ def newtest():
 
 # Add Questions function using JSON creation
 @app.route('/addquestions/add_multiq', methods=['GET', 'POST'])
+@login_required
 def add_multiq():
+  if current_user.check_admin():
     form = MultiTestQuestion()
     ##for relative file location
     dirname = path.dirname(__file__)
@@ -200,10 +202,15 @@ def add_multiq():
         outfile.write(json_object)
         flash('Questions added!')
         return redirect(url_for('userprofile'))
-    return render_template("tests/addmultiq_template.html", title="Add Questions", form=form)
+  else:
+    flash('Not an admin: Please contact your supervisor')
+    return redirect(url_for('userprofile'))
+  return render_template("tests/addmultiq_template.html", title="Add MultipleChoice Questions", form=form)
 
 @app.route('/addquestions/add_shortq', methods=['GET', 'POST'])
+@login_required
 def add_shortq():
+  if current_user.check_admin():
     form = ShortTestQuestion()
     ##for relative file location
     dirname = path.dirname(__file__)
@@ -304,10 +311,15 @@ def add_shortq():
         outfile.write(json_object)
         flash('Questions added!')
         return redirect(url_for('userprofile'))
-    return render_template("tests/addshortq_template.html", title="Add Short Questions", form=form)
+  else:
+    flash('Not an admin: Please contact your supervisor')
+    return redirect(url_for('userprofile'))
+  return render_template("tests/addshortq_template.html", title="Add Short Questions", form=form)
     
 @app.route('/addquestions/add_openq', methods=['GET', 'POST'])
+@login_required
 def add_openq():
+  if current_user.check_admin():
     form = OpenTestQuestion()
     ##for relative file location
     dirname = path.dirname(__file__)
@@ -408,7 +420,10 @@ def add_openq():
         outfile.write(json_object)
         flash('Questions added!')
         return redirect(url_for('userprofile'))
-    return render_template("tests/addopenq_template.html", title="Add Open Questions", form=form)
+  else:
+    flash('Not an admin: Please contact your supervisor')
+    return redirect(url_for('userprofile'))
+  return render_template("tests/addopenq_template.html", title="Add Open Questions", form=form)
 
 
     
