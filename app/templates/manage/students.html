@@ -17,24 +17,8 @@
 
 <section class="dashboard">
   <div class="container">
-    <p><strong>There
-      {% if num_users == 1 %}
-      is 1 user
-      {% else %}
-      are {{ num_users }} users
-      {% endif %}
-      registered:
-      {% if num_admins == 1 %}
-      1 admin
-      {% else %}
-      {{ num_admins }} admins
-      {% endif %}
-      and
-      {% if num_students == 1 %}
-      1 student.
-      {% else %}
-      {{ num_students }} students.
-      {% endif %}
+    <p><strong>There {% if num_users == 1 %}is 1 user{% else %}are {{ num_users }} users{% endif %} registered:
+      {% if num_admins == 1 %}1 admin{% else %}{{ num_admins }} admins{% endif %} and {% if num_students == 1 %}1 student.{% else %}{{ num_students }} students.{% endif %}
     </strong></p>
     {% for user in users %}
     <div class="question-box">
