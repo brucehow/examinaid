@@ -47,9 +47,17 @@
                 <div class="dropdown-menu" aria-labelledby="profile-menu">
                   <a class="dropdown-item" href="{{ url_for('userprofile') }}">Dashboard</a>
                   <div class="dropdown-divider"></div>
+                  {% if current_user.admin %} <!-- Teacher dropdown menu -->
+                  <a class="dropdown-item" href="{{ url_for('userprofile') }}">Mark Completed Tests</a>
+                  <a class="dropdown-item" href="{{ url_for('userprofile') }}">View Previous Tests</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{{ url_for('userprofile') }}">Manage Tests</a>
+                  <a class="dropdown-item" href="{{ url_for('manageusers') }}">Manage Users</a>
+                  {% else %} <!-- Student dropdown menu -->
                   <a class="dropdown-item" href="{{ url_for('newtest') }}">Start New Test</a>
                   <a class="dropdown-item" href="{{ url_for('attempts') }}">View Previous Attempts</a>
                   <a class="dropdown-item" href="{{ url_for('userprofile') }}">My Feedback</a>
+                  {% endif %}
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="{{ url_for('changepassword') }}">Change Password</a>
                 </div>
