@@ -63,3 +63,8 @@ header {
 .dropdown-menu > .dropdown-item:focus {
  background-color: #007757;
 }
+
+/* New test nav-bar */
+.nav-abs {
+  position: absolute;
+}
