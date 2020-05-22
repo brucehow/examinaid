@@ -24,6 +24,17 @@ div.question-box form p strong {
   margin-left: 0rem;
 }
 
+#add-user-form input {
+  border: 1px solid;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0 0.25rem 0.5rem;
+  margin-right: 0.5rem;
+}
+
+#add-user-form input[type=submit] {
+  padding: 0.25rem 0.5rem;
+}
+
 /* Button */
 input.test-btn {
   background-color: #008a65;
