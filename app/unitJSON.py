@@ -1,4 +1,5 @@
 from json import load, dump
+from os import listdir, path, curdir
 
 def add_test(unitCode, testCount):
   """
@@ -37,6 +38,13 @@ def get_tests(unitCode):
     tests = -1
   return tests
 
+def get_all(filepath):
+  """
+  Loads and returns the entire `units.json` file containing all supported units and their test numbers.
+  """
+  with open(filepath, "r") as readfile:
+    units = load(readfile)
+    return units
 
 def remove_unit(unitCode):
   """

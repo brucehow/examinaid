@@ -37,10 +37,12 @@ def attempts():
 def quiz():
     return render_template("quiz.html", title="Quiz")
 
-# Test selection page; could be phased into the student profile
-@app.route("/newtest")
+@app.route("/newtest", methods = ["GET", "POST"])
 def newtest():
     form = TestForm()
+    if form.validate_on_submit():
+      questionset = form.questionset.data
+      return redirect(url_for("test", questionset=questionset))
     return render_template("tests/newtest.html", title="Start New Test", form=form)
 
 

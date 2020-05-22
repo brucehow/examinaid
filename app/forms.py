@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import IntegerField, StringField, PasswordField, BooleanField, SubmitField, SelectField, FieldList
 from wtforms.validators import DataRequired
 from flask_login import current_user
+from app.unitJSON import get_all
 
 # The following validators and User object are only required for the Register form.
 from wtforms.validators import ValidationError, Email, EqualTo
@@ -34,8 +35,8 @@ class RegisterForm(FlaskForm):
 
 # Potential form for the unit test selection
 class TestForm(FlaskForm):
-    unit = SelectField('Unit', [DataRequired()], choices = [('python','CITS1401'),('dsa','CITS2200'),('ai','CITS3001')])
-    testtype = SelectField('Assessment Type', [DataRequired()], choices = [('midsem','Mid-Semester'),('final','Final Examination')])
+    questionset = SelectField('Question Set', [DataRequired()], choices = [("{}_{}".format(unit.lower(), setnumber), "{} Set {}".format(unit, setnumber)) for unit in get_all("app/questions/units.json") for setnumber in get_all("app/questions/units.json")[unit]]) # ('cits1401_1','CITS1401 Set 1')
+    submit = SubmitField('Start Test')
 
 class MultiTestQuestion(FlaskForm):
     unitName = StringField('UnitName', validators=[DataRequired()])
