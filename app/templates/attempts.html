@@ -6,7 +6,11 @@
     <div class="row vertical-align">
       <div class="col-md-8">
         <h1>Previous Attempts</h1>
-        <p>Sit back home, relax, and view all your previous test attempts and outcomes.</p>
+        {% if current_user.admin %}
+        <p>View all previous test attempts and outcomes completed by students</p>
+        {% else %} 
+        <p>View all your previous test attempts and outcomes.</p>
+        {% endif %}
       </div>
       <div class="col-md-4 d-none d-md-block">
         <img class="img-lg" src="../static/resources/prevattempts.svg" alt=""> 
@@ -17,8 +21,43 @@
 <section class="green">
   <!-- Load previous tests here -->
   <div class="container">
+    {% if current_user.admin %}
+    <div class="test-attempt-list">
+      <div class="table-responsive-sm">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Unit</th>
+              <th>Assessment Type</th>
+              <th>Student</th>
+              <th>Started</th>
+              <th>Completed</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <!-- for each here-->
+          <tr>
+            <td>CITS1401</td>
+            <td>Exam</td>
+            <td>Bruce</td>
+            <td>01/05/2020 15:20</td>
+            <td>01/05/2020 15:50</td>
+            <td>16/25</td>
+          </tr>
+          <tr>
+            <td>CITS1401</td>
+            <td>Exam</td>
+            <td>Bruce</td>
+            <td>01/05/2020 15:20</td>
+            <td>01/05/2020 15:50</td>
+            <td>16/25</td>
+          </tr>
+          <!-- end for -->
+        </table>
+      </div>
+    </div>
+    {% else %} <!-- Student Template -->
     <div class="row">
-      <!-- Template -->
       <div class="col-md-6">
         <div class="test-attempt">
           <div class="row">
@@ -48,6 +87,7 @@
         </div>
       </div>
     </div>
+    {% endif %}
   </div>
 </section>
 
