@@ -11,10 +11,9 @@
   </div>
   <!-- Wave separator -->
   <svg class="wave-bot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-    <path fill="#fafafa" fill-opacity="1" d="M0,64L60,74.7C120,85,240,107,360,101.3C480,96,600,64,720,48C840,32,960,32,1080,48C1200,64,1320,96,1380,112L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+    <path fill="#fafafa" fill-opacity="1" d="M0,32L48,37.3C96,43,192,53,288,90.7C384,128,480,192,576,186.7C672,181,768,107,864,85.3C960,64,1056,96,1152,106.7C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
   </svg>
 </section>
-
 <section class="dashboard">
   <div class="container">
     <p><strong>There {% if num_users == 1 %}is 1 user
@@ -23,7 +22,7 @@
     <!-- Form to add a user -->
     <div class="question-box">
       <form action="{{ url_for('adduser') }}" method="POST" id="add-user-form">
-        <p><strong>Add a User:</strong></p>
+        <p><strong>Add a new User</strong></p>
         <input type="text" name="username" placeholder="Username" required/>
         <input type="email" name="email" placeholder="Email" required/>
         <input type="password" name="password" placeholder="Password" required/>
