@@ -479,12 +479,17 @@ def remove(user_id):
 def adduser():
     data = request.form
     if data:
-        print(data["username"], data["email"])
+        print(data["username"], data["email"], data["password"])
         if (data["username"] == '') or (data["email"] == ''):
             print("Cannot add a user without both a username and an email.")
         else:
             user = User(username=data["username"], email=data["email"])
-            user.set_password("password1")
+            if (data["password"] is not None):
+              print("Password specified.")
+              user.set_password(data["password"])
+            else:
+              print("Password not specified.")
+              user.set_password("password1")
             db.session.add(user)
             db.session.commit()
     else:
