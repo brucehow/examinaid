@@ -17,32 +17,44 @@
 
 <section class="dashboard">
   <div class="container">
-    <p><strong>There {% if num_users == 1 %}is 1 user{% else %}are {{ num_users }} users{% endif %} registered:
-      {% if num_admins == 1 %}1 admin{% else %}{{ num_admins }} admins{% endif %} and {% if num_students == 1 %}1 student.{% else %}{{ num_students }} students.{% endif %}
+    <p><strong>There {% if num_users == 1 %}is 1 user
+      {% else %}are {{ num_users }} users{% endif %} registered: {% if num_admins == 1 %}1 teacher{% else %}{{ num_admins }} teachers{% endif %} and {% if num_students == 1 %}1 student.{% else %}{{ num_students }} students.{% endif %}
     </strong></p>
     <!-- Form to add a user -->
     <div class="question-box">
       <form action="{{ url_for('adduser') }}" method="POST" id="add-user-form">
         <p><strong>Add a User:</strong></p>
-        <input type="text" name="username" placeholder="Username" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <input type="password" name="password" placeholder="Password" required />
-        <input type="submit" value="Add User" />
+        <input type="text" name="username" placeholder="Username" required/>
+        <input type="email" name="email" placeholder="Email" required/>
+        <input type="password" name="password" placeholder="Password" required/>
+        <input type="submit" value="Add User"/>
       </form>
     </div>
     <!-- List of all users -->
-    {% for user in users %}
-    <div class="question-box">
-      <p><strong>{{ user.username }}</strong></p>
-      <ul>
-        <li>{% if user.check_admin() %}Administrator{% else %}Student{% endif %}</li>
-        <li>{{ user.email }}</li>
-        {% if current_user != user %}
-        <li><button onclick="window.location.href='/manageusers/remove/{{ user.id }}'" class="remove-user" id="remove-user-{{ user.id }}">Remove User</button></li>
-        {% endif %}
-      </ul>
+    <div class="table-responsive-sm">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Account</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        {% for user in users %}
+        <tr>
+          <td>{{ user.username }}</td>
+          <td>{% if user.check_admin() %}Teacher{% else %}Student{% endif %}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            {% if current_user != user %}
+            <button onclick="window.location.href='/manageusers/remove/{{ user.id }}'" class="remove-user" id="remove-user-{{ user.id }}">Remove User</button>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
     </div>
-    {% endfor %}
   </div>
 </section>
 

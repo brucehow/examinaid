@@ -42,17 +42,6 @@ input.test-btn {
   float: right;
 }
 
-button.remove-user {
-  background: none;
-  border: none;
-  font-weight: bold;
-  transition: 250ms;
-}
-
-button.remove-user:hover {
-  color: grey;
-}
-
 /* Images */
 .question-image {
   margin-bottom: 1rem;

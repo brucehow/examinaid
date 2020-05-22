@@ -55,3 +55,21 @@ section.dashboard {
   padding: 2rem;
   margin: 4rem 0;
 }
+
+/* Mange users CSS */
+button.remove-user {
+  background: none;
+  border: none;
+  font-weight: bold;
+  transition: 250ms;
+}
+
+button.remove-user:hover {
+  color: grey;
+}
+
+.user-list {
+  border: 1px solid grey;
+  padding: 1rem;
+  margin: 2rem 0;
+}
