@@ -1,5 +1,5 @@
 from json import load, dump
-from os import listdir, path, curdir
+from os import listdir, path, remove
 
 def add_test(unitCode, testCount):
   """
@@ -41,6 +41,8 @@ def get_tests(unitCode):
 def get_all(filepath):
   """
   Loads and returns the entire `units.json` file containing all supported units and their test numbers.
+  When referencing this function outside of the main `unitJSON.py` module file, the `filepath` variable
+  is likely to be `app/questions/units.json`.
   """
   with open(filepath, "r") as readfile:
     units = load(readfile)
@@ -48,7 +50,7 @@ def get_all(filepath):
 
 def remove_unit(unitCode):
   """
-  Removes a unit from the `app/questions/units.json` file.
+  Removes a unit from the `app/questions/units.json` file and deletes all the question sets.
   Returns the list of supported tests for that unit, or `-1` if the unit was not in the units file.
   """
   with open("questions/units.json", "r") as readfile:
@@ -56,16 +58,22 @@ def remove_unit(unitCode):
   tests = units.pop(unitCode, None)
   with open("questions/units.json", "w") as writefile:
     dump(units, writefile, indent=4)
+  # Delete all question set files for this unit
+  for test in tests:
+    questionset = "questions/{}_{}.json".format(unitCode.lower(), test)
+    if path.exists(questionset):
+        remove(questionset)
   if tests is not None:
     return tests
   else:
     return -1
-  
+
 
 def remove_test(unitCode, testNumber):
   """
   Removes test number `testNumber` from the unit with code `unitCode`.
-  Returns 0 on successful removal, or -1 if an error was encountered.
+  Returns `0` on successful removal of track and file, `-1` if the `testNumber` is not being tracked, and `-2` if the test file did not exist.
+  The `testNumber` check occurs before the existing file check.
   """
   with open("questions/units.json", "r") as readfile:
     units = load(readfile)
@@ -77,8 +85,16 @@ def remove_test(unitCode, testNumber):
         units.pop(unitCode) # Remove this unit if we removed the final test
       with open("questions/units.json", "w") as writefile:
         dump(units, writefile)
+      # Delete the actual question set file
+      questionset = "questions/{}_{}.json".format(unitCode.lower(), testNumber)
+      if path.exists(questionset):
+        remove(questionset)
+      else:
+        return -2
       return 0
     else:
       return -1 # Test number not in tests
   except KeyError:
     return -1 # Unit is not supported
+
+print(remove_unit("CITS1401"))
