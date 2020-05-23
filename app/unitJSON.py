@@ -12,14 +12,14 @@ def add_test(unitCode, testCount):
   with open("questions/units.json", "r") as readfile: # We don't want to have to write to the file unless we have to
     units = load(readfile)
   try: # File already contains the unit
-    tests = units[unitCode]
+    tests = units[unitCode.upper()]
     if (testCount in tests):
       return -1 # Test count already supported
     else:
       tests.append(testCount)
       tests.sort()
   except KeyError: # File does not already contain the unit
-    units[unitCode] = [testCount]
+    units[unitCode.upper()] = [testCount]
   with open("questions/units.json", "w") as writefile:
     dump(units, writefile)
     return 0
@@ -33,7 +33,7 @@ def get_tests(unitCode):
   with open("questions/units.json", "r") as readfile: # We don't want to have to write to the file unless we have to
     units = load(readfile)
   try:
-    tests = units[unitCode]
+    tests = units[unitCode.upper()]
   except KeyError:
     tests = -1
   return tests
