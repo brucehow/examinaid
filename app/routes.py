@@ -440,52 +440,52 @@ def test(questionset):
 @login_required
 def submit():
     data = request.form
-    answers = list(data.values()) #Convert user response to a list
-    filename = 'app/questions/' + answers[0] + '.json' 
-    answers = answers[1:] 
+    userAnswers = list(data.values()) #Convert user response to a list
+    fileName = 'app/questions/' + userAnswers[0] + '.json' 
+    userAnswers = userAnswers[1:] 
 
-    actuals = []  #Storage for each question in the test, its allocated mark and its correct answer
-    marks = []
-    questions = []
+    allCorrectanswers = []  #Storage for each question in the test, its allocated mark and its correct answer
+    availMarksauto = []
+    allQuestions = []
 
     incorrectQnumber = [] #Storage for incorrect questions and user's responses
-    youanswered = []
-    incorrectquestion = []
-    correctanswer = []
+    youAnswered = []
+    incorrectQuestion = []
+    correctAnswers = []
 
-    with open (filename, 'r') as f:
-      mydata = json.load(f)
-      answerdata = mydata["questions"]
-      for i in range(0,len(answers)):
-        questionNumber = answerdata[i]
+    with open (fileName, 'r') as f:
+      myData = json.load(f)
+      answerData = myData["questions"]
+      for i in range(0,len(userAnswers)):
+        questionNumber = answerData[i]
         correctAnswer = questionNumber["answer"]
         marksAwarded = questionNumber["marks"]
         question = questionNumber["prompt"]
 
-        questions.append(question)
-        actuals.append(correctAnswer)
+        allQuestions.append(question)
+        allCorrectanswers.append(correctAnswer)
 
         if correctAnswer is None: 
-          marks.append(0)           #Don't include marks for non automated questions
+          availMarksauto.append(0)           #Don't include marks for non automated questions
         else:
-          marks.append(marksAwarded)
+          availMarksauto.append(marksAwarded)
 
-      marksachieved = 0
-      for i in range(0,len(actuals)):
-        if answers[i] == actuals[i] and actuals[i] is not None:  #Tally up marks if correct answer
-          marksachieved = marksachieved + marks[i]
-        elif answers[i] != actuals[i] and actuals[i] is not None: #Add questions and answers to incorrect question storage
+      marksAchieved = 0
+      for i in range(0,len(allCorrectanswers)):
+        if userAnswers[i] == allCorrectanswers[i] and allCorrectanswers[i] is not None:  #Tally up marks if correct answer
+          marksAchieved = marksAchieved + availMarksauto[i]
+        elif userAnswers[i] != allCorrectanswers[i] and allCorrectanswers[i] is not None: #Add questions and answers to incorrect question storage
           incorrectQnumber.append(i+1)
-          youanswered.append(answers[i])
-          incorrectquestion.append(questions[i])
-          correctanswer.append(actuals[i])
+          youAnswered.append(userAnswers[i])
+          incorrectQuestion.append(allQuestions[i])
+          correctAnswers.append(allCorrectanswers[i])
 
-      autoAchievablemarks = sum(marks)
+      autoAchievablemarks = sum(availMarksauto)
 
-      output = "achieved {} of {} for all automatic questions. The remaining questions will be manually marked.\n".format(marksachieved,sum(marks))
+      output = "achieved {} of {} for all automatic questions. The remaining questions will be manually marked.\n".format(marksAchieved,sum(availMarksauto))
 
       for i in range (0,len(incorrectQnumber)):
-        print("You incorrectly answered:Q{}:{}\n You answered:{}\n Correct Answer: {}\n".format(incorrectQnumber[i],incorrectquestion[i],youanswered[i],correctanswer[i]))
+        print("You incorrectly answered:Q{}:{}\n You answered:{}\n Correct Answer: {}\n".format(incorrectQnumber[i],incorrectQuestion[i],youAnswered[i],correctAnswers[i]))
 
 
     return redirect(url_for('userprofile'))
