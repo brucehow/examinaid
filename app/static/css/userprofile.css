@@ -56,6 +56,11 @@ section.dashboard {
   margin: 4rem 0;
 }
 
+.test-attempt:hover {
+  transform: translate(0, -5px);
+}
+
+
 .test-attempt-list {
   color: #2c2d30;
   background-color: #fafafa;

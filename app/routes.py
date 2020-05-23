@@ -33,6 +33,10 @@ def userprofile():
 def attempts():
     return render_template("attempts.html", title="Previous Attempts")
 
+@app.route("/feedback")
+def feedback():
+    return render_template("feedback.html", title="Feedback")
+
 @app.route("/quiz")
 def quiz():
     return render_template("quiz.html", title="Quiz")
