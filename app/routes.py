@@ -89,6 +89,15 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', title="Register", form=form)
 
+# Admin manage tests
+@app.route('/managetests')
+@login_required
+def managetests():
+    if not current_user.check_admin(): # Student logins cannot access this page
+        return redirect(url_for('userprofile'))
+    else:
+        return render_template('manage/tests.html', title="Manage Tests")
+
 # Add Questions function using JSON creation
 @app.route('/addquestions/add_multiq', methods=['GET', 'POST'])
 @login_required
