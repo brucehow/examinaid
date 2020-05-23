@@ -434,22 +434,25 @@ def test(questionset):
                             unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"], unitCode=data["unitCode"],
                             questionset=questionset)
 
-# After a test is submitted
+#After a test is submitted, the received dictionary is converted to a list. The first item in this list contains the name of the question set. We use this information to open the correct JSON file and compare the users response
+# to the actual answers for each question. Marks are counted up along with determining which question the user got incorrect. 
 @app.route('/submit/', methods=['POST'])
 @login_required
 def submit():
     data = request.form
-    answers = list(data.values())
-    filename = 'app/questions/' + answers[0] + '.json'
-    answers = answers[1:]
+    answers = list(data.values()) #Convert user response to a list
+    filename = 'app/questions/' + answers[0] + '.json' 
+    answers = answers[1:] 
 
-    actuals = []
+    actuals = []  #Storage for each question in the test, its allocated mark and its correct answer
     marks = []
     questions = []
-    incorrectQnumber = []
+
+    incorrectQnumber = [] #Storage for incorrect questions and user's responses
     youanswered = []
     incorrectquestion = []
     correctanswer = []
+
     with open (filename, 'r') as f:
       mydata = json.load(f)
       answerdata = mydata["questions"]
@@ -458,24 +461,27 @@ def submit():
         correctAnswer = questionNumber["answer"]
         marksAwarded = questionNumber["marks"]
         question = questionNumber["prompt"]
+
         questions.append(question)
         actuals.append(correctAnswer)
-        if correctAnswer is None:
-          marks.append(0)
+
+        if correctAnswer is None: 
+          marks.append(0)           #Don't include marks for non automated questions
         else:
           marks.append(marksAwarded)
 
       marksachieved = 0
       for i in range(0,len(actuals)):
-        if answers[i] == actuals[i] and actuals[i] is not None:
+        if answers[i] == actuals[i] and actuals[i] is not None:  #Tally up marks if correct answer
           marksachieved = marksachieved + marks[i]
-        elif answers[i] != actuals[i] and actuals[i] is not None:
+        elif answers[i] != actuals[i] and actuals[i] is not None: #Add questions and answers to incorrect question storage
           incorrectQnumber.append(i+1)
           youanswered.append(answers[i])
           incorrectquestion.append(questions[i])
           correctanswer.append(actuals[i])
-      
+
       autoAchievablemarks = sum(marks)
+
       output = "achieved {} of {} for all automatic questions. The remaining questions will be manually marked.\n".format(marksachieved,sum(marks))
 
       for i in range (0,len(incorrectQnumber)):
