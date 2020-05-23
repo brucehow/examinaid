@@ -99,7 +99,7 @@ def managetests():
         return render_template('manage/tests.html', title="Manage Tests")
 
 # Add Questions function using JSON creation
-@app.route('/addquestions/add_multiq', methods=['GET', 'POST'])
+@app.route('/managetests/add_multiq', methods=['GET', 'POST'])
 @login_required
 def add_multiq():
   if current_user.check_admin():
@@ -208,7 +208,7 @@ def add_multiq():
     return redirect(url_for('userprofile'))
   return render_template("tests/addmultiq_template.html", title="Add MultipleChoice Questions", form=form)
 
-@app.route('/addquestions/add_shortq', methods=['GET', 'POST'])
+@app.route('/managetests/add_shortq', methods=['GET', 'POST'])
 @login_required
 def add_shortq():
   if current_user.check_admin():
@@ -317,7 +317,7 @@ def add_shortq():
     return redirect(url_for('userprofile'))
   return render_template("tests/addshortq_template.html", title="Add Short Questions", form=form)
     
-@app.route('/addquestions/add_openq', methods=['GET', 'POST'])
+@app.route('/managetests/add_openq', methods=['GET', 'POST'])
 @login_required
 def add_openq():
   if current_user.check_admin():

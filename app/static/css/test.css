@@ -97,3 +97,13 @@ input[type="file"] {
   background-color: #0b926a;
   background-image: url(../resources/texture-1.png);
 }
+
+/* Manage tests */
+.options {
+  max-width: 500px;
+  padding: 0;
+}
+
+.add-question label {
+  min-width: 80px;
+}
