@@ -31,8 +31,10 @@ class UserModelCase(unittest.TestCase):
     self.assertFalse(s.check_password('secretpassword'))
     self.assertTrue(s.check_password('hashpassword'))
 
+
+    
 if __name__ == '__main__':
-  unittest.main()
+  unittest.main(verbosity=2)
 
 
   # def test_is_commited(self):
