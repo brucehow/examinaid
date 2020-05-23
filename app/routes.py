@@ -9,6 +9,7 @@ from werkzeug.urls import url_parse
 
 from json import load, dumps
 from os import listdir, path # To debug file paths
+import json
 
 @app.route("/")
 @app.route("/index")
@@ -438,7 +439,34 @@ def test(questionset):
 @login_required
 def submit():
     data = request.form
-    print(data)
+    answers = list(data.values())
+    filename = 'app/questions/' + answers[0] + '.json'
+    answers = answers[1:]
+
+    actuals = []
+    marks = []
+    with open (filename, 'r') as f:
+      mydata = json.load(f)
+      answerdata = mydata["questions"]
+      for i in range(0,len(answers)):
+        questionNumber = answerdata[i]
+        correctAnswer = questionNumber["answer"]
+        marksAwarded = questionNumber["marks"]
+        actuals.append(correctAnswer)
+        if correctAnswer is None:
+          marks.append(0)
+        else:
+          marks.append(marksAwarded)
+
+      marksachieved = 0
+      for i in range(0,len(actuals)):
+        if answers[i] == actuals[i]:
+          marksachieved = marksachieved + marks[i]
+      
+      autoAchievablemarks = sum(marks)
+      print("achieved {} of {} for all automatic questions. The remaining questions will be manually marked.".format(marksachieved,sum(marks)))
+
+
     return redirect(url_for('userprofile'))
 
 # Admin manage student logins
