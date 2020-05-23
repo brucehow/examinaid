@@ -2,7 +2,15 @@
 
 {% block content %}
 <link rel="stylesheet" href="../../static/css/test.css"/>
-
+<nav class="navbar-hidden nav-abs navbar-expand-md nav-transparent">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for('managetests') }}">
+        <span class="far fa-arrow-alt-circle-left nav-back nav-white"></span>
+      </a>
+    </li>
+  </ul>
+</nav>
 <section class="green">
   <div class="container">
     <div class="row vertical-align">
