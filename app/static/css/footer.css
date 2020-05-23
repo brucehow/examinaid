@@ -1,0 +1,30 @@
+footer {
+  background-color: #242729;
+  color: white;
+}
+
+.footer-content {
+  padding: 2rem 0;
+}
+
+.anchor {
+  background-color: #1b1d1f;
+}
+
+.copyright {
+  margin: 0;
+  padding: 1rem 0;
+  opacity: 0.6;
+}
+
+.footer-link {
+  text-decoration: none;
+  font-weight: 400;
+  color: white;
+}
+
+.footer-link:hover {
+  color: white;
+  text-decoration: none;
+  opacity: 0.6;
+}
