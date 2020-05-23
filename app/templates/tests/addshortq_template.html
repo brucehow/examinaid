@@ -2,276 +2,316 @@
 
 {% block content %}
 <link rel="stylesheet" href="../../static/css/test.css"/>
-<div class="container">
-  <div class="test-info">
-    <h2>This is to create a Short Answer question set.</h2>
-    <p><strong>This submission must be completed in one sitting.</strong></p>
-  </div>
-  <form id="example-test-form" method="POST">
-    {{ form.hidden_tag() }}
-    
-    {{ form.unitName.label }}<br>
-    {{ form.unitName() }}<br>
-    {% for error in form.unitName.errors %}
-    <br><span style="color: red;">[{{ error }}]</span>
-    {% endfor %} 
-    <br>    
-
-    {{ form.unitCode.label }}<br>
-    {{ form.unitCode() }}
-    {% for error in form.unitCode.errors %}
-    <br><span style="color: red;">[{{ error }}]</span>
-    {% endfor %} 
-    <br>
-
-    {{ form.testNumber.label }}<br>
-    {{ form.testNumber() }}
-    {% for error in form.testNumber.errors %}
-    <br><span style="color: red;">[{{ error }}]</span>
-    {% endfor %} 
-    <br>
-
-    {{ form.totalMarks.label }}<br>
-    {{ form.totalMarks() }}<br>
-    {% for error in form.totalMarks.errors %}
-    <br><span style="color: red;">[{{ error }}]</span>
-    {% endfor %} 
-    <br>
-
-    <div class="question-box">
-      <p><strong>{% print("Question 1:") %}</strong></p><br>
-
-      {{ form.marks1.label }}<br>
-      {{ form.marks1() }}
-      {% for error in form.marks1.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      {{ form.prompt1.label }}<br>
-      {{ form.prompt1() }}
-      {% for error in form.prompt1.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      {{ form.answer1.label }}<br>
-      {{ form.answer1() }}
-      {% for error in form.answer1.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      <p><strong>{% print("Question 2:") %}</strong></p><br>
-
-      {{ form.marks2.label }}<br>
-      {{ form.marks2() }}
-      {% for error in form.marks2.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-      
-      {{ form.prompt2.label }}<br>
-      {{ form.prompt2() }}
-      {% for error in form.prompt2.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      {{ form.answer2.label }}<br>
-      {{ form.answer2() }}
-      {% for error in form.answer2.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      <p><strong>{% print("Question 3:") %}</strong></p><br>
-
-      {{ form.marks3.label }}<br>
-      {{ form.marks3() }}
-      {% for error in form.marks3.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-      
-      {{ form.prompt3.label }}<br>
-      {{ form.prompt3() }}
-      {% for error in form.prompt3.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      {{ form.answer3.label }}<br>
-      {{ form.answer3() }}
-      {% for error in form.answer3.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      <p><strong>{% print("Question 4:") %}</strong></p><br>
-
-      {{ form.marks4.label }}<br>
-      {{ form.marks4() }}
-      {% for error in form.marks4.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-      
-      {{ form.prompt4.label }}<br>
-      {{ form.prompt4() }}
-      {% for error in form.prompt4.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-
-      {{ form.answer4.label }}<br>
-      {{ form.answer4() }}
-      {% for error in form.answer4.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      <p><strong>{% print("Question 5:") %}</strong></p><br>
-
-      {{ form.marks5.label }}<br>
-      {{ form.marks5() }}
-      {% for error in form.marks5.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-      
-      {{ form.prompt5.label }}<br>
-      {{ form.prompt5() }}
-      {% for error in form.prompt5.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      {{ form.answer5.label }}<br>
-      {{ form.answer5() }}
-      {% for error in form.answer5.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      <p><strong>{% print("Question 6:") %}</strong></p><br>
-
-      {{ form.marks6.label }}<br>
-      {{ form.marks6() }}
-      {% for error in form.marks6.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-      
-      {{ form.prompt6.label }}<br>
-      {{ form.prompt6() }}
-      {% for error in form.prompt6.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      {{ form.answer6.label }}<br>
-      {{ form.answer6() }}
-      {% for error in form.answer6.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      <p><strong>{% print("Question 7:") %}</strong></p><br>
-
-      {{ form.marks7.label }}<br>
-      {{ form.marks7() }}
-      {% for error in form.marks7.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-      
-      {{ form.prompt7.label }}<br>
-      {{ form.prompt7() }}
-      {% for error in form.prompt7.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      {{ form.answer7.label }}<br>
-      {{ form.answer7() }}
-      {% for error in form.answer7.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      <p><strong>{% print("Question 8:") %}</strong></p><br>
-
-      {{ form.marks8.label }}<br>
-      {{ form.marks8() }}
-      {% for error in form.marks8.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-      
-      {{ form.prompt8.label }}<br>
-      {{ form.prompt8() }}
-      {% for error in form.prompt8.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      {{ form.answer8.label }}<br>
-      {{ form.answer8() }}
-      {% for error in form.answer8.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      <p><strong>{% print("Question 9:") %}</strong></p><br>
-
-      {{ form.marks9.label }}<br>
-      {{ form.marks9() }}
-      {% for error in form.marks9.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-      
-      {{ form.prompt9.label }}<br>
-      {{ form.prompt9() }}
-      {% for error in form.prompt1.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      {{ form.answer9.label }}<br>
-      {{ form.answer9() }}
-      {% for error in form.answer9.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      <p><strong>{% print("Question 10:") %}</strong></p><br>
-
-      {{ form.marks10.label }}<br>
-      {{ form.marks10() }}
-      {% for error in form.marks10.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-      
-      {{ form.prompt10.label }}<br>
-      {{ form.prompt10() }}
-      {% for error in form.prompt10.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
-
-      {{ form.answer10.label }}<br>
-      {{ form.answer10() }}
-      {% for error in form.answer10.errors %}
-      <br><span style="color: red;">[{{ error }}]</span>
-      {% endfor %} 
-      <br>
+<section class="green">
+  <div class="container">
+    <div class="row vertical-align">
+      <div class="col-md-8">
+        <h2>Create Short Answer Question Set</h2>
+        <p>Create a short answer question set for students</p>
       </div>
-    <input type="submit" class="plain-btn lg test-btn" value="Submit Question Set"  id="submit-example-test-form" />
-  </form>
-</div>
+      <div class="col-md-4 d-none d-md-block">
+        <img class="img-lg" src="../../static/resources/managequestion.svg" alt=""> 
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <p><strong>Note: </strong> following form must be completed in one sitting.</p>
+    <form id="example-test-form" method="POST">
+      <div class="question-box">
+        <h3>Test Information</h3>
+        {{ form.hidden_tag() }}
+        {{ form.unitName.label }}<br>
+        {{ form.unitName() }}<br>
+        {% for error in form.unitName.errors %}
+        <br><span style="color: red;">[{{ error }}]</span>
+        {% endfor %} 
 
+        {{ form.unitCode.label }}<br>
+        {{ form.unitCode() }}
+        {% for error in form.unitCode.errors %}
+        <br><span style="color: red;">[{{ error }}]</span>
+        {% endfor %} 
+        <br>
+
+        {{ form.testNumber.label }}<br>
+        {{ form.testNumber() }}
+        {% for error in form.testNumber.errors %}
+        <br><span style="color: red;">[{{ error }}]</span>
+        {% endfor %} 
+        <br>
+
+        {{ form.totalMarks.label }}<br>
+        {{ form.totalMarks() }}<br>
+        {% for error in form.totalMarks.errors %}
+        <br><span style="color: red;">[{{ error }}]</span>
+        {% endfor %} 
+        <br>
+      </div>
+      <!-- Question set start -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="question-box add-question">
+            <h3>Question 1</h3>
+            {{ form.marks1.label }}
+            {{ form.marks1() }}
+            {% for error in form.marks1.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+      
+            {{ form.prompt1.label }}
+            {{ form.prompt1() }}
+            {% for error in form.prompt1.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+
+            {{ form.answer1.label }}
+            {{ form.answer1() }}
+            {% for error in form.answer1.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="question-box add-question">
+            <h3>Question 2</h3>
+            {{ form.marks2.label }}
+            {{ form.marks2() }}
+            {% for error in form.marks2.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+      
+            {{ form.prompt2.label }}
+            {{ form.prompt2() }}
+            {% for error in form.prompt2.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+
+            {{ form.answer2.label }}
+            {{ form.answer2() }}
+            {% for error in form.answer2.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="question-box add-question">
+            <h3>Question 3</h3>
+            {{ form.marks3.label }}
+            {{ form.marks3() }}
+            {% for error in form.marks3.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+      
+            {{ form.prompt3.label }}
+            {{ form.prompt3() }}
+            {% for error in form.prompt3.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+
+            {{ form.answer3.label }}
+            {{ form.answer3() }}
+            {% for error in form.answer3.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="question-box add-question">
+            <h3>Question 4</h3>
+            {{ form.marks4.label }}
+            {{ form.marks4() }}
+            {% for error in form.marks4.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+      
+            {{ form.prompt4.label }}
+            {{ form.prompt4() }}
+            {% for error in form.prompt4.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+
+            {{ form.answer4.label }}
+            {{ form.answer4() }}
+            {% for error in form.answer4.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="question-box add-question">
+            <h3>Question 5</h3>
+            {{ form.marks5.label }}
+            {{ form.marks5() }}
+            {% for error in form.marks5.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+      
+            {{ form.prompt5.label }}
+            {{ form.prompt5() }}
+            {% for error in form.prompt5.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+
+            {{ form.answer5.label }}
+            {{ form.answer5() }}
+            {% for error in form.answer5.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="question-box add-question">
+            <h3>Question 6</h3>
+            {{ form.marks6.label }}
+            {{ form.marks6() }}
+            {% for error in form.marks6.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+      
+            {{ form.prompt6.label }}
+            {{ form.prompt6() }}
+            {% for error in form.prompt6.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+
+            {{ form.answer6.label }}
+            {{ form.answer6() }}
+            {% for error in form.answer6.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="question-box add-question">
+            <h3>Question 7</h3>
+            {{ form.marks7.label }}
+            {{ form.marks7() }}
+            {% for error in form.marks7.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+      
+            {{ form.prompt7.label }}
+            {{ form.prompt7() }}
+            {% for error in form.prompt7.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+
+            {{ form.answer7.label }}
+            {{ form.answer7() }}
+            {% for error in form.answer7.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="question-box add-question">
+            <h3>Question 8</h3>
+            {{ form.marks8.label }}
+            {{ form.marks8() }}
+            {% for error in form.marks8.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+      
+            {{ form.prompt8.label }}
+            {{ form.prompt8() }}
+            {% for error in form.prompt8.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+
+            {{ form.answer8.label }}
+            {{ form.answer8() }}
+            {% for error in form.answer8.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="question-box add-question">
+            <h3>Question 9</h3>
+            {{ form.marks9.label }}
+            {{ form.marks9() }}
+            {% for error in form.marks9.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+      
+            {{ form.prompt9.label }}
+            {{ form.prompt9() }}
+            {% for error in form.prompt9.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+
+            {{ form.answer9.label }}
+            {{ form.answer9() }}
+            {% for error in form.answer9.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="question-box add-question">
+            <h3>Question 10</h3>
+            {{ form.marks10.label }}
+            {{ form.marks10() }}
+            {% for error in form.marks10.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+      
+            {{ form.prompt10.label }}
+            {{ form.prompt10() }}
+            {% for error in form.prompt10.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+
+            {{ form.answer10.label }}
+            {{ form.answer10() }}
+            {% for error in form.answer10.errors %}
+            <br><span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            <br>
+          </div>
+        </div>
+      </div>
+      <input type="submit" class="plain-btn lg test-btn" value="Submit Question Set"  id="submit-example-test-form" />
+    </form>
+  </div>
+</section>
 {% endblock content %}
