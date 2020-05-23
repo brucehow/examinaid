@@ -445,6 +445,7 @@ def submit():
 
     actuals = []
     marks = []
+    questions = []
     incorrectQnumber = []
     youanswered = []
     incorrectquestion = []
@@ -456,32 +457,29 @@ def submit():
         questionNumber = answerdata[i]
         correctAnswer = questionNumber["answer"]
         marksAwarded = questionNumber["marks"]
+        question = questionNumber["prompt"]
+        questions.append(question)
         actuals.append(correctAnswer)
         if correctAnswer is None:
           marks.append(0)
         else:
           marks.append(marksAwarded)
 
-      question = questionNumber["prompt"]
-
       marksachieved = 0
       for i in range(0,len(actuals)):
         if answers[i] == actuals[i] and actuals[i] is not None:
           marksachieved = marksachieved + marks[i]
-        elif actuals[i] is not None:
+        elif answers[i] != actuals[i] and actuals[i] is not None:
           incorrectQnumber.append(i+1)
           youanswered.append(answers[i])
-          incorrectquestion.append(question)
+          incorrectquestion.append(questions[i])
           correctanswer.append(actuals[i])
       
-      print(correctanswer,incorrectquestion,incorrectQnumber,youanswered)
-
       autoAchievablemarks = sum(marks)
       output = "achieved {} of {} for all automatic questions. The remaining questions will be manually marked.\n".format(marksachieved,sum(marks))
-      print(output)
 
       for i in range (0,len(incorrectQnumber)):
-        print("You incorrectly answered:Q{}:{}\n You answered:{}\n Correct Answer: {}\n").format(incorrectQnumber[i],incorrectquestion[i],youanswered[i],correctanswer[i])
+        print("You incorrectly answered:Q{}:{}\n You answered:{}\n Correct Answer: {}\n".format(incorrectQnumber[i],incorrectquestion[i],youanswered[i],correctanswer[i]))
 
 
     return redirect(url_for('userprofile'))
