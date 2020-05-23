@@ -9,6 +9,7 @@ from werkzeug.urls import url_parse
 
 from json import load, dumps
 from os import listdir, path # To debug file paths
+import json
 
 @app.route("/")
 @app.route("/index")
@@ -450,12 +451,61 @@ def test(questionset):
                             unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"], unitCode=data["unitCode"],
                             questionset=questionset)
 
-# After a test is submitted
+#After a test is submitted, the received dictionary is converted to a list. The first item in this list contains the name of the question set. We use this information to open the correct JSON file and compare the users response
+# to the actual answers for each question. Marks are counted up along with determining which question the user got incorrect. 
 @app.route('/submit/', methods=['POST'])
 @login_required
 def submit():
     data = request.form
-    print(data)
+    userAnswers = list(data.values()) #Convert user response to a list
+    fileName = 'app/questions/' + userAnswers[0] + '.json' 
+    userAnswers = userAnswers[1:] 
+
+    allCorrectanswers = []  #Storage for each question in the test, its allocated mark and its correct answer
+    availMarksauto = []
+    allQuestions = []
+
+    incorrectQnumber = [] #Storage for incorrect questions and user's responses
+    youAnswered = []
+    incorrectQuestion = []
+    correctAnswers = []
+
+    with open (fileName, 'r') as f:
+      myData = json.load(f)
+      answerData = myData["questions"]
+      for i in range(0,len(userAnswers)):
+        questionNumber = answerData[i]
+        correctAnswer = questionNumber["answer"]
+        marksAwarded = questionNumber["marks"]
+        question = questionNumber["prompt"]
+
+        allQuestions.append(question)
+        allCorrectanswers.append(correctAnswer)
+
+        if correctAnswer is None: 
+          availMarksauto.append(0)           #Don't include marks for non automated questions
+        else:
+          availMarksauto.append(marksAwarded)
+
+      marksAchieved = 0
+      for i in range(0,len(allCorrectanswers)):
+        if userAnswers[i] == allCorrectanswers[i] and allCorrectanswers[i] is not None:  #Tally up marks if correct answer
+          marksAchieved = marksAchieved + availMarksauto[i]
+        elif userAnswers[i] != allCorrectanswers[i] and allCorrectanswers[i] is not None: #Add questions and answers to incorrect question storage
+          incorrectQnumber.append(i+1)
+          youAnswered.append(userAnswers[i])
+          incorrectQuestion.append(allQuestions[i])
+          correctAnswers.append(allCorrectanswers[i])
+
+      autoAchievablemarks = sum(availMarksauto)
+
+      output = "achieved {} of {} for all automatic questions. The remaining questions will be manually marked.\n".format(marksAchieved,sum(availMarksauto))
+
+      print(output)
+      for i in range (0,len(incorrectQnumber)):
+        print("You incorrectly answered:Q{}: {}\n You answered:{}\n Correct Answer: {}\n".format(incorrectQnumber[i],incorrectQuestion[i],youAnswered[i],correctAnswers[i]))
+
+
     return redirect(url_for('userprofile'))
 
 # Admin manage student logins
