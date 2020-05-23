@@ -96,5 +96,3 @@ def remove_test(unitCode, testNumber):
       return -1 # Test number not in tests
   except KeyError:
     return -1 # Unit is not supported
-
-print(remove_unit("CITS1401"))
