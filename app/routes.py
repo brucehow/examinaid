@@ -202,9 +202,6 @@ def add_multiq():
   else:
     flash('Not an admin: Please contact your supervisor')
     return redirect(url_for('userprofile'))
-  else:
-    flash('Not an admin: Please contact your supervisor')
-    return redirect(url_for('userprofile'))
   return render_template("tests/addmultiq_template.html", title="Add MultipleChoice Questions", form=form)
 
 @app.route('/addquestions/add_shortq', methods=['GET', 'POST'])
@@ -430,9 +427,6 @@ def add_openq():
           outfile.write(json_object)
           flash('Questions added!')
           return redirect(url_for('userprofile'))
-  else:
-    flash('Not an admin: Please contact your supervisor')
-    return redirect(url_for('userprofile'))
   else:
     flash('Not an admin: Please contact your supervisor')
     return redirect(url_for('userprofile'))
