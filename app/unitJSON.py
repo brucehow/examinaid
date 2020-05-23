@@ -9,7 +9,8 @@ def add_test(unitCode, testCount):
   created a file named `cits3401_3.json`, we will call `add_test("cits3401", 3)`.
   Returns 0 on success, and -1 if the testCount is already supported.
   """
-  with open("questions/units.json", "r") as readfile: # We don't want to have to write to the file unless we have to
+  unitCode = unitCode.upper()
+  with open("app/questions/units.json", "r") as readfile: # We don't want to have to write to the file unless we have to
     units = load(readfile)
   try: # File already contains the unit
     tests = units[unitCode]
@@ -20,7 +21,7 @@ def add_test(unitCode, testCount):
       tests.sort()
   except KeyError: # File does not already contain the unit
     units[unitCode] = [testCount]
-  with open("questions/units.json", "w") as writefile:
+  with open("app/questions/units.json", "w") as writefile:
     dump(units, writefile)
     return 0
 
@@ -30,7 +31,8 @@ def get_tests(unitCode):
   Gets the list of supported tests for the unit with code `unitCode`.
   Returns the list of test numbers, or -1 if the unit is not supported yet.
   """
-  with open("questions/units.json", "r") as readfile: # We don't want to have to write to the file unless we have to
+  unitCode = unitCode.upper()
+  with open("app/questions/units.json", "r") as readfile: # We don't want to have to write to the file unless we have to
     units = load(readfile)
   try:
     tests = units[unitCode]
@@ -51,10 +53,11 @@ def remove_unit(unitCode):
   Removes a unit from the `app/questions/units.json` file.
   Returns the list of supported tests for that unit, or `-1` if the unit was not in the units file.
   """
-  with open("questions/units.json", "r") as readfile:
+  unitCode = unitCode.upper()
+  with open("app/questions/units.json", "r") as readfile:
     units = load(readfile)
   tests = units.pop(unitCode, None)
-  with open("questions/units.json", "w") as writefile:
+  with open("app/questions/units.json", "w") as writefile:
     dump(units, writefile, indent=4)
   if tests is not None:
     return tests
@@ -67,7 +70,8 @@ def remove_test(unitCode, testNumber):
   Removes test number `testNumber` from the unit with code `unitCode`.
   Returns 0 on successful removal, or -1 if an error was encountered.
   """
-  with open("questions/units.json", "r") as readfile:
+  unitCode = unitCode.upper()
+  with open("app/questions/units.json", "r") as readfile:
     units = load(readfile)
   try:
     tests = units[unitCode]
@@ -75,7 +79,7 @@ def remove_test(unitCode, testNumber):
       tests.remove(testNumber)
       if (len(tests) == 0):
         units.pop(unitCode) # Remove this unit if we removed the final test
-      with open("questions/units.json", "w") as writefile:
+      with open("app/questions/units.json", "w") as writefile:
         dump(units, writefile)
       return 0
     else:

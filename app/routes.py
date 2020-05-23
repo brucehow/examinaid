@@ -2,7 +2,7 @@ from app import app, db
 from flask import render_template, flash, redirect, url_for, request
 
 from app.forms import LoginForm, RegisterForm, TestForm, ResetPasswordForm, MultiTestQuestion, ShortTestQuestion, OpenTestQuestion
-
+from app.unitJSON import add_test, get_tests, get_all, remove_unit, remove_test
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, db
 from werkzeug.urls import url_parse
@@ -191,11 +191,17 @@ def add_multiq():
     json_object = dumps(dictionary, indent = 4)
     
     if form.validate_on_submit():
-    #change questions/test.json to be an actual variable for file storage and loading
-      with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
-        outfile.write(json_object)
-        flash('Questions added!')
+      if add_test(form.unitCode.data, form.testNumber.data) == -1:
+        flash('Error: Test already exists!')
         return redirect(url_for('userprofile'))
+      else:
+        with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
+          outfile.write(json_object)
+          flash('Questions added!')
+          return redirect(url_for('userprofile'))
+  else:
+    flash('Not an admin: Please contact your supervisor')
+    return redirect(url_for('userprofile'))
   else:
     flash('Not an admin: Please contact your supervisor')
     return redirect(url_for('userprofile'))
@@ -300,14 +306,21 @@ def add_shortq():
     json_object = dumps(dictionary, indent = 4)
     
     if form.validate_on_submit():
-    #change questions/test.json to be an actual variable for file storage and loading
-      with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
-        outfile.write(json_object)
-        flash('Questions added!')
+      if add_test(form.unitCode.data, form.testNumber.data) == -1:
+        flash('Error: Test already exists!')
         return redirect(url_for('userprofile'))
+      else:
+        with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
+          outfile.write(json_object)
+          flash('Questions added!')
+          return redirect(url_for('userprofile'))
   else:
     flash('Not an admin: Please contact your supervisor')
     return redirect(url_for('userprofile'))
+
+    #change questions/test.json to be an actual variable for file storage and loading
+
+
   return render_template("tests/addshortq_template.html", title="Add Short Questions", form=form)
     
 @app.route('/addquestions/add_openq', methods=['GET', 'POST'])
@@ -409,11 +422,17 @@ def add_openq():
     json_object = dumps(dictionary, indent = 4)
     
     if form.validate_on_submit():
-    #change questions/test.json to be an actual variable for file storage and loading
-      with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
-        outfile.write(json_object)
-        flash('Questions added!')
+      if add_test(form.unitCode.data, form.testNumber.data) == -1:
+        flash('Error: Test already exists!')
         return redirect(url_for('userprofile'))
+      else:
+        with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
+          outfile.write(json_object)
+          flash('Questions added!')
+          return redirect(url_for('userprofile'))
+  else:
+    flash('Not an admin: Please contact your supervisor')
+    return redirect(url_for('userprofile'))
   else:
     flash('Not an admin: Please contact your supervisor')
     return redirect(url_for('userprofile'))
