@@ -4,17 +4,7 @@ footer {
 }
 
 .footer-content {
-  padding: 2rem 0;
-}
-
-.anchor {
-  background-color: #1b1d1f;
-}
-
-.copyright {
-  margin: 0;
-  padding: 1rem 0;
-  opacity: 0.6;
+  padding: 5rem 0 2rem;
 }
 
 .footer-link {
@@ -26,5 +16,28 @@ footer {
 .footer-link:hover {
   color: white;
   text-decoration: none;
+  opacity: 0.6;
+}
+
+/* Structural */
+.footer-divider {
+  opacity: 0.6;
+  border-top: 1px solid #303030;
+  max-width: 400px;
+}
+
+/* Social icons */
+.social a {
+  margin: 0 0.5rem;
+}
+
+/* Anchor copyright info */
+.anchor {
+  background-color: #1b1d1f;
+}
+
+.copyright {
+  margin: 0;
+  padding: 1rem 0;
   opacity: 0.6;
 }
