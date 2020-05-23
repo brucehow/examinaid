@@ -16,19 +16,16 @@
       </ul>
     </nav>
     <div class="test-selector d-flex justify-content-center align-items-center">
-      <form class="unit-select" action="" method="post">
+      <form class="unit-select" action="" method="post" novalidate>
         <h2>Choose your test</h2>
         <h4>Select from the below options</h4>
+        {{ form.hidden_tag() }}
         <div class="field">
-          <label for="unit">Select Unit</label>
-          {{ form.unit(class="userInput", autofocus="on") }}
-        </div>
-        <div class="field">
-          <label for="unit">Assessment Type</label>
-          {{ form.testtype(class="userInput") }}
+          {{ form.questionset.label }}
+          {{ form.questionset(class="userInput", autofocus="on") }}
         </div>
         <div class="field-sm center">
-          <button class="form-btn" href="{{ url_for('test', questionset='cits3403_1') }}">Begin Test</button>
+          {{ form.submit(class="form-btn") }}
         </div>
       </form>
     </div>
