@@ -484,8 +484,9 @@ def submit():
 
       output = "achieved {} of {} for all automatic questions. The remaining questions will be manually marked.\n".format(marksAchieved,sum(availMarksauto))
 
+      print(output)
       for i in range (0,len(incorrectQnumber)):
-        print("You incorrectly answered:Q{}:{}\n You answered:{}\n Correct Answer: {}\n".format(incorrectQnumber[i],incorrectQuestion[i],youAnswered[i],correctAnswers[i]))
+        print("You incorrectly answered:Q{}: {}\n You answered:{}\n Correct Answer: {}\n".format(incorrectQnumber[i],incorrectQuestion[i],youAnswered[i],correctAnswers[i]))
 
 
     return redirect(url_for('userprofile'))
