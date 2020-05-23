@@ -7,9 +7,18 @@
       <div class="col-md-8">
         <h1>Manage Tests</h1>
         <p>Add new tests to the system or remove existing tests</p>
+        <div class="dropdown">
+          <button class="plain-btn lg green dropdown-toggle" type="button" data-toggle="dropdown">Add Test <span class="caret"></span></button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{{ url_for('userprofile') }}">Multi Choice Test</a>
+            <a class="dropdown-item" href="{{ url_for('userprofile') }}">Short Answer Test</a>
+            <a class="dropdown-item" href="{{ url_for('userprofile') }}">Open Answer Test</a>
+          </div>
+        </div>
+        
       </div>
       <div class="col-md-4 d-none d-md-block">
-        <img class="img-lg" src="../static/resources/prevattempts.svg" alt=""> 
+        <img class="img-lg" src="../../static/resources/managetests.svg" alt=""> 
       </div>
     </div>
   </div>
@@ -23,30 +32,27 @@
         <table class="table">
           <thead>
             <tr>
-              <th>Unit Set</th>
-              <th>Assessment Type</th>
-              <th>Student</th>
-              <th>Started</th>
-              <th>Completed</th>
-              <th>Score</th>
+              <th>Unit Code</th>
+              <th>Unit Name</th>
+              <th>Test Number</th>
+              <th>Total Marks</th>
+              <th>Questions</th>
             </tr>
           </thead>
           <!-- for each here-->
           <tr>
-            <td>CITS1401</td>
-            <td>Exam</td>
-            <td>Bruce</td>
-            <td>01/05/2020 15:20</td>
-            <td>01/05/2020 15:50</td>
-            <td>16/25</td>
+            <td>CITS3403</td>
+            <td>Agile Web Development</td>
+            <td>1</td>
+            <td>25</td>
+            <td>10</td>
           </tr>
           <tr>
-            <td>CITS1401</td>
-            <td>Exam</td>
-            <td>Bruce</td>
-            <td>01/05/2020 15:20</td>
-            <td>01/05/2020 15:50</td>
-            <td>16/25</td>
+            <td>CITS3403</td>
+            <td>Agile Web Development</td>
+            <td>1</td>
+            <td>25</td>
+            <td>10</td>
           </tr>
           <!-- end for -->
         </table>

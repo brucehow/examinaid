@@ -61,7 +61,8 @@ header {
 }
 
 .dropdown-menu > .dropdown-item:focus {
- background-color: #007757;
+  background-color: #007757;
+  color: white;
 }
 
 /* New test nav-bar */
