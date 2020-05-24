@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import IntegerField, StringField, PasswordField, BooleanField, SubmitField, SelectField, FieldList
-from wtforms.validators import DataRequired, InputRequired
+from wtforms.validators import DataRequired
 from flask_login import current_user
 from app.unitJSON import get_all
 
