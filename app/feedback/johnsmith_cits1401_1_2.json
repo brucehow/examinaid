@@ -1,0 +1,35 @@
+{
+    "marked": "partial",
+    "unitName": "Problem Solving with Python",
+    "unitCode": "CITS1401",
+    "time": "05/24/2020, 20:01:32",
+    "user": "johnsmith",
+    "questionset": "cits1401_1",
+    "totalAvailmarks": 14,
+    "autoMarksachieved": 5,
+    "availAutomarks": 10,
+    "incorrectAutoquestions": [
+        "Which statement is not true about objects in an \"Object Oriented Program\"?",
+        "What does the following expression produce? list(range(7))[:-2]",
+        "Which of these Python data types cannot be indexed using the syntax x[k]?",
+        "Which of these expressions evaluates to False whenever a has the value True?",
+        "Given a Python list xs of length k, what is the legal range of values with which xs can be indexed?"
+    ],
+    "youAnswered": [
+        "Objects can contain data.",
+        "[6, 5, 4, 3, 2, 1, 0]",
+        "tuples",
+        "a and not b",
+        "k-1 or smaller"
+    ],
+    "correctAnswers": [
+        "Objects cannot mutate",
+        "[0, 1, 2, 3, 4]",
+        "files",
+        "not not False == a",
+        "-k up to k-1 inclusive"
+    ],
+    "requireManual": [
+        "Your boss asks you to develop a python program to determine an employee's net pay per month. The program will take a single parameter detailing the employee's yearly salary. You must develop a program to subtract super contributions, levies, and taxes in this order. Draw a structure chart outlining the structure of the program and upload it via the below prompt."
+    ]
+}

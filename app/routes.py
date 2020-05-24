@@ -34,13 +34,6 @@ def contact():
 def userprofile():
     return render_template("userprofile.html", title="My Profile")
 
-@app.route("/attempts")
-def attempts():
-    return render_template("attempts.html", title="Previous Attempts")
-
-@app.route("/feedback")
-def feedback():
-    return render_template("feedback.html", title="Feedback")
 
 @app.route("/quiz")
 def quiz():
@@ -482,6 +475,9 @@ def submit():
       myData = json.load(f)
       answerData = myData["questions"]
       totalMarksavail = myData["totalMarks"]
+      unitName = myData["unitName"]
+      unitCode = myData["unitCode"]
+
       for i in range(0,len(userAnswers)):
         questionNumber = answerData[i]
         correctAnswer = questionNumber["answer"]
@@ -514,6 +510,8 @@ def submit():
 
       dictionary = {
         "marked":'partial',
+        "unitName":unitName,
+        "unitCode":unitCode,
         "time":time,
         "user": user,
         "questionset":questionSet,
@@ -545,9 +543,16 @@ def submit():
         outfile.write(json_object)
 
 
-    return redirect(url_for('userprofile'))
+    return render_template('feedback.html', title="{} - New Test".format(dictionary["unitName"]),
+                            unit="{}: {}".format(dictionary["unitCode"], dictionary["unitName"]),achievedAutomarks=dictionary["autoMarksachieved"], autoAchievablemarks=dictionary["availAutomarks"],
+                            incorrectquestions=dictionary["incorrectAutoquestions"], youAnswered=dictionary["youAnswered"], correctAnswers=dictionary["correctAnswers"], time = dictionary["time"])
+@app.route("/attempts")
+def attempts():
+    return render_template("attempts.html", title="Previous Attempts")
 
-
+@app.route("/feedback/")
+def feedback():
+    return render_template("feedback.html", title="Feedback")
 
 # Admin manage student logins
 @app.route('/manageusers')
