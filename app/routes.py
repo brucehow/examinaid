@@ -672,6 +672,13 @@ def testfeedback(test_id):
                 total += mark
             feedback["manualMarks"] = newManualMarks
             feedback["manualMarksachieved"] = total
+            feedback["marked"] = "Fully"
+
+            # Update the file
+            json_object = dumps(feedback, indent=4)
+            newfeedback = open(filepath, "w")
+            newfeedback.write(json_object)
+            flash('Marks manually updated')
 
         # Access is granted
         return render_template("feedback.html", title="Feedback", content=feedback, inputs=inputs, form=form)

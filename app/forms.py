@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import IntegerField, StringField, PasswordField, BooleanField, SubmitField, SelectField, FieldList
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, InputRequired
 from flask_login import current_user
 from app.unitJSON import get_all
 
@@ -39,16 +39,16 @@ class TestForm(FlaskForm):
     submit = SubmitField('Start Test')
 
 class ManualMarkForm(FlaskForm):
-    mark1 = IntegerField('Mark', validators=[DataRequired(message="Invalid Marks Value")])
-    mark2 = IntegerField('Mark', validators=[DataRequired(message="Invalid Marks Value")])
-    mark3 = IntegerField('Mark', validators=[DataRequired(message="Invalid Marks Value")])
-    mark4 = IntegerField('Mark', validators=[DataRequired(message="Invalid Marks Value")])
-    mark5 = IntegerField('Mark', validators=[DataRequired(message="Invalid Marks Value")])
-    mark6 = IntegerField('Mark', validators=[DataRequired(message="Invalid Marks Value")])
-    mark7 = IntegerField('Mark', validators=[DataRequired(message="Invalid Marks Value")])
-    mark8 = IntegerField('Mark', validators=[DataRequired(message="Invalid Marks Value")])
-    mark9 = IntegerField('Mark', validators=[DataRequired(message="Invalid Marks Value")])
-    mark10 = IntegerField('Mark', validators=[DataRequired(message="Invalid Marks Value")])
+    mark1 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
+    mark2 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
+    mark3 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
+    mark4 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
+    mark5 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
+    mark6 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
+    mark7 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
+    mark8 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
+    mark9 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
+    mark10 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
 
 class MultiTestQuestion(FlaskForm):
     unitName = StringField('UnitName', validators=[DataRequired()])
