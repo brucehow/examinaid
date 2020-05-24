@@ -104,3 +104,22 @@ def remove_test(unitCode, testNumber):
       return -1 # Test number not in tests
   except KeyError:
     return -3 # Unit is not supported
+
+def next_test(unitCode):
+  """
+  Given a unit code, returns the number of the next availble question set.
+  Use this function to determine the next available question set number
+  when adding a new set.
+  """
+  unitCode = unitCode.upper()
+  with open("app/questions/units.json", "r") as readfile:
+    units = load(readfile)
+    try:
+      tests = units[unitCode]
+      templist = list(range(1,tests[len(tests) - 1] + 1))
+      for i in templist:
+        if i not in tests:
+          return i # First missing slot
+      return len(tests) + 1 # Next possible value, all previous values taken
+    except KeyError:
+      return 1 # Unit isn't supported yet, so start from set 1
