@@ -33,7 +33,7 @@
         {% if question.questionType == "multipleChoice" %}
           {% for option in question.totalOptions %}
             <input id="{{ option }}" type="radio" name="q{{ question.questionNumber }}" value="{{ option }}" required/>
-            <label for="{{ option }}">{{ option }}</label>
+            <label>{{ option }}</label>
             <br>
           {% endfor %}
         {% elif question.questionType == "number" %}

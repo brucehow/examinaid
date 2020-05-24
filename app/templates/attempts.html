@@ -65,14 +65,17 @@
               <h3>{{ attempt.unitCode }}</h3>
               <p>Question Set: {{ attempt.questionset }}</p>
               <p>Completed: {{ attempt.time }}</p>
+              <a class="contact-link" href="{{ url_for('feedback') }}">View Feedback</a>
             </div>
             <div class="col-sm-4 text-right">
-              <h2></h2>
-              <p>Auto Mark: <strong>{{ attempt.autoMarksachieved}}/{{ attempt.availAutomarks}}</strong></p>
-              <p>Open Answer Mark: <strong>{{ attempt.autoMarksachieved}}/{{ attempt.totalAvailmarks - attempt.availAutomarks}}</strong></p>
+              <h3>Overall Mark {{ attempt.autoMarksachieved + attempt.manualMarksachieved }}/{{ attempt.totalAvailmarks}}</h3>
+              <p>Auto Mark <strong>{{ attempt.autoMarksachieved}}/{{ attempt.availAutomarks}}</strong></p>
+              <p>Open Answer Mark <strong>{% if attempt.marked == "partial" %}-{% else %}{{ attempt.manualMarksachieved}}{% endif %}/{{ attempt.totalAvailmarks - attempt.availAutomarks}}</strong></p>
+              {% if attempt.marked == "partial" %}
+              <i class="text-right">Open Answer marking required</i>
+              {% endif %}
             </div>
           </div>
-          <a class="contact-link" href="{{ url_for('feedback') }}">View Feedback</a>
         </div>
       </div>
       {% endfor %}
