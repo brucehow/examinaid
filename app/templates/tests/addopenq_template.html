@@ -43,20 +43,6 @@
         <br><span style="color: red;">{{ error }}</span>
         {% endfor %} 
         <br>
-
-        {{ form.testNumber.label }}<br>
-        {{ form.testNumber(class="test-input") }}
-        {% for error in form.testNumber.errors %}
-        <br><span style="color: red;">{{ error }}</span>
-        {% endfor %} 
-        <br>
-
-        {{ form.totalMarks.label }}<br>
-        {{ form.totalMarks(class="test-input") }}
-        {% for error in form.totalMarks.errors %}
-        <br><span style="color: red;">{{ error }}</span>
-        {% endfor %} 
-        <br>
       </div>
       <!-- Question set start -->
       <div class="row">
