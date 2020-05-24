@@ -204,7 +204,7 @@ def add_multiq():
         flash('Error: Test already exists!')
         return redirect(url_for('userprofile'))
       else:
-        with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
+        with open(path.join(dirname, "questions/" + form.unitCode.data.lower() + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
           outfile.write(json_object)
           flash('Questions added!')
           return redirect(url_for('userprofile'))
@@ -316,7 +316,7 @@ def add_shortq():
         flash('Error: Test already exists!')
         return redirect(url_for('userprofile'))
       else:
-        with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
+        with open(path.join(dirname, "questions/" + form.unitCode.data.lower() + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
           outfile.write(json_object)
           flash('Questions added!')
           return redirect(url_for('userprofile'))
@@ -432,7 +432,7 @@ def add_openq():
         flash('Error: Test already exists!')
         return redirect(url_for('userprofile'))
       else:
-        with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
+        with open(path.join(dirname, "questions/" + form.unitCode.data.lower() + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
           outfile.write(json_object)
           flash('Questions added!')
           return redirect(url_for('userprofile'))
