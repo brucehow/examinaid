@@ -99,8 +99,14 @@ def register():
 def marktests():
     if not current_user.check_admin(): # Student logins cannot access this page
         return redirect(url_for('userprofile'))
-    else:
-        return render_template('marktests.html', title="Mark Completed Tests")
+    feedbackDir = 'app/feedback/'
+    res = []
+    for filename in os.listdir(feedbackDir):
+        feedback = open(feedbackDir + filename)
+        content = load(feedback)
+        if content["marked"] == "partial":
+            res.append(content)
+    return render_template('marktests.html', title="Mark Completed Tests", markTests=res)
 
 # Admin manage tests
 @app.route('/managetests')
@@ -602,13 +608,10 @@ def submit():
 
       with open(path.join(feedbackDir,filename+ ".json"), "w") as outfile:
         outfile.write(json_object)
-
-
-    return render_template('feedback.html', title="{} - New Test".format(dictionary["unitName"]),
-                            unit="{}: {}".format(dictionary["unitCode"], dictionary["unitName"]),achievedAutomarks=dictionary["autoMarksachieved"], autoAchievablemarks=dictionary["availAutomarks"],
-                            incorrectquestions=dictionary["incorrectAutoquestions"], youAnswered=dictionary["youAnswered"], correctAnswers=dictionary["correctAnswers"], time = dictionary["time"])
+    return redirect(url_for('attempts'))
 
 @app.route("/attempts")
+@login_required
 def attempts():
     attempts = []
     feedbackDir = 'app/feedback/'
@@ -623,9 +626,17 @@ def attempts():
                 attempts.append(load(feedback))
     return render_template("attempts.html", title="Previous Attempts", userAttempts=attempts)
 
-@app.route("/feedback/")
-def feedback():
-    return render_template("feedback.html", title="Feedback")
+@app.route("/feedback/<test_id>")
+@login_required
+def feedback(test_id):
+    feedback_file = open('app/feedback/' + test_id)
+    feedback = load(feedback_file)
+
+    # Access to feedback file given to admin or user itself
+    if current_user.check_admin() or current_user.username == feedback["user"]:
+        return render_template("feedback.html", title="Feedback", content=feedback)
+
+    return redirect(url_for('userprofile'))
 
 # Admin manage student logins
 @app.route('/manageusers')
