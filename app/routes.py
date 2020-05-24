@@ -565,7 +565,26 @@ def submit():
 
       manuallMarksachieved = 0
 
+      iteration = []
+      feedbackDir = 'app/feedback/'
+      for filename in os.listdir(feedbackDir):
+        if filename.startswith(user):
+          feedBacksplit = filename.split('_')
+          if feedBacksplit[1]+'_'+feedBacksplit[2] == questionSet:
+            number = feedBacksplit[3].split('.')
+            iteration.append(int(number[0]))
+
+      if iteration:
+        feedbackNumber = max(iteration)+1
+      else:
+        feedbackNumber = 1  
+
+      filename = '{}_{}_{}'.format(user,questionSet,feedbackNumber)
+
+
+
       dictionary = {
+        "ID":filename,
         "marked":'partial',
         "unitName":unitName,
         "unitCode":unitCode,
@@ -584,22 +603,7 @@ def submit():
 
       #Converts dictionary to JSON object. Checks directory if this test has been completed previously. Creates new JSON file containing answers per submission. 
       json_object = dumps(dictionary, indent = 4)
-      iteration = []
-      feedbackDir = 'app/feedback/'
-      for filename in os.listdir(feedbackDir):
-        if filename.startswith(user):
-          feedBacksplit = filename.split('_')
-          if feedBacksplit[1]+'_'+feedBacksplit[2] == questionSet:
-            number = feedBacksplit[3].split('.')
-            iteration.append(int(number[0]))
-
-      if iteration:
-        feedbackNumber = max(iteration)+1
-      else:
-        feedbackNumber = 1  
-
-      filename = '{}_{}_{}'.format(user,questionSet,feedbackNumber)
-
+      
       with open(path.join(feedbackDir,filename+ ".json"), "w") as outfile:
         outfile.write(json_object)
 
