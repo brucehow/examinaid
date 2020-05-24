@@ -579,8 +579,8 @@ def submit():
         "requireManual":requireManualmark
       }
 
+      #Converts dictionary to JSON object. Checks directory if this test has been completed previously. Creates new JSON file containing answers per submission.
       json_object = dumps(dictionary, indent = 4)
-
       iteration = []
       feedbackDir = 'app/feedback/'
       for filename in os.listdir(feedbackDir):
