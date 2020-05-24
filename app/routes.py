@@ -11,6 +11,9 @@ from json import load, dumps
 from os import listdir, path # To debug file paths
 import json
 import os
+import datetime
+from datetime import datetime
+
 
 @app.route("/")
 @app.route("/index")
@@ -505,8 +508,13 @@ def submit():
       autoAchievablemarks = sum(availMarksauto)
       user = current_user.username
 
+      now = datetime.now()
+      time = now.strftime("%m/%d/%Y, %H:%M:%S")
+      print(time)
+
       dictionary = {
         "marked":'partial',
+        "time":time,
         "user": user,
         "questionset":questionSet,
         "totalAvailmarks": totalMarksavail,
