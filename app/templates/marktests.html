@@ -38,7 +38,7 @@
             <td>{{ test.manualMarksachieved }}/{{ test.totalAvailmarks - test.availAutomarks}}</td>
             <td>{{ test.autoMarksachieved + test.manualMarksachieved }}/{{ test.totalAvailmarks }}</td>
             <td>{{ test.time }}</td>
-            <td><button onclick="window.location.href='/feedback/{{ test.id }}'" class="remove-user">Mark Test</button></td>
+            <td><button onclick="window.location.href='/feedback/{{ test.ID }}'" class="remove-user">Mark Test</button></td>
           </tr>
           {% endfor %}
         </table>

@@ -1,9 +1,9 @@
 {
-    "ID": "bruce_cits3403_1_1",
+    "ID": "bruce_cits3403_1_2",
     "marked": "partial",
     "unitName": "Agile Web Development",
     "unitCode": "CITS3403",
-    "time": "05/24/2020, 21:54:40",
+    "time": "05/24/2020, 22:53:56",
     "user": "bruce",
     "questionset": "cits3403_1",
     "totalAvailmarks": 14,
@@ -22,15 +22,15 @@
         "The following CSS code adds a 1 px (w) border to (x), and a 1px (y) border to (z). What is w, x, y, and z?"
     ],
     "youAnswered": [
-        "<thead></thead>",
+        "<td></td>",
         "<tb></tb>",
         "<tr></tr>",
         "<tr></tr>",
         "<td></td>",
         "<tr></tr>",
-        "23",
-        "213 ",
-        "w: black, x: table headers, y: blue, z: table cells"
+        " 1",
+        "11",
+        "w: black, x: table headers, y: blue, z: table rows and cells"
     ],
     "correctAnswers": [
         "<table></table>",

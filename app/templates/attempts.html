@@ -67,7 +67,7 @@
               <h3>{{ attempt.unitCode }}</h3>
               <p>Question Set: {{ attempt.questionset }}</p>
               <p>Completed: {{ attempt.time }}</p>
-              <a class="contact-link" href="{{ url_for('feedback') }}">View Feedback</a>
+              <a class="contact-link" href="{{ url_for('userprofile') }}">View Feedback</a>
             </div>
             <div class="col-sm-4 text-right">
               <h3>Overall Mark {{ attempt.autoMarksachieved + attempt.manualMarksachieved }}/{{ attempt.totalAvailmarks}}</h3>

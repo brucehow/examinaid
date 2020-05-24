@@ -34,6 +34,10 @@ def contact():
 def userprofile():
     return render_template("userprofile.html", title="My Profile")
 
+@app.route("/feedback") # Should not be accessed on its own
+@login_required
+def feedback():
+    return redirect(url_for('userprofile'))
 
 @app.route("/quiz")
 def quiz():
@@ -610,8 +614,9 @@ def submit():
       #Converts dictionary to JSON object. Checks directory if this test has been completed previously. Creates new JSON file containing answers per submission. 
       json_object = dumps(dictionary, indent = 4)
       
-      with open(path.join(feedbackDir,filename+ ".json"), "w") as outfile:
+      with open(path.join(feedbackDir,filename + ".json"), "w") as outfile:
         outfile.write(json_object)
+
     return redirect(url_for('attempts'))
 
 @app.route("/attempts")
@@ -632,8 +637,9 @@ def attempts():
 
 @app.route("/feedback/<test_id>")
 @login_required
-def feedback(test_id):
-    feedback_file = open('app/feedback/' + test_id)
+def testfeedback(test_id):
+    filepath = 'app/feedback/' + test_id + ".json"
+    feedback_file = open(filepath)
     feedback = load(feedback_file)
 
     # Access to feedback file given to admin or user itself

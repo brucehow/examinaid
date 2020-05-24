@@ -15,7 +15,27 @@
   </div>
 </section>
 <section>
-  <!-- feedback here -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Test Information</h3>
+        <p>Unit Code: {{ content.unitCode }}</p>
+        <p>Unit Name: {{ content.unitName }}</p>
+        <p>Completed: {{ content.time }}</p>
+        <p>Student: {{ content.user }}</p>
+      </div>
+      <div class="col-md-6">
+        <h3>Marking Summary</h3>
+        <p>Marking Status: {{ content.marked }}</p>
+        <p>Automatic Mark: {{ content.autoMarksachieved }}/{{ content.availAutomarks }}</p>
+        <p>Manual Mark: {{ content.manualMarksachieved }}/{{ content.totalAvailmarks - content.availAutomarks }}</p>
+        <p>Overal Mark: {{ content.manualMarksachieved + content.autoMarksachieved }}/{{ content.totalAvailmarks }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  
 </section>
 
 {% endblock %}
