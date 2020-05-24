@@ -1,0 +1,57 @@
+{% extends "index.html" %}
+
+{% block content %}
+<section class="grey">
+  <div class="container">
+    <div class="row vertical-align">
+      <div class="col-md-8">
+        <h1>Mark Completed Tests</h1>
+        <p>Manually mark open and short answer tests and add customised feedback</p>
+      </div>
+      <div class="col-md-4 d-none d-md-block">
+        <img class="img-lg" src="../static/resources/marktest.svg" alt=""> 
+      </div>
+    </div>
+  </div>
+</section>
+<section class="green">
+  <!-- Load previous tests here -->
+  <div class="container">
+    <div class="test-attempt-list">
+      <div class="table-responsive-sm">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Unit</th>
+              <th>Student</th>
+              <th>Started</th>
+              <th>Completed</th>
+              <th>Score</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <!-- for each here-->
+          <tr>
+            <td>CITS1401_1</td>
+            <td>Bruce</td>
+            <td>01/05/2020 15:20</td>
+            <td>01/05/2020 15:50</td>
+            <td>16/25</td>
+            <td>Mark Test</td>
+          </tr>
+          <tr>
+            <td>CITS1401</td>
+            <td>Bruce</td>
+            <td>01/05/2020 15:20</td>
+            <td>01/05/2020 15:50</td>
+            <td>16/25</td>
+            <td>Mark Test</td>
+          </tr>
+          <!-- end for -->
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

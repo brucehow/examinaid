@@ -51,7 +51,6 @@ header {
 /* Hidden style nav icon */
 .nav-back {
   font-size: 3rem;  
-  color: #5c5c5c;
   opacity: 0.5;
 }
 
@@ -61,11 +60,27 @@ header {
   transition: 300ms;
 }
 
+.nav-white {
+  color: white;
+  opacity: 0.5;
+}
+
+.nav-white:hover {
+  color: white;
+  opacity: 0.9;
+}
+
+
 .dropdown-menu > .dropdown-item:focus {
- background-color: #007757;
+  background-color: #007757;
+  color: white;
 }
 
 /* New test nav-bar */
 .nav-abs {
   position: absolute;
+}
+
+.nav-transparent {
+  background: transparent;
 }

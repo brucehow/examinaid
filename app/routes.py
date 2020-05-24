@@ -9,11 +9,11 @@ from werkzeug.urls import url_parse
 
 from json import load, dumps
 from os import listdir, path # To debug file paths
+from app.unitJSON import get_all, remove_test, next_test
 import json
 import os
 import datetime
 from datetime import datetime
-
 
 @app.route("/")
 @app.route("/index")
@@ -93,349 +93,404 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', title="Register", form=form)
 
+# Admin mark tests
+@app.route('/marktests')
+@login_required
+def marktests():
+    if not current_user.check_admin(): # Student logins cannot access this page
+        return redirect(url_for('userprofile'))
+    else:
+        return render_template('marktests.html', title="Mark Completed Tests")
+
+# Admin manage tests
+@app.route('/managetests')
+@login_required
+def managetests():
+    if not current_user.check_admin(): # Student logins cannot access this page
+        return redirect(url_for('userprofile'))
+    else:
+        tests = get_all("app/questions/units.json")
+        questionSets = []
+        for unit in tests:
+            for qset in tests[unit]:
+                filepath = "app/questions/{}_{}.json".format(unit.lower(), qset)
+                questionSet = load(open(filepath))
+                numq = 0
+                for question in questionSet["questions"]:
+                    numq += 1
+                thisSet = {
+                    "unitCode": questionSet["unitCode"],
+                    "unitName": questionSet["unitName"],
+                    "testNumber": questionSet["testNumber"],
+                    "totalMarks": questionSet["totalMarks"],
+                    "questions": numq
+                }
+                questionSets.append(thisSet)
+        return render_template('manage/tests.html', title="Manage Tests", sets=questionSets)
+
+# Remove a test set
+@app.route('/managetests/removeset/<unitCode>/<testNumber>')
+@login_required
+def removeset(unitCode, testNumber):
+    result = remove_test(unitCode, testNumber)
+    questionset = "{}_{}.json".format(unitCode.lower(), testNumber)
+    if result == 0:
+        print("Successfuly removed {}.".format(questionset))
+    elif result == -1:
+        print("Question set \"{}\" was not being tracked!".format(questionset))
+    elif result == -2:
+        print("{} file does not exist!".format(questionset))
+    elif result == -3:
+        print("Unit {} is not being tracked!".format(unitCode))
+    else: # Unknown
+        print("Unknown error occured trying to delete {}.".format(questionset))
+    return redirect(url_for("managetests"))
+
 # Add Questions function using JSON creation
-@app.route('/addquestions/add_multiq', methods=['GET', 'POST'])
+@app.route('/managetests/add_multiq', methods=['GET', 'POST'])
 @login_required
 def add_multiq():
   if current_user.check_admin():
     form = MultiTestQuestion()
     ##for relative file location
     dirname = path.dirname(__file__)
-    dictionary = {
-      "unitCode" : form.unitCode.data,
-      "unitName": form.unitName.data,
-      "testNumber": form.testNumber.data,
-      "totalMarks": form.totalMarks.data,
-      "questions": [
-        {
-          "questionNumber": 1,
-          "marks" : form.marks1.data,
-          "prompt": form.prompt1.data,
-          "answer": form.answer1.data,
-          "questionType": "multipleChoice",
-          "totalOptions": form.options1.data
-        },
-        {
-          "questionNumber": 2,
-          "marks" : form.marks2.data,
-          "prompt": form.prompt2.data,
-          "answer": form.answer2.data,
-          "questionType": "multipleChoice",
-          "totalOptions": form.options2.data
-        },
-        {
-          "questionNumber": 3,
-          "marks" : form.marks3.data,
-          "prompt": form.prompt3.data,
-          "answer": form.answer3.data,
-          "questionType": "multipleChoice",
-          "totalOptions": form.options3.data
-        },
-        {
-          "questionNumber": 4,
-          "marks" : form.marks4.data,
-          "prompt": form.prompt4.data,
-          "answer": form.answer4.data,
-          "questionType": "multipleChoice",
-          "totalOptions": form.options4.data
-        },
-        {
-          "questionNumber": 5,
-          "marks" : form.marks5.data,
-          "prompt": form.prompt5.data,
-          "answer": form.answer5.data,
-          "questionType": "multipleChoice",
-          "totalOptions": form.options5.data
-        },
-                {
-          "questionNumber": 6,
-          "marks" : form.marks6.data,
-          "prompt": form.prompt6.data,
-          "answer": form.answer6.data,
-          "questionType": "multipleChoice",
-          "totalOptions": form.options6.data
-        },
-        {
-          "questionNumber": 7,
-          "marks" : form.marks7.data,
-          "prompt": form.prompt7.data,
-          "answer": form.answer7.data,
-          "questionType": "multipleChoice",
-          "totalOptions": form.options7.data
-        },
-        {
-          "questionNumber": 8,
-          "marks" : form.marks8.data,
-          "prompt": form.prompt8.data,
-          "answer": form.answer8.data,
-          "questionType": "multipleChoice",
-          "totalOptions": form.options8.data
-        },
-        {
-          "questionNumber": 9,
-          "marks" : form.marks9.data,
-          "prompt": form.prompt9.data,
-          "answer": form.answer9.data,
-          "questionType": "multipleChoice",
-          "totalOptions": form.options9.data
-        },
-        {
-          "questionNumber": 10,
-          "marks" : form.marks10.data,
-          "prompt": form.prompt10.data,
-          "answer": form.answer10.data,
-          "questionType": "multipleChoice",
-          "totalOptions": form.options10.data
-        }
-      ]
-    }
-    ##dumps for 4 items, change indent variable if there's more items required
-    json_object = dumps(dictionary, indent = 4)
-    
     if form.validate_on_submit():
-      if add_test(form.unitCode.data, form.testNumber.data) == -1:
-        flash('Error: Test already exists!')
-        return redirect(url_for('userprofile'))
-      else:
-        with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
-          outfile.write(json_object)
-          flash('Questions added!')
-          return redirect(url_for('userprofile'))
+        totalMarks = form.marks1.data + form.marks2.data + form.marks3.data + form.marks4.data + form.marks5.data\
+        + form.marks6.data + form.marks7.data + form.marks8.data + form.marks9.data + form.marks10.data
+        testNumber = next_test(form.unitCode.data)
+        dictionary = {
+        "unitCode" : form.unitCode.data,
+        "unitName": form.unitName.data,
+        "testNumber": testNumber,
+        "totalMarks": totalMarks,
+        "questions": [
+            {
+            "questionNumber": 1,
+            "marks" : form.marks1.data,
+            "prompt": form.prompt1.data,
+            "answer": form.answer1.data,
+            "questionType": "multipleChoice",
+            "totalOptions": form.options1.data
+            },
+            {
+            "questionNumber": 2,
+            "marks" : form.marks2.data,
+            "prompt": form.prompt2.data,
+            "answer": form.answer2.data,
+            "questionType": "multipleChoice",
+            "totalOptions": form.options2.data
+            },
+            {
+            "questionNumber": 3,
+            "marks" : form.marks3.data,
+            "prompt": form.prompt3.data,
+            "answer": form.answer3.data,
+            "questionType": "multipleChoice",
+            "totalOptions": form.options3.data
+            },
+            {
+            "questionNumber": 4,
+            "marks" : form.marks4.data,
+            "prompt": form.prompt4.data,
+            "answer": form.answer4.data,
+            "questionType": "multipleChoice",
+            "totalOptions": form.options4.data
+            },
+            {
+            "questionNumber": 5,
+            "marks" : form.marks5.data,
+            "prompt": form.prompt5.data,
+            "answer": form.answer5.data,
+            "questionType": "multipleChoice",
+            "totalOptions": form.options5.data
+            },
+                    {
+            "questionNumber": 6,
+            "marks" : form.marks6.data,
+            "prompt": form.prompt6.data,
+            "answer": form.answer6.data,
+            "questionType": "multipleChoice",
+            "totalOptions": form.options6.data
+            },
+            {
+            "questionNumber": 7,
+            "marks" : form.marks7.data,
+            "prompt": form.prompt7.data,
+            "answer": form.answer7.data,
+            "questionType": "multipleChoice",
+            "totalOptions": form.options7.data
+            },
+            {
+            "questionNumber": 8,
+            "marks" : form.marks8.data,
+            "prompt": form.prompt8.data,
+            "answer": form.answer8.data,
+            "questionType": "multipleChoice",
+            "totalOptions": form.options8.data
+            },
+            {
+            "questionNumber": 9,
+            "marks" : form.marks9.data,
+            "prompt": form.prompt9.data,
+            "answer": form.answer9.data,
+            "questionType": "multipleChoice",
+            "totalOptions": form.options9.data
+            },
+            {
+            "questionNumber": 10,
+            "marks" : form.marks10.data,
+            "prompt": form.prompt10.data,
+            "answer": form.answer10.data,
+            "questionType": "multipleChoice",
+            "totalOptions": form.options10.data
+            }
+        ]
+        }
+        ##dumps for 4 items, change indent variable if there's more items required
+        json_object = dumps(dictionary, indent = 4)
+        if add_test(form.unitCode.data, testNumber) == -1:
+            flash('Error: Test already exists!')
+            return redirect(url_for('userprofile'))
+        else:
+            with open(path.join(dirname, "questions/" + form.unitCode.data.lower() + "_" + str(testNumber)  + ".json"), "w") as outfile:
+                outfile.write(json_object)
+                flash('Multi choice test added!')
+                return redirect(url_for('managetests'))
   else:
     flash('Not an admin: Please contact your supervisor')
     return redirect(url_for('userprofile'))
   return render_template("tests/addmultiq_template.html", title="Add MultipleChoice Questions", form=form)
 
-@app.route('/addquestions/add_shortq', methods=['GET', 'POST'])
+@app.route('/managetests/add_shortq', methods=['GET', 'POST'])
 @login_required
 def add_shortq():
   if current_user.check_admin():
     form = ShortTestQuestion()
     ##for relative file location
     dirname = path.dirname(__file__)
-    dictionary = {
-      "unitCode" : form.unitCode.data,
-      "unitName": form.unitName.data,
-      "testNumber": form.testNumber.data,
-      "totalMarks": form.totalMarks.data,
-      "questions": [
-        {
-          "questionNumber": 1,
-          "marks" : form.marks1.data,
-          "prompt": form.prompt1.data,
-          "answer": form.answer1.data,
-          "questionType": "shortAnswer",
-          "totalOptions": None
-        },
-        {
-          "questionNumber": 2,
-          "marks" : form.marks2.data,
-          "prompt": form.prompt2.data,
-          "answer": form.answer2.data,
-          "questionType": "shortAnswer",
-          "totalOptions": None
-        },
-        {
-          "questionNumber": 3,
-          "marks" : form.marks3.data,
-          "prompt": form.prompt3.data,
-          "answer": form.answer3.data,
-          "questionType": "shortAnswer",
-          "totalOptions": None
-        },
-        {
-          "questionNumber": 4,
-          "marks" : form.marks4.data,
-          "prompt": form.prompt4.data,
-          "answer": form.answer4.data,
-          "questionType": "shortAnswer",
-          "totalOptions": None
-        },
-        {
-          "questionNumber": 5,
-          "marks" : form.marks5.data,
-          "prompt": form.prompt5.data,
-          "answer": form.answer5.data,
-          "questionType": "shortAnswer",
-          "totalOptions": None
-        },
-                {
-          "questionNumber": 6,
-          "marks" : form.marks6.data,
-          "prompt": form.prompt6.data,
-          "answer": form.answer6.data,
-          "questionType": "shortAnswer",
-          "totalOptions": None
-        },
-        {
-          "questionNumber": 7,
-          "marks" : form.marks7.data,
-          "prompt": form.prompt7.data,
-          "answer": form.answer7.data,
-          "questionType": "shortAnswer",
-          "totalOptions": None
-        },
-        {
-          "questionNumber": 8,
-          "marks" : form.marks8.data,
-          "prompt": form.prompt8.data,
-          "answer": form.answer8.data,
-          "questionType": "shortAnswer",
-          "totalOptions": None
-        },
-        {
-          "questionNumber": 9,
-          "marks" : form.marks9.data,
-          "prompt": form.prompt9.data,
-          "answer": form.answer9.data,
-          "questionType": "shortAnswer",
-          "totalOptions": None
-        },
-        {
-          "questionNumber": 10,
-          "marks" : form.marks10.data,
-          "prompt": form.prompt10.data,
-          "answer": form.answer10.data,
-          "questionType": "shortAnswer",
-          "totalOptions": None
-        }
-      ]
-    }
-    ##dumps for 4 items, change indent variable if there's more items required
-    json_object = dumps(dictionary, indent = 4)
-    
     if form.validate_on_submit():
-      if add_test(form.unitCode.data, form.testNumber.data) == -1:
-        flash('Error: Test already exists!')
-        return redirect(url_for('userprofile'))
-      else:
-        with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
-          outfile.write(json_object)
-          flash('Questions added!')
+        totalMarks = form.marks1.data + form.marks2.data + form.marks3.data + form.marks4.data + form.marks5.data\
+        + form.marks6.data + form.marks7.data + form.marks8.data + form.marks9.data + form.marks10.data
+        testNumber = next_test(form.unitCode.data)
+        dictionary = {
+          "unitCode" : form.unitCode.data,
+          "unitName": form.unitName.data,
+          "testNumber": testNumber,
+          "totalMarks": totalMarks,
+          "questions": [
+          {
+            "questionNumber": 1,
+            "marks" : form.marks1.data,
+            "prompt": form.prompt1.data,
+            "answer": form.answer1.data,
+            "questionType": "shortAnswer",
+            "totalOptions": None
+          },
+          {
+            "questionNumber": 2,
+            "marks" : form.marks2.data,
+            "prompt": form.prompt2.data,
+            "answer": form.answer2.data,
+            "questionType": "shortAnswer",
+            "totalOptions": None
+          },
+          {
+            "questionNumber": 3,
+            "marks" : form.marks3.data,
+            "prompt": form.prompt3.data,
+            "answer": form.answer3.data,
+            "questionType": "shortAnswer",
+            "totalOptions": None
+          },
+          {
+            "questionNumber": 4,
+            "marks" : form.marks4.data,
+            "prompt": form.prompt4.data,
+            "answer": form.answer4.data,
+            "questionType": "shortAnswer",
+            "totalOptions": None
+          },
+          {
+            "questionNumber": 5,
+            "marks" : form.marks5.data,
+            "prompt": form.prompt5.data,
+            "answer": form.answer5.data,
+            "questionType": "shortAnswer",
+            "totalOptions": None
+          },
+                  {
+            "questionNumber": 6,
+            "marks" : form.marks6.data,
+            "prompt": form.prompt6.data,
+            "answer": form.answer6.data,
+            "questionType": "shortAnswer",
+            "totalOptions": None
+          },
+          {
+            "questionNumber": 7,
+            "marks" : form.marks7.data,
+            "prompt": form.prompt7.data,
+            "answer": form.answer7.data,
+            "questionType": "shortAnswer",
+            "totalOptions": None
+          },
+          {
+            "questionNumber": 8,
+            "marks" : form.marks8.data,
+            "prompt": form.prompt8.data,
+            "answer": form.answer8.data,
+            "questionType": "shortAnswer",
+            "totalOptions": None
+          },
+          {
+            "questionNumber": 9,
+            "marks" : form.marks9.data,
+            "prompt": form.prompt9.data,
+            "answer": form.answer9.data,
+            "questionType": "shortAnswer",
+            "totalOptions": None
+          },
+          {
+            "questionNumber": 10,
+            "marks" : form.marks10.data,
+            "prompt": form.prompt10.data,
+            "answer": form.answer10.data,
+            "questionType": "shortAnswer",
+            "totalOptions": None
+          }
+        ]
+        }    
+        ##dumps for 4 items, change indent variable if there's more items required
+        json_object = dumps(dictionary, indent = 4)
+        if add_test(form.unitCode.data, testNumber) == -1:
+          flash('Error: Test already exists!')
           return redirect(url_for('userprofile'))
+        else:
+          with open(path.join(dirname, "questions/" + form.unitCode.data.lower() + "_" + str(testNumber)  + ".json"), "w") as outfile:
+            outfile.write(json_object)
+            flash('Short answer test added!')
+            return redirect(url_for('managetests'))
   else:
     flash('Not an admin: Please contact your supervisor')
-    return redirect(url_for('userprofile'))
-
-    #change questions/test.json to be an actual variable for file storage and loading
-
-
+    return redirect(url_for('managetests'))
   return render_template("tests/addshortq_template.html", title="Add Short Questions", form=form)
-    
-@app.route('/addquestions/add_openq', methods=['GET', 'POST'])
+
+@app.route('/managetests/add_openq', methods=['GET', 'POST'])
 @login_required
 def add_openq():
   if current_user.check_admin():
     form = OpenTestQuestion()
     ##for relative file location
     dirname = path.dirname(__file__)
-    dictionary = {
-      "unitCode" : form.unitCode.data,
-      "unitName": form.unitName.data,
-      "testNumber": form.testNumber.data,
-      "totalMarks": form.totalMarks.data,
-      "questions": [
-        {
-          "questionNumber": 1,
-          "marks" : form.marks1.data,
-          "prompt": form.prompt1.data,
-          "answer": None,
-          "questionType": "openAnswer",
-          "totalOptions": None
-        },
-        {
-          "questionNumber": 2,
-          "marks" : form.marks2.data,
-          "prompt": form.prompt2.data,
-          "answer": None,
-          "questionType": "openAnswer",
-          "totalOptions": None
-        },
-        {
-          "questionNumber": 3,
-          "marks" : form.marks3.data,
-          "prompt": form.prompt3.data,
-          "answer": None,
-          "questionType": "openAnswer",
-          "totalOptions": None
-        },
-        {
-          "questionNumber": 4,
-          "marks" : form.marks4.data,
-          "prompt": form.prompt4.data,
-          "answer": None,
-          "questionType": "openAnswer",
-          "totalOptions": None
-        },
-        {
-          "questionNumber": 5,
-          "marks" : form.marks5.data,
-          "prompt": form.prompt5.data,
-          "answer": None,
-          "questionType": "openAnswer",
-          "totalOptions": None
-        },
-        {
-          "questionNumber": 6,
-          "marks" : form.marks6.data,
-          "prompt": form.prompt6.data,
-          "answer": None,
-          "questionType": "openAnswer",
-          "totalOptions": None
-        },
-        {
-          "questionNumber": 7,
-          "marks" : form.marks7.data,
-          "prompt": form.prompt7.data,
-          "answer": None,
-          "questionType": "openAnswer",
-          "totalOptions": None
-        },
-        {
-          "questionNumber": 8,
-          "marks" : form.marks8.data,
-          "prompt": form.prompt8.data,
-          "answer": None,
-          "questionType": "openAnswer",
-          "totalOptions": None
-        },
-        {
-          "questionNumber": 9,
-          "marks" : form.marks9.data,
-          "prompt": form.prompt9.data,
-          "answer": None,
-          "questionType": "openAnswer",
-          "totalOptions": None
-        },
-        {
-          "questionNumber": 10,
-          "marks" : form.marks10.data,
-          "prompt": form.prompt10.data,
-          "answer": None,
-          "questionType": "openAnswer",
-          "totalOptions": None
-        }
-      ]
-    }
-    ##dumps for 4 items, change indent variable if there's more items required
-    json_object = dumps(dictionary, indent = 4)
-    
     if form.validate_on_submit():
-      if add_test(form.unitCode.data, form.testNumber.data) == -1:
-        flash('Error: Test already exists!')
-        return redirect(url_for('userprofile'))
-      else:
-        with open(path.join(dirname, "questions/" + form.unitCode.data + "_" + str(form.testNumber.data)  + ".json"), "w") as outfile:
-          outfile.write(json_object)
-          flash('Questions added!')
+        totalMarks = form.marks1.data + form.marks2.data + form.marks3.data + form.marks4.data + form.marks5.data\
+        + form.marks6.data + form.marks7.data + form.marks8.data + form.marks9.data + form.marks10.data
+        testNumber = next_test(form.unitCode.data)
+        dictionary = {
+        "unitCode" : form.unitCode.data,
+        "unitName": form.unitName.data,
+        "testNumber": testNumber,
+        "totalMarks": totalMarks,
+        "questions": [
+          {
+            "questionNumber": 1,
+            "marks" : form.marks1.data,
+            "prompt": form.prompt1.data,
+            "answer": None,
+            "questionType": "openAnswer",
+            "totalOptions": None
+          },
+          {
+            "questionNumber": 2,
+            "marks" : form.marks2.data,
+            "prompt": form.prompt2.data,
+            "answer": None,
+            "questionType": "openAnswer",
+            "totalOptions": None
+          },
+          {
+            "questionNumber": 3,
+            "marks" : form.marks3.data,
+            "prompt": form.prompt3.data,
+            "answer": None,
+            "questionType": "openAnswer",
+            "totalOptions": None
+          },
+          {
+            "questionNumber": 4,
+            "marks" : form.marks4.data,
+            "prompt": form.prompt4.data,
+            "answer": None,
+            "questionType": "openAnswer",
+            "totalOptions": None
+          },
+          {
+            "questionNumber": 5,
+            "marks" : form.marks5.data,
+            "prompt": form.prompt5.data,
+            "answer": None,
+            "questionType": "openAnswer",
+            "totalOptions": None
+          },
+          {
+            "questionNumber": 6,
+            "marks" : form.marks6.data,
+            "prompt": form.prompt6.data,
+            "answer": None,
+            "questionType": "openAnswer",
+            "totalOptions": None
+          },
+          {
+            "questionNumber": 7,
+            "marks" : form.marks7.data,
+            "prompt": form.prompt7.data,
+            "answer": None,
+            "questionType": "openAnswer",
+            "totalOptions": None
+          },
+          {
+            "questionNumber": 8,
+            "marks" : form.marks8.data,
+            "prompt": form.prompt8.data,
+            "answer": None,
+            "questionType": "openAnswer",
+            "totalOptions": None
+          },
+          {
+            "questionNumber": 9,
+            "marks" : form.marks9.data,
+            "prompt": form.prompt9.data,
+            "answer": None,
+            "questionType": "openAnswer",
+            "totalOptions": None
+          },
+          {
+            "questionNumber": 10,
+            "marks" : form.marks10.data,
+            "prompt": form.prompt10.data,
+            "answer": None,
+            "questionType": "openAnswer",
+            "totalOptions": None
+          }
+        ]
+        }
+        ##dumps for 4 items, change indent variable if there's more items required
+        json_object = dumps(dictionary, indent = 4)
+        if add_test(form.unitCode.data, testNumber) == -1:
+          flash('Error: Test already exists!')
           return redirect(url_for('userprofile'))
+        else:
+          with open(path.join(dirname, "questions/" + form.unitCode.data.lower() + "_" + str(testNumber)  + ".json"), "w") as outfile:
+            outfile.write(json_object)
+            flash('Open answer test added!')
+            return redirect(url_for('managetests'))
   else:
     flash('Not an admin: Please contact your supervisor')
     return redirect(url_for('userprofile'))
   return render_template("tests/addopenq_template.html", title="Add Open Questions", form=form)
 
 
-    
+
 # The actual unique test page itself.
 @app.route('/test/<questionset>')
 @login_required
