@@ -1,6 +1,7 @@
 {% extends "index.html" %}
 
 {% block content %}
+<link rel="stylesheet" href="../../static/css/test.css"/>
 <section class="green">
   <div class="container">
     <div class="row vertical-align">
@@ -32,10 +33,17 @@
         <p>Overal Mark: {{ content.manualMarksachieved + content.autoMarksachieved }}/{{ content.totalAvailmarks }}</p>
       </div>
     </div>
+    <div class="row">
+      {% for i in range(content.incorrectAutoquestions|length) %}
+      <div class="col-md-6">
+        <div class="question-box">
+          {{ content.incorrectAutoquestions[i] }}<br><br>
+          <p><b>You answered:</b> {{ content.youAnswered[i] }}</p>
+          <p><b>Correct answer:</b> {{ content.correctAnswers[i] }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </section>
-<section>
-  
-</section>
-
 {% endblock %}
