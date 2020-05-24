@@ -612,10 +612,15 @@ def submit():
 def attempts():
     attempts = []
     feedbackDir = 'app/feedback/'
-    for filename in os.listdir(feedbackDir):
-        if filename.startswith(current_user.username):
+    if current_user.check_admin(): # Get every feedback if teacher
+        for filename in os.listdir(feedbackDir):
             feedback = open(feedbackDir + filename)
             attempts.append(load(feedback))
+    else:
+        for filename in os.listdir(feedbackDir):
+            if filename.startswith(current_user.username): # Get user specific feedback
+                feedback = open(feedbackDir + filename)
+                attempts.append(load(feedback))
     return render_template("attempts.html", title="Previous Attempts", userAttempts=attempts)
 
 @app.route("/feedback/")

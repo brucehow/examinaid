@@ -1,0 +1,46 @@
+{
+    "marked": "partial",
+    "unitName": "Agile Web Development",
+    "unitCode": "CITS3403",
+    "time": "05/24/2020, 21:54:40",
+    "user": "bruce",
+    "questionset": "cits3403_1",
+    "totalAvailmarks": 14,
+    "autoMarksachieved": 0,
+    "manualMarksachieved": 0,
+    "availAutomarks": 14,
+    "incorrectAutoquestions": [
+        "Which tag should surround an entire table of data?",
+        "Which tag adds new data to a HTML table?",
+        "Which of the following tags is used to separate the body of a table from its headers and footers?",
+        "Which of the following tags is used to enclose the row of a table containing its headers?",
+        "Which tag creates new rows in a HTML table?",
+        "Which tag adds a new row header to a HTML table?",
+        "What is the name of the tag used to separate the footer of a table from its body?",
+        "How many columns does the following table row span altogether?",
+        "The following CSS code adds a 1 px (w) border to (x), and a 1px (y) border to (z). What is w, x, y, and z?"
+    ],
+    "youAnswered": [
+        "<thead></thead>",
+        "<tb></tb>",
+        "<tr></tr>",
+        "<tr></tr>",
+        "<td></td>",
+        "<tr></tr>",
+        "23",
+        "213 ",
+        "w: black, x: table headers, y: blue, z: table cells"
+    ],
+    "correctAnswers": [
+        "<table></table>",
+        "<td></td>",
+        "<tbody></tbody>",
+        "<thead></thead>",
+        "<tr></tr>",
+        "<th scope=\"row\"></th>",
+        "tfoot",
+        "3",
+        "w: black, x: table rows and cells, y: blue, z: table headers"
+    ],
+    "requireManual": []
+}

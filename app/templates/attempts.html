@@ -27,36 +27,38 @@
         <table class="table">
           <thead>
             <tr>
-              <th>Unit</th>
-              <th>Assessment Type</th>
+              <th>Unit Code</th>
               <th>Student</th>
-              <th>Started</th>
+              <th>Auto Mark</th>
+              <th>Manual Mark</th>
+              <th>Total Mark</th>
               <th>Completed</th>
-              <th>Score</th>
+              <th>Status</th>
             </tr>
           </thead>
-          <!-- for each here-->
+          {% for attempt in userAttempts %}
           <tr>
-            <td>CITS1401</td>
-            <td>Exam</td>
-            <td>Bruce</td>
-            <td>01/05/2020 15:20</td>
-            <td>01/05/2020 15:50</td>
-            <td>16/25</td>
+            <td>{{ attempt.unitCode }}</td>
+            <td>{{ attempt.user }}</td>
+            <td>{{ attempt.autoMarksachieved }}/{{ attempt.availAutomarks }}</td>
+            <td>{{ attempt.manualMarksachieved }}/{{ attempt.totalAvailmarks - attempt.availAutomarks}}</td>
+            <td>{{ attempt.autoMarksachieved + attempt.manualMarksachieved }}/{{ attempt.totalAvailmarks }}</td>
+            <td>{{ attempt.time }}</td>
+            <td>{% if attempt.marked == "partial" %}Marking Required{% else %}Fully Marked{% endif %}</td>
           </tr>
-          <tr>
-            <td>CITS1401</td>
-            <td>Exam</td>
-            <td>Bruce</td>
-            <td>01/05/2020 15:20</td>
-            <td>01/05/2020 15:50</td>
-            <td>16/25</td>
-          </tr>
-          <!-- end for -->
+          {% endfor %}
         </table>
       </div>
     </div>
     {% else %} <!-- Student Template -->
+      {% if not userAttempts %}
+      <div class="row">
+        <div class="test-attempt">
+          <h3>No Previous Attempts Found</h3>
+          <p>Stop slacking and get to work</p>
+        </div>
+      </div>
+      {% else %}
       {% for attempt in userAttempts %}
       <div class="row">
         <div class="test-attempt">
@@ -79,6 +81,7 @@
         </div>
       </div>
       {% endfor %}
+      {% endif %}
     </div>
     {% endif %}
   </div>
