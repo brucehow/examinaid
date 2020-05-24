@@ -162,3 +162,14 @@ img.img-md {
   0% { transform: translateY(0); }
   100% { transform: translateY(-15px); }
 }
+
+/* Flashed Messages */
+.flashed-messages {
+  position: absolute;
+  padding: 1rem 0;
+  font-weight: 900;
+  font-size: 1rem;
+  color: #2c2d30;
+  right: 0;
+  left: 0;
+}

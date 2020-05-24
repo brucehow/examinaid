@@ -49,10 +49,10 @@
                   <a class="dropdown-item" href="{{ url_for('userprofile') }}">Dashboard</a>
                   <div class="dropdown-divider"></div>
                   {% if current_user.admin %} <!-- Teacher dropdown menu -->
-                  <a class="dropdown-item" href="{{ url_for('userprofile') }}">Mark Completed Tests</a>
+                  <a class="dropdown-item" href="{{ url_for('marktests') }}">Mark Completed Tests</a>
                   <a class="dropdown-item" href="{{ url_for('attempts') }}">View Previous Tests</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="{{ url_for('userprofile') }}">Manage Tests</a>
+                  <a class="dropdown-item" href="{{ url_for('managetests') }}">Manage Tests</a>
                   <a class="dropdown-item" href="{{ url_for('manageusers') }}">Manage Users</a>
                   {% else %} <!-- Student dropdown menu -->
                   <a class="dropdown-item" href="{{ url_for('newtest') }}">Start New Test</a>
@@ -104,7 +104,7 @@
               <p>Our team of experienced markers and tutors will personally review every question you answer to make sure that the results you get are totally accurate and the feedback you receive is of the highest standard.</p>
             </div>
             <div class="col-md-6 d-none d-md-block">
-              <img class="img-md" src="../static/resources/feedback.svg" alt=""> 
+              <img class="img-md" src="../static/resources/getfeedback.svg" alt=""> 
             </div>
           </div>
           <hr class="divider">
