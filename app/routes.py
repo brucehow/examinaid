@@ -9,6 +9,7 @@ from werkzeug.urls import url_parse
 
 from json import load, dumps
 from os import listdir, path # To debug file paths
+from app.unitJSON import get_all
 
 @app.route("/")
 @app.route("/index")
@@ -107,7 +108,24 @@ def managetests():
     if not current_user.check_admin(): # Student logins cannot access this page
         return redirect(url_for('userprofile'))
     else:
-        return render_template('manage/tests.html', title="Manage Tests")
+        tests = get_all("app/questions/units.json")
+        questionSets = []
+        for unit in tests:
+            for qset in tests[unit]:
+                filepath = "app/questions/{}_{}.json".format(unit.lower(), qset)
+                questionSet = load(open(filepath))s
+                numq = 0
+                for question in questionSet["questions"]:
+                    numq += 1
+                thisSet = {
+                    "unitCode": questionSet["unitCode"],
+                    "unitName": questionSet["unitName"],
+                    "testNumber": questionSet["testNumber"],
+                    "totalMarks": questionSet["totalMarks"],
+                    "questions": numq
+                }
+                questionSets.append(thisSet)
+        return render_template('manage/tests.html', title="Manage Tests", sets=questionSets)
 
 # Add Questions function using JSON creation
 @app.route('/managetests/add_multiq', methods=['GET', 'POST'])

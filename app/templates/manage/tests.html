@@ -42,24 +42,16 @@
               <th>Action</th>
             </tr>
           </thead>
-          <!-- for each here-->
+          {% for set in sets %}
           <tr>
-            <td>CITS3403</td>
-            <td>Agile Web Development</td>
-            <td>1</td>
-            <td>25</td>
-            <td>10</td>
+            <td>{{ set.unitCode }}</td>
+            <td>{{ set.unitName }}</td>
+            <td>{{ set.testNumber }}</td>
+            <td>{{ set.totalMarks }}</td>
+            <td>{{ set.questions }}</td>
             <td>Remove</td>
           </tr>
-          <tr>
-            <td>CITS3403</td>
-            <td>Agile Web Development</td>
-            <td>1</td>
-            <td>25</td>
-            <td>10</td>
-            <td>Remove</td>
-          </tr>
-          <!-- end for -->
+          {% endfor %}
         </table>
       </div>
     </div>
