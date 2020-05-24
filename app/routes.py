@@ -459,6 +459,7 @@ def submit():
     data = request.form
     userAnswers = list(data.values()) #Convert user response to a list
     fileName = 'app/questions/' + userAnswers[0] + '.json' 
+    questionSet = userAnswers[0]
     userAnswers = userAnswers[1:] 
 
     allCorrectanswers = []  #Storage for each question in the test, its allocated mark and its correct answer
@@ -499,7 +500,11 @@ def submit():
 
       autoAchievablemarks = sum(availMarksauto)
 
-      output = "achieved {} of {} for all automatic questions. The remaining questions will be manually marked.\n".format(marksAchieved,sum(availMarksauto))
+      user = current_user.username
+      
+      output = 'partial/n'
+      output += '{}, {}\n'.format(user,questionSet)
+      output += "achieved {} of {} for all automatic questions. The remaining questions will be manually marked.\n".format(marksAchieved,sum(availMarksauto))
 
       for i in range (0,len(incorrectQnumber)):
         output += "You incorrectly answered: Q{}: {}\n You answered: {}\n Correct Answer: {}\n".format(incorrectQnumber[i],incorrectQuestion[i],youAnswered[i],correctAnswers[i])
