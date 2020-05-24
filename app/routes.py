@@ -524,18 +524,21 @@ def submit():
         "requireManual":requireManualmark
       }
 
-      print(dictionary)
       json_object = dumps(dictionary, indent = 4)
 
+      iteration = []
       feedbackDir = 'app/feedback/'
       for filename in os.listdir(feedbackDir):
         if filename.startswith(user):
           feedBacksplit = filename.split('_')
-          number = feedBacksplit[3].split('.')
-          feedbackNumber = int(number[0])
-          feedbackNumber = feedbackNumber + 1
-        else:
-          feedbackNumber = 1  
+          if feedBacksplit[1]+'_'+feedBacksplit[2] == questionSet:
+            number = feedBacksplit[3].split('.')
+            iteration.append(int(number[0]))
+
+      if iteration:
+        feedbackNumber = max(iteration)+1
+      else:
+        feedbackNumber = 1  
 
       filename = '{}_{}_{}'.format(user,questionSet,feedbackNumber)
 
