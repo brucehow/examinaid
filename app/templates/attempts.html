@@ -44,7 +44,7 @@
             <td>{{ attempt.manualMarksachieved }}/{{ attempt.totalAvailmarks - attempt.availAutomarks}}</td>
             <td>{{ attempt.autoMarksachieved + attempt.manualMarksachieved }}/{{ attempt.totalAvailmarks }}</td>
             <td>{{ attempt.time }}</td>
-            <td>{% if attempt.marked == "partial" %}Marking Required{% else %}Fully Marked{% endif %}</td>
+            <td>{% if attempt.marked == "Partial" %}Marking Required{% else %}Fully Marked{% endif %}</td>
           </tr>
           {% endfor %}
         </table>
@@ -72,8 +72,8 @@
             <div class="col-sm-4 text-right">
               <h3>Overall Mark {{ attempt.autoMarksachieved + attempt.manualMarksachieved }}/{{ attempt.totalAvailmarks}}</h3>
               <p>Auto Mark <strong>{{ attempt.autoMarksachieved}}/{{ attempt.availAutomarks}}</strong></p>
-              <p>Open Answer Mark <strong>{% if attempt.marked == "partial" %}-{% else %}{{ attempt.manualMarksachieved}}{% endif %}/{{ attempt.totalAvailmarks - attempt.availAutomarks}}</strong></p>
-              {% if attempt.marked == "partial" %}
+              <p>Open Answer Mark <strong>{% if attempt.marked == "Partial" %}-{% else %}{{ attempt.manualMarksachieved}}{% endif %}/{{ attempt.totalAvailmarks - attempt.availAutomarks}}</strong></p>
+              {% if attempt.marked == "Partial" %}
               <i class="text-right">Open Answer marking required</i>
               {% endif %}
             </div>

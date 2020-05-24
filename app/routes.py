@@ -108,7 +108,7 @@ def marktests():
     for filename in os.listdir(feedbackDir):
         feedback = open(feedbackDir + filename)
         content = load(feedback)
-        if content["marked"] == "partial":
+        if content["marked"] == "Partial":
             res.append(content)
     return render_template('marktests.html', title="Mark Completed Tests", markTests=res)
 
@@ -537,85 +537,88 @@ def submit():
     marksAchieved = 0
 
     with open (fileName, 'r') as f:
-      myData = json.load(f)
-      answerData = myData["questions"]
-      totalMarksavail = myData["totalMarks"]
-      unitName = myData["unitName"]
-      unitCode = myData["unitCode"]
+        myData = json.load(f)
+        answerData = myData["questions"]
+        totalMarksavail = myData["totalMarks"]
+        unitName = myData["unitName"]
+        unitCode = myData["unitCode"]
 
-      for i in range(0,len(userAnswers)):
-        questionNumber = answerData[i]
-        correctAnswer = questionNumber["answer"]
-        marksAwarded = questionNumber["marks"]
-        question = questionNumber["prompt"]
-        allQuestions.append(question)
-        allCorrectanswers.append(correctAnswer)
+        for i in range(0,len(userAnswers)):
+            questionNumber = answerData[i]
+            correctAnswer = questionNumber["answer"]
+            marksAwarded = questionNumber["marks"]
+            question = questionNumber["prompt"]
+            allQuestions.append(question)
+            allCorrectanswers.append(correctAnswer)
 
-        if correctAnswer is None: 
-          availMarksauto.append(0)           #Don't include marks for non automated questions
-          requireManualmark.append(question)
+            if correctAnswer is None: 
+                availMarksauto.append(0) #Don't include marks for non automated questions
+                requireManualmark.append(question)
+            else:
+                availMarksauto.append(marksAwarded)
+
+        for i in range(0,len(allCorrectanswers)):
+            if userAnswers[i] == allCorrectanswers[i] and allCorrectanswers[i] is not None:  #Tally up marks if correct answer
+                marksAchieved = marksAchieved + availMarksauto[i]
+            elif userAnswers[i] != allCorrectanswers[i] and allCorrectanswers[i] is not None: #Add questions and answers to incorrect question storage
+                incorrectQnumber.append(i+1)
+                youAnswered.append(userAnswers[i])
+                incorrectQuestion.append(allQuestions[i])
+                correctAnswers.append(allCorrectanswers[i])
+
+        autoAchievablemarks = sum(availMarksauto)
+        user = current_user.username
+
+        now = datetime.now()
+        time = now.strftime("%m/%d/%Y, %H:%M:%S")
+        print(time)
+
+        manuallMarksachieved = 0
+
+        iteration = []
+        feedbackDir = 'app/feedback/'
+        for filename in os.listdir(feedbackDir):
+            if filename.startswith(user):
+                feedBacksplit = filename.split('_')
+            if feedBacksplit[1]+'_'+feedBacksplit[2] == questionSet:
+                number = feedBacksplit[3].split('.')
+                iteration.append(int(number[0]))
+
+        if iteration:
+            feedbackNumber = max(iteration)+1
         else:
-          availMarksauto.append(marksAwarded)
+            feedbackNumber = 1  
 
-      for i in range(0,len(allCorrectanswers)):
-        if userAnswers[i] == allCorrectanswers[i] and allCorrectanswers[i] is not None:  #Tally up marks if correct answer
-          marksAchieved = marksAchieved + availMarksauto[i]
-        elif userAnswers[i] != allCorrectanswers[i] and allCorrectanswers[i] is not None: #Add questions and answers to incorrect question storage
-          incorrectQnumber.append(i+1)
-          youAnswered.append(userAnswers[i])
-          incorrectQuestion.append(allQuestions[i])
-          correctAnswers.append(allCorrectanswers[i])
-
-      autoAchievablemarks = sum(availMarksauto)
-      user = current_user.username
-
-      now = datetime.now()
-      time = now.strftime("%m/%d/%Y, %H:%M:%S")
-      print(time)
-
-      manuallMarksachieved = 0
-
-      iteration = []
-      feedbackDir = 'app/feedback/'
-      for filename in os.listdir(feedbackDir):
-        if filename.startswith(user):
-          feedBacksplit = filename.split('_')
-          if feedBacksplit[1]+'_'+feedBacksplit[2] == questionSet:
-            number = feedBacksplit[3].split('.')
-            iteration.append(int(number[0]))
-
-      if iteration:
-        feedbackNumber = max(iteration)+1
-      else:
-        feedbackNumber = 1  
-
-      filename = '{}_{}_{}'.format(user,questionSet,feedbackNumber)
+        filename = '{}_{}_{}'.format(user,questionSet,feedbackNumber)
 
 
 
-      dictionary = {
-        "ID":filename,
-        "marked":'partial',
-        "unitName":unitName,
-        "unitCode":unitCode,
-        "time":time,
-        "user": user,
-        "questionset":questionSet,
-        "totalAvailmarks": totalMarksavail,
-        "autoMarksachieved":marksAchieved,
-        "manualMarksachieved":manuallMarksachieved,
-        "availAutomarks":sum(availMarksauto),
-        "incorrectAutoquestions":incorrectQuestion,
-        "youAnswered":youAnswered,
-        "correctAnswers":correctAnswers,
-        "requireManual":requireManualmark
-      }
-
-      #Converts dictionary to JSON object. Checks directory if this test has been completed previously. Creates new JSON file containing answers per submission. 
-      json_object = dumps(dictionary, indent = 4)
+        dictionary = {
+            "ID":filename,
+            "marked":"Partial",
+            "unitName":unitName,
+            "unitCode":unitCode,
+            "time":time,
+            "user": user,
+            "questionset":questionSet,
+            "totalAvailmarks": totalMarksavail,
+            "autoMarksachieved":marksAchieved,
+            "manualMarksachieved":manuallMarksachieved,
+            "availAutomarks":sum(availMarksauto),
+            "incorrectAutoquestions":incorrectQuestion,
+            "youAnswered":youAnswered,
+            "correctAnswers":correctAnswers,
+            "requireManual":requireManualmark
+        }
       
-      with open(path.join(feedbackDir,filename + ".json"), "w") as outfile:
-        outfile.write(json_object)
+        if dictionary["availAutomarks"] == dictionary["totalAvailmarks"]:
+            dictionary["marked"] = "Fully"
+
+        #Converts dictionary to JSON object. Checks directory if this test has been completed previously. Creates new JSON file containing answers per submission. 
+        json_object = dumps(dictionary, indent = 4)
+        
+        with open(path.join(feedbackDir,filename + ".json"), "w") as outfile:
+            outfile.write(json_object)
 
     return redirect(url_for('attempts'))
 
