@@ -563,6 +563,8 @@ def submit():
       time = now.strftime("%m/%d/%Y, %H:%M:%S")
       print(time)
 
+      manuallMarksachieved = 0
+
       dictionary = {
         "marked":'partial',
         "unitName":unitName,
@@ -572,6 +574,7 @@ def submit():
         "questionset":questionSet,
         "totalAvailmarks": totalMarksavail,
         "autoMarksachieved":marksAchieved,
+        "manualMarksachieved":manuallMarksachieved,
         "availAutomarks":sum(availMarksauto),
         "incorrectAutoquestions":incorrectQuestion,
         "youAnswered":youAnswered,
@@ -579,7 +582,7 @@ def submit():
         "requireManual":requireManualmark
       }
 
-      #Converts dictionary to JSON object. Checks directory if this test has been completed previously. Creates new JSON file containing answers per submission.
+      #Converts dictionary to JSON object. Checks directory if this test has been completed previously. Creates new JSON file containing answers per submission. 
       json_object = dumps(dictionary, indent = 4)
       iteration = []
       feedbackDir = 'app/feedback/'
