@@ -10,6 +10,7 @@ from werkzeug.urls import url_parse
 from json import load, dumps
 from os import listdir, path # To debug file paths
 import json
+import os
 
 @app.route("/")
 @app.route("/index")
@@ -466,29 +467,32 @@ def submit():
     availMarksauto = []
     allQuestions = []
 
+    requireManualmark = []
+
     incorrectQnumber = [] #Storage for incorrect questions and user's responses
     youAnswered = []
     incorrectQuestion = []
     correctAnswers = []
+    marksAchieved = 0
 
     with open (fileName, 'r') as f:
       myData = json.load(f)
       answerData = myData["questions"]
+      totalMarksavail = myData["totalMarks"]
       for i in range(0,len(userAnswers)):
         questionNumber = answerData[i]
         correctAnswer = questionNumber["answer"]
         marksAwarded = questionNumber["marks"]
         question = questionNumber["prompt"]
-
         allQuestions.append(question)
         allCorrectanswers.append(correctAnswer)
 
         if correctAnswer is None: 
           availMarksauto.append(0)           #Don't include marks for non automated questions
+          requireManualmark.append(question)
         else:
           availMarksauto.append(marksAwarded)
 
-      marksAchieved = 0
       for i in range(0,len(allCorrectanswers)):
         if userAnswers[i] == allCorrectanswers[i] and allCorrectanswers[i] is not None:  #Tally up marks if correct answer
           marksAchieved = marksAchieved + availMarksauto[i]
@@ -499,15 +503,38 @@ def submit():
           correctAnswers.append(allCorrectanswers[i])
 
       autoAchievablemarks = sum(availMarksauto)
-
       user = current_user.username
-      
-      output = 'partial/n'
-      output += '{}, {}\n'.format(user,questionSet)
-      output += "achieved {} of {} for all automatic questions. The remaining questions will be manually marked.\n".format(marksAchieved,sum(availMarksauto))
 
-      for i in range (0,len(incorrectQnumber)):
-        output += "You incorrectly answered: Q{}: {}\n You answered: {}\n Correct Answer: {}\n".format(incorrectQnumber[i],incorrectQuestion[i],youAnswered[i],correctAnswers[i])
+      dictionary = {
+        "marked":'partial',
+        "user": user,
+        "questionset":questionSet,
+        "totalAvailmarks": totalMarksavail,
+        "autoMarksachieved":marksAchieved,
+        "availAutomarks":sum(availMarksauto),
+        "incorrectAutoquestions":incorrectQuestion,
+        "youAnswered":youAnswered,
+        "correctAnswers":correctAnswers,
+        "requireManual":requireManualmark
+      }
+
+      print(dictionary)
+      json_object = dumps(dictionary, indent = 4)
+
+      feedbackDir = 'app/feedback/'
+      for filename in os.listdir(feedbackDir):
+        if filename.startswith(user):
+          feedBacksplit = filename.split('_')
+          number = feedBacksplit[3].split('.')
+          feedbackNumber = int(number[0])
+          feedbackNumber = feedbackNumber + 1
+        else:
+          feedbackNumber = 1  
+
+      filename = '{}_{}_{}'.format(user,questionSet,feedbackNumber)
+
+      with open(path.join(feedbackDir,filename+ ".json"), "w") as outfile:
+        outfile.write(json_object)
 
 
     return redirect(url_for('userprofile'))
