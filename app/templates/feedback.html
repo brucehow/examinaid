@@ -44,6 +44,17 @@
       </div>
       {% endfor %}
     </div>
+    <div class="row">
+      {% for i in range(content.requireManual|length) %}
+      <div class="col-md-6">
+        <div class="question-box">
+          {{ content.requireManual[i] }}<br><br>
+          <p><b>Student Answer:</b></p>
+          <p>{{ content.manualAnswers[i] }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </section>
 {% endblock %}

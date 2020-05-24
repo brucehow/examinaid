@@ -529,6 +529,7 @@ def submit():
     allQuestions = []
 
     requireManualmark = []
+    manualAnswers = []
 
     incorrectQnumber = [] #Storage for incorrect questions and user's responses
     youAnswered = []
@@ -554,6 +555,7 @@ def submit():
             if correctAnswer is None: 
                 availMarksauto.append(0) #Don't include marks for non automated questions
                 requireManualmark.append(question)
+                manualAnswers.append(userAnswers[i])
             else:
                 availMarksauto.append(marksAwarded)
 
@@ -591,8 +593,6 @@ def submit():
 
         filename = '{}_{}_{}'.format(user,questionSet,feedbackNumber)
 
-
-
         dictionary = {
             "ID":filename,
             "marked":"Partial",
@@ -608,7 +608,8 @@ def submit():
             "incorrectAutoquestions":incorrectQuestion,
             "youAnswered":youAnswered,
             "correctAnswers":correctAnswers,
-            "requireManual":requireManualmark
+            "requireManual":requireManualmark,
+            "manualAnswers":manualAnswers
         }
       
         if dictionary["availAutomarks"] == dictionary["totalAvailmarks"]:
