@@ -253,8 +253,8 @@ def add_multiq():
         else:
             with open(path.join(dirname, "questions/" + form.unitCode.data.lower() + "_" + str(testNumber)  + ".json"), "w") as outfile:
                 outfile.write(json_object)
-                flash('Questions added!')
-                return redirect(url_for('userprofile'))
+                flash('Multi choice test added!')
+                return redirect(url_for('managetests'))
   else:
     flash('Not an admin: Please contact your supervisor')
     return redirect(url_for('userprofile'))
@@ -367,11 +367,11 @@ def add_shortq():
         else:
           with open(path.join(dirname, "questions/" + form.unitCode.data.lower() + "_" + str(testNumber)  + ".json"), "w") as outfile:
             outfile.write(json_object)
-            flash('Questions added!')
-            return redirect(url_for('userprofile'))
+            flash('Short answer test added!')
+            return redirect(url_for('managetests'))
   else:
     flash('Not an admin: Please contact your supervisor')
-    return redirect(url_for('userprofile'))
+    return redirect(url_for('managetests'))
   return render_template("tests/addshortq_template.html", title="Add Short Questions", form=form)
 
 @app.route('/managetests/add_openq', methods=['GET', 'POST'])
@@ -481,8 +481,8 @@ def add_openq():
         else:
           with open(path.join(dirname, "questions/" + form.unitCode.data.lower() + "_" + str(testNumber)  + ".json"), "w") as outfile:
             outfile.write(json_object)
-            flash('Questions added!')
-            return redirect(url_for('userprofile'))
+            flash('Open answer test added!')
+            return redirect(url_for('managetests'))
   else:
     flash('Not an admin: Please contact your supervisor')
     return redirect(url_for('userprofile'))

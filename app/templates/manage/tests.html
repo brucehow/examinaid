@@ -1,6 +1,15 @@
 {% extends "index.html" %}
 
 {% block content %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+  <ul class=flashed-messages>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+{% endwith %}
 <section class="grey">
   <div class="container">
     <div class="row vertical-align">
