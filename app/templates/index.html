@@ -8,6 +8,7 @@
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="../static/css/main.css"/>
     <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/footer.css"/>
     <link rel="stylesheet" href="../static/css/forms.css"/>
     <link rel="stylesheet" href="../static/css/userprofile.css"/>
 
@@ -56,7 +57,6 @@
                   {% else %} <!-- Student dropdown menu -->
                   <a class="dropdown-item" href="{{ url_for('newtest') }}">Start New Test</a>
                   <a class="dropdown-item" href="{{ url_for('attempts') }}">View Previous Attempts</a>
-                  <a class="dropdown-item" href="{{ url_for('userprofile') }}">My Feedback</a>
                   {% endif %}
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="{{ url_for('changepassword') }}">Change Password</a>
@@ -154,6 +154,35 @@
         </div>
       </section>
       {% endblock %}
+      <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="row">
+              <div class="col-sm-6">
+                <p><strong>ExaminAid</strong></p>
+                <p>We are the leaders in unit preparation across many courses in UWA. Join us today to experience the power of knowledge for yourself.</p>
+              </div>
+              <div class="col-sm-6 text-right">
+                <p><strong>Useful Links</strong></p>
+                <ul class="navbar-nav footer-nav">
+                  <li class="nav-item"><a class="footer-link" href="{{ url_for('about') }}">About</a></li>
+                  <li class="nav-item"><a class="footer-link" href="{{ url_for('contact') }}">Contact</a></li>
+                  <li class="nav-item"><a class="footer-link" href="{{ url_for('login') }}">Login</a></li>
+                  <li class="nav-item"><a class="footer-link" href="{{ url_for('register') }}">Register</a></li>
+                </ul>
+              </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="social center">
+              <a class="footer-link" href="https://github.com/brucehow/examinaid"><span class="fab fa-github"></span></a>
+              <a class="footer-link" href="https://teaching.csse.uwa.edu.au/units/CITS3403/index.php"><span class="fas fa-university"></span></a>
+            </div>
+          </div>
+        </div>
+        <div class="anchor center">
+          <p class="copyright">© 2020 Copyright ExaminAid</p>
+        </div>
+      </footer>
     </main>
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"

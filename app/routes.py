@@ -10,6 +10,10 @@ from werkzeug.urls import url_parse
 from json import load, dumps
 from os import listdir, path # To debug file paths
 from app.unitJSON import get_all, remove_test, next_test
+import json
+import os
+import datetime
+from datetime import datetime
 
 @app.route("/")
 @app.route("/index")
@@ -30,9 +34,6 @@ def contact():
 def userprofile():
     return render_template("userprofile.html", title="My Profile")
 
-@app.route("/attempts")
-def attempts():
-    return render_template("attempts.html", title="Previous Attempts")
 
 @app.route("/quiz")
 def quiz():
@@ -502,13 +503,111 @@ def test(questionset):
                             unit="{}: {}".format(data["unitCode"], data["unitName"]), questions=data["questions"], unitCode=data["unitCode"],
                             questionset=questionset)
 
-# After a test is submitted
+#After a test is submitted, the received dictionary is converted to a list. The first item in this list contains the name of the question set. We use this information to open the correct JSON file and compare the users response
+# to the actual answers for each question. Marks are counted up along with determining which question the user got incorrect. 
 @app.route('/submit/', methods=['POST'])
 @login_required
 def submit():
     data = request.form
-    print(data)
-    return redirect(url_for('userprofile'))
+    userAnswers = list(data.values()) #Convert user response to a list
+    fileName = 'app/questions/' + userAnswers[0] + '.json' 
+    questionSet = userAnswers[0]
+    userAnswers = userAnswers[1:] 
+
+    allCorrectanswers = []  #Storage for each question in the test, its allocated mark and its correct answer
+    availMarksauto = []
+    allQuestions = []
+
+    requireManualmark = []
+
+    incorrectQnumber = [] #Storage for incorrect questions and user's responses
+    youAnswered = []
+    incorrectQuestion = []
+    correctAnswers = []
+    marksAchieved = 0
+
+    with open (fileName, 'r') as f:
+      myData = json.load(f)
+      answerData = myData["questions"]
+      totalMarksavail = myData["totalMarks"]
+      unitName = myData["unitName"]
+      unitCode = myData["unitCode"]
+
+      for i in range(0,len(userAnswers)):
+        questionNumber = answerData[i]
+        correctAnswer = questionNumber["answer"]
+        marksAwarded = questionNumber["marks"]
+        question = questionNumber["prompt"]
+        allQuestions.append(question)
+        allCorrectanswers.append(correctAnswer)
+
+        if correctAnswer is None: 
+          availMarksauto.append(0)           #Don't include marks for non automated questions
+          requireManualmark.append(question)
+        else:
+          availMarksauto.append(marksAwarded)
+
+      for i in range(0,len(allCorrectanswers)):
+        if userAnswers[i] == allCorrectanswers[i] and allCorrectanswers[i] is not None:  #Tally up marks if correct answer
+          marksAchieved = marksAchieved + availMarksauto[i]
+        elif userAnswers[i] != allCorrectanswers[i] and allCorrectanswers[i] is not None: #Add questions and answers to incorrect question storage
+          incorrectQnumber.append(i+1)
+          youAnswered.append(userAnswers[i])
+          incorrectQuestion.append(allQuestions[i])
+          correctAnswers.append(allCorrectanswers[i])
+
+      autoAchievablemarks = sum(availMarksauto)
+      user = current_user.username
+
+      now = datetime.now()
+      time = now.strftime("%m/%d/%Y, %H:%M:%S")
+      print(time)
+
+      dictionary = {
+        "marked":'partial',
+        "unitName":unitName,
+        "unitCode":unitCode,
+        "time":time,
+        "user": user,
+        "questionset":questionSet,
+        "totalAvailmarks": totalMarksavail,
+        "autoMarksachieved":marksAchieved,
+        "availAutomarks":sum(availMarksauto),
+        "incorrectAutoquestions":incorrectQuestion,
+        "youAnswered":youAnswered,
+        "correctAnswers":correctAnswers,
+        "requireManual":requireManualmark
+      }
+
+      print(dictionary)
+      json_object = dumps(dictionary, indent = 4)
+
+      feedbackDir = 'app/feedback/'
+      for filename in os.listdir(feedbackDir):
+        if filename.startswith(user):
+          feedBacksplit = filename.split('_')
+          number = feedBacksplit[3].split('.')
+          feedbackNumber = int(number[0])
+          feedbackNumber = feedbackNumber + 1
+        else:
+          feedbackNumber = 1  
+
+      filename = '{}_{}_{}'.format(user,questionSet,feedbackNumber)
+
+      with open(path.join(feedbackDir,filename+ ".json"), "w") as outfile:
+        outfile.write(json_object)
+
+
+    return render_template('feedback.html', title="{} - New Test".format(dictionary["unitName"]),
+                            unit="{}: {}".format(dictionary["unitCode"], dictionary["unitName"]),achievedAutomarks=dictionary["autoMarksachieved"], autoAchievablemarks=dictionary["availAutomarks"],
+                            incorrectquestions=dictionary["incorrectAutoquestions"], youAnswered=dictionary["youAnswered"], correctAnswers=dictionary["correctAnswers"], time = dictionary["time"])
+@app.route("/attempts")
+def attempts():
+    return render_template("attempts.html", title="Previous Attempts")
+
+@app.route("/feedback/")
+def feedback():
+    return render_template("feedback.html", title="Feedback")
 
 # Admin manage student logins
 @app.route('/manageusers')
