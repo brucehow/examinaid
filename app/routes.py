@@ -91,6 +91,15 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', title="Register", form=form)
 
+# Admin mark tests
+@app.route('/marktests')
+@login_required
+def marktests():
+    if not current_user.check_admin(): # Student logins cannot access this page
+        return redirect(url_for('userprofile'))
+    else:
+        return render_template('marktests.html', title="Mark Completed Tests")
+
 # Admin manage tests
 @app.route('/managetests')
 @login_required
