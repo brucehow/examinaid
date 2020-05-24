@@ -480,10 +480,10 @@ def add_openq():
           flash('Error: Test already exists!')
           return redirect(url_for('userprofile'))
         else:
-          with open(path.join(dirname, "questions/" + form.unitCode.data.lower() + "_" + str(testNumber)  + ".json"), "w") as outfile:
-            outfile.write(json_object)
-            flash('Open answer test added!')
-            return redirect(url_for('managetests'))
+            with open(path.join(dirname, "questions/" + form.unitCode.data.lower() + "_" + str(testNumber)  + ".json"), "w") as outfile:
+                outfile.write(json_object)
+                flash('Open answer test added!')
+                return redirect(url_for('managetests'))
   else:
     flash('Not an admin: Please contact your supervisor')
     return redirect(url_for('userprofile'))
@@ -585,12 +585,12 @@ def submit():
       feedbackDir = 'app/feedback/'
       for filename in os.listdir(feedbackDir):
         if filename.startswith(user):
-          feedBacksplit = filename.split('_')
-          number = feedBacksplit[3].split('.')
-          feedbackNumber = int(number[0])
-          feedbackNumber = feedbackNumber + 1
+            feedBacksplit = filename.split('_')
+            number = feedBacksplit[3].split('.')
+            feedbackNumber = int(number[0])
+            feedbackNumber = feedbackNumber + 1
         else:
-          feedbackNumber = 1  
+            feedbackNumber = 1  
 
       filename = '{}_{}_{}'.format(user,questionSet,feedbackNumber)
 
@@ -601,9 +601,16 @@ def submit():
     return render_template('feedback.html', title="{} - New Test".format(dictionary["unitName"]),
                             unit="{}: {}".format(dictionary["unitCode"], dictionary["unitName"]),achievedAutomarks=dictionary["autoMarksachieved"], autoAchievablemarks=dictionary["availAutomarks"],
                             incorrectquestions=dictionary["incorrectAutoquestions"], youAnswered=dictionary["youAnswered"], correctAnswers=dictionary["correctAnswers"], time = dictionary["time"])
+
 @app.route("/attempts")
 def attempts():
-    return render_template("attempts.html", title="Previous Attempts")
+    attempts = []
+    feedbackDir = 'app/feedback/'
+    for filename in os.listdir(feedbackDir):
+        if filename.startswith(current_user.username):
+            feedback = open(feedbackDir + filename)
+            attempts.append(load(feedback))
+    return render_template("attempts.html", title="Previous Attempts", userAttempts=attempts)
 
 @app.route("/feedback/")
 def feedback():

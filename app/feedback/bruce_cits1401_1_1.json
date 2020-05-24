@@ -1,0 +1,41 @@
+{
+    "marked": "partial",
+    "unitName": "Problem Solving with Python",
+    "unitCode": "CITS1401",
+    "time": "05/24/2020, 20:35:15",
+    "user": "bruce",
+    "questionset": "cits1401_1",
+    "totalAvailmarks": 14,
+    "autoMarksachieved": 2,
+    "availAutomarks": 10,
+    "incorrectAutoquestions": [
+        "Which statement is not true about objects in an \"Object Oriented Program\"?",
+        "What does the following expression produce? list(range(7))[:-2]",
+        "Which of these Python data types cannot be indexed using the syntax x[k]?",
+        "Which of these expressions evaluates to False whenever a has the value True?",
+        "Given a Python list xs of length k, what is the legal range of values with which xs can be indexed?",
+        "If x is an integer variable whose value is over 1000, which expression returns its third least-significant digit? (e.g. if x = 3847, it should return 8.)",
+        "Which of these statements is true for all positive numbers x and y?"
+    ],
+    "youAnswered": [
+        "Objects can contain other objects.",
+        "[6, 5, 4, 3, 2, 1, 0]",
+        "dictionaries",
+        "a and not b",
+        "-(k-1) up to k inclusive",
+        "x % 100 // 100",
+        "y ** x > y"
+    ],
+    "correctAnswers": [
+        "Objects cannot mutate",
+        "[0, 1, 2, 3, 4]",
+        "files",
+        "not not False == a",
+        "-k up to k-1 inclusive",
+        "x // 100 % 10",
+        "y - x < y"
+    ],
+    "requireManual": [
+        "Your boss asks you to develop a python program to determine an employee's net pay per month. The program will take a single parameter detailing the employee's yearly salary. You must develop a program to subtract super contributions, levies, and taxes in this order. Draw a structure chart outlining the structure of the program and upload it via the below prompt."
+    ]
+}

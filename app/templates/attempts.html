@@ -57,37 +57,25 @@
       </div>
     </div>
     {% else %} <!-- Student Template -->
-    <div class="row">
-      <div class="col-md-6">
+      {% for attempt in userAttempts %}
+      <div class="row">
         <div class="test-attempt">
           <div class="row">
             <div class="col-sm-8">
-              <h3>CITS1401</h3>
-              <p>Started: 1st April 2020 at 15:20</p>
-              <p>Completed: 1st April 2020 at 15:45</p>
+              <h3>{{ attempt.unitCode }}</h3>
+              <p>Question Set: {{ attempt.questionset }}</p>
+              <p>Completed: {{ attempt.time }}</p>
             </div>
             <div class="col-sm-4 text-right">
-              <h2>16/25</h2>
+              <h2></h2>
+              <p>Auto Mark: <strong>{{ attempt.autoMarksachieved}}/{{ attempt.availAutomarks}}</strong></p>
+              <p>Open Answer Mark: <strong>{{ attempt.autoMarksachieved}}/{{ attempt.totalAvailmarks - attempt.availAutomarks}}</strong></p>
             </div>
           </div>
           <a class="contact-link" href="{{ url_for('feedback') }}">View Feedback</a>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="test-attempt">
-          <div class="row">
-            <div class="col-sm-8">
-              <h3>CITS1401</h3>
-              <p>Started: 1st April 2020 at 15:20</p>
-              <p>Completed: 1st April 2020 at 15:45</p>
-            </div>
-            <div class="col-sm-4 text-right">
-              <h2>16/25</h2>
-            </div>
-          </div>
-          <a class="contact-link" href="{{ url_for('feedback') }}">View Feedback</a>
-        </div>
-      </div>
+      {% endfor %}
     </div>
     {% endif %}
   </div>
