@@ -25,11 +25,46 @@ class UserModelCase(unittest.TestCase):
     db.session.remove()
     db.drop_all()
 
+  def test_user_username(self):
+    user1 = User.query.get('111')
+    self.assertEqual(user1.username, "testing101")
+
+  def test_admin_username(self):
+    admin1 = User.query.get('333')
+    self.assertEqual(admin1.username, "admin101")
+
+  def test_user_email(self):
+    user1 = User.query.get('111')
+    self.assertEqual(user1.email, "tester@gmail.com")
+
+  def admin_user_email(self):
+    admin1 = User.query.get('333')
+    self.assertEqual(admin1.email, "admin@gmail.com")
+
   def test_password_hashing(self):
     s = User.query.get('111')
+    a = User.query.get('333')
     s.set_password('hashpassword')
+    a.set_password('newpassword')
     self.assertFalse(s.check_password('secretpassword'))
     self.assertTrue(s.check_password('hashpassword'))
+    self.assertFalse(a.check_password('adminiscool'))
+    self.assertTrue(a.check_password('newpassword'))
+
+  def test_check_admin(self):
+    s = User.query.get('111')
+    a = User.query.get('333')
+    self.assertFalse(s.check_admin())
+    self.assertTrue(a.check_admin())
+    
+
+  def test_toggle_admin(self):
+    s = User.query.get('111')
+    a = User.query.get('333')
+    s.toggle_admin()
+    a.toggle_admin()
+    self.assertTrue(s.check_admin())
+    self.assertFalse(a.check_admin())
 
 
     
