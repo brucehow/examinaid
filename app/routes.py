@@ -1,7 +1,7 @@
 from app import app, db
 from flask import render_template, flash, redirect, url_for, request
 
-from app.forms import LoginForm, RegisterForm, TestForm, ResetPasswordForm, MultiTestQuestion, ShortTestQuestion, OpenTestQuestion, ManualMarkForm
+from app.forms import LoginForm, RegisterForm, TestForm, ResetPasswordForm, MultiTestQuestion, ShortTestQuestion, OpenTestQuestion, ManualMarkForm, DemoTestQuestion
 from app.unitJSON import add_test, get_tests, get_all, remove_unit, remove_test
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, db
@@ -499,6 +499,62 @@ def add_openq():
     return redirect(url_for('userprofile'))
   return render_template("tests/addopenq_template.html", title="Add Open Questions", form=form)
 
+@app.route('/managetests/add_demo', methods=['GET', 'POST'])
+@login_required
+def add_demo():
+  if current_user.check_admin():
+    form = DemoTestQuestion()
+    ##for relative file location
+    dirname = path.dirname(__file__)
+    if form.validate_on_submit():
+        totalMarks = form.marks1.data + form.marks2.data + form.marks3.data
+        testNumber = next_test(form.unitCode.data)
+        dictionary = {
+        "unitCode" : form.unitCode.data,
+        "unitName": form.unitName.data,
+        "testNumber": testNumber,
+        "totalMarks": totalMarks,
+        "questions": [
+          {
+            "questionNumber": 1,
+            "marks" : form.marks1.data,
+            "prompt": form.prompt1.data,
+            "answer": form.answer1.data,
+            "questionType": "multipleChoice",
+            "totalOptions": form.options1.data
+          },
+          {
+            "questionNumber": 2,
+            "marks" : form.marks2.data,
+            "prompt": form.prompt2.data,
+            "answer": form.answer2.data,
+            "questionType": "shortAnswer",
+            "totalOptions": None
+          },
+          {
+            "questionNumber": 3,
+            "marks" : form.marks3.data,
+            "prompt": form.prompt3.data,
+            "answer": None,
+            "questionType": "openAnswer",
+            "totalOptions": None
+          }
+        ]
+        }
+        ##dumps for 4 items, change indent variable if there's more items required
+        json_object = dumps(dictionary, indent = 4)
+        if add_test(form.unitCode.data, testNumber) == -1:
+          flash('Error: Test already exists!')
+          return redirect(url_for('userprofile'))
+        else:
+            with open(path.join(dirname, "questions/" + form.unitCode.data.lower() + "_" + str(testNumber)  + ".json"), "w") as outfile:
+                outfile.write(json_object)
+                flash('Demo test added!')
+                return redirect(url_for('managetests'))
+  else:
+    flash('Not an admin: Please contact your supervisor')
+    return redirect(url_for('userprofile'))
+  return render_template("tests/adddemo_template.html", title="Add Demo Questions", form=form)
 
 
 # The actual unique test page itself.
