@@ -563,6 +563,8 @@ def submit():
       time = now.strftime("%m/%d/%Y, %H:%M:%S")
       print(time)
 
+      manuallMarksachieved = 0
+
       dictionary = {
         "marked":'partial',
         "unitName":unitName,
@@ -572,6 +574,7 @@ def submit():
         "questionset":questionSet,
         "totalAvailmarks": totalMarksavail,
         "autoMarksachieved":marksAchieved,
+        "manualMarksachieved":manuallMarksachieved,
         "availAutomarks":sum(availMarksauto),
         "incorrectAutoquestions":incorrectQuestion,
         "youAnswered":youAnswered,
@@ -579,18 +582,21 @@ def submit():
         "requireManual":requireManualmark
       }
 
-      print(dictionary)
+      #Converts dictionary to JSON object. Checks directory if this test has been completed previously. Creates new JSON file containing answers per submission. 
       json_object = dumps(dictionary, indent = 4)
-
+      iteration = []
       feedbackDir = 'app/feedback/'
       for filename in os.listdir(feedbackDir):
         if filename.startswith(user):
-            feedBacksplit = filename.split('_')
+          feedBacksplit = filename.split('_')
+          if feedBacksplit[1]+'_'+feedBacksplit[2] == questionSet:
             number = feedBacksplit[3].split('.')
-            feedbackNumber = int(number[0])
-            feedbackNumber = feedbackNumber + 1
-        else:
-            feedbackNumber = 1  
+            iteration.append(int(number[0]))
+
+      if iteration:
+        feedbackNumber = max(iteration)+1
+      else:
+        feedbackNumber = 1  
 
       filename = '{}_{}_{}'.format(user,questionSet,feedbackNumber)
 
