@@ -21,6 +21,12 @@
 <section class="green">
   <!-- Load previous tests here -->
   <div class="container">
+    {% if not userAttempts and not current_user.admin %}
+    <div class="center">
+      <h3>No Previous Attempts Found</h3>
+      <p>Stop slacking and get to work!</p>
+    </div>
+    {% endif %}
     {% if current_user.admin %}
     <div class="test-attempt-list">
       <div class="table-responsive-sm">
@@ -51,38 +57,28 @@
       </div>
     </div>
     {% else %} <!-- Student Template -->
-      {% if not userAttempts %}
-      <div class="row">
-        <div class="test-attempt">
-          <h3>No Previous Attempts Found</h3>
-          <p>Stop slacking and get to work</p>
-        </div>
-      </div>
-      {% else %}
-      {% for attempt in userAttempts %}
-      <div class="row">
-        <div class="test-attempt">
-          <div class="row">
-            <div class="col-sm-8">
-              <h3>{{ attempt.unitCode }}</h3>
-              <p>Question Set: {{ attempt.questionset }}</p>
-              <p>Completed: {{ attempt.time }}</p>
-              <a class="contact-link" href="{{ url_for('testfeedback', test_id=attempt.ID) }}">View Feedback</a>
-            </div>
-            <div class="col-sm-4 text-right">
-              <h3>Overall Mark {{ attempt.autoMarksachieved + attempt.manualMarksachieved }}/{{ attempt.totalAvailmarks}}</h3>
-              <p>Auto Mark <strong>{{ attempt.autoMarksachieved}}/{{ attempt.availAutomarks}}</strong></p>
-              <p>Open Answer Mark <strong>{% if attempt.marked == "Partial" %}-{% else %}{{ attempt.manualMarksachieved}}{% endif %}/{{ attempt.totalAvailmarks - attempt.availAutomarks}}</strong></p>
-              {% if attempt.marked == "Partial" %}
-              <i class="text-right">Open Answer marking required</i>
-              {% endif %}
-            </div>
+    {% for attempt in userAttempts %}
+    <div class="row">
+      <div class="test-attempt">
+        <div class="row">
+          <div class="col-sm-8">
+            <h3>{{ attempt.unitCode }}</h3>
+            <p>Question Set: {{ attempt.questionset }}</p>
+            <p>Completed: {{ attempt.time }}</p>
+            <a class="contact-link" href="{{ url_for('testfeedback', test_id=attempt.ID) }}">View Feedback</a>
+          </div>
+          <div class="col-sm-4 text-right">
+            <h3>Overall Mark {{ attempt.autoMarksachieved + attempt.manualMarksachieved }}/{{ attempt.totalAvailmarks}}</h3>
+            <p>Auto Mark <strong>{{ attempt.autoMarksachieved}}/{{ attempt.availAutomarks}}</strong></p>
+            <p>Open Answer Mark <strong>{% if attempt.marked == "Partial" %}-{% else %}{{ attempt.manualMarksachieved}}{% endif %}/{{ attempt.totalAvailmarks - attempt.availAutomarks}}</strong></p>
+            {% if attempt.marked == "Partial" %}
+            <i class="text-right">Open Answer marking required</i>
+            {% endif %}
           </div>
         </div>
       </div>
-      {% endfor %}
-      {% endif %}
     </div>
+    {% endfor %}
     {% endif %}
   </div>
 </section>

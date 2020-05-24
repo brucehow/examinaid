@@ -8,7 +8,7 @@
     "questionset": "open_1",
     "totalAvailmarks": 10,
     "autoMarksachieved": 0,
-    "manualMarksachieved": 7,
+    "manualMarksachieved": 6,
     "availAutomarks": 0,
     "incorrectAutoquestions": [],
     "youAnswered": [],
@@ -51,7 +51,7 @@
     ],
     "manualMarks": [
         1,
-        1,
+        0,
         0,
         0,
         0,
