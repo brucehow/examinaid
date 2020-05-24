@@ -113,7 +113,7 @@ def managetests():
         for unit in tests:
             for qset in tests[unit]:
                 filepath = "app/questions/{}_{}.json".format(unit.lower(), qset)
-                questionSet = load(open(filepath))s
+                questionSet = load(open(filepath))
                 numq = 0
                 for question in questionSet["questions"]:
                     numq += 1
