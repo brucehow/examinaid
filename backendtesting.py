@@ -55,8 +55,7 @@ class UserModelCase(unittest.TestCase):
     s = User.query.get('111')
     a = User.query.get('333')
     self.assertFalse(s.check_admin())
-    self.assertTrue(a.check_admin())
-    
+    self.assertTrue(a.check_admin())   
 
   def test_toggle_admin(self):
     s = User.query.get('111')
@@ -66,14 +65,8 @@ class UserModelCase(unittest.TestCase):
     self.assertTrue(s.check_admin())
     self.assertFalse(a.check_admin())
 
-
     
 if __name__ == '__main__':
   unittest.main(verbosity=2)
 
-
-  # def test_is_commited(self):
-  #   s = User.query.get('111')
-  #   self.assertFalse(s.is_commited())
-  #   a = User.query.get('333')
 
