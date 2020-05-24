@@ -1,7 +1,7 @@
 from app import app, db
 from flask import render_template, flash, redirect, url_for, request
 
-from app.forms import LoginForm, RegisterForm, TestForm, ResetPasswordForm, MultiTestQuestion, ShortTestQuestion, OpenTestQuestion
+from app.forms import LoginForm, RegisterForm, TestForm, ResetPasswordForm, MultiTestQuestion, ShortTestQuestion, OpenTestQuestion, ManualMarkForm
 from app.unitJSON import add_test, get_tests, get_all, remove_unit, remove_test
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, db
@@ -645,7 +645,7 @@ def attempts():
                 attempts.append(load(feedback))
     return render_template("attempts.html", title="Previous Attempts", userAttempts=attempts)
 
-@app.route("/feedback/<test_id>")
+@app.route("/feedback/<test_id>", methods=['GET', 'POST'])
 @login_required
 def testfeedback(test_id):
     filepath = 'app/feedback/' + test_id + ".json"
@@ -654,7 +654,27 @@ def testfeedback(test_id):
 
     # Access to feedback file given to admin or user itself
     if current_user.check_admin() or current_user.username == feedback["user"]:
-        return render_template("feedback.html", title="Feedback", content=feedback)
+        
+        # Store relevant number of form.marks in input
+        form = ManualMarkForm()
+        inputs = []
+        for prompt in form:
+            if len(inputs) == len(feedback["manualMarks"]):
+                break
+            inputs.append(prompt)
+
+        if form.validate_on_submit():
+            newManualMarks = []
+            total = 0
+            for markInput in inputs:
+                mark = int(markInput.data)
+                newManualMarks.append(mark)
+                total += mark
+            feedback["manualMarks"] = newManualMarks
+            feedback["manualMarksachieved"] = total
+
+        # Access is granted
+        return render_template("feedback.html", title="Feedback", content=feedback, inputs=inputs, form=form)
 
     return redirect(url_for('userprofile')) 
 
