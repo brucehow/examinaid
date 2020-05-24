@@ -34,27 +34,27 @@
         {{ form.unitName.label }}<br>
         {{ form.unitName(class="test-input") }}<br>
         {% for error in form.unitName.errors %}
-        <br><span style="color: red;">[{{ error }}]</span>
+        <br><span style="color: red;">{{ error }}</span>
         {% endfor %} 
 
         {{ form.unitCode.label }}<br>
         {{ form.unitCode(class="test-input") }}
         {% for error in form.unitCode.errors %}
-        <br><span style="color: red;">[{{ error }}]</span>
+        <br><span style="color: red;">{{ error }}</span>
         {% endfor %} 
         <br>
 
         {{ form.testNumber.label }}<br>
         {{ form.testNumber(class="test-input") }}
         {% for error in form.testNumber.errors %}
-        <br><span style="color: red;">[{{ error }}]</span>
+        <br><span style="color: red;">{{ error }}</span>
         {% endfor %} 
         <br>
 
         {{ form.totalMarks.label }}<br>
-        {{ form.totalMarks(class="test-input") }}<br>
+        {{ form.totalMarks(class="test-input") }}
         {% for error in form.totalMarks.errors %}
-        <br><span style="color: red;">[{{ error }}]</span>
+        <br><span style="color: red;">{{ error }}</span>
         {% endfor %} 
         <br>
       </div>
@@ -66,14 +66,14 @@
             {{ form.marks1.label }}
             {{ form.marks1(class="test-input") }}
             {% for error in form.marks1.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
       
             {{ form.prompt1.label }}
             {{ form.prompt1(class="test-input") }}
             {% for error in form.prompt1.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
           </div>
@@ -84,14 +84,14 @@
             {{ form.marks2.label }}
             {{ form.marks2(class="test-input") }}
             {% for error in form.marks2.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
       
             {{ form.prompt2.label }}
             {{ form.prompt2(class="test-input") }}
             {% for error in form.prompt2.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
           </div>
@@ -104,14 +104,14 @@
             {{ form.marks3.label }}
             {{ form.marks3(class="test-input") }}
             {% for error in form.marks3.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
       
             {{ form.prompt3.label }}
             {{ form.prompt3(class="test-input") }}
             {% for error in form.prompt3.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
           </div>
@@ -122,14 +122,14 @@
             {{ form.marks4.label }}
             {{ form.marks4(class="test-input") }}
             {% for error in form.marks4.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
       
             {{ form.prompt4.label }}
             {{ form.prompt4(class="test-input") }}
             {% for error in form.prompt4.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
           </div>
@@ -142,14 +142,14 @@
             {{ form.marks5.label }}
             {{ form.marks5(class="test-input") }}
             {% for error in form.marks5.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
       
             {{ form.prompt5.label }}
             {{ form.prompt5(class="test-input") }}
             {% for error in form.prompt5.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
           </div>
@@ -160,14 +160,14 @@
             {{ form.marks6.label }}
             {{ form.marks6(class="test-input") }}
             {% for error in form.marks6.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
       
             {{ form.prompt6.label }}
             {{ form.prompt6(class="test-input") }}
             {% for error in form.prompt6.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
           </div>
@@ -180,14 +180,14 @@
             {{ form.marks7.label }}
             {{ form.marks7(class="test-input") }}
             {% for error in form.marks7.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
       
             {{ form.prompt7.label }}
             {{ form.prompt7(class="test-input") }}
             {% for error in form.prompt7.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
           </div>
@@ -198,14 +198,14 @@
             {{ form.marks8.label }}
             {{ form.marks8(class="test-input") }}
             {% for error in form.marks8.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
       
             {{ form.prompt8.label }}
             {{ form.prompt8(class="test-input") }}
             {% for error in form.prompt8.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
           </div>
@@ -218,14 +218,14 @@
             {{ form.marks9.label }}
             {{ form.marks9(class="test-input") }}
             {% for error in form.marks9.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
       
             {{ form.prompt9.label }}
             {{ form.prompt9(class="test-input") }}
             {% for error in form.prompt9.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
           </div>
@@ -236,14 +236,14 @@
             {{ form.marks10.label }}
             {{ form.marks10(class="test-input") }}
             {% for error in form.marks10.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
       
             {{ form.prompt10.label }}
             {{ form.prompt10(class="test-input") }}
             {% for error in form.prompt10.errors %}
-            <br><span style="color: red;">[{{ error }}]</span>
+            <br><span style="color: red;">{{ error }}</span>
             {% endfor %} 
             <br>
           </div>

@@ -328,7 +328,7 @@ def add_shortq():
 
 
   return render_template("tests/addshortq_template.html", title="Add Short Questions", form=form)
-    
+
 @app.route('/managetests/add_openq', methods=['GET', 'POST'])
 @login_required
 def add_openq():
@@ -442,7 +442,7 @@ def add_openq():
   return render_template("tests/addopenq_template.html", title="Add Open Questions", form=form)
 
 
-    
+
 # The actual unique test page itself.
 @app.route('/test/<questionset>')
 @login_required
