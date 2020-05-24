@@ -77,14 +77,15 @@ def remove_unit(unitCode):
 def remove_test(unitCode, testNumber):
   """
   Removes test number `testNumber` from the unit with code `unitCode`.
-  Returns `0` on successful removal of track and file, `-1` if the `testNumber` is not being tracked, and `-2` if the test file did not exist.
+  Returns `0` on successful removal of track and file, `-1` if the `testNumber` is not being tracked, `-2` if the test file did not exist, and `-3` if the unit is not being tracked.
   The `testNumber` check occurs before the existing file check.
   """
   unitCode = unitCode.upper()
+  testNumber = int(testNumber)
   with open("app/questions/units.json", "r") as readfile:
     units = load(readfile)
   try:
-    tests = units[unitCode]
+    tests = units[unitCode.upper()]
     if (testNumber in tests):
       tests.remove(testNumber)
       if (len(tests) == 0):
@@ -92,13 +93,14 @@ def remove_test(unitCode, testNumber):
       with open("app/questions/units.json", "w") as writefile:
         dump(units, writefile)
       # Delete the actual question set file
-      questionset = "questions/{}_{}.json".format(unitCode.lower(), testNumber)
+      questionset = "app/questions/{}_{}.json".format(unitCode.lower(), testNumber)
       if path.exists(questionset):
+        print("DELETING {}!".format(questionset))
         remove(questionset)
+        return 0
       else:
-        return -2
-      return 0
+        return -2 # This question set does not exist
     else:
       return -1 # Test number not in tests
   except KeyError:
-    return -1 # Unit is not supported
+    return -3 # Unit is not supported
