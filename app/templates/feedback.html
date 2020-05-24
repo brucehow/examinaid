@@ -44,8 +44,10 @@
       </div>
       {% endfor %}
     </div>
+    {% if current_user.admin %}
     <form id="mark-form" action="" method="POST">
       {{ form.hidden_tag() }}
+    {% endif %}
       <div class="row">
         {% for i in range(content.requireManual|length) %}
         <div class="col-md-6">
@@ -53,15 +55,21 @@
             {{ content.requireManual[i] }}<br><br>
             <p><b>Student Answer:</b></p>
             <p>{{ content.manualAnswers[i] }}</p>
-            <p><b>Allocate Marks<br> {{ inputs[i](class="mark-input") }} / {{ content.availManualMarks[i] }}</b></p>
+            {% if current_user.admin %}
+            <p><b>Allocate Mark<br> {{ inputs[i](class="mark-input") }} / {{ content.availManualMarks[i] }}</b></p>
             {% for error in inputs[i].errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %} 
+            {% else %}
+            <p><b>Manual Mark</b><br>{{ content.manualMark[i] }}/{{ content.availManualMarks[i] }}</p>
+            {% endif %}
           </div>
         </div>
         {% endfor %}
       </div>
-      <input type="submit" class="plain-btn lg test-btn" value="Update Marks"  id="submit-mark-form" />
+      {% if current_user.admin %}
+      <input type="submit" class="plain-btn lg test-btn" value="Update Marks"  id="submit-mark-form"/>
+      {% endif %}
     </form>
   </div>
 </section>
