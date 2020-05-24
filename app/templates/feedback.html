@@ -44,16 +44,33 @@
       </div>
       {% endfor %}
     </div>
+    {% if current_user.admin %}
+    <form method="POST">
+      <div class="row">
+        {% for i in range(content.requireManual|length) %}
+        <div class="col-md-6">
+          <div class="question-box">
+            {{ content.requireManual[i] }}<br><br>
+            <p><b>Student Answer:</b></p>
+            <p>{{ content.manualAnswers[i] }}</p>
+            <p><b>Assign Mark:<br><input class="mark-input"> / {{ content.availManualMarks[i] }}</b></p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <input type="submit" class="plain-btn lg test-btn" value="Mark Manual Answers"  id="submit-marking"/><br>
+    </form>
+    {% else %}
     <div class="row">
-      {% for i in range(content.requireManual|length) %}
       <div class="col-md-6">
         <div class="question-box">
           {{ content.requireManual[i] }}<br><br>
           <p><b>Student Answer:</b></p>
           <p>{{ content.manualAnswers[i] }}</p>
+          <p><b>Assigned Mark: {{ content.manualMark[i] }}/{{ content.availManualMarks[i] }}</b></p>
         </div>
       </div>
-      {% endfor %}
+      {% endif %}
     </div>
   </div>
 </section>

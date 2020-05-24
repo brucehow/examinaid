@@ -530,6 +530,8 @@ def submit():
 
     requireManualmark = []
     manualAnswers = []
+    manualMarks = [] # Actual mark
+    availManualMarks = [] # Mark allocation for each
 
     incorrectQnumber = [] #Storage for incorrect questions and user's responses
     youAnswered = []
@@ -556,6 +558,8 @@ def submit():
                 availMarksauto.append(0) #Don't include marks for non automated questions
                 requireManualmark.append(question)
                 manualAnswers.append(userAnswers[i])
+                manualMarks.append(0)
+                availManualMarks.append(marksAwarded)
             else:
                 availMarksauto.append(marksAwarded)
 
@@ -609,7 +613,9 @@ def submit():
             "youAnswered":youAnswered,
             "correctAnswers":correctAnswers,
             "requireManual":requireManualmark,
-            "manualAnswers":manualAnswers
+            "manualAnswers":manualAnswers,
+            "availManualMarks":availManualMarks,
+            "manualMarks":manualMarks
         }
       
         if dictionary["availAutomarks"] == dictionary["totalAvailmarks"]:
@@ -650,7 +656,7 @@ def testfeedback(test_id):
     if current_user.check_admin() or current_user.username == feedback["user"]:
         return render_template("feedback.html", title="Feedback", content=feedback)
 
-    return redirect(url_for('userprofile'))
+    return redirect(url_for('userprofile')) 
 
 # Admin manage student logins
 @app.route('/manageusers')
