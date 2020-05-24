@@ -16,6 +16,12 @@
 </section>
 <section class="green">
   <div class="container">
+    {% if not markTests %}
+    <div class="center">
+      <h3>No Marking Required</h3>
+      <p>Nice work! You're all caught up.</p>
+    </div>
+    {% else %}
     <div class="test-attempt-list">
       <div class="table-responsive-sm">
         <table class="table">
@@ -44,6 +50,7 @@
         </table>
       </div>
     </div>
+    {% endif %}
   </div>
 </section>
 
