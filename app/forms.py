@@ -39,16 +39,16 @@ class TestForm(FlaskForm):
     submit = SubmitField('Start Test')
 
 class ManualMarkForm(FlaskForm):
-    mark1 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
-    mark2 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
-    mark3 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
-    mark4 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
-    mark5 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
-    mark6 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
-    mark7 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
-    mark8 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
-    mark9 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
-    mark10 = IntegerField('Mark', validators=[InputRequired(message="Invalid Marks Value")])
+    mark1 = IntegerField('Mark', default=0)
+    mark2 = IntegerField('Mark', default=0)
+    mark3 = IntegerField('Mark', default=0)
+    mark4 = IntegerField('Mark', default=0)
+    mark5 = IntegerField('Mark', default=0)
+    mark6 = IntegerField('Mark', default=0)
+    mark7 = IntegerField('Mark', default=0)
+    mark8 = IntegerField('Mark', default=0)
+    mark9 = IntegerField('Mark', default=0)
+    mark10 = IntegerField('Mark', default=0)
 
 class MultiTestQuestion(FlaskForm):
     unitName = StringField('UnitName', validators=[DataRequired()])
