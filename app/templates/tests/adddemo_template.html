@@ -1,0 +1,130 @@
+{% extends "login.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="../../static/css/test.css"/>
+<nav class="navbar-hidden nav-abs navbar-expand-md nav-transparent">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for('managetests') }}">
+        <span class="far fa-arrow-alt-circle-left nav-back nav-white"></span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<section class="green">
+  <div class="container">
+    <div class="row vertical-align">
+      <div class="col-md-8">
+        <h2>Create Demo Question Set</h2>
+        <p>Create a Demo question set for assessors</p>
+      </div>
+      <div class="col-md-4 d-none d-md-block">
+        <img class="img-lg" src="../../static/resources/managequestion.svg" alt=""> 
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <p><strong>Note: </strong> following form must be completed in one sitting.</p>
+    <form id="example-test-form" method="POST">
+      <div class="question-box">
+        <h3>Test Information</h3>
+        {{ form.hidden_tag() }}
+        {{ form.unitName.label }}<br>
+        {{ form.unitName(class="test-input") }}<br>
+        {% for error in form.unitName.errors %}
+        <br><span style="color: red;">{{ error }}</span>
+        {% endfor %} 
+
+        {{ form.unitCode.label }}<br>
+        {{ form.unitCode(class="test-input")}}
+        {% for error in form.unitCode.errors %}
+        <br><span style="color: red;">{{ error }}</span>
+        {% endfor %} 
+        <br>
+      </div>
+      <!-- Question set start -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="question-box add-question">
+            <h3>Question 1</h3>
+            {{ form.marks1.label }}
+            {{ form.marks1(class="test-input") }}
+            {% for error in form.marks1.errors %}
+            <br><span style="color: red;">{{ error }}</span>
+            {% endfor %} 
+            <br>
+      
+            {{ form.prompt1.label }}
+            {{ form.prompt1(class="test-input") }}
+            {% for error in form.prompt1.errors %}
+            <br><span style="color: red;">{{ error }}</span>
+            {% endfor %} 
+            <br><br>
+      
+            {{ form.options1(class="options option-input") }}
+            {% for error in form.options1.errors %}
+            <br><span style="color: red;">{{ error }}</span>
+            {% endfor %} 
+      
+            {{ form.answer1.label }}
+            {{ form.answer1(class="test-input") }}
+            {% for error in form.answer1.errors %}
+            <br><span style="color: red;">{{ error }}</span>
+            {% endfor %} 
+            <br>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="question-box add-question">
+            <h3>Question 2</h3>
+            {{ form.marks2.label }}
+            {{ form.marks2(class="test-input") }}
+            {% for error in form.marks2.errors %}
+            <br><span style="color: red;">{{ error }}</span>
+            {% endfor %} 
+            <br>
+      
+            {{ form.prompt2.label }}
+            {{ form.prompt2(class="test-input") }}
+            {% for error in form.prompt2.errors %}
+            <br><span style="color: red;">{{ error }}</span>
+            {% endfor %} 
+            <br>
+
+            {{ form.answer2.label }}
+            {{ form.answer2(class="test-input") }}
+            {% for error in form.answer2.errors %}
+            <br><span style="color: red;">{{ error }}</span>
+            {% endfor %} 
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="question-box add-question">
+            <h3>Question 3</h3>
+            {{ form.marks3.label }}
+            {{ form.marks3(class="test-input") }}
+            {% for error in form.marks3.errors %}
+            <br><span style="color: red;">{{ error }}</span>
+            {% endfor %} 
+            <br>
+      
+            {{ form.prompt3.label }}
+            {{ form.prompt3(class="test-input") }}
+            {% for error in form.prompt3.errors %}
+            <br><span style="color: red;">{{ error }}</span>
+            {% endfor %} 
+            <br>
+          </div>
+        </div>
+      </div>
+      <input type="submit" class="plain-btn lg test-btn" value="Submit Question Set"  id="submit-example-test-form"/>
+    </form>
+  </div>
+</section>
+
+{% endblock content %}
