@@ -39,7 +39,8 @@
               <th>Manual Mark</th>
               <th>Total Mark</th>
               <th>Completed</th>
-              <th>Status</th>
+              <th>Marked</th>
+              <th>Feedback</th>
             </tr>
           </thead>
           {% for attempt in userAttempts %}
@@ -50,7 +51,8 @@
             <td>{{ attempt.manualMarksachieved }}/{{ attempt.totalAvailmarks - attempt.availAutomarks}}</td>
             <td>{{ attempt.autoMarksachieved + attempt.manualMarksachieved }}/{{ attempt.totalAvailmarks }}</td>
             <td>{{ attempt.time }}</td>
-            <td>{% if attempt.marked == "Partial" %}Marking Required{% else %}Fully Marked{% endif %}</td>
+            <td>{{ attempt.marked }}</td>
+            <td><button onclick="window.location.href='/feedback/{{ attempt.ID }}'" class="remove-user">View</button></td>
           </tr>
           {% endfor %}
         </table>
