@@ -9,7 +9,7 @@ from werkzeug.urls import url_parse
 
 from json import load, dumps
 from os import listdir, path # To debug file paths
-from app.unitJSON import get_all
+from app.unitJSON import get_all, remove_test
 
 @app.route("/")
 @app.route("/index")
@@ -126,6 +126,24 @@ def managetests():
                 }
                 questionSets.append(thisSet)
         return render_template('manage/tests.html', title="Manage Tests", sets=questionSets)
+
+# Remove a test set
+@app.route('/managetests/removeset/<unitCode>/<testNumber>')
+@login_required
+def removeset(unitCode, testNumber):
+    result = remove_test(unitCode, testNumber)
+    questionset = "{}_{}.json".format(unitCode.lower(), testNumber)
+    if result == 0:
+        print("Successfuly removed {}.".format(questionset))
+    elif result == -1:
+        print("Question set \"{}\" was not being tracked!".format(questionset))
+    elif result == -2:
+        print("{} file does not exist!".format(questionset))
+    elif result == -3:
+        print("Unit {} is not being tracked!".format(unitCode))
+    else: # Unknown
+        print("Unknown error occured trying to delete {}.".format(questionset))
+    return redirect(url_for("managetests"))
 
 # Add Questions function using JSON creation
 @app.route('/managetests/add_multiq', methods=['GET', 'POST'])

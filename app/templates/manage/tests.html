@@ -49,7 +49,7 @@
             <td>{{ set.testNumber }}</td>
             <td>{{ set.totalMarks }}</td>
             <td>{{ set.questions }}</td>
-            <td>Remove</td>
+            <td><button onclick="window.location.href='/managetests/removeset/{{ set.unitCode }}/{{ set.testNumber }}'" class="remove-user">Remove</button></td>
           </tr>
           {% endfor %}
         </table>
