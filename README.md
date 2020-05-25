@@ -58,6 +58,82 @@ Administrators also have the ability to add and remove question sets.
 
 ExaminAid also has a contact form, as mentioned above. This form is a HTML form which sends data to Google Sheets, by communicating with a script associated with the corresponding sheet. The sheet which receives this data is available [here](https://docs.google.com/spreadsheets/d/1tRqt7958lMhJuw4GvrrazpACogWdf6A6B2dD_zZ_HmE/edit?usp=sharing).
 
+## Application Structure
+The application structure and explanation are as below:
+```
+examinate
+├── README.md
+├── USEFUL.md
+├── app
+│   ├── __init__.py
+│   ├── feedback
+│   ├── forms.py
+│   ├── models.py
+│   ├── questions
+│   │   ├── <question_file>.json
+│   │   └── units.json
+│   ├── routes.py
+│   ├── static
+│   │   ├── css
+│   │   │   ├── about.css
+│   │   │   ├── footer.css
+│   │   │   ├── forms.css
+│   │   │   ├── header.css
+│   │   │   ├── main.css
+│   │   │   ├── test.css
+│   │   │   └── userprofile.css
+│   │   ├── resources
+│   │   │   ├── ...svg
+│   │   │   ├── authors
+│   │   │   │   ├── ...png
+│   │   └── scripts
+│   │       ├── contact-form.js
+│   │       └── index.js
+│   ├── templates
+│   │   ├── about.html
+│   │   ├── attempts.html
+│   │   ├── changepassword.html
+│   │   ├── contact.html
+│   │   ├── feedback.html
+│   │   ├── index.html
+│   │   ├── login.html
+│   │   ├── manage
+│   │   │   ├── students.html
+│   │   │   └── tests.html
+│   │   ├── marktests.html
+│   │   ├── quiz.html
+│   │   ├── register.html
+│   │   ├── tests
+│   │   │   ├── adddemo_template.html
+│   │   │   ├── addmultiq_template.html
+│   │   │   ├── addopenq_template.html
+│   │   │   ├── addshortq_template.html
+│   │   │   ├── newtest.html
+│   │   │   └── test_template.html
+│   │   └── userprofile.html
+│   └── unitJSON.py
+├── app.db
+├── backendtesting.py
+├── config.py
+├── gitlog.csv
+├── index.py
+├── migrations
+│   ├── README
+│   ├── alembic.ini
+│   ├── env.py
+│   ├── script.py.mako
+│   └── versions
+│       ├── ...py
+├── requirements.txt
+├── resources
+│   ├── Website Flowchart.png
+│   └── question_images
+│       ├── ...png
+├── selenium
+│   └── frontendtesting.side
+└── test.db
+```
+
 ## Features
 
 
