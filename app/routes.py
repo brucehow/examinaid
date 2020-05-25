@@ -106,6 +106,8 @@ def marktests():
     feedbackDir = 'app/feedback/'
     res = []
     for filename in os.listdir(feedbackDir):
+        if filename == ".gitkeep":
+            continue
         feedback = open(feedbackDir + filename)
         content = load(feedback)
         if content["marked"] == "Partial":
@@ -640,6 +642,8 @@ def submit():
         iteration = []
         feedbackDir = 'app/feedback/'
         for filename in os.listdir(feedbackDir):
+            if filename == ".gitkeep":
+                continue
             if filename.startswith(user):
                 feedBacksplit = filename.split('_')
                 print(feedBacksplit)
@@ -693,10 +697,14 @@ def attempts():
     feedbackDir = 'app/feedback/'
     if current_user.check_admin(): # Get every feedback if teacher
         for filename in os.listdir(feedbackDir):
+            if filename == ".gitkeep":
+                continue
             feedback = open(feedbackDir + filename)
             attempts.append(load(feedback))
     else:
         for filename in os.listdir(feedbackDir):
+            if filename == ".gitkeep":
+                continue
             if filename.startswith(current_user.username): # Get user specific feedback
                 feedback = open(feedbackDir + filename)
                 attempts.append(load(feedback))
