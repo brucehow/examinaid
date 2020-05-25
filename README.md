@@ -20,76 +20,35 @@ ExaminAid also has a contact form, as mentioned above. This form is a HTML form 
 The application structure and explanation are as below:
 ```
 examinate
-├── README.md
+├── README.md                           
 ├── USEFUL.md
 ├── app
 │   ├── __init__.py
-│   ├── feedback
-│   ├── forms.py
-│   ├── models.py
-│   ├── questions
+│   ├── feedback                        <-- dir containing completed tests
+│   ├── forms.py                        <-- structure for WTForms
+│   ├── models.py                       <-- authentication and user control
+│   ├── questions                       <-- dir containing question sets
 │   │   ├── <question_file>.json
-│   │   └── units.json
-│   ├── routes.py
-│   ├── static
-│   │   ├── css
-│   │   │   ├── about.css
-│   │   │   ├── footer.css
-│   │   │   ├── forms.css
-│   │   │   ├── header.css
-│   │   │   ├── main.css
-│   │   │   ├── test.css
-│   │   │   └── userprofile.css
-│   │   ├── resources
-│   │   │   ├── ...svg
+│   │   └── units.json                  <-- question set overview
+│   ├── routes.py                       <-- page and authentication routes
+│   ├── static 
+│   │   ├── css                         <-- dir containing css files for each component
+│   │   │   ├── *.css
+│   │   ├── resources                   <-- dir containing image resources
+│   │   │   ├── *.svg
 │   │   │   ├── authors
-│   │   │   │   ├── ...png
-│   │   └── scripts
-│   │       ├── contact-form.js
-│   │       └── index.js
-│   ├── templates
-│   │   ├── about.html
-│   │   ├── attempts.html
-│   │   ├── changepassword.html
-│   │   ├── contact.html
-│   │   ├── feedback.html
-│   │   ├── index.html
-│   │   ├── login.html
-│   │   ├── manage
-│   │   │   ├── students.html
-│   │   │   └── tests.html
-│   │   ├── marktests.html
-│   │   ├── quiz.html
-│   │   ├── register.html
-│   │   ├── tests
-│   │   │   ├── adddemo_template.html
-│   │   │   ├── addmultiq_template.html
-│   │   │   ├── addopenq_template.html
-│   │   │   ├── addshortq_template.html
-│   │   │   ├── newtest.html
-│   │   │   └── test_template.html
-│   │   └── userprofile.html
-│   └── unitJSON.py
-├── app.db
-├── backendtesting.py
-├── config.py
-├── gitlog.csv
-├── index.py
-├── migrations
-│   ├── README
-│   ├── alembic.ini
-│   ├── env.py
-│   ├── script.py.mako
-│   └── versions
-│       ├── ...py
-├── requirements.txt
-├── resources
-│   ├── Website Flowchart.png
-│   └── question_images
-│       ├── ...png
+│   │   │   │   ├── *.png
+│   │   └── scripts                     <-- dir containing js scripts
+│   │       ├── *.js
+│   ├── templates                       <-- html page templates
+│   │   ├── *.html
+│   └── unitJSON.py                     <-- handles exam test files
+├── app.db                              <-- light weight database file
+├── backendtesting.py                   <-- backend unit test
+├── requirements.txt                    <-- application required dependencies
 ├── selenium
-│   └── frontendtesting.side
-└── test.db
+│   └── frontendtesting.side            <-- selenium front-end testing
+└── test.db                             <-- db used for unit testing
 ```
 
 ## Features
