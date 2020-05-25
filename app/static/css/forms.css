@@ -83,11 +83,3 @@ form > h4 {
   font-size: 1rem;
   color: red;
 }
-
-.forgot-password,
-.forgot-password:hover {
-  color: #007757;
-  font-size: 1rem;
-  font-weight: 700;
-  float: right;
-}
