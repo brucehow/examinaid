@@ -169,7 +169,10 @@ img.img-md {
   padding: 1rem 0;
   font-weight: 900;
   font-size: 1rem;
-  color: #2c2d30;
   right: 0;
   left: 0;
+}
+
+.flashed-white {
+  color: white;
 }

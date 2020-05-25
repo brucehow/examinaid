@@ -38,6 +38,18 @@ class TestForm(FlaskForm):
     questionset = SelectField('Question Set', [DataRequired()], choices = [("{}_{}".format(unit.lower(), setnumber), "{} Set {}".format(unit, setnumber)) for unit in get_all("app/questions/units.json") for setnumber in get_all("app/questions/units.json")[unit]]) # ('cits1401_1','CITS1401 Set 1')
     submit = SubmitField('Start Test')
 
+class ManualMarkForm(FlaskForm):
+    mark1 = IntegerField('Mark', default=0)
+    mark2 = IntegerField('Mark', default=0)
+    mark3 = IntegerField('Mark', default=0)
+    mark4 = IntegerField('Mark', default=0)
+    mark5 = IntegerField('Mark', default=0)
+    mark6 = IntegerField('Mark', default=0)
+    mark7 = IntegerField('Mark', default=0)
+    mark8 = IntegerField('Mark', default=0)
+    mark9 = IntegerField('Mark', default=0)
+    mark10 = IntegerField('Mark', default=0)
+
 class MultiTestQuestion(FlaskForm):
     unitName = StringField('UnitName', validators=[DataRequired()])
     unitCode = StringField('UnitCode', validators=[DataRequired()])

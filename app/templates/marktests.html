@@ -15,42 +15,42 @@
   </div>
 </section>
 <section class="green">
-  <!-- Load previous tests here -->
   <div class="container">
+    {% if not markTests %}
+    <div class="center">
+      <h3>No Marking Required</h3>
+      <p>Nice work! You're all caught up.</p>
+    </div>
+    {% else %}
     <div class="test-attempt-list">
       <div class="table-responsive-sm">
         <table class="table">
           <thead>
             <tr>
-              <th>Unit</th>
+              <th>Unit Code</th>
               <th>Student</th>
-              <th>Started</th>
+              <th>Auto Mark</th>
+              <th>Manual Mark</th>
+              <th>Total Mark</th>
               <th>Completed</th>
-              <th>Score</th>
-              <th>Action</th>
+              <th>Status</th>
             </tr>
           </thead>
-          <!-- for each here-->
+          {% for test in markTests %}
           <tr>
-            <td>CITS1401_1</td>
-            <td>Bruce</td>
-            <td>01/05/2020 15:20</td>
-            <td>01/05/2020 15:50</td>
-            <td>16/25</td>
-            <td>Mark Test</td>
+            <td>{{ test.unitCode }}</td>
+            <td>{{ test.user }}</td>
+            <td>{{ test.autoMarksachieved }}/{{ test.availAutomarks }}</td>
+            <td>{{ test.manualMarksachieved }}/{{ test.totalAvailmarks - test.availAutomarks}}</td>
+            <td>{{ test.autoMarksachieved + test.manualMarksachieved }}/{{ test.totalAvailmarks }}</td>
+            <td>{{ test.time }}</td>
+            <td><button onclick="window.location.href='/feedback/{{ test.ID }}'" class="remove-user">Mark Test</button></td>
           </tr>
-          <tr>
-            <td>CITS1401</td>
-            <td>Bruce</td>
-            <td>01/05/2020 15:20</td>
-            <td>01/05/2020 15:50</td>
-            <td>16/25</td>
-            <td>Mark Test</td>
-          </tr>
-          <!-- end for -->
+          {% endfor %}
         </table>
       </div>
     </div>
+    {% endif %}
   </div>
 </section>
 
