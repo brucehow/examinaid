@@ -4,31 +4,47 @@
 
 **ExaminAid** is a UWA Computer Science assessment preparation application containing various resources in the form of test questions and answers. The application is accessible to anyone who creates an account on the server where ExaminAid is running and contains all the question sets available to users. ExaminAid is completely free and has an intuitive and simple-to-use user interface for everyone, both students and teachers. The creators of ExaminAid welcome any feedback via the contact form on the ExaminAid website.
 
+#MISC
+
+##File Structure: Common - Lachlan
+
+##USEFUL.py - Lachlan
+
 #NON - LOGIN FEATURES
 
 ##Index and about page - Bruce
 
-##Contact form - Lachland
+##Contact form - Lachlan
 
-#LOGIN - STUDENT
+#LOGIN - STUDENT - Paul
 
-#User profile - Paul
+##User profile - Student - Paul
 
-#Start New test - Lachlan
+##Start & Doing a New test - Lachlan
 
-#Previous attempts - Paul
+##Automated marking - Paul
 
-#LOGIN - Teacher
+##Previous attempts - Paul
 
-#Mark completed tests - Bruce
+##Change password - Lachlan
 
-#Add questions -bryan
+#LOGIN - TEACHER
 
-#Manage users - Bryan
+##User profile - Teacher - Paul
 
-#Previous attempts - Paul
+##Mark completed tests - Bruce
 
+##Manage Tests, unitJSON - Bryan
 
+##Manage Users - Bryan
+
+##Previous Student Tests - Paul
+
+#TESTING
+
+##Unit tests - Bryan
+
+##Selenium tests - Bruce
 
 ## Design and Development
 
