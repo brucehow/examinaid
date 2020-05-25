@@ -53,7 +53,6 @@
         <div class="field">
           {{ loginForm.password.label }}
           {{ loginForm.password(class="userInput", autofocus="on", placeholder="Password") }}
-          <a class="forgot-password" href="{{ url_for('login') }}">Forgot your password?</a>
           {% for error in loginForm.password.errors %}
           <span class="form-error">{{ error }}</span>
           {% endfor %}

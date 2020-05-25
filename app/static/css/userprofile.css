@@ -54,10 +54,11 @@ section.dashboard {
   padding: 2rem;
   width: 100%;
   margin: 4rem 0;
+  transition: 250ms;
 }
 
 .test-attempt:hover {
-  transform: translate(0, -5px);
+  transform: translate(0, -10px);
 }
 
 
