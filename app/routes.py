@@ -46,7 +46,8 @@ def quiz():
 @app.route("/newtest", methods = ["GET", "POST"])
 def newtest():
     form = TestForm()
-    form.questionset.choices = [("{}_{}".format(unit.lower(), setnumber), "{} Set {}".format(unit, setnumber)) for unit in get_all("app/questions/units.json") for setnumber in get_all("app/questions/units.json")[unit]]
+    allTests = get_all("app/questions/units.json")
+    form.questionset.choices = [("{}_{}".format(unit.lower(), setnumber), "{} Set {}".format(unit, setnumber)) for unit in allTests for setnumber in allTests[unit]]
     if form.validate_on_submit():
       questionset = form.questionset.data
       return redirect(url_for("test", questionset=questionset))

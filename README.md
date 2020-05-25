@@ -6,7 +6,7 @@
 
 ## Design and Development
 
-Every question set supported by our application has a different combination of question types; the 3 main question types supported by our application include **multiple choice**, **short answer**, and **open answer** questions. Each question set is represented by a JSON file which contains information about the unit, including the unit code, and unit name, as well as the total number of marks, alongside the actual questions themselves. For the question sets that are supported by default, **immediate feedback** is available for most multiple choice and short answer questions, and the option for **custom feedback** is available on open answer questions. More information about this is provided in the paragraph on accounts.
+Every question set supported by our application has a different combination of question types; the 3 main question types supported by our application include **multiple choice**, **short answer**, and **open answer** questions. Each question set is represented by a JSON file which contains information about the unit, including the unit code, and unit name, as well as the total number of marks, alongside the actual questions themselves. For the question sets that are supported by default, **immediate feedback** is available for most multiple choice and short answer questions, and the option for **custom feedback** is available on open answer questions. More information about this is provided below.
 
 There are 2 types of accounts users can have. By default, upon signing up to our application, users are granted a **student** account, which can view question sets set by administrators, take tests and view the results of past tests.
 
@@ -16,88 +16,62 @@ The **USEFUL.md** document outlines the commands available to developers wishing
 
 ExaminAid does **not** store passwords in plain text. Rather, the backend database stores salted and hashed strings that represent these passwords. When a user log into our application, the password they enter is checked against this string. Users are able to change their passwords while logged in, by first confirming their email, then their current password, and then entering their new, desired password.
 
-Administrators also have the ability to add and remove question sets.
-
-ExaminAid also has a contact form, as mentioned above. This form is a HTML form which sends data to Google Sheets, by communicating with a script associated with the corresponding sheet. The sheet which receives this data is available [here](https://docs.google.com/spreadsheets/d/1tRqt7958lMhJuw4GvrrazpACogWdf6A6B2dD_zZ_HmE/edit?usp=sharing).
-
 ## Application Structure
 The application structure and explanation are as below:
 ```
 examinate
-├── README.md
+├── README.md                           
 ├── USEFUL.md
 ├── app
 │   ├── __init__.py
-│   ├── feedback
-│   ├── forms.py
-│   ├── models.py
-│   ├── questions
+│   ├── feedback                        <-- dir containing completed tests
+│   ├── forms.py                        <-- structure for WTForms
+│   ├── models.py                       <-- authentication and user control
+│   ├── questions                       <-- dir containing question sets
 │   │   ├── <question_file>.json
-│   │   └── units.json
-│   ├── routes.py
-│   ├── static
-│   │   ├── css
-│   │   │   ├── about.css
-│   │   │   ├── footer.css
-│   │   │   ├── forms.css
-│   │   │   ├── header.css
-│   │   │   ├── main.css
-│   │   │   ├── test.css
-│   │   │   └── userprofile.css
-│   │   ├── resources
-│   │   │   ├── ...svg
+│   │   └── units.json                  <-- question set overview
+│   ├── routes.py                       <-- page and authentication routes
+│   ├── static 
+│   │   ├── css                         <-- dir containing css files for each component
+│   │   │   ├── *.css
+│   │   ├── resources                   <-- dir containing image resources
+│   │   │   ├── *.svg
 │   │   │   ├── authors
-│   │   │   │   ├── ...png
-│   │   └── scripts
-│   │       ├── contact-form.js
-│   │       └── index.js
-│   ├── templates
-│   │   ├── about.html
-│   │   ├── attempts.html
-│   │   ├── changepassword.html
-│   │   ├── contact.html
-│   │   ├── feedback.html
-│   │   ├── index.html
-│   │   ├── login.html
-│   │   ├── manage
-│   │   │   ├── students.html
-│   │   │   └── tests.html
-│   │   ├── marktests.html
-│   │   ├── quiz.html
-│   │   ├── register.html
-│   │   ├── tests
-│   │   │   ├── adddemo_template.html
-│   │   │   ├── addmultiq_template.html
-│   │   │   ├── addopenq_template.html
-│   │   │   ├── addshortq_template.html
-│   │   │   ├── newtest.html
-│   │   │   └── test_template.html
-│   │   └── userprofile.html
-│   └── unitJSON.py
-├── app.db
-├── backendtesting.py
-├── config.py
-├── gitlog.csv
-├── index.py
-├── migrations
-│   ├── README
-│   ├── alembic.ini
-│   ├── env.py
-│   ├── script.py.mako
-│   └── versions
-│       ├── ...py
-├── requirements.txt
-├── resources
-│   ├── Website Flowchart.png
-│   └── question_images
-│       ├── ...png
+│   │   │   │   ├── *.png
+│   │   └── scripts                     <-- dir containing js scripts
+│   │       ├── *.js
+│   ├── templates                       <-- html page templates
+│   │   ├── *.html
+│   └── unitJSON.py                     <-- handles exam test files
+├── app.db                              <-- light weight database file
+├── backendtesting.py                   <-- backend unit test
+├── requirements.txt                    <-- application required dependencies
 ├── selenium
-│   └── frontendtesting.side
-└── test.db
+│   └── frontendtesting.side            <-- selenium front-end testing
+└── test.db                             <-- db used for unit testing
 ```
 
 ## Features
 
+### General
+- **Contact Form** - Allows users to submit feedback and questions about our site. This is a HTML form with interfaces with a script in Google Sheets to store form submissions in a separate online document. The sheet which receives this data is available [here](https://docs.google.com/spreadsheets/d/1tRqt7958lMhJuw4GvrrazpACogWdf6A6B2dD_zZ_HmE/edit?usp=sharing).
+- **Reset / Change Password** - Requires a login. Users can change their password by confirming their email and previous password.
+
+### Student Dashboard
+- **Start Test** - Directs the user to `newtest.html` where the user can choose a test to complete. Our application currently supports 4 course tests, as well as a demonstration test.
+- **Previous Attempts** - Allows the user to view their previous test attempts. Each entry contains the test unit code, automated marks, manual marks, the marking status and a link containing the test feedback
+
+### Teacher Dashboard
+**Admin user account required**
+- **Mark Completed Tests** - Allows the user to view a list of tests that require marking. The user can view the student's test feedback which shows the test information, list of incorrect automatic questions and the students responses to the questions. Teachers can manually allocate a mark and update the student's feedback.
+- **View Previous Tests** - Displays a list of completed tests by all students. Each test entry will show the unit code, student that completed the test, automatic marks, manual marks, total marks, completion date, the marking status and a link to the file feedback.
+- **Manage Tests** - Allows a teacher to add tests of varying formats, or remove existing tests.
+- **Manage Users** - Allows a teacher to add or remove user logins. Cannot change an account's status (between student / teacher) for security reasons; this can only be done at the command line.
+
+### Styling
+- Boostrap has been used throughout the application to structure the webpage.
+- Styling components has been separated into different `.css` files which are located in the `app/static/css` dir
+- FontAwesome has been used to provide unique icons that are easily accessible such as the GitHub and BackNavigation buttons
 
 ## Libraries Used
 - [Bootstrap](https://getbootstrap.com/)
