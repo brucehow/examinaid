@@ -4,6 +4,32 @@
 
 **ExaminAid** is a UWA Computer Science assessment preparation application containing various resources in the form of test questions and answers. The application is accessible to anyone who creates an account on the server where ExaminAid is running and contains all the question sets available to users. ExaminAid is completely free and has an intuitive and simple-to-use user interface for everyone, both students and teachers. The creators of ExaminAid welcome any feedback via the contact form on the ExaminAid website.
 
+#NON - LOGIN FEATURES
+
+##Index and about page - Bruce
+
+##Contact form - Lachland
+
+#LOGIN - STUDENT
+
+#User profile - Paul
+
+#Start New test - Lachlan
+
+#Previous attempts - Paul
+
+#LOGIN - Teacher
+
+#Mark completed tests - Bruce
+
+#Add questions -bryan
+
+#Manage users - Bryan
+
+#Previous attempts - Paul
+
+
+
 ## Design and Development
 
 Every question set supported by our application has a different combination of question types; the 3 main question types supported by our application include **multiple choice**, **short answer**, and **open answer** questions. Each question set is represented by a JSON file which contains information about the unit, including the unit code, and unit name, as well as the total number of marks, alongside the actual questions themselves. For the question sets that are supported by default, **immediate feedback** is available for most multiple choice and short answer questions, and the option for **custom feedback** is available on open answer questions. More information about this is provided in the paragraph on accounts.
