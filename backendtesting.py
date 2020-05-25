@@ -2,7 +2,8 @@ import unittest, os
 from app import app, db
 ##from config import Config
 from app.models import User
-
+from app.forms import ResetPasswordForm, LoginForm, RegisterForm, TestForm, MultiTestQuestion, ShortTestQuestion, OpenTestQuestion
+from wtforms.validators import ValidationError, Email, EqualTo
 class UserModelCase(unittest.TestCase):
 
   def setUp(self):
@@ -41,7 +42,14 @@ class UserModelCase(unittest.TestCase):
     admin1 = User.query.get('333')
     self.assertEqual(admin1.email, "admin@gmail.com")
 
-  def test_password_hashing(self):
+  def check_password(self):
+    s = User.query.get('111')
+    a = User.query.get('333')
+    self.assertEqual(s.check_password, 'secretpassword')
+    self.assertEqual(a.check_password, 'adminiscool')
+
+
+  def test_set_password(self):
     s = User.query.get('111')
     a = User.query.get('333')
     s.set_password('hashpassword')
@@ -50,6 +58,11 @@ class UserModelCase(unittest.TestCase):
     self.assertTrue(s.check_password('hashpassword'))
     self.assertFalse(a.check_password('adminiscool'))
     self.assertTrue(a.check_password('newpassword'))
+
+  def test_password_hashing(self):
+    s = User.query.get('111')
+    s.set_password('hashedpassword')
+    self.assertNotEqual(s.password_hash, 'hashedpassword')
 
   def test_check_admin(self):
     s = User.query.get('111')
@@ -65,7 +78,11 @@ class UserModelCase(unittest.TestCase):
     self.assertTrue(s.check_admin())
     self.assertFalse(a.check_admin())
 
-    
+  # def test_validate_email(self):
+  #   s = User.query.get('111')
+  #   with self.assertRaises(ValidationError):
+  #     ResetPasswordForm.validate_email(s.email, 'tester2@gmail.com')
+
 if __name__ == '__main__':
   unittest.main(verbosity=2)
 
