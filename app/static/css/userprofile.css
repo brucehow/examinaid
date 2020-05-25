@@ -19,11 +19,6 @@ section.dashboard {
   margin: 2rem 0;
 }
 
-.userprof {
-  display: flex;
-  justify-content: space-around;
-}
-
 /* Containers */
 .user-msg {
   max-width: 700px;

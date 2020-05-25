@@ -1,7 +1,7 @@
 from app import app, db
 from flask import render_template, flash, redirect, url_for, request
 
-from app.forms import LoginForm, RegisterForm, TestForm, ResetPasswordForm, MultiTestQuestion, ShortTestQuestion, OpenTestQuestion, DemoTestQuestion
+from app.forms import LoginForm, RegisterForm, TestForm, ResetPasswordForm, MultiTestQuestion, ShortTestQuestion, OpenTestQuestion, ManualMarkForm, DemoTestQuestion
 from app.unitJSON import add_test, get_tests, get_all, remove_unit, remove_test
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, db
@@ -34,6 +34,10 @@ def contact():
 def userprofile():
     return render_template("userprofile.html", title="My Profile")
 
+@app.route("/feedback") # Should not be accessed on its own
+@login_required
+def feedback():
+    return redirect(url_for('userprofile'))
 
 @app.route("/quiz")
 def quiz():
@@ -99,8 +103,16 @@ def register():
 def marktests():
     if not current_user.check_admin(): # Student logins cannot access this page
         return redirect(url_for('userprofile'))
-    else:
-        return render_template('marktests.html', title="Mark Completed Tests")
+    feedbackDir = 'app/feedback/'
+    res = []
+    for filename in os.listdir(feedbackDir):
+        if filename == ".gitkeep":
+            continue
+        feedback = open(feedbackDir + filename)
+        content = load(feedback)
+        if content["marked"] == "Partial":
+            res.append(content)
+    return render_template('marktests.html', title="Mark Completed Tests", markTests=res)
 
 # Admin manage tests
 @app.route('/managetests')
@@ -575,6 +587,9 @@ def submit():
     allQuestions = []
 
     requireManualmark = []
+    manualAnswers = []
+    manualMarks = [] # Actual mark
+    availManualMarks = [] # Mark allocation for each
 
     incorrectQnumber = [] #Storage for incorrect questions and user's responses
     youAnswered = []
@@ -583,105 +598,157 @@ def submit():
     marksAchieved = 0
 
     with open (fileName, 'r') as f:
-      myData = json.load(f)
-      answerData = myData["questions"]
-      totalMarksavail = myData["totalMarks"]
-      unitName = myData["unitName"]
-      unitCode = myData["unitCode"]
+        myData = json.load(f)
+        answerData = myData["questions"]
+        totalMarksavail = myData["totalMarks"]
+        unitName = myData["unitName"]
+        unitCode = myData["unitCode"]
 
-      for i in range(0,len(userAnswers)):
-        questionNumber = answerData[i]
-        correctAnswer = questionNumber["answer"]
-        marksAwarded = questionNumber["marks"]
-        question = questionNumber["prompt"]
-        allQuestions.append(question)
-        allCorrectanswers.append(correctAnswer)
+        for i in range(0,len(userAnswers)):
+            questionNumber = answerData[i]
+            correctAnswer = questionNumber["answer"]
+            marksAwarded = questionNumber["marks"]
+            question = questionNumber["prompt"]
+            allQuestions.append(question)
+            allCorrectanswers.append(correctAnswer)
 
-        if correctAnswer is None: 
-          availMarksauto.append(0)           #Don't include marks for non automated questions
-          requireManualmark.append(question)
+            if correctAnswer is None: 
+                availMarksauto.append(0) #Don't include marks for non automated questions
+                requireManualmark.append(question)
+                manualAnswers.append(userAnswers[i])
+                manualMarks.append(0)
+                availManualMarks.append(marksAwarded)
+            else:
+                availMarksauto.append(marksAwarded)
+
+        for i in range(0,len(allCorrectanswers)):
+            if userAnswers[i] == allCorrectanswers[i] and allCorrectanswers[i] is not None:  #Tally up marks if correct answer
+                marksAchieved = marksAchieved + availMarksauto[i]
+            elif userAnswers[i] != allCorrectanswers[i] and allCorrectanswers[i] is not None: #Add questions and answers to incorrect question storage
+                incorrectQnumber.append(i+1)
+                youAnswered.append(userAnswers[i])
+                incorrectQuestion.append(allQuestions[i])
+                correctAnswers.append(allCorrectanswers[i])
+
+        autoAchievablemarks = sum(availMarksauto)
+        user = current_user.username
+
+        now = datetime.now()
+        time = now.strftime("%m/%d/%Y, %H:%M:%S")
+        print(time)
+
+        manuallMarksachieved = 0
+
+        iteration = []
+        feedbackDir = 'app/feedback/'
+        for filename in os.listdir(feedbackDir):
+            if filename == ".gitkeep":
+                continue
+            if filename.startswith(user):
+                feedBacksplit = filename.split('_')
+                print(feedBacksplit)
+                if feedBacksplit[1]+'_'+feedBacksplit[2] == questionSet:
+                    number = feedBacksplit[3].split('.')
+                    iteration.append(int(number[0]))
+
+        if iteration:
+            feedbackNumber = max(iteration)+1
         else:
-          availMarksauto.append(marksAwarded)
+            feedbackNumber = 1  
 
-      for i in range(0,len(allCorrectanswers)):
-        if userAnswers[i] == allCorrectanswers[i] and allCorrectanswers[i] is not None:  #Tally up marks if correct answer
-          marksAchieved = marksAchieved + availMarksauto[i]
-        elif userAnswers[i] != allCorrectanswers[i] and allCorrectanswers[i] is not None: #Add questions and answers to incorrect question storage
-          incorrectQnumber.append(i+1)
-          youAnswered.append(userAnswers[i])
-          incorrectQuestion.append(allQuestions[i])
-          correctAnswers.append(allCorrectanswers[i])
+        filename = '{}_{}_{}'.format(user,questionSet,feedbackNumber)
 
-      autoAchievablemarks = sum(availMarksauto)
-      user = current_user.username
+        dictionary = {
+            "ID":filename,
+            "marked":"Partial",
+            "unitName":unitName,
+            "unitCode":unitCode,
+            "time":time,
+            "user": user,
+            "questionset":questionSet,
+            "totalAvailmarks": totalMarksavail,
+            "autoMarksachieved":marksAchieved,
+            "manualMarksachieved":manuallMarksachieved,
+            "availAutomarks":sum(availMarksauto),
+            "incorrectAutoquestions":incorrectQuestion,
+            "youAnswered":youAnswered,
+            "correctAnswers":correctAnswers,
+            "requireManual":requireManualmark,
+            "manualAnswers":manualAnswers,
+            "availManualMarks":availManualMarks,
+            "manualMarks":manualMarks
+        }
+      
+        if dictionary["availAutomarks"] == dictionary["totalAvailmarks"]:
+            dictionary["marked"] = "Fully"
 
-      now = datetime.now()
-      time = now.strftime("%m/%d/%Y, %H:%M:%S")
-      print(time)
+        #Converts dictionary to JSON object. Checks directory if this test has been completed previously. Creates new JSON file containing answers per submission. 
+        json_object = dumps(dictionary, indent = 4)
+        
+        with open(path.join(feedbackDir,filename + ".json"), "w") as outfile:
+            outfile.write(json_object)
 
-      manuallMarksachieved = 0
-
-      dictionary = {
-        "marked":'partial',
-        "unitName":unitName,
-        "unitCode":unitCode,
-        "time":time,
-        "user": user,
-        "questionset":questionSet,
-        "totalAvailmarks": totalMarksavail,
-        "autoMarksachieved":marksAchieved,
-        "manualMarksachieved":manuallMarksachieved,
-        "availAutomarks":sum(availMarksauto),
-        "incorrectAutoquestions":incorrectQuestion,
-        "youAnswered":youAnswered,
-        "correctAnswers":correctAnswers,
-        "requireManual":requireManualmark
-      }
-
-      #Converts dictionary to JSON object. Checks directory if this test has been completed previously. Creates new JSON file containing answers per submission. 
-      json_object = dumps(dictionary, indent = 4)
-      iteration = []
-      feedbackDir = 'app/feedback/'
-      for filename in os.listdir(feedbackDir):
-        if filename.startswith(user):
-          feedBacksplit = filename.split('_')
-          if feedBacksplit[1]+'_'+feedBacksplit[2] == questionSet:
-            number = feedBacksplit[3].split('.')
-            iteration.append(int(number[0]))
-
-      if iteration:
-        feedbackNumber = max(iteration)+1
-      else:
-        feedbackNumber = 1  
-
-      filename = '{}_{}_{}'.format(user,questionSet,feedbackNumber)
-
-      with open(path.join(feedbackDir,filename+ ".json"), "w") as outfile:
-        outfile.write(json_object)
-
-
-    return render_template('feedback.html', title="{} - New Test".format(dictionary["unitName"]),
-                            unit="{}: {}".format(dictionary["unitCode"], dictionary["unitName"]),achievedAutomarks=dictionary["autoMarksachieved"], autoAchievablemarks=dictionary["availAutomarks"],
-                            incorrectquestions=dictionary["incorrectAutoquestions"], youAnswered=dictionary["youAnswered"], correctAnswers=dictionary["correctAnswers"], time = dictionary["time"])
+    return redirect(url_for('attempts'))
 
 @app.route("/attempts")
+@login_required
 def attempts():
     attempts = []
     feedbackDir = 'app/feedback/'
     if current_user.check_admin(): # Get every feedback if teacher
         for filename in os.listdir(feedbackDir):
+            if filename == ".gitkeep":
+                continue
             feedback = open(feedbackDir + filename)
             attempts.append(load(feedback))
     else:
         for filename in os.listdir(feedbackDir):
+            if filename == ".gitkeep":
+                continue
             if filename.startswith(current_user.username): # Get user specific feedback
                 feedback = open(feedbackDir + filename)
                 attempts.append(load(feedback))
     return render_template("attempts.html", title="Previous Attempts", userAttempts=attempts)
 
-@app.route("/feedback/")
-def feedback():
-    return render_template("feedback.html", title="Feedback")
+@app.route("/feedback/<test_id>", methods=['GET', 'POST'])
+@login_required
+def testfeedback(test_id):
+    filepath = 'app/feedback/' + test_id + ".json"
+    feedback_file = open(filepath)
+    feedback = load(feedback_file)
+
+    # Access to feedback file given to admin or user itself
+    if current_user.check_admin() or current_user.username == feedback["user"]:
+        
+        # Store relevant number of form.marks in input
+        form = ManualMarkForm()
+        inputs = []
+        for prompt in form:
+            if len(inputs) == len(feedback["manualMarks"]):
+                break
+            inputs.append(prompt)
+
+        if form.validate_on_submit():
+            newManualMarks = []
+            total = 0
+            for markInput in inputs:
+                mark = int(markInput.data)
+                newManualMarks.append(mark)
+                total += mark
+            feedback["manualMarks"] = newManualMarks
+            feedback["manualMarksachieved"] = total
+            feedback["marked"] = "Fully"
+
+            # Update the file
+            json_object = dumps(feedback, indent=4)
+            newfeedback = open(filepath, "w")
+            newfeedback.write(json_object)
+            flash('Marks manually updated')
+
+        # Access is granted
+        return render_template("feedback.html", title="Feedback", content=feedback, inputs=inputs, form=form)
+
+    return redirect(url_for('userprofile')) 
 
 # Admin manage student logins
 @app.route('/manageusers')

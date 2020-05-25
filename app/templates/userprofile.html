@@ -3,7 +3,7 @@
 {% block content %}
 {% with messages = get_flashed_messages() %}
 {% if messages %}
-  <ul class=flashed-messages>
+  <ul class="flashed-messages flashed-white">
     {% for message in messages %}
     <li>{{ message }}</li>
     {% endfor %}
@@ -35,25 +35,25 @@
     <!-- Teacher Dashboard -->
     <h2>Teacher Dashboard</h2> 
     <div class="row center">
-      <div class="col-md-4 dashboard-item">
+      <div class="col-md-6 dashboard-item">
         <img class="thumbnail" src="../static/resources/mark.svg" alt=""> 
         <h3>Mark Completed Tests</h3>
         <p>View open answer questions and give your feedback.</p>
         <button class="plain-btn lg green" onclick="window.location.href='/marktests'">Mark Tests</button>
       </div>
-      <div class="col-md-4 dashboard-item">
+      <div class="col-md-6 dashboard-item">
         <img class="thumbnail" src="../static/resources/prevtest.svg" alt=""> 
         <h3>View Previous Tests</h3>
         <p>See the list of completed tests from students.</p>
         <button class="plain-btn lg green" onclick="window.location.href='/attempts'">Preview</button>
       </div>
-      <div class="col-md-4 dashboard-item">
+      <div class="col-md-6 dashboard-item">
         <img class="thumbnail" src="../static/resources/manage.svg" alt=""> 
         <h3>Manage Tests</h3>
         <p>Add tests of different formats, or remove existing tests.</p>
         <button class="plain-btn lg green" onclick="window.location.href='/managetests'">Manage</button>
       </div>
-      <div class="col-md-4 dashboard-item">
+      <div class="col-md-6 dashboard-item">
         <img class="thumbnail" src="../static/resources/users.svg" alt=""> 
         <h3>Manage Users</h3>
         <p>Add or remove user logins.</p>
@@ -63,14 +63,14 @@
     {% else %}
     <!-- Student Dashboard -->
     <h2>Student Dashboard</h2> 
-    <div class="row center userprof">
-      <div class="col-md-4 dashboard-item">
+    <div class="row center">
+      <div class="col-md-6 dashboard-item">
         <img class="thumbnail" src="../static/resources/newtest.svg" alt=""> 
         <h3>Start a new test</h3>
         <p>Lorem ipsum dolor, sit amet consectetur.</p>
         <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Get Started</button>
       </div>
-      <div class="col-md-4 dashboard-item">
+      <div class="col-md-6 dashboard-item">
         <img class="thumbnail" src="../static/resources/prevtest.svg" alt=""> 
         <h3>Previous attempts</h3>
         <p>Lorem ipsum dolor, sit amet consectetur.</p>
