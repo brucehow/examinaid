@@ -39,10 +39,6 @@ def userprofile():
 def feedback():
     return redirect(url_for('userprofile'))
 
-@app.route("/quiz")
-def quiz():
-    return render_template("quiz.html", title="Quiz")
-
 @app.route("/newtest", methods = ["GET", "POST"])
 def newtest():
     form = TestForm()
