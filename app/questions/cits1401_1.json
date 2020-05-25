@@ -1,0 +1,80 @@
+{
+    "unitCode": "CITS1401",
+    "unitName": "Problem Solving with Python",
+    "testNumber": 1,
+    "totalMarks": 14,
+    "questions": [
+      {
+        "questionNumber": 1,
+        "marks": 1,
+        "prompt": "Which statement is not true about objects in an \"Object Oriented Program\"?",
+        "answer": "Objects cannot mutate",
+        "questionType": "multipleChoice",
+        "totalOptions": ["Objects can contain data.","Objects can have operations.","Objects can contain other objects.","Objects cannot mutate."]
+      },
+      {
+        "questionNumber": 2,
+        "marks": 1,
+        "prompt": "What does the following expression produce? list(range(7))[:-2]",
+        "answer": "[0, 1, 2, 3, 4]",
+        "questionType": "multipleChoice",
+        "totalOptions": ["[0, 1, 2, 3, 4]","[1, 2, 3, 4, 5]","[0, 1, 2, 3, 4, 5]","[6, 5, 4, 3, 2, 1, 0]"]
+      },
+      {
+        "questionNumber": 3,
+        "marks": 1,
+        "prompt": "Which of these Python data types cannot be indexed using the syntax x[k]?",
+        "answer": "files",
+        "questionType": "multipleChoice",
+        "totalOptions": ["lists","tuples","strings","files","dictionaries"]
+      },
+      {
+        "questionNumber": 4,
+        "marks": 1,
+        "prompt": "Which of these expressions evaluates to False whenever a has the value True?",
+        "answer": "not not False == a",
+        "questionType": "multipleChoice",
+        "totalOptions": ["a or not b","a and not b","a == a == b","not not False == a"]
+      },
+      {
+        "questionNumber": 5,
+        "marks": 1,
+        "prompt": "Given a Python list xs of length k, what is the legal range of values with which xs can be indexed?",
+        "answer": "-k up to k-1 inclusive",
+        "questionType": "multipleChoice",
+        "totalOptions": ["k-1 or smaller","-k up to k-1 inclusive","-(k-1) up to k-1 inclusive","-(k-1) up to k inclusive","k or smaller"]
+      },
+      {
+        "questionNumber": 6,
+        "marks": 2,
+        "prompt": "What is the value of xs[-1] after these statements? xs=[1] for k in range(5): xs.append(k-xs[k])",
+        "answer": "1",
+        "questionType": "number",
+        "totalOptions": null
+      },
+      {
+        "questionNumber": 7,
+        "marks": 1,
+        "prompt": "If x is an integer variable whose value is over 1000, which expression returns its third least-significant digit? (e.g. if x = 3847, it should return 8.)",
+        "answer": "x // 100 % 10",
+        "questionType": "multipleChoice",
+        "totalOptions": ["x // 100 % 10","x % 100 // 10","x // 100 % 100","x % 100 // 100","x // 1000 % 100"]
+      },
+      {
+        "questionNumber": 8,
+        "marks": 2,
+        "prompt": "Which of these statements is true for all positive numbers x and y?",
+        "answer": "y - x < y",
+        "questionType": "multipleChoice",
+        "totalOptions": ["y + x < y","y / x > y","y - x < y","y ** x > y"]
+      },
+      {
+        "questionNumber": 9,
+        "marks": 4,
+        "prompt":"Your boss asks you to develop a python program to determine an employee's net pay per month. The program will take a single parameter detailing the employee's yearly salary. You must develop a program to subtract super contributions, levies, and taxes in this order. Draw a structure chart outlining the structure of the program and upload it via the below prompt.",
+        "answer": null,
+        "questionType": "fileUpload",
+        "totalOptions": null
+      }
+    ]
+  }

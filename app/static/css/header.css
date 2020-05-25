@@ -1,0 +1,86 @@
+header {
+  background-color: white;
+  padding-bottom: 71px; /* Prevent fixed nav-bar from overlapping */
+  font-size: 1rem;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: white;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px; /* Navbar static size */
+}
+
+.navbar-hidden {
+  background-color: white;
+  margin: 1rem 0 0 1rem;
+}
+
+.nav-link {
+  color: #2c2d30;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  color: #2c2d30;
+}
+
+.nav-bar li {
+  display: inline;
+  letter-spacing: 0.025em;
+  font-size: 1em;
+  margin: 1%;
+}
+
+.nav-item {
+  padding: 0 10px 0 0;
+}
+
+/* Nav-bar toggler */
+#toggler-btn {
+  outline: none; /* Remove blue outline on click */
+  padding: 0.3rem 0;
+}
+
+.nav-icon {
+  font-size: 1.8rem;
+}
+
+/* Hidden style nav icon */
+.nav-back {
+  font-size: 3rem;  
+  opacity: 0.5;
+}
+
+.nav-back:hover {
+  opacity: 0.8;
+  color: #007757;
+  transition: 300ms;
+}
+
+.nav-white {
+  color: white;
+  opacity: 0.5;
+}
+
+.nav-white:hover {
+  color: white;
+  opacity: 0.9;
+}
+
+
+.dropdown-menu > .dropdown-item:focus {
+  background-color: #007757;
+  color: white;
+}
+
+/* New test nav-bar */
+.nav-abs {
+  position: absolute;
+}
+
+.nav-transparent {
+  background: transparent;
+}

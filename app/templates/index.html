@@ -1,49 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
     <meta charset="utf-8">
+    <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../static/index.css"/>
-    {% if site_title %}
-    <title>{{ site_title }} | CITSPrep</title>
-    {% else %}
-    <title>Welcome to CITSPrep!</title>
-    {% endif %}
-    <body class="container">
-        <header>
-            <nav>
-                <ul class="navigation-bar">
-                    <li>CITSPrep</li>
-                    <li><a href="/index">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-            <div>
-                <button class="plain-button">Sign Up / Sign In</button>
-            </div>
-        </header>
-        <hr>
-        <main>
-            {% if welcome_string %}
-            <p>{{ welcome_string }}</p>
-            {% else %}
-            <br>
-            {% endif %}
-            {% block content %}
-            <!-- index.html-specific content goes here -->
-            <div class="about-us">
-                <div class="description">
-                    <h2>Who are we?</h2>
-                    <p>We're the leaders in unit preparation across every course in UWA. Join us today to experience the power of knowledge for yourself.</p>
-                    <button class="plain-button big-text">Learn More</button>
-                </div>
-                <image src="https://a.slack-edge.com/dd0405/marketing/img/solutions/remote-work/img-hero-remote.jpg" alt="placeholder image" class="test-image-1">
-            </div>
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="../static/css/main.css"/>
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/footer.css"/>
+    <link rel="stylesheet" href="../static/css/forms.css"/>
+    <link rel="stylesheet" href="../static/css/userprofile.css"/>
 
-            {% endblock %}
-        </main>
-        <script src="https://code.jquery.com/jquery-3.4.1.js" crossorigin="anonymous"></script>
-        <script src="../static/index.js"></script>
-    </body>
+    {% if title %}
+    <title>ExaminAid - {{ title }}</title>
+    {% else %}
+    <title>ExaminAid</title>
+    {% endif %}
+  </head>
+  <body>
+    <header>
+      <nav class="navbar fixed-top navbar-expand-md">
+        <div class="container">
+          <!-- Bar icon when nav menu collapses -->
+          <button id="toggler-btn" class="navbar-toggler" data-toggle="collapse" data-target="#collapse-menu" aria-expanded="false">
+            <span class="fas fa-bars nav-icon"></span>
+          </button>
+          <div id="collapse-menu" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">  <!-- Left side navbar -->
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">ExaminAid</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+            <ul class="navbar-nav ml-auto"> <!-- Right side navbar -->
+              {% if current_user.is_anonymous %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('login') }}">Sign In</a>
+              </li>
+              <li class="nav-item">
+                <button class="plain-btn sm green" onclick="window.location.href='/register';">Register</button>
+              </li>
+              {% else %}
+              <li class="nav-item dropdown">
+                <!-- My profile dropdown toggler -->
+                <a class="nav-link dropdown-toggle" href="{{ url_for('userprofile') }}" id="profile-menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account</a>
+                <!-- My profile menu -->
+                <div class="dropdown-menu" aria-labelledby="profile-menu">
+                  <a class="dropdown-item" href="{{ url_for('userprofile') }}">Dashboard</a>
+                  <div class="dropdown-divider"></div>
+                  {% if current_user.admin %} <!-- Teacher dropdown menu -->
+                  <a class="dropdown-item" href="{{ url_for('marktests') }}">Mark Completed Tests</a>
+                  <a class="dropdown-item" href="{{ url_for('attempts') }}">View Previous Tests</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{{ url_for('managetests') }}">Manage Tests</a>
+                  <a class="dropdown-item" href="{{ url_for('manageusers') }}">Manage Users</a>
+                  {% else %} <!-- Student dropdown menu -->
+                  <a class="dropdown-item" href="{{ url_for('newtest') }}">Start New Test</a>
+                  <a class="dropdown-item" href="{{ url_for('attempts') }}">View Previous Attempts</a>
+                  {% endif %}
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{{ url_for('changepassword') }}">Change Password</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('logout') }}"><b>Logout</b></a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      {% block content %}
+      <!-- Landing/Home Section -->
+      <section class="landing">
+        <div class="container">
+          <div class="row vertical-align">
+            <div class="col-md-7">
+              <h1>Studying for exams has never been easier!</h1>
+              <p>We are the leaders in unit preparation across many courses in UWA. Join us today to experience the power of knowledge for yourself.</p>
+              {% if current_user.is_anonymous %}
+              <button class="plain-btn lg green" onclick="window.location.href='/register'">Get Started</button>
+              {% else %}
+              <button class="plain-btn lg green" onclick="window.location.href='/userprofile'">Get Started</button>
+              {% endif %}
+            </div>
+            <div class="col-md-5 d-none d-md-block">
+              <img class="img-lg float-anim" src="../static/resources/landing.svg" alt=""> 
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About Section -->
+      <section class="green">
+        <svg class="wave-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path fill="#fff" fill-opacity="1" d="M0,160L40,154.7C80,149,160,139,240,117.3C320,96,400,64,480,48C560,32,640,32,720,53.3C800,75,880,117,960,117.3C1040,117,1120,75,1200,69.3C1280,64,1360,96,1400,112L1440,128L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path>
+        </svg>
+        <div class="container">
+          <div class="row vertical-align">
+            <div class="col-md-6">
+              <h2>Get customised feedback</h2>
+              <p>Our team of experienced markers and tutors will personally review every question you answer to make sure that the results you get are totally accurate and the feedback you receive is of the highest standard.</p>
+            </div>
+            <div class="col-md-6 d-none d-md-block">
+              <img class="img-md" src="../static/resources/getfeedback.svg" alt=""> 
+            </div>
+          </div>
+          <hr class="divider">
+          <div class="row vertical-align">
+            <div class="col-md-6 d-none d-md-block">
+              <img class="img-md" src="../static/resources/learn.svg" alt=""> 
+            </div>
+            <div class="col-md-6">
+              <h2>Learn from your mistakes</h2>
+              <p>Work through practise questions in a system which builds on your strengths and weaknesses, tailoring each individual test to the topics which you prefer to focus on the most. Review tests you've previously taken to understand your weak points.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="grey"> 
+        <div class="container">
+          <h2 class="sub-heading">What you can expect..</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <h3>Efficiency</h3>
+              <p>Expect results from the day you start your preparation with us. See tangible improvements across all supported topics and feel confident that your education is in the right hands.</p>
+            </div>
+            <div class="col-md-4">
+              <h3>Accessibility</h3>
+              <p>With a wide range of features to tailor to your needs, you will never find learning with us a chore. Set your personal study goals and work towards them in your own time.</p>
+            </div>
+            <div class="col-md-4">
+              <h3>Interactivity</h3>
+              <p>This site is modern, responsive, and maintained by a small group of dedicated designers willing to put interactivity at your fingertips. Find out more by contacting us today.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section>
+        <div class="container">
+          <div class="row vertical-align">
+            <div class="col-md-7">
+              <h2>Contact us</h2>
+              <p>Want to learn more about ExaminAid? Got a question for our backend team? Looking for individual 1-on-1 support from our professional mentors and tutors? Feel free to message us, and find out just how easy learning can be.</p>
+              <a class="contact-link" href="{{ url_for('contact') }}">Send us a message</a>
+            </div>
+            <div class="col-md-5 d-none d-md-block">
+              <img class="img-lg" src="../static/resources/contact.svg" alt=""> 
+            </div>
+          </div>
+        </div>
+      </section>
+      {% endblock %}
+      <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="row">
+              <div class="col-sm-6">
+                <p><strong>ExaminAid</strong></p>
+                <p>We are the leaders in unit preparation across many courses in UWA. Join us today to experience the power of knowledge for yourself.</p>
+              </div>
+              <div class="col-sm-6 text-right">
+                <p><strong>Useful Links</strong></p>
+                <ul class="navbar-nav footer-nav">
+                  <li class="nav-item"><a class="footer-link" href="{{ url_for('about') }}">About</a></li>
+                  <li class="nav-item"><a class="footer-link" href="{{ url_for('contact') }}">Contact</a></li>
+                  <li class="nav-item"><a class="footer-link" href="{{ url_for('login') }}">Login</a></li>
+                  <li class="nav-item"><a class="footer-link" href="{{ url_for('register') }}">Register</a></li>
+                </ul>
+              </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="social center">
+              <a class="footer-link" href="https://github.com/brucehow/examinaid"><span class="fab fa-github"></span></a>
+              <a class="footer-link" href="https://teaching.csse.uwa.edu.au/units/CITS3403/index.php"><span class="fas fa-university"></span></a>
+            </div>
+          </div>
+        </div>
+        <div class="anchor center">
+          <p class="copyright">© 2020 Copyright ExaminAid</p>
+        </div>
+      </footer>
+    </main>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/84fb170980.js" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="../static/scripts/index.js"></script>
+    <script src="../static/scripts/contact-form.js"></script>
+  </body>
 </html>

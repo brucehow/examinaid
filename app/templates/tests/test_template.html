@@ -1,0 +1,55 @@
+{% extends "login.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="../../static/css/test.css"/>
+<section class="green">
+  <div class="container">
+    <div class="row vertical-align">
+      <div class="col-md-8">
+        <h2>{% if unit %}{{ unit }}{% else %}Example Test{% endif %}</h2>
+        <p>Please <strong>do not</strong> click away or refresh this page while doing this test, as your answers may not be recorded. When you are finished, ensure that you
+          submit your test, so that your results are saved.</p>
+      </div>
+      <div class="col-md-4 d-none d-md-block">
+        <img class="img-lg" src="../../static/resources/starttest.svg" alt=""> 
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+<div class="container">
+  <h2>Begin Test</h2>
+  <p><strong>Note: </strong> following form must be completed in one sitting.</p>
+  <!-- To serialize a form, the inputs MUST be named. -->
+  <form action="{{ url_for('submit') }}" method="POST" id="unit-test-form">
+    <input class="test-input type="text" name="questionset" value="{{ questionset }}" readonly hidden>
+    {% for question in questions %}
+      <div class="question-box">
+        <p>{{ question.questionNumber }}. {{ question.prompt }}</p>
+        {% if question.image %}
+        <image src="{{ question.image }}" class="question-image" alt="" />
+        <br>
+        {% endif %}
+        {% if question.questionType == "multipleChoice" %}
+          {% for option in question.totalOptions %}
+            <input id="{{ option }}" type="radio" name="q{{ question.questionNumber }}" value="{{ option }}" required/>
+            <label>{{ option }}</label>
+            <br>
+          {% endfor %}
+        {% elif question.questionType == "number" %}
+        <input class="test-input type="number" name="q{{ question.questionNumber }}" placeholder="Number" required/>
+        {% elif question.questionType == "shortAnswer" %}
+        <input class="test-input type="text" name="q{{ question.questionNumber }}" placeholder="Short Answer" required/>
+        {% elif question.questionType == "fileUpload" %}
+        <label for="test-file-upload" class="file-upload-btn" ><strong>Upload a file here...</strong> <span id="name-of-file"></span></label>
+        <input type="file" name="q{{ question.questionNumber }}" class="file-upload-btn" id="test-file-upload" required/>
+        {% else %}
+        <textarea class="test-input" name="q{{ question.questionNumber }}" placeholder="Sample input" ></textarea>
+        {% endif %}
+      </div>
+    {% endfor %}
+    <input type="submit" class="plain-btn lg test-btn" value="Submit Test"  id="submit-unit-test-form" required/>
+  </form>
+</div>
+
+{% endblock content %}

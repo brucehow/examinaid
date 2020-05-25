@@ -1,0 +1,104 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+  <ul class=flashed-messages>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+{% endwith %}
+<section class="grey">
+  <div class="container">
+    <div class="row vertical-align">
+      <div class="col-md-8">
+        <h1>Manage Tests</h1>
+        <p>Add new tests to the system or remove existing tests</p>
+        <div class="dropdown">
+          <button class="plain-btn lg green dropdown-toggle" type="button" data-toggle="dropdown">Add Test <span class="caret"></span></button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{{ url_for('add_multiq') }}">Multi Choice Test</a>
+            <a class="dropdown-item" href="{{ url_for('add_shortq') }}">Short Answer Test</a>
+            <a class="dropdown-item" href="{{ url_for('add_openq') }}">Open Answer Test</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{{ url_for('add_demo') }}">Demo Test</a>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-md-4 d-none d-md-block">
+        <img class="img-lg" src="../../static/resources/managetests.svg" alt=""> 
+      </div>
+    </div>
+  </div>
+</section>
+<section class="green">
+  <!-- Load previous tests here -->
+  <div class="container">
+    <h2>Active Tests</h2>
+    <p>Below is a list of currently active tests that can be used by students</p>
+    {% if current_user.admin %}
+    <div class="test-attempt-list">
+      <div class="table-responsive-sm">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Unit Code</th>
+              <th>Unit Name</th>
+              <th>Test Number</th>
+              <th>Total Marks</th>
+              <th>Questions</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          {% for set in sets %}
+          <tr>
+            <td>{{ set.unitCode }}</td>
+            <td>{{ set.unitName }}</td>
+            <td>{{ set.testNumber }}</td>
+            <td>{{ set.totalMarks }}</td>
+            <td>{{ set.questions }}</td>
+            <td><button onclick="window.location.href='/managetests/removeset/{{ set.unitCode }}/{{ set.testNumber }}'" class="remove-user">Remove</button></td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+    {% else %} <!-- Student Template -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="test-attempt">
+          <div class="row">
+            <div class="col-sm-8">
+              <h3>CITS1401</h3>
+              <p>Started: 1st April 2020 at 15:20</p>
+              <p>Completed: 1st April 2020 at 15:45</p>
+            </div>
+            <div class="col-sm-4 text-right">
+              <h2>16/25</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="test-attempt">
+          <div class="row">
+            <div class="col-sm-8">
+              <h3>CITS1401</h3>
+              <p>Started: 1st April 2020 at 15:20</p>
+              <p>Completed: 1st April 2020 at 15:45</p>
+            </div>
+            <div class="col-sm-4 text-right">
+              <h2>16/25</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% endblock %}

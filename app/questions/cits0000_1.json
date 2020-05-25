@@ -1,0 +1,37 @@
+{
+    "unitCode": "CITS0000",
+    "unitName": "Demo Test",
+    "testNumber": 1,
+    "totalMarks": 6,
+    "questions": [
+        {
+            "questionNumber": 1,
+            "marks": 1,
+            "prompt": "What is our unit code?",
+            "answer": "CITS3403",
+            "questionType": "multipleChoice",
+            "totalOptions": [
+                "CITS3401",
+                "CITS3403",
+                "CITS3002",
+                "CITS3003"
+            ]
+        },
+        {
+            "questionNumber": 2,
+            "marks": 2,
+            "prompt": "What is the name of our unit?",
+            "answer": "Agile Web Development",
+            "questionType": "shortAnswer",
+            "totalOptions": null
+        },
+        {
+            "questionNumber": 3,
+            "marks": 3,
+            "prompt": "What do you think about this unit?",
+            "answer": null,
+            "questionType": "openAnswer",
+            "totalOptions": null
+        }
+    ]
+}

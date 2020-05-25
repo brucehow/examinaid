@@ -1,0 +1,88 @@
+{% extends "index.html" %}
+
+{% block content %}
+<section class="grey">
+  <div class="container">
+    <div class="row vertical-align">
+      <div class="col-md-8">
+        <h1>Previous Attempts</h1>
+        {% if current_user.admin %}
+        <p>View all previous test attempts and outcomes completed by students</p>
+        {% else %} 
+        <p>View all your previous test attempts and outcomes.</p>
+        {% endif %}
+      </div>
+      <div class="col-md-4 d-none d-md-block">
+        <img class="img-lg" src="../static/resources/prevattempts.svg" alt=""> 
+      </div>
+    </div>
+  </div>
+</section>
+<section class="green">
+  <!-- Load previous tests here -->
+  <div class="container">
+    {% if not userAttempts and not current_user.admin %}
+    <div class="center">
+      <h3>No Previous Attempts Found</h3>
+      <p>Stop slacking and get to work!</p>
+    </div>
+    {% endif %}
+    {% if current_user.admin %}
+    <div class="test-attempt-list">
+      <div class="table-responsive-sm">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Unit Code</th>
+              <th>Student</th>
+              <th>Auto Mark</th>
+              <th>Manual Mark</th>
+              <th>Total Mark</th>
+              <th>Completed</th>
+              <th>Marked</th>
+              <th>Feedback</th>
+            </tr>
+          </thead>
+          {% for attempt in userAttempts %}
+          <tr>
+            <td>{{ attempt.unitCode }}</td>
+            <td>{{ attempt.user }}</td>
+            <td>{{ attempt.autoMarksachieved }}/{{ attempt.availAutomarks }}</td>
+            <td>{{ attempt.manualMarksachieved }}/{{ attempt.totalAvailmarks - attempt.availAutomarks}}</td>
+            <td>{{ attempt.autoMarksachieved + attempt.manualMarksachieved }}/{{ attempt.totalAvailmarks }}</td>
+            <td>{{ attempt.time }}</td>
+            <td>{{ attempt.marked }}</td>
+            <td><button onclick="window.location.href='/feedback/{{ attempt.ID }}'" class="remove-user">View</button></td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+    {% else %} <!-- Student Template -->
+    {% for attempt in userAttempts %}
+    <div class="row">
+      <div class="test-attempt">
+        <div class="row">
+          <div class="col-sm-8">
+            <h3>{{ attempt.unitCode }}</h3>
+            <p>Question Set: {{ attempt.questionset }}</p>
+            <p>Completed: {{ attempt.time }}</p>
+            <a class="contact-link" href="{{ url_for('testfeedback', test_id=attempt.ID) }}">View Feedback</a>
+          </div>
+          <div class="col-sm-4 text-right">
+            <h3>Overall Mark {{ attempt.autoMarksachieved + attempt.manualMarksachieved }}/{{ attempt.totalAvailmarks}}</h3>
+            <p>Auto Mark <strong>{{ attempt.autoMarksachieved}}/{{ attempt.availAutomarks}}</strong></p>
+            <p>Open Answer Mark <strong>{% if attempt.marked == "Partial" %}-{% else %}{{ attempt.manualMarksachieved}}{% endif %}/{{ attempt.totalAvailmarks - attempt.availAutomarks}}</strong></p>
+            {% if attempt.marked == "Partial" %}
+            <i class="text-right">Open Answer marking required</i>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+</section>
+
+{% endblock %}

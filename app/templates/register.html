@@ -1,0 +1,59 @@
+{% extends "login.html" %}
+
+{% block content %}
+<nav class="navbar-hidden navbar-expand-md">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for('index') }}">
+        <span class="far fa-arrow-alt-circle-left nav-back"></span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<form class="login" action="#" method="post">
+  <h2>Create an account</h2>
+  <h4>Enter your details below</h4>
+  {{ form.hidden_tag() }}
+  
+  <div class="field">
+    {{ form.username.label }} <span class="required">*</span>
+    {{ form.username(class="userInput", autofocus="on", placeholder="Username") }}
+    {% for error in form.username.errors %}
+    <span class="form-error">{{ error }}</span>
+    {% endfor %}
+  </div>
+
+  <div class="field">
+    {{ form.email.label }} <span class="required">*</span>
+    {{ form.email(class="userInput", placeholder="you@example.com") }}
+    {% for error in form.email.errors %}
+    <span class="form-error">{{ error }}</span>
+    {% endfor %}
+  </div>
+
+  <div class="field">
+    {{ form.password.label }} <span class="required">*</span>
+    {{ form.password(class="userInput", placeholder="Password") }}
+    {% for error in form.password.errors %}
+    <span class="form-error">{{ error }}</span>
+    {% endfor %}
+  </div>
+
+  <div class="field">
+    {{ form.repeat_password.label }} <span class="required">*</span>
+    {{ form.repeat_password(class="userInput", placeholder="Repeat your password") }}
+    {% for error in form.repeat_password.errors %}
+    <span class="form-error">{{ error }}</span>
+    {% endfor %}
+  </div>
+
+  <div class="field">
+    {{ form.submit(class="form-btn") }}
+  </div>
+
+  <div class="field-sm center">
+    <span>Returning user? </span>
+    <a class="alternate-login" href="{{ url_for('login') }}">Sign In</a>
+  </div>
+</form>
+{% endblock %}

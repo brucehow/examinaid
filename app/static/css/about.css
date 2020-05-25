@@ -1,0 +1,18 @@
+/* structure */
+section.about {
+  background-color: #fafafa;
+  padding: 2rem 0 7rem 0;
+}
+
+.author {
+  margin: 1rem 0;
+}
+
+/* Author thumbnail */
+img.author {
+  border-radius: 50%;
+  border-color: rgba(0,0,0,0.125);
+  border-width: thin;
+  height: 100px;
+  width: 100px;
+}

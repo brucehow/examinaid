@@ -1,0 +1,85 @@
+/* Form structure */
+form.contact {
+  margin: 0 auto;
+  max-width: 350px;
+} 
+
+form.login {
+  margin: 4rem auto;
+  max-width: 350px;
+} 
+
+form.unit-select {
+  max-width: 350px;
+}
+
+form > h2,
+form > h4 {
+  text-align: center;
+}
+
+/* Field structure */
+.field {
+  margin-bottom: 1.5rem;
+}
+
+.field-sm {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Input styling */
+.userInput {
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.userInput::placeholder {
+  opacity: 0.8;
+}
+
+.userInput:focus {
+  border-color: #7e7e7e;
+  outline: none;
+}
+
+.userInput:hover {
+  border-color: #7e7e7e;
+}
+
+/* Button */
+.form-btn {
+  background-color: #008a65;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.03rem;
+  width: 100%;
+  padding: 0.7rem 1rem;
+}
+
+.form-btn:hover {
+  background-color: #007757;
+}
+
+.form-btn:focus {
+  outline: none;
+}
+
+.alternate-login,
+.alternate-login:hover {
+  color: #007757;
+  font-weight: 700;
+}
+
+/* Form handlers */
+.form-error,
+.required {
+  font-size: 1rem;
+  color: red;
+}

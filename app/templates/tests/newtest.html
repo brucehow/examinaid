@@ -1,0 +1,40 @@
+{% extends "login.html" %}
+
+{% block content %}
+<!-- Custom Stylesheets -->
+<link rel="stylesheet" href="../static/css/test.css"/>
+
+<div class="row no-gutters">
+  <div class="col-lg-6">
+    <nav class="navbar-hidden nav-abs navbar-expand-md">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('userprofile') }}">
+            <span class="far fa-arrow-alt-circle-left nav-back"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="test-selector d-flex justify-content-center align-items-center">
+      <form class="unit-select" action="" method="post" novalidate>
+        <h2>Choose your test</h2>
+        <h4>Select from the below options</h4>
+        {{ form.hidden_tag() }}
+        <div class="field">
+          {{ form.questionset.label }}
+          {{ form.questionset(class="userInput", autofocus="on") }}
+        </div>
+        <div class="field-sm center">
+          {{ form.submit(class="form-btn") }}
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="test-bg d-flex justify-content-center align-items-center">
+      <img class="img-md" src="../static/resources/starttest.svg" alt="">
+    </div>
+  </div>
+</div>
+
+{% endblock %}

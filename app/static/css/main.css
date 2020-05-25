@@ -1,0 +1,178 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap);
+
+body {
+  background-color: white;
+  color: #2c2d30;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.03rem;
+}
+
+/* Sections */
+section {
+  padding: 7rem 0;
+}
+
+section.landing {
+  padding: 10rem 0;
+}
+
+section.grey {
+  background-color: #fafafa;
+}
+
+section.green {
+  background-color: #0b926a;
+  background-image: url(../resources/texture-1.png);
+  color: white;
+}
+
+/* Structure */
+div.container {
+  margin: 0 auto; /* left right padding */
+}
+
+div.vertical-align {
+  align-items: center; 
+}
+
+div.center {
+  text-align: center;
+}
+
+hr.divider {
+  margin: 5rem;
+  border: none;
+}
+
+/* Headings */
+h1 {
+  font-weight: 900;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-weight: 900;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.sub-heading {
+  margin-bottom: 4rem;
+}
+
+/* Buttons */
+.plain-btn {
+  border-radius: 5px;
+  border: none;
+  color: white;
+}
+
+.plain-btn:focus {
+  outline: none;
+}
+
+.sm {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.5rem 1.0rem;
+}
+
+.lg {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  font-weight: 900;
+  font-size: 1.25rem;
+  letter-spacing: 0.03rem;
+  padding: 1.0rem 1.5rem;
+}
+
+button.green {
+  background-color: #008a65;
+}
+
+button.green:hover {
+  background-color: #007757;
+}
+
+.contact-link {
+  color: #12649f;
+  font-weight: 700;
+}
+
+.contact-link:hover {
+  text-decoration: none;
+}
+
+/* Lists */
+ul.flashed-messages li {
+  text-align: center;
+  list-style-type: none;
+}
+
+/* Images */
+img.img-lg {
+  margin: auto;
+  max-width: 100%;
+}
+
+img.img-md {
+  margin: auto;
+  max-width: 75%;
+}
+
+/* Waves */
+.wave-bot {
+  margin: 5rem 0 -12rem 0;
+  display: block;
+  height: 15rem;
+  width: 100%;
+}
+
+.wave-top {
+  margin: -7rem 0 -4rem 0;
+  display: block;
+  height: 15rem;
+  width: 100%;
+}
+
+
+/* Animation */
+.float-anim {
+  -webkit-animation: floatAnim 2s infinite alternate;
+  animation: floatAnim 2s infinite alternate;
+}
+  @-webkit-keyframes floatAnim {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-15px); }
+}
+  @keyframes floatAnim {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-15px); }
+}
+
+/* Flashed Messages */
+.flashed-messages {
+  position: absolute;
+  padding: 1rem 0;
+  font-weight: 900;
+  font-size: 1rem;
+  right: 0;
+  left: 0;
+}
+
+.flashed-white {
+  color: white;
+}

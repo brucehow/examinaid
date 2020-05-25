@@ -1,0 +1,90 @@
+/* Images */
+img.thumbnail {
+  margin: 4rem 0 2rem 0;
+  height: 150px;
+  width: 200px;
+}
+
+/* Structuring */
+section.dashboard {
+  background-color: #fafafa;
+  padding: 2rem 0 7rem 0;
+}
+
+.dashboard-item p {
+  margin: auto;
+}
+
+.dashboard-item button {
+  margin: 2rem 0;
+}
+
+/* Containers */
+.user-msg {
+  max-width: 700px;
+}
+
+.stat {
+  max-width: 600px;
+  margin-top: 4rem;
+}
+
+.surveylist {
+  border-bottom: black;
+  margin-top: 5%;
+}
+
+#newtestcontainer {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Start Test Buttons */
+.test-links {
+  text-decoration: none;
+}
+
+/* Attempts */
+.test-attempt {
+  color: #2c2d30;
+  background-color: #fafafa;
+  box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 2rem;
+  width: 100%;
+  margin: 4rem 0;
+  transition: 250ms;
+}
+
+.test-attempt:hover {
+  transform: translate(0, -10px);
+}
+
+
+.test-attempt-list {
+  color: #2c2d30;
+  background-color: #fafafa;
+  box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 4rem 0;
+}
+
+/* Mange users CSS */
+button.remove-user {
+  background: none;
+  border: none;
+  font-weight: bold;
+  transition: 250ms;
+}
+
+button.remove-user:hover {
+  color: grey;
+}
+
+.user-list {
+  border: 1px solid grey;
+  padding: 1rem;
+  margin: 2rem 0;
+}

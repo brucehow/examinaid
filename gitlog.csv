@@ -1,0 +1,463 @@
+575412c,ForsakenIdol,14 minutes ago,Student test list animation smoothening and increase
+35cb663,ForsakenIdol,14 minutes ago,Remove Forgot Password button as functionality unimplemented
+8e0669c,ForsakenIdol,15 minutes ago,Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+9c5258b,ForsakenIdol,16 minutes ago,Test list logic moved to routes
+b44b2a2,Paul,17 minutes ago,Merge branch 'development' of https://github.com/brucehow/examinaid into development
+d670b47,Paul,17 minutes ago,add readme breakdown
+379f55a,ForsakenIdol,38 minutes ago,Merge pull request #38 from brucehow/feature/test-feedback
+e6f1378,ForsakenIdol,39 minutes ago,Merge branch 'development' into feature/test-feedback
+4d505b1,ForsakenIdol,50 minutes ago,Remove wzrd scripts
+070454c,Brucehow,54 minutes ago,Add new frontend test cases to selenium file
+fc4dac2,Brucehow,81 minutes ago,Merge branch 'feature/test-feedback' of https://github.com/brucehow/cits3403 into feature/test-feedback
+a5ff029,Brucehow,82 minutes ago,Fix bug where .gitkeep is being checked as a json
+f9a314f,Bruce How,2 hours ago,Merge branch 'development' into feature/test-feedback
+fcaee5f,Brucehow,2 hours ago,Fix feedback.json file generation issue, feedback dir must be populated
+4b210ea,Brucehow,2 hours ago,Merge branch 'feature/test-feedback' of https://github.com/brucehow/cits3403 into feature/test-feedback
+ad9991b,Brucehow,2 hours ago,Remove sample tests and user responses
+e57d624,Paul,5 hours ago,fix route bug, delete unecessary tests
+1d5d0bb,Bryan Yeo,9 hours ago,Minor word fixes
+ce67a84,Bruce How,10 hours ago,Merge branch 'development' into feature/test-feedback
+0e87ccf,Bruce How,11 hours ago,Merge pull request #37 from brucehow/feature/new-demo
+8e76b98,Brucehow,11 hours ago,Add demo test link to managetest page
+304e57d,Brucehow,11 hours ago,Add feedback view link in attempts view
+48c2538,Brucehow,11 hours ago,Remove InputRequired import
+a1c62db,Brucehow,11 hours ago,Remove InputRequired validator and add default mark to Marks form
+29837c8,Brucehow,11 hours ago,Add jinja code for checking user attempts
+7b48ab8,Brucehow,11 hours ago,Add jinja checks to identify if any tests need to be marked
+593015f,Brucehow,11 hours ago,Add styling changes for flashed message
+d3f66a2,Brucehow,11 hours ago,Update manual marking to reflect in json file
+1b7f223,Brucehow,12 hours ago,Change flex-box sizes to 2 columns per dashboard
+530dbc1,Brucehow,12 hours ago,Add different interface for students on feedback
+ba7f51f,Brucehow,12 hours ago,Add jinja code and new form to catch updated marks
+b8f53a6,Brucehow,13 hours ago,Add backbone structure for manual mark allocation
+3abef1b,Brucehow,14 hours ago,Add code in routes to store manual answers
+7930720,Brucehow,14 hours ago,Fix feedback json marked variable logic
+7d91010,Brucehow,14 hours ago,Add jinja code and styling for feedback
+8a555be,Brucehow,15 hours ago,Add relative routes for feedback files and access control
+f6ff890,Bryan Yeo,15 hours ago,Add demo functionality to /add_demo
+703e2bd,Brucehow,15 hours ago,Merge branch 'feature/test-feedback' of https://github.com/brucehow/cits3403 into feature/test-feedback
+aed3c05,Brucehow,15 hours ago,Add feedback routing with unique test id
+c749c03,Paul,15 hours ago,add ID to feedback dict
+3339ee4,Brucehow,16 hours ago,Add jinja code for attempts teacher view
+b07510e,Brucehow,16 hours ago,Add jinja code for attempts and fix test label bug
+87848ff,Brucehow,17 hours ago,Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+2d29100,Brucehow,17 hours ago,Add Jinja syntax for attempts
+52c5280,Paul,17 hours ago,Merge branch 'development' of https://github.com/brucehow/examinaid into development
+231d5d9,Paul,17 hours ago,add manual mark feedback
+f291c6e,Bryan Yeo,17 hours ago,Merge branch 'development' of https://github.com/brucehow/examinaid into development
+2362f19,Bryan Yeo,17 hours ago,Add student account
+9728368,Paul,17 hours ago,fix userprofile spacing
+e7a5e79,Paul,17 hours ago,Merge branch 'development' of https://github.com/brucehow/examinaid into development
+28db188,Paul,17 hours ago,fix bug feedback
+61c4157,Brucehow,18 hours ago,Fix conflicting feedback.svg image names
+a7438e4,Bruce How,18 hours ago,Merge pull request #30 from brucehow/feature/teacher-dashboard
+4703d0d,Bruce How,18 hours ago,Merge branch 'development' into feature/teacher-dashboard
+fef0f71,Brucehow,18 hours ago,Add simple flash msg styling
+8ab8f5f,Paul,18 hours ago,update return data to feedback
+28565cc,Paul,19 hours ago,Merge branch 'development' of https://github.com/brucehow/examinaid into development
+7ca458e,Paul,19 hours ago,add timecomplete to feedback
+a93f6d7,Paul O'Sullivan,19 hours ago,Merge pull request #36 from brucehow/testing/selenium
+3c4c825,Bruce How,19 hours ago,Delete tests.html
+b21b8e5,Bruce How,19 hours ago,Merge pull request #35 from brucehow/Feedback
+5925755,Bryan Yeo,19 hours ago,Update openq + shortq html template
+7a55611,Paul,19 hours ago,add feedback userfile creation
+e05d4be,Bryan Yeo,19 hours ago,Applied testNumber and totalMarks to routes.py
+7c70412,Brucehow,19 hours ago,Change directory name
+31abb55,Brucehow,19 hours ago,Add UserControl and Links test suites
+493c64a,Brucehow,19 hours ago,Add selenium tests
+b67f98e,Lachlan D Whang,20 hours ago,Remove testNumber and totalMarks fields from multiChoice question form; these fields are now derived in routes.py
+afcc853,Paul,20 hours ago,Add obtain questionset
+467a1fb,Lachlan D Whang,21 hours ago,next_test takes unitCode input and returns next value for test support
+8bc19f4,Lachlan D Whang,21 hours ago,Implement remove question set functionality
+4126b2d,Lachlan D Whang,21 hours ago,Add more detailed error response handling to unitJSON
+8e61bdf,Lachlan D Whang,21 hours ago,Reverse interchanged question set numbers in CITS1401 tests
+5b4d64c,Lachlan D Whang,22 hours ago,Small typo line 116
+7f38431,Lachlan D Whang,22 hours ago,Merge branch 'feature/teacher-dashboard' of https://github.com/brucehow/cits3403 into feature/teacher-dashboard
+18650ff,Lachlan D Whang,22 hours ago,Active tests looping for supported tests
+cb7d83b,Brucehow,22 hours ago,Add redirect from dropdown
+550d4cc,Brucehow,22 hours ago,Add Mark Completed Test page template
+cedba20,Paul,22 hours ago,update output string of feedback
+fb2efa3,Brucehow,23 hours ago,Add proper validtor error  messages
+49cd2c3,ForsakenIdol,23 hours ago,Lowercase unitset name changes
+68f805a,Brucehow,23 hours ago,Add remove button to template
+9f0262f,Brucehow,2 days ago,Add test input styling to templates
+e528758,Brucehow,2 days ago,Add styling to test template
+741131d,Paul O'Sullivan,2 days ago,Merge pull request #33 from brucehow/footer
+8619360,Brucehow,2 days ago,Add content to contact to match with footer theme
+7871c52,Brucehow,2 days ago,Add social icons to footer and fix padding
+a99688e,Brucehow,2 days ago,Add footer structure to index
+e38133b,ForsakenIdol,2 days ago,Merge pull request #32 from brucehow/feedbacl
+5d74641,Paul,2 days ago,fix spacing, print output
+5fd4377,Paul,2 days ago,add camel casing
+b0e115a,Paul,2 days ago,Add comments
+574c3ef,Paul,2 days ago,fix bug
+04aad4d,Bruce How,2 days ago,Merge pull request #31 from brucehow/feature/student-dashboard
+522f6db,Brucehow,2 days ago,Add HTML structure for test feedback and attempts
+11badf3,Paul,2 days ago,Add show incorrect questions
+71977ff,Brucehow,2 days ago,Merge branch 'feature/teacher-dashboard' of https://github.com/brucehow/cits3403 into feature/teacher-dashboard
+e761118,Brucehow,2 days ago,Fix incorrect href under dropdown to managetest
+cde7c01,Bruce How,2 days ago,Merge branch 'development' into feature/teacher-dashboard
+0b65b82,Brucehow,2 days ago,Add final elements for managetests
+b53b433,Brucehow,2 days ago,Add navigation button with custom styling for templates
+823600f,Brucehow,2 days ago,Add styling for shortq template
+e51158a,Brucehow,2 days ago,Add consistent styling for multiq template
+a1da3f8,Brucehow,2 days ago,Finalise styling for openq template
+cb7da4d,ForsakenIdol,2 days ago,Merge pull request #29 from brucehow/feature/new-test-tracker
+6d8b8b3,Paul,2 days ago,add automated feedback
+5006a03,ForsakenIdol,2 days ago,Merge branch 'development' into feature/new-test-tracker
+fb1385e,Brucehow,2 days ago,Add manage test type redirection and style to multiq
+69973e9,Bryan Yeo,2 days ago,Update errors
+b9ac357,ForsakenIdol,2 days ago,Case testing for unit names
+2b9c8bc,Bryan Yeo,2 days ago,Add tracking functionality
+56b835d,ForsakenIdol,2 days ago,Remove print statement from unitJSON
+333ee6e,ForsakenIdol,2 days ago,Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+287950d,ForsakenIdol,2 days ago,Question set files are now deleted in unitJSON instead of just being untracked
+44b3259,Brucehow,2 days ago,Add styling for managetest page
+f153da5,Brucehow,2 days ago,Add route for manage test and page template
+6781825,Bryan Yeo,2 days ago,Add flash message functionality to userprofile
+00cb79d,Paul,3 days ago,Add required for test questions
+2ad1dbb,ForsakenIdol,3 days ago,C:/Program Files/Git/newtest route now properly leads to the correct selected test set
+69216d9,Brucehow,3 days ago,Add index button redirection for non_anonymous users
+255d643,Brucehow,3 days ago,Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+1140ffa,Brucehow,3 days ago,Increase opacity for nav-bar icon
+1067210,ForsakenIdol,3 days ago,Merge pull request #28 from brucehow/feature/teacher-dashboard
+26f2ecb,Brucehow,3 days ago,Remove bar icon buf for register page
+28ed36c,Brucehow,3 days ago,Add icon for manage users and change wave separator
+1b0f1f2,Brucehow,3 days ago,Fix redirection from nav-bar
+7e10787,Brucehow,3 days ago,Add previous test view for teacher
+5615cc8,Brucehow,3 days ago,Add styling for manage users to be responsive with device sizes
+3daf35e,Brucehow,3 days ago,Add jinja code for teacher dropdown menu
+77c8a4e,Brucehow,3 days ago,Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+1505037,Brucehow,3 days ago,Fix incorrect nav icon in change password and add icon to newtest
+3409476,ForsakenIdol,3 days ago,unitJSON rewrite
+08c288f,ForsakenIdol,3 days ago,Add requirements.txt file
+df93d00,ForsakenIdol,3 days ago,Expand on README
+0816331,ForsakenIdol,3 days ago,Password input for add user form; general styling updates
+e7e1e89,Bruce How,4 days ago,Add libraries and version
+4078153,Brucehow,4 days ago,Add redirect buttons for forms including changepassword
+b40fb94,Brucehow,4 days ago,Add drop down toggler for account to dashboard
+08ea6a6,Brucehow,4 days ago,Add user drop down options and fix newtest route
+1cac492,Brucehow,4 days ago,Add my profile dropdown to implement change password options
+0af2ac0,Brucehow,4 days ago,Add forgot password button for future implementation
+a9870c2,Brucehow,4 days ago,Fix naming with newtest as newtest2 was removed
+92010be,Brucehow,4 days ago,Remove import TestQuestion as is no longer in used
+fb61888,ForsakenIdol,4 days ago,Merge branch 'feature/reset-password' into development
+9c13f8c,ForsakenIdol,4 days ago,Merge pull request #26 from brucehow/feature/dashboard
+b33053a,Bruce How,4 days ago,Merge branch 'development' into feature/dashboard
+5854c94,ForsakenIdol,4 days ago,Move reset password form validation completely to form class
+fc0c946,Brucehow,4 days ago,Add extra column structure for test attempts card
+bfd6fe8,Brucehow,4 days ago,Styling changes to exit button
+0d37001,Brucehow,4 days ago,Merge branch 'feature/dashboard' of https://github.com/brucehow/cits3403 into feature/dashboard
+a41b2bd,Brucehow,4 days ago,Add content template and styling to previous attempts page
+f444a14,Brucehow,4 days ago,Add previous attempts html page
+3498d80,Bryan Yeo,4 days ago,Made Bryan an admin
+6810757,ForsakenIdol,4 days ago,Merge pull request #25 from brucehow/feature/ten-question-function
+719bc8b,Bryan Yeo,4 days ago,Merge branch 'development' into feature/ten-question-function
+0ae7d97,ForsakenIdol,4 days ago,Implement password reset functionality
+7601002,Bryan Yeo,4 days ago,Update app.db to match dev
+fda192c,Bryan Yeo,4 days ago,Update template to be relevant
+d0713e8,Bryan Yeo,4 days ago,Add admin checking functionality
+22e55c5,ForsakenIdol,4 days ago,README first draft
+5b296e3,Bruce How,4 days ago,Merge pull request #24 from brucehow/feature/student-management
+e97af3c,Brucehow,4 days ago,Add sample teacher account to test
+bbeb808,Bryan Yeo,4 days ago,Standardize writing json file format
+fa936cf,Bryan Yeo,4 days ago,Add marks to short q template
+fbed97d,Bryan Yeo,4 days ago,Rename multiq template
+f9a0059,Bryan Yeo,4 days ago,Add openq html template
+d916645,Bryan Yeo,4 days ago,Add open questions functionality
+ef1e997,Bryan Yeo,4 days ago,Add totalmarks functionality
+c96ac36,Bryan Yeo,4 days ago,Add mark functionality to html
+de013a2,Bryan Yeo,4 days ago,Add marks functionality to forms
+8946728,ForsakenIdol,4 days ago,Manage users not just manage students
+6711280,ForsakenIdol,4 days ago,Ability to add users implemented
+80e6514,ForsakenIdol,4 days ago,Condensify jinja on students.html
+ebd60ad,ForsakenIdol,4 days ago,You removed yourself. Oh wait - you can't.
+54f73d4,ForsakenIdol,4 days ago,Can now remove users; admin profile path updated
+cf5c2d4,ForsakenIdol,4 days ago,Add user list and login checking
+42c8a2d,ForsakenIdol,4 days ago,Student management page skeleton
+cf654cb,ForsakenIdol,4 days ago,General file structure refactor; remove example test path
+476994f,ForsakenIdol,4 days ago,Replace admin login sample text
+1681f4b,ForsakenIdol,4 days ago,Restore flashed messages for login, remove unecessary message flashes in some areas
+26a71cb,ForsakenIdol,4 days ago,Increase opacity of exit button for login screen
+5d26d86,Brucehow,4 days ago,Add content template and styling to previous attempts page
+1b7a590,Bryan Yeo,4 days ago,update correct html template
+d67ae7d,Brucehow,4 days ago,Add previous attempts html page
+58f6aa6,Bryan Yeo,4 days ago,Add short q html template
+b57026c,Bryan Yeo,4 days ago,Add short q functionality for routes.py
+213d8b9,Bryan Yeo,4 days ago,Add form functionality for short questions
+00e2cee,Brucehow,4 days ago,Add close button for login/register for navigation
+17ef532,Brucehow,4 days ago,Fix bugged app.db file
+b49f1d5,Brucehow,4 days ago,Rename temp site name to ExaminAid
+439bcc5,Brucehow,4 days ago,Rename temp site name to ExaminAid
+d658c83,Bruce How,4 days ago,Merge pull request #23 from brucehow/feature/dashboard
+620936a,Bryan Yeo,5 days ago,Fix totalOptions having two brackets
+77611d4,Bryan Yeo,5 days ago,Fix missing lines in multiquestion template
+d4c30f8,Bryan Yeo,5 days ago,Add manual additions for routes.py and test template
+8c804d8,Brucehow,5 days ago,Add styling for the test selection page
+5e079f4,Bryan Yeo,5 days ago,Add import for forms
+c2bd3d9,Bryan Yeo,5 days ago,Add form support for short + open questions
+b97b719,ForsakenIdol,5 days ago,Merge pull request #22 from brucehow/feature/unit-tracking-file
+87bbcac,ForsakenIdol,5 days ago,Remove debug
+ec12ee9,ForsakenIdol,5 days ago,Merge pull request #21 from brucehow/feature/json-db
+06ba032,ForsakenIdol,5 days ago,Add unit JSON file and functions for updating that file
+4a51c32,Bryan Yeo,5 days ago,Merge branch 'feature/json-db' of https://github.com/brucehow/cits3403 into feature/json-db
+52a6425,Bryan Yeo,5 days ago,Remove answer validation
+29b12a5,Bryan Yeo,5 days ago,Merge branch 'development' into feature/json-db
+831b7bf,Bryan Yeo,5 days ago,Amend fix comments
+4d17a97,Bryan Yeo,5 days ago,Remove unneeded py script
+9a4b130,Bryan Yeo,5 days ago,Fix for form validation + redirect url
+e43f2be,ForsakenIdol,5 days ago,Move test template html into same directory level as the other html templates
+4ad7836,ForsakenIdol,5 days ago,url_for() now takes route handler arguments, cleaning up test render_template()
+04b9396,ForsakenIdol,5 days ago,Add hidden input field for tracking questionset
+150ab51,Lachlan D Whang,5 days ago,Test form submit route established
+00e9dac,Bryan Yeo,6 days ago,Merge branch 'development' into feature/json-db
+1af459d,Bryan Yeo,6 days ago,Working json implementation for 1 Question
+3922879,ForsakenIdol,6 days ago,Log serialized form inputs and add index.js script to login page
+cefa741,ForsakenIdol,6 days ago,Upload button hover styling
+af97fd6,ForsakenIdol,6 days ago,Merge pull request #20 from brucehow/feature/general-test-page
+9997197,ForsakenIdol,6 days ago,Distinguishing comments
+eef32d6,ForsakenIdol,6 days ago,General path for all supported question sets
+38fa975,ForsakenIdol,6 days ago,Set first question in set 2 to multichoice for cits3403
+06acf9c,ForsakenIdol,7 days ago,More question image support
+90f36a5,ForsakenIdol,7 days ago,Image support for questions, textarea styling changes
+756e90b,Bryan Yeo,7 days ago,Temporary placeholder for json.py
+f280941,Bryan Yeo,8 days ago,Fix form field issue
+89968d0,Bryan Yeo,8 days ago,Fix up bugs / change mcq to 4 entries
+feff435,Bryan Yeo,8 days ago,Add testing route (untested) + issue with write_json.py
+bcffbe9,Bryan Yeo,8 days ago,Create AddQuestion Template
+46c7b0e,Bryan Yeo,8 days ago,Add table along with route
+398c43a,Paul,8 days ago,Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+1e26aa9,Paul,8 days ago,update newtest
+dc51554,Bryan Yeo,8 days ago,Add relative path functionality
+cd5b65e,Brucehow,8 days ago,Add login_required to login protected pages
+d19a654,Brucehow,8 days ago,Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+8b9e8f9,Brucehow,8 days ago,Finish HTML and CSS code for about and add thumbnails
+3b4330e,Bryan Yeo,8 days ago,Add json script
+5756056,Brucehow,8 days ago,Add CSS styling for about page
+da041c1,ForsakenIdol,8 days ago,Merge pull request #19 from brucehow/feature/test-page
+fb2f84c,ForsakenIdol,8 days ago,Merge branch 'development' into feature/test-page
+8a9e2a2,Brucehow,8 days ago,Fix HTML format for About
+63a3687,Brucehow,8 days ago,Fix typo in test-input
+90fc232,Brucehow,8 days ago,Fix labels not linking to radio ids
+dec7823,Brucehow,8 days ago,Add small CSS changes to buttons and question boxes
+fcdcbbb,Paul,8 days ago,Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+b59bf57,ForsakenIdol,8 days ago,Custom file upload button for tests
+f669077,Brucehow,8 days ago,Clean up CSS code, reuse existing classes
+4b87611,Paul,8 days ago,change route to startnewtest
+8e11977,ForsakenIdol,8 days ago,multiplechoice to multipleChoice camelcase, support for more question types
+ee605d2,Brucehow,8 days ago,Change format, remove nav-bar and clean HTML code
+9540ffa,Brucehow,8 days ago,Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+5d114a8,Brucehow,8 days ago,Add contact form redirect from index
+5a2fc56,ForsakenIdol,8 days ago,Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+dcfc0a6,ForsakenIdol,8 days ago,Basic test styling, JSON character fixes
+88599ec,Brucehow,8 days ago,Remove debug flash messages
+5a0d618,Paul,9 days ago,add placeholders for team member bios
+3246c18,Paul,9 days ago,add cits1401 2nd test
+785dd92,Paul,9 days ago,add cits1401_1 test questions
+6ed220b,ForsakenIdol,3 weeks ago,Temp rename endpoint function for newtest to prevent overlap
+6f7a2d6,Bruce How,3 weeks ago,Merge pull request #18 from brucehow/feature/example-test-form
+e9c2016,Bruce How,3 weeks ago,Merge branch 'development' into feature/example-test-form
+8dd39b1,Brucehow,3 weeks ago,Fix centering for forms for smaller devices
+b216d64,Brucehow,3 weeks ago,Add wave separator for index
+239bebd,Brucehow,3 weeks ago,Change margins for waves for index and userprofile
+61a9e16,Bryan Yeo,3 weeks ago,Merge pull request #17 from brucehow/feature/user-profile
+3a7b656,Brucehow,3 weeks ago,Merge branch 'testpage' of https://github.com/brucehow/cits3403 into testpage
+cf447d6,Brucehow,3 weeks ago,Add teacher dashboard features
+5a6efc1,Brucehow,3 weeks ago,Add teacher dashboard
+b63a225,ForsakenIdol,3 weeks ago,Add question set 2 for CITS3403
+ff21435,ForsakenIdol,3 weeks ago,Remove empty question from top of first set
+7a3f980,Brucehow,3 weeks ago,Add db instance and fix None value for bool
+8edc09f,Paul,3 weeks ago,Add form component
+9a15141,ForsakenIdol,3 weeks ago,JSON formatting for multichoice options
+4e29532,ForsakenIdol,3 weeks ago,Add question set 1 for CITS3403
+b281643,ForsakenIdol,3 weeks ago,Add test number to example JSON
+a0c02c8,Brucehow,3 weeks ago,Move stat to temp location
+d094575,Brucehow,3 weeks ago,Fix naming error in float anim
+95a5096,Brucehow,3 weeks ago,Add responsive code for wave sep for smaller devices
+27af189,Brucehow,3 weeks ago,Add statistics to user profile
+cb8cee8,Brucehow,3 weeks ago,Add wave design for user homepage
+0e20760,Brucehow,3 weeks ago,Add dashboard icons
+2bee812,Brucehow,3 weeks ago,Fix userprofile sections and change nav to boxshadow
+d09aaf5,Brucehow,3 weeks ago,Replce anchor styling with buttons
+aec0cf3,Brucehow,3 weeks ago,Fix HTML formatting
+c2780b0,Paul,3 weeks ago,Add new test form
+cd34ace,Paul,3 weeks ago,Remove minor CSS styling
+f89ce6f,ForsakenIdol,4 weeks ago,Update input name for openanswer examples
+3101b8a,ForsakenIdol,4 weeks ago,Generalize multichoice and open answer fields
+e5b72db,ForsakenIdol,4 weeks ago,Generalise form to added JSON example
+4cf852f,ForsakenIdol,4 weeks ago,Created example form outline
+04cec56,Paul,4 weeks ago,Add start new test instead of unit choice
+5687a9f,Paul,4 weeks ago,fix css flexbox for start test buttons
+bc40b12,Paul,4 weeks ago,Cleaned up CSS
+f7f3360,Paul,4 weeks ago,Add Submit Button
+5dd1f2f,Paul,4 weeks ago,Update userprofile.css
+474afb9,Paul,4 weeks ago,Remove button from css, add quiz page and route
+c208224,Paul,4 weeks ago,Small changes to the previous commit
+5897896,Paul,4 weeks ago,Add horizontal menu for new tests
+0955fcf,Paul,4 weeks ago,Add dummy links to unit choices
+dfecb7b,Paul,4 weeks ago,Add Lachlan's button test
+748fe41,Paul,4 weeks ago,Add previous attempt windows
+d55895a,Paul O'Sullivan,4 weeks ago,Merge pull request #16 from brucehow/feature/small-nav-bar
+74eab12,Brucehow,5 weeks ago,Replace poorly used CSS selectors accordingly
+0ce7b0f,Brucehow,5 weeks ago,Change to col-md and hide images for small width sizes
+9cda993,Brucehow,5 weeks ago,Fix padding issues with toggler-btn
+586ea51,Brucehow,5 weeks ago,Add left side nav to nav-bar toggler menu
+d54ff35,Brucehow,5 weeks ago,Add collapse icon for menu nav-bar/left
+b942c0d,Brucehow,5 weeks ago,Add icon toggler for small nav-bar width
+6f04eaf,Brucehow,5 weeks ago,Remove duplicate title and change format
+b745555,Paul,5 weeks ago,Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+a5f2e38,Paul,5 weeks ago,Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+3a6ba39,Brucehow,5 weeks ago,Fix spacing on models.py
+b0b7d54,ForsakenIdol,6 weeks ago,Update script button with new ID name
+4203c83,ForsakenIdol,6 weeks ago,Merge pull request #15 from brucehow/feature/form-css
+d11fb4e,ForsakenIdol,6 weeks ago,Merge branch 'development' into feature/form-css
+68ad058,Brucehow,6 weeks ago,Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+b1fd059,Brucehow,6 weeks ago,Fix missing head tag and stray section tag
+3008dff,Brucehow,6 weeks ago,Add custom margins for login and contact forms
+ca96b04,Brucehow,6 weeks ago,Add styling for the contact us forms
+e400e2f,Brucehow,6 weeks ago,Change placeholders and error messages for register input
+d6cb7da,Bruce How,6 weeks ago,Merge pull request #14 from brucehow/feature/admin-accounts
+d621582,ForsakenIdol,6 weeks ago,Add admin account functionality and command-line admin setting support, add relevant instructions to USEFUL
+ec80400,Brucehow,6 weeks ago,Change default form margin to fit generic large screen sizes
+5a1af4a,Brucehow,6 weeks ago,Change input class to match form css selectors
+1e85d13,Brucehow,6 weeks ago,Change register html structure to implement css styling
+a82cd58,ForsakenIdol,6 weeks ago,Upgrade database to admin columns
+8096b9d,Bryan Yeo,6 weeks ago,Add .vs related files to gitignore
+47d2f6a,Brucehow,6 weeks ago,Add vscode related files to gitignore
+8afdc9c,Brucehow,6 weeks ago,Remove nav bar from login
+0a4870a,ForsakenIdol,6 weeks ago,Merge pull request #13 from brucehow/feature/form-css
+7e66082,Brucehow,6 weeks ago,Add autofocus and set input hover color
+c799e12,Brucehow,6 weeks ago,Change placeholder text
+785fe03,Brucehow,6 weeks ago,Change css for form error messages
+a9878a5,Paul,6 weeks ago,Add userprofile "Select Unit" button
+d66750a,Brucehow,6 weeks ago,Change font size and alignment for small field
+f2c535c,ForsakenIdol,6 weeks ago,Modify response field behaviour to prevent initial red text flash
+a0e1ea7,Brucehow,6 weeks ago,Fix form button color and padding
+1a044fb,Brucehow,6 weeks ago,Add css selector to individual inputs
+7efdfef,Brucehow,6 weeks ago,Tweak css changes to the forms using generic css selectors
+e064870,ForsakenIdol,6 weeks ago,Add javascript-side validation for contact form
+bc8eba3,ForsakenIdol,6 weeks ago,Remove html contact form validation
+41108a5,Brucehow,6 weeks ago,Change register form structure to be consistent with css
+0492280,ForsakenIdol,6 weeks ago,Change userhomepage name to userprofile
+abf7daa,ForsakenIdol,6 weeks ago,Formatting, remove newlines
+ec51c9d,ForsakenIdol,6 weeks ago,Merge pull request #11 from brucehow/feature/contact-form
+dfe418b,ForsakenIdol,6 weeks ago,Merge branch 'development' into feature/contact-form
+aa2d78e,ForsakenIdol,6 weeks ago,Change script to be more inline with jquery
+255ab8d,ForsakenIdol,6 weeks ago,Add temporary contact message acknowledgement
+9161145,ForsakenIdol,6 weeks ago,Submit ID generalization
+f50e4a1,ForsakenIdol,6 weeks ago,Add styling to contact form submit button
+49278f9,ForsakenIdol,7 weeks ago,Pad message textarea, resize input, animate border width on field focus
+4a756ae,ForsakenIdol,7 weeks ago,Change element ids to be more descriptive and informative
+b8730b9,ForsakenIdol,7 weeks ago,Add red asterisk to required fields, basic form styling, etc etc
+0f6234d,ForsakenIdol,7 weeks ago,Remove unneeded div elements and add labels with 'for'
+171f110,ForsakenIdol,7 weeks ago,Remove sample text and add required name & msg
+e6e0e7a,ForsakenIdol,7 weeks ago,Add AJAX remote script fetch to Google Sheets for form submit
+a4a0112,ForsakenIdol,7 weeks ago,Add contact form skeleton with page path
+40d3a42,Bruce How,7 weeks ago,Fix form error message indentation
+c1ca08a,Bruce How,7 weeks ago,Remove outline on input focus
+7abc2ef,Bruce How,7 weeks ago,Add small padding changes to forms.css
+9f45019,Bruce How,7 weeks ago,Fix code in register to match new css selectors
+420cb81,Bruce How,7 weeks ago,Change selectors in forms.css to be more generic
+70e378d,Bruce How,7 weeks ago,Tweak padding and font sizes for forms
+8db1efa,ForsakenIdol,7 weeks ago,Update about page with sample text and temporary inline styling
+9fe2dce,ForsakenIdol,7 weeks ago,Containerize text on profile page
+8241899,ForsakenIdol,7 weeks ago,Containerize flashed messages, add placeholder 'New Test' link and shift profile link to right of navbar
+526e55b,ForsakenIdol,7 weeks ago,Added jinja conditional and relevant path in routes for site titles
+779c4d8,ForsakenIdol,7 weeks ago,Remove list style from flashed messages
+115d02b,ForsakenIdol,7 weeks ago,Add user dashboard description and condition profile link to navbar
+8c37ca0,ForsakenIdol,7 weeks ago,Merge pull request #10 from brucehow/feature/form-css-update
+67fe6f7,ForsakenIdol,7 weeks ago,Merge branch 'development' into feature/form-css-update
+0916191,ForsakenIdol,7 weeks ago,Conflict changes updated
+9a622be,Brucehow,7 weeks ago,Change illustration color and nav padding
+6e8acfa,ForsakenIdol,7 weeks ago,Add top padding especially for register form element
+0caadc7,ForsakenIdol,7 weeks ago,Update alternate login button to match style of form submit
+600cd15,ForsakenIdol,7 weeks ago,Add checkbox scaling, email field support
+288e481,ForsakenIdol,7 weeks ago,Remove size limits on WTForms declarations, size styling pushed to CSS
+3807b8b,ForsakenIdol,7 weeks ago,Add center login elements, input styling, greater element padding for login page
+291c0ef,Bruce How,7 weeks ago,Change landing padding
+4ff5092,Brucehow,7 weeks ago,Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+b5cf0ae,Brucehow,7 weeks ago,Add landing section size
+adbcdfb,ForsakenIdol,7 weeks ago,Update sample Loren Ipsum text to more relevant text
+ccd35ee,Brucehow,7 weeks ago,Add contact illustration and text
+faf2252,Brucehow,7 weeks ago,Add changes to index section structure
+cb7e018,Brucehow,7 weeks ago,Add floating anim to illustrations
+73bea94,Brucehow,7 weeks ago,Add img-md for accompanying images
+e9b6026,Brucehow,7 weeks ago,Add custom styling for lg button
+5581b87,Brucehow,7 weeks ago,Change second section to white
+79bfebf,Brucehow,7 weeks ago,Add index base structure and illustrations
+918df6b,Bryan Yeo,7 weeks ago,Update Flask-sqlalchemy/Flask-migrate/Flask-login
+bd48d17,Bryan Yeo,7 weeks ago,Add personal credentials
+ff3c23a,ForsakenIdol,7 weeks ago,Merge pull request #9 from brucehow/userhomepage
+9330e66,Paul,7 weeks ago,add userhomepage route & html page
+f2a5283,Brucehow,7 weeks ago,Remove unnecessary break
+4f6570c,Brucehow,7 weeks ago,Hide Get Started button when logged in
+d49bb25,Brucehow,7 weeks ago,Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+e63b37f,Brucehow,7 weeks ago,Add sample illustration and padding in index
+5e00e25,ForsakenIdol,7 weeks ago,Add logout button to nav, flash login/logout messages
+7d695db,ForsakenIdol,7 weeks ago,Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+e04e6fa,ForsakenIdol,7 weeks ago,Add SQLAlchemy terminal processing to USEFUL
+5c46cf0,Brucehow,7 weeks ago,Remove landing page
+fa3d805,ForsakenIdol,7 weeks ago,Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+48aa917,ForsakenIdol,7 weeks ago,Add flask shell context
+6b6d71f,Brucehow,7 weeks ago,Fix login/register links
+6f185e9,Brucehow,7 weeks ago,Add responsive design to the nav-bar
+a806a7b,Brucehow,7 weeks ago,Add responsive design to the nav-bar
+24903a1,Brucehow,7 weeks ago,Add responsive design to the nav-bar
+47cc09e,Bryan Yeo,7 weeks ago,Merge pull request #8 from brucehow/feature/account-functionality
+9e0233d,ForsakenIdol,7 weeks ago,Add logout button temporarily to about page
+0caff58,ForsakenIdol,7 weeks ago,Update login and registration logic, add logout path which has not yet been implemented in HTML
+94abcbd,ForsakenIdol,7 weeks ago,Add Alembic users table database upgrade script
+a03bcfe,ForsakenIdol,7 weeks ago,Add database migration script, disable SQLAlchemy modification tracking, update __init__.py with new packages
+b4ff233,ForsakenIdol,7 weeks ago,Add User object and user ID loader, update RegisterForm with repeat password field and username + email validation
+fd63bbf,ForsakenIdol,7 weeks ago,Add url_for() function links to replace relative links
+9173035,ForsakenIdol,8 weeks ago,Merge pull request #7 from brucehow/issue/#6-register-form-cannot-redirect
+3f201a9,ForsakenIdol,8 weeks ago,Change universal register 'name' to consistent 'username'
+41b054a,ForsakenIdol,8 weeks ago,Add backslash '/' to register href path
+ba57ed4,Paul,8 weeks ago,Delete Sign In tag. Add alternate-login class to Register tag.
+d4bcd71,ForsakenIdol,8 weeks ago,Merge pull request #5 from brucehow/Styling-update-proposal-and-link-redirects
+561d78f,ForsakenIdol,8 weeks ago,Remove alternate login from sign in page to avoid pull conflicts
+d93e113,Paul,8 weeks ago,Add "New User? Register Now" to Sign In pag
+ff39037,ForsakenIdol,8 weeks ago,Styling changes for alternate login links
+38efa74,ForsakenIdol,8 weeks ago,Add alternate login redirect buttons between Sign In / Sign Up pages
+a722282,ForsakenIdol,8 weeks ago,Link 'Learn More' button to 'About' page on index
+dab45d5,ForsakenIdol,8 weeks ago,Change link hover and button hover to grey for 250ms
+bf5fbad,ForsakenIdol,8 weeks ago,Change anchor onclick to href attribute for 'Sign In', thus mouse pointer is invoked
+036258e,Paul,8 weeks ago,Add Sign In button. Add registration page.
+5fb9c9d,Bryan Yeo,8 weeks ago,Updated Instruction Answers
+117f730,Brucehow,8 weeks ago,Add nav bar styling
+77c0a1d,Brucehow,8 weeks ago,Fix anchor link issue and style sheet
+aa07ad7,Brucehow,8 weeks ago,Change main in routes to landing
+9c87c32,Brucehow,8 weeks ago,Change styling and css file structure
+6208cd9,Bryan Yeo,8 weeks ago,Added Flask-WTF to instructions
+9ad36bf,Paul O'Sullivan,8 weeks ago,Update USEFUL.md
+e4509da,Paul O'Sullivan,8 weeks ago,Update USEFUL.md
+2d5252d,ForsakenIdol,8 weeks ago,Add basic form validation, flash message in place of login submit
+7c8c60d,Brucehow,8 weeks ago,Change index.js to 2 spaces tab
+ea41f80,Brucehow,8 weeks ago,Change file spacing to 2 spaces tab
+efdbaa8,ForsakenIdol,8 weeks ago,Add basic environ security and login form template
+2097a6e,Brucehow,8 weeks ago,Move static files into structured folders
+d01c322,ForsakenIdol,8 weeks ago,Add style for main page
+c20ade6,Bruce How,8 weeks ago,Remove __pycache__ dir from app
+4a08158,Bruce How,8 weeks ago,Add __pycache__ to gitignore
+2138162,ForsakenIdol,8 weeks ago,Merge pull request #4 from brucehow/master
+fa68594,Bruce How,8 weeks ago,Merge pull request #3 from brucehow/development
+cb5b415,Bruce How,8 weeks ago,Add env and OS files
+3065faf,ForsakenIdol,8 weeks ago,Add base style template
+74a6a34,ForsakenIdol,8 weeks ago,Add navbar logo, separate elements
+9ce5d33,ForsakenIdol,8 weeks ago,Add script outline, bootstrap + jQuery imports, containerise index.html
+7f55d26,ForsakenIdol,8 weeks ago,Add website flowchart
+bb59170,ForsakenIdol,8 weeks ago,Remove changelog version tracking, add 27-03 changes
+ec1d48b,Paul O'Sullivan,8 weeks ago,Merge pull request #2 from brucehow/development
+254496f,ForsakenIdol,8 weeks ago,Updated binary, readded untracked venv
+30bcd54,ForsakenIdol,8 weeks ago,Remove tracked venv, reapply .gitignore for venv
+75a977c,ForsakenIdol,8 weeks ago,Temp track venv for removal
+ca2755c,ForsakenIdol,8 weeks ago,Update USEFUL with info to create venv on clone
+17dcac0,ForsakenIdol,8 weeks ago,Add gitignore for venv, removal soon
+0b919a1,Bruce How,9 weeks ago,Merge pull request #1 from brucehow/test-branch-1
+08cb818,ForsakenIdol,9 weeks ago,Add main body styling and test font import
+4a6ae19,ForsakenIdol,9 weeks ago,Add some styling and 'About' page path 2
+23b2a79,ForsakenIdol,9 weeks ago,Add changelog (track version-date), add useful (stepwise)
+59d099a,ForsakenIdol,9 weeks ago,Add Flask application folder and file outlines
+29a26c8,ForsakenIdol,9 weeks ago,Add virtual environment files, include Flask install
+e5afac8,ForsakenIdol,10 weeks ago,Add Bryan's GitHub link to his name in the README
+4c987c8,ForsakenIdol,10 weeks ago,First commit, added README

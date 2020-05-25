@@ -1,0 +1,83 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+  <ul class="flashed-messages flashed-white">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+{% endwith %}
+<section class="green">
+  <div class="container">
+    <div class="user-msg">
+      <h1>Welcome back, {{ current_user.username }}!</h1>
+      {% if current_user.admin %}
+      <p>This is your user dashboard. Here, you'll be able to view all supported tests, as well as mark any test questions with open answers.
+        You'll also be able to add or remove tests and student logins.
+      </p>
+      {% else %}
+      <p>This is your user dashboard. Here, you'll be able to see the results of any past tests, as well as start a new test.
+        You'll also be able to review your overall performance.</p>
+      {% endif %}
+    </div>
+  </div>
+  <!-- Wave separator -->
+  <svg class="wave-bot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="#fafafa" fill-opacity="1" d="M0,64L60,74.7C120,85,240,107,360,101.3C480,96,600,64,720,48C840,32,960,32,1080,48C1200,64,1320,96,1380,112L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+  </svg>
+</section>
+<section class="dashboard">
+  <div class="container">
+    {% if current_user.admin %}
+    <!-- Teacher Dashboard -->
+    <h2>Teacher Dashboard</h2> 
+    <div class="row center">
+      <div class="col-md-6 dashboard-item">
+        <img class="thumbnail" src="../static/resources/mark.svg" alt=""> 
+        <h3>Mark Completed Tests</h3>
+        <p>View open answer questions and give your feedback.</p>
+        <button class="plain-btn lg green" onclick="window.location.href='/marktests'">Mark Tests</button>
+      </div>
+      <div class="col-md-6 dashboard-item">
+        <img class="thumbnail" src="../static/resources/prevtest.svg" alt=""> 
+        <h3>View Previous Tests</h3>
+        <p>See the list of completed tests from students.</p>
+        <button class="plain-btn lg green" onclick="window.location.href='/attempts'">Preview</button>
+      </div>
+      <div class="col-md-6 dashboard-item">
+        <img class="thumbnail" src="../static/resources/manage.svg" alt=""> 
+        <h3>Manage Tests</h3>
+        <p>Add tests of different formats, or remove existing tests.</p>
+        <button class="plain-btn lg green" onclick="window.location.href='/managetests'">Manage</button>
+      </div>
+      <div class="col-md-6 dashboard-item">
+        <img class="thumbnail" src="../static/resources/users.svg" alt=""> 
+        <h3>Manage Users</h3>
+        <p>Add or remove user logins.</p>
+        <button class="plain-btn lg green" onclick="window.location.href='/manageusers'">Manage</button>
+      </div>
+    </div>
+    {% else %}
+    <!-- Student Dashboard -->
+    <h2>Student Dashboard</h2> 
+    <div class="row center">
+      <div class="col-md-6 dashboard-item">
+        <img class="thumbnail" src="../static/resources/newtest.svg" alt=""> 
+        <h3>Start a new test</h3>
+        <p>Get started on a new test.</p>
+        <button class="plain-btn lg green" onclick="window.location.href='/newtest'">Get Started</button>
+      </div>
+      <div class="col-md-6 dashboard-item">
+        <img class="thumbnail" src="../static/resources/prevtest.svg" alt=""> 
+        <h3>Previous attempts</h3>
+        <p>View all your previous test attempts and outcomes.</p>
+        <button class="plain-btn lg green" onclick="window.location.href='/attempts'">Preview</button>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
