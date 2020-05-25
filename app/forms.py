@@ -182,6 +182,22 @@ class OpenTestQuestion(FlaskForm):
     prompt10 = StringField('Prompt', validators=[DataRequired(message="Prompt Field Required")])
     marks10 = IntegerField('Marks', validators=[DataRequired(message="Invalid Marks Value")])
 
+class DemoTestQuestion(FlaskForm):
+    unitName = StringField('UnitName', validators=[DataRequired()])
+    unitCode = StringField('UnitCode', validators=[DataRequired()])
+
+    prompt1 = StringField('Prompt', validators=[DataRequired(message="Prompt Field Required")])
+    answer1 = StringField('Answer', validators=[DataRequired(message="Answer Field Required")])
+    options1 = FieldList(StringField('Options:'), min_entries=4)
+    marks1 = IntegerField('Marks', validators=[DataRequired(message="Invalid Marks Value")])
+
+    prompt2 = StringField('Prompt', validators=[DataRequired(message="Prompt Field Required")])
+    answer2 = StringField('Answer', validators=[DataRequired(message="Answer Field Required")])
+    marks2 = IntegerField('Marks', validators=[DataRequired(message="Invalid Marks Value")])
+
+    prompt3 = StringField('Prompt', validators=[DataRequired(message="Prompt Field Required")])
+    marks3 = IntegerField('Marks', validators=[DataRequired(message="Invalid Marks Value")])
+
 # Form to reset user password
 class ResetPasswordForm(FlaskForm):
     email = StringField('Current Email', validators=[DataRequired(), Email()])
