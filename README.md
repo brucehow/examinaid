@@ -93,7 +93,21 @@ examinate
 ```
 
 ## Features
-
+### Student Dashboard
+- Start Test - Directs the user to `newtest.html` where the user can choose a test to start
+- Previous Attempts - Allows the user to view their previous test attempts. Each entry contains the test unit code, automated marks, manual marks, the marking status and a link containing the test feedback
+#
+### Teacher Dashboard
+**Admin user account required**
+- Mark Completed Tests - Allows the user to view a list of tests that require marking. The user can view the student's test feedback which shows the test information, list of incorrect automatic questions and the students responses to the questions. Teachers can manually allocate a mark and update the student's feedback.
+- View Previous Tests - Displays a list of completed tests by all students. Each test entry will show the unit code, student that completed the test, automatic marks, manual marks, total marks, completion date, the marking status and a link to the file feedback.
+- Manage Tests - Allows the user to add tests of different formats, or remove existing tests
+- Manage Users - Allows the user to add or remove user logins
+#
+### Styling
+- Boostrap has been used throughout the application to structure the webpage.
+- Styling components has been separated into different `.css` files which are located in the `app/static/css` dir
+- FontAwesome has been used to provide unique icons that are easily accessible such as the GitHub and BackNavigation buttons
 
 ## Libraries Used
 - [Bootstrap](https://getbootstrap.com/)
