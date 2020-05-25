@@ -35,7 +35,7 @@ class RegisterForm(FlaskForm):
 
 # Potential form for the unit test selection
 class TestForm(FlaskForm):
-    questionset = SelectField('Question Set', [DataRequired()], choices = [("{}_{}".format(unit.lower(), setnumber), "{} Set {}".format(unit, setnumber)) for unit in get_all("app/questions/units.json") for setnumber in get_all("app/questions/units.json")[unit]]) # ('cits1401_1','CITS1401 Set 1')
+    questionset = SelectField('Question Set', [DataRequired()], choices = [])
     submit = SubmitField('Start Test')
 
 class ManualMarkForm(FlaskForm):
