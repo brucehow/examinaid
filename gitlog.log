@@ -1,0 +1,711 @@
+*   39171bc was ForsakenIdol, 2 hours ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+|\  
+| *   f580d92 was ForsakenIdol, 2 hours ago, message: Merge pull request #41 from brucehow/master
+| |\  
+| | *   92a2c3b was ForsakenIdol, 2 hours ago, message: Merge pull request #40 from brucehow/development
+| | |\  
+| | |/  
+| |/|   
+| * | 76a26b0 was Bryan Yeo, 2 hours ago, message: update read me
+| * | 2070832 was Bryan Yeo, 2 hours ago, message: Update html for validation
+| | * 474b1e3 was Brucehow, 2 hours ago, message: Add proper about description for Paul
+| | *   ecf48dc was ForsakenIdol, 3 hours ago, message: Merge pull request #39 from brucehow/development
+| | |\  
+| | |/  
+| |/|   
+* / | 748c777 was ForsakenIdol, 2 hours ago, message: Updated venv requirements
+|/ /  
+* |   123edd5 was ForsakenIdol, 3 hours ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+|\ \  
+| * \   9ae4660 was Bryan Yeo, 4 hours ago, message: Merge branch 'development' of https://github.com/brucehow/examinaid into development
+| |\ \  
+| * | | 333a3a3 was Bryan Yeo, 4 hours ago, message: Update readme
+* | | | 62334c3 was ForsakenIdol, 3 hours ago, message: Last minute route changes
+| |/ /  
+|/| |   
+* | | a313471 was ForsakenIdol, 4 hours ago, message: Newtest test list logic optimization
+* | | 04018c6 was ForsakenIdol, 4 hours ago, message: README elaboration
+* | | 755b396 was Brucehow, 6 hours ago, message: Add overview for app structure to README.md
+* | | 578fd88 was Brucehow, 6 hours ago, message: Add userprofile feature desc and styling info
+|/ /  
+* |   e7f9237 was Brucehow, 7 hours ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+|\ \  
+| * | 251ac77 was Bruce How, 7 hours ago, message: Remove presentation list
+| * | cd574f7 was Bruce How, 7 hours ago, message: Add project structure to README.md
+* | | d97a222 was Brucehow, 7 hours ago, message: Replace lorem ipsum text
+|/ /  
+* |   5bccaea was ForsakenIdol, 8 hours ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+|\ \  
+| * \   a22f852 was Brucehow, 8 hours ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+| |\ \  
+| | * \   5b0c8c0 was Bryan Yeo, 8 hours ago, message: Merge pull request #34 from brucehow/testing/back-end
+| | |\ \  
+| | | * | 709c874 was Bryan Yeo, 8 hours ago, message: Add more modules
+| | | * | ab1bf57 was Bryan Yeo, 9 hours ago, message: Delete outdated test script
+| | | * | 05b8474 was Bryan Yeo, 30 hours ago, message: Clean up code
+| | | * | 304986b was Bryan Yeo, 30 hours ago, message: Add more test cases
+| | | * | 3c38c00 was Bryan Yeo, 2 days ago, message: Verbose Test Data
+| | | * | 9a7a17a was Bryan Yeo, 2 days ago, message: Basic testing skeleton
+| * | | | 1d5ee31 was Brucehow, 8 hours ago, message: Add xpath code for proper button selection
+* | | | | 144cc2a was ForsakenIdol, 8 hours ago, message: README changes, sample test added
+| |/ / /  
+|/| | |   
+* | | | 575412c was ForsakenIdol, 8 hours ago, message: Student test list animation smoothening and increase
+* | | | 35cb663 was ForsakenIdol, 8 hours ago, message: Remove Forgot Password button as functionality unimplemented
+* | | |   8e0669c was ForsakenIdol, 9 hours ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+|\ \ \ \  
+| * | | | b44b2a2 was Paul, 9 hours ago, message: Merge branch 'development' of https://github.com/brucehow/examinaid into development
+| |\| | | 
+| * | | | d670b47 was Paul, 9 hours ago, message: add readme breakdown
+* | | | | 9c5258b was ForsakenIdol, 9 hours ago, message: Test list logic moved to routes
+| |/ / /  
+|/| | |   
+* | | |   379f55a was ForsakenIdol, 9 hours ago, message: Merge pull request #38 from brucehow/feature/test-feedback
+|\ \ \ \  
+| |/ / /  
+|/| | |   
+| * | |   e6f1378 was ForsakenIdol, 9 hours ago, message: Merge branch 'development' into feature/test-feedback
+| |\ \ \  
+| |/ / /  
+|/| | |   
+* | | | 4d505b1 was ForsakenIdol, 9 hours ago, message: Remove wzrd scripts
+* | | | 070454c was Brucehow, 9 hours ago, message: Add new frontend test cases to selenium file
+| * | |   fc4dac2 was Brucehow, 10 hours ago, message: Merge branch 'feature/test-feedback' of https://github.com/brucehow/cits3403 into feature/test-feedback
+| |\ \ \  
+| | * \ \   f9a314f was Bruce How, 10 hours ago, message: Merge branch 'development' into feature/test-feedback
+| | |\ \ \  
+| |_|/ / /  
+|/| | | |   
+* | | | | 1d5d0bb was Bryan Yeo, 17 hours ago, message: Minor word fixes
+| * | | | a5ff029 was Brucehow, 10 hours ago, message: Fix bug where .gitkeep is being checked as a json
+| |/ / /  
+| * | | fcaee5f was Brucehow, 10 hours ago, message: Fix feedback.json file generation issue, feedback dir must be populated
+| * | |   4b210ea was Brucehow, 10 hours ago, message: Merge branch 'feature/test-feedback' of https://github.com/brucehow/cits3403 into feature/test-feedback
+| |\ \ \  
+| | * | | e57d624 was Paul, 13 hours ago, message: fix route bug, delete unecessary tests
+| | * | |   ce67a84 was Bruce How, 19 hours ago, message: Merge branch 'development' into feature/test-feedback
+| | |\ \ \  
+| |_|/ / /  
+|/| | | |   
+* | | | |   0e87ccf was Bruce How, 19 hours ago, message: Merge pull request #37 from brucehow/feature/new-demo
+|\ \ \ \ \  
+| * | | | | 8e76b98 was Brucehow, 19 hours ago, message: Add demo test link to managetest page
+| * | | | | f6ff890 was Bryan Yeo, 23 hours ago, message: Add demo functionality to /add_demo
+|/ / / / /  
+| * / / / ad9991b was Brucehow, 11 hours ago, message: Remove sample tests and user responses
+| |/ / /  
+| * | | 304e57d was Brucehow, 19 hours ago, message: Add feedback view link in attempts view
+| * | | 48c2538 was Brucehow, 19 hours ago, message: Remove InputRequired import
+| * | | a1c62db was Brucehow, 19 hours ago, message: Remove InputRequired validator and add default mark to Marks form
+| * | | 29837c8 was Brucehow, 19 hours ago, message: Add jinja code for checking user attempts
+| * | | 7b48ab8 was Brucehow, 19 hours ago, message: Add jinja checks to identify if any tests need to be marked
+| * | | 593015f was Brucehow, 19 hours ago, message: Add styling changes for flashed message
+| * | | d3f66a2 was Brucehow, 19 hours ago, message: Update manual marking to reflect in json file
+| * | | 1b7f223 was Brucehow, 20 hours ago, message: Change flex-box sizes to 2 columns per dashboard
+| * | | 530dbc1 was Brucehow, 20 hours ago, message: Add different interface for students on feedback
+| * | | ba7f51f was Brucehow, 20 hours ago, message: Add jinja code and new form to catch updated marks
+| * | | b8f53a6 was Brucehow, 22 hours ago, message: Add backbone structure for manual mark allocation
+| * | | 3abef1b was Brucehow, 22 hours ago, message: Add code in routes to store manual answers
+| * | | 7930720 was Brucehow, 22 hours ago, message: Fix feedback json marked variable logic
+| * | | 7d91010 was Brucehow, 23 hours ago, message: Add jinja code and styling for feedback
+| * | | 8a555be was Brucehow, 23 hours ago, message: Add relative routes for feedback files and access control
+| * | |   703e2bd was Brucehow, 23 hours ago, message: Merge branch 'feature/test-feedback' of https://github.com/brucehow/cits3403 into feature/test-feedback
+| |\ \ \  
+| | * | | c749c03 was Paul, 24 hours ago, message: add ID to feedback dict
+| |/ / /  
+|/| | |   
+| * | | aed3c05 was Brucehow, 23 hours ago, message: Add feedback routing with unique test id
+|/ / /  
+* | | 3339ee4 was Brucehow, 24 hours ago, message: Add jinja code for attempts teacher view
+* | | b07510e was Brucehow, 25 hours ago, message: Add jinja code for attempts and fix test label bug
+* | |   87848ff was Brucehow, 25 hours ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+|\ \ \  
+| * \ \   52c5280 was Paul, 25 hours ago, message: Merge branch 'development' of https://github.com/brucehow/examinaid into development
+| |\ \ \  
+| | * \ \   f291c6e was Bryan Yeo, 25 hours ago, message: Merge branch 'development' of https://github.com/brucehow/examinaid into development
+| | |\ \ \  
+| | * | | | 2362f19 was Bryan Yeo, 25 hours ago, message: Add student account
+| * | | | | 231d5d9 was Paul, 25 hours ago, message: add manual mark feedback
+| | |/ / /  
+| |/| | |   
+| * | | | 9728368 was Paul, 25 hours ago, message: fix userprofile spacing
+| |/ / /  
+| * | |   e7a5e79 was Paul, 26 hours ago, message: Merge branch 'development' of https://github.com/brucehow/examinaid into development
+| |\ \ \  
+| * | | | 28db188 was Paul, 26 hours ago, message: fix bug feedback
+* | | | | 2d29100 was Brucehow, 25 hours ago, message: Add Jinja syntax for attempts
+| |/ / /  
+|/| | |   
+* | | | 61c4157 was Brucehow, 26 hours ago, message: Fix conflicting feedback.svg image names
+* | | |   a7438e4 was Bruce How, 26 hours ago, message: Merge pull request #30 from brucehow/feature/teacher-dashboard
+|\ \ \ \  
+| |/ / /  
+|/| | |   
+| * | |   4703d0d was Bruce How, 26 hours ago, message: Merge branch 'development' into feature/teacher-dashboard
+| |\ \ \  
+| |/ / /  
+|/| | |   
+* | | | 8ab8f5f was Paul, 26 hours ago, message: update return data to feedback
+* | | |   28565cc was Paul, 27 hours ago, message: Merge branch 'development' of https://github.com/brucehow/examinaid into development
+|\ \ \ \  
+| * \ \ \   a93f6d7 was Paul O'Sullivan, 27 hours ago, message: Merge pull request #36 from brucehow/testing/selenium
+| |\ \ \ \  
+| | * | | | 3c4c825 was Bruce How, 27 hours ago, message: Delete tests.html
+| | * | | | 7c70412 was Brucehow, 28 hours ago, message: Change directory name
+| | * | | | 31abb55 was Brucehow, 28 hours ago, message: Add UserControl and Links test suites
+| | * | | | 493c64a was Brucehow, 28 hours ago, message: Add selenium tests
+* | | | | | 7ca458e was Paul, 27 hours ago, message: add timecomplete to feedback
+|/ / / / /  
+* | | | |   b21b8e5 was Bruce How, 27 hours ago, message: Merge pull request #35 from brucehow/Feedback
+|\ \ \ \ \  
+| |/ / / /  
+|/| | | |   
+| * | | | 7a55611 was Paul, 27 hours ago, message: add feedback userfile creation
+|/ / / /  
+* | | | afcc853 was Paul, 29 hours ago, message: Add obtain questionset
+* | | | cedba20 was Paul, 31 hours ago, message: update output string of feedback
+* | | | e528758 was Brucehow, 2 days ago, message: Add styling to test template
+* | | |   741131d was Paul O'Sullivan, 2 days ago, message: Merge pull request #33 from brucehow/footer
+|\ \ \ \  
+| * | | | 8619360 was Brucehow, 2 days ago, message: Add content to contact to match with footer theme
+| * | | | 7871c52 was Brucehow, 2 days ago, message: Add social icons to footer and fix padding
+| * | | | a99688e was Brucehow, 2 days ago, message: Add footer structure to index
+|/ / / /  
+* | | |   e38133b was ForsakenIdol, 2 days ago, message: Merge pull request #32 from brucehow/feedbacl
+|\ \ \ \  
+| * | | | 5d74641 was Paul, 2 days ago, message: fix spacing, print output
+| * | | | 5fd4377 was Paul, 2 days ago, message: add camel casing
+| * | | | b0e115a was Paul, 2 days ago, message: Add comments
+| * | | | 574c3ef was Paul, 2 days ago, message: fix bug
+| * | | | 11badf3 was Paul, 2 days ago, message: Add show incorrect questions
+| * | | | 6d8b8b3 was Paul, 2 days ago, message: add automated feedback
+* | | | |   04aad4d was Bruce How, 2 days ago, message: Merge pull request #31 from brucehow/feature/student-dashboard
+|\ \ \ \ \  
+| * | | | | 522f6db was Brucehow, 2 days ago, message: Add HTML structure for test feedback and attempts
+|/ / / / /  
+| | * | | fef0f71 was Brucehow, 26 hours ago, message: Add simple flash msg styling
+| | * | | 5925755 was Bryan Yeo, 27 hours ago, message: Update openq + shortq html template
+| | * | | e05d4be was Bryan Yeo, 27 hours ago, message: Applied testNumber and totalMarks to routes.py
+| | * | | b67f98e was Lachlan D Whang, 28 hours ago, message: Remove testNumber and totalMarks fields from multiChoice question form; these fields are now derived in routes.py
+| | * | | 467a1fb was Lachlan D Whang, 29 hours ago, message: next_test takes unitCode input and returns next value for test support
+| | * | | 8bc19f4 was Lachlan D Whang, 30 hours ago, message: Implement remove question set functionality
+| | * | | 4126b2d was Lachlan D Whang, 30 hours ago, message: Add more detailed error response handling to unitJSON
+| | * | | 8e61bdf was Lachlan D Whang, 30 hours ago, message: Reverse interchanged question set numbers in CITS1401 tests
+| | * | | 5b4d64c was Lachlan D Whang, 30 hours ago, message: Small typo line 116
+| | * | |   7f38431 was Lachlan D Whang, 30 hours ago, message: Merge branch 'feature/teacher-dashboard' of https://github.com/brucehow/cits3403 into feature/teacher-dashboard
+| | |\ \ \  
+| | | * | | cb7d83b was Brucehow, 30 hours ago, message: Add redirect from dropdown
+| | * | | | 18650ff was Lachlan D Whang, 30 hours ago, message: Active tests looping for supported tests
+| | |/ / /  
+| | * | | 550d4cc was Brucehow, 30 hours ago, message: Add Mark Completed Test page template
+| | * | | fb2efa3 was Brucehow, 31 hours ago, message: Add proper validtor error  messages
+| | * | | 49cd2c3 was ForsakenIdol, 31 hours ago, message: Lowercase unitset name changes
+| | * | | 68f805a was Brucehow, 32 hours ago, message: Add remove button to template
+| | * | | 9f0262f was Brucehow, 2 days ago, message: Add test input styling to templates
+| | * | |   71977ff was Brucehow, 2 days ago, message: Merge branch 'feature/teacher-dashboard' of https://github.com/brucehow/cits3403 into feature/teacher-dashboard
+| | |\ \ \  
+| | | * \ \   cde7c01 was Bruce How, 2 days ago, message: Merge branch 'development' into feature/teacher-dashboard
+| | | |\ \ \  
+| |_|_|/ / /  
+|/| | | | |   
+* | | | | |   cb7da4d was ForsakenIdol, 2 days ago, message: Merge pull request #29 from brucehow/feature/new-test-tracker
+|\ \ \ \ \ \  
+| |_|_|_|/ /  
+|/| | | | |   
+| * | | | |   5006a03 was ForsakenIdol, 2 days ago, message: Merge branch 'development' into feature/new-test-tracker
+| |\ \ \ \ \  
+| |/ / / / /  
+|/| | | | |   
+* | | | | | b9ac357 was ForsakenIdol, 2 days ago, message: Case testing for unit names
+* | | | | | 56b835d was ForsakenIdol, 2 days ago, message: Remove print statement from unitJSON
+* | | | | |   333ee6e was ForsakenIdol, 2 days ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+|\ \ \ \ \ \  
+* | | | | | | 287950d was ForsakenIdol, 2 days ago, message: Question set files are now deleted in unitJSON instead of just being untracked
+| |_|/ / / /  
+|/| | | | |   
+| | * | | | 69973e9 was Bryan Yeo, 2 days ago, message: Update errors
+| | * | | | 2b9c8bc was Bryan Yeo, 2 days ago, message: Add tracking functionality
+| |/ / / /  
+| * / / / 6781825 was Bryan Yeo, 2 days ago, message: Add flash message functionality to userprofile
+|/ / / /  
+* | | | 00cb79d was Paul, 3 days ago, message: Add required for test questions
+* | | | 2ad1dbb was ForsakenIdol, 3 days ago, message: C:/Program Files/Git/newtest route now properly leads to the correct selected test set
+* | | | 69216d9 was Brucehow, 3 days ago, message: Add index button redirection for non_anonymous users
+* | | |   255d643 was Brucehow, 3 days ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+|\ \ \ \  
+| * \ \ \   1067210 was ForsakenIdol, 3 days ago, message: Merge pull request #28 from brucehow/feature/teacher-dashboard
+| |\ \ \ \  
+* | | | | | 1140ffa was Brucehow, 3 days ago, message: Increase opacity for nav-bar icon
+|/ / / / /  
+* | | | | 26f2ecb was Brucehow, 3 days ago, message: Remove bar icon buf for register page
+| | * | | e761118 was Brucehow, 2 days ago, message: Fix incorrect href under dropdown to managetest
+| | |/ /  
+| | * | 0b65b82 was Brucehow, 2 days ago, message: Add final elements for managetests
+| | * | b53b433 was Brucehow, 2 days ago, message: Add navigation button with custom styling for templates
+| | * | 823600f was Brucehow, 2 days ago, message: Add styling for shortq template
+| | * | e51158a was Brucehow, 2 days ago, message: Add consistent styling for multiq template
+| | * | a1da3f8 was Brucehow, 2 days ago, message: Finalise styling for openq template
+| | * | fb1385e was Brucehow, 2 days ago, message: Add manage test type redirection and style to multiq
+| | * | 44b3259 was Brucehow, 2 days ago, message: Add styling for managetest page
+| | * | f153da5 was Brucehow, 2 days ago, message: Add route for manage test and page template
+| |/ /  
+| * | 28ed36c was Brucehow, 3 days ago, message: Add icon for manage users and change wave separator
+| * | 1b0f1f2 was Brucehow, 3 days ago, message: Fix redirection from nav-bar
+| * | 7e10787 was Brucehow, 3 days ago, message: Add previous test view for teacher
+| * | 5615cc8 was Brucehow, 3 days ago, message: Add styling for manage users to be responsive with device sizes
+| * | 3daf35e was Brucehow, 3 days ago, message: Add jinja code for teacher dropdown menu
+|/ /  
+* |   77c8a4e was Brucehow, 3 days ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+|\ \  
+| * | 3409476 was ForsakenIdol, 3 days ago, message: unitJSON rewrite
+| * | 08c288f was ForsakenIdol, 4 days ago, message: Add requirements.txt file
+| * | df93d00 was ForsakenIdol, 4 days ago, message: Expand on README
+| * | 0816331 was ForsakenIdol, 4 days ago, message: Password input for add user form; general styling updates
+| * | e7e1e89 was Bruce How, 4 days ago, message: Add libraries and version
+* | | 1505037 was Brucehow, 3 days ago, message: Fix incorrect nav icon in change password and add icon to newtest
+|/ /  
+* | 4078153 was Brucehow, 4 days ago, message: Add redirect buttons for forms including changepassword
+* | b40fb94 was Brucehow, 4 days ago, message: Add drop down toggler for account to dashboard
+* | 08ea6a6 was Brucehow, 4 days ago, message: Add user drop down options and fix newtest route
+* | 1cac492 was Brucehow, 4 days ago, message: Add my profile dropdown to implement change password options
+* | 0af2ac0 was Brucehow, 4 days ago, message: Add forgot password button for future implementation
+* | a9870c2 was Brucehow, 4 days ago, message: Fix naming with newtest as newtest2 was removed
+* | 92010be was Brucehow, 4 days ago, message: Remove import TestQuestion as is no longer in used
+* |   fb61888 was ForsakenIdol, 4 days ago, message: Merge branch 'feature/reset-password' into development
+|\ \  
+| * | 5854c94 was ForsakenIdol, 4 days ago, message: Move reset password form validation completely to form class
+| * | 0ae7d97 was ForsakenIdol, 4 days ago, message: Implement password reset functionality
+* | |   9c13f8c was ForsakenIdol, 4 days ago, message: Merge pull request #26 from brucehow/feature/dashboard
+|\ \ \  
+| * \ \   b33053a was Bruce How, 4 days ago, message: Merge branch 'development' into feature/dashboard
+| |\ \ \  
+| |/ / /  
+|/| | |   
+* | | | 3498d80 was Bryan Yeo, 4 days ago, message: Made Bryan an admin
+* | | |   6810757 was ForsakenIdol, 4 days ago, message: Merge pull request #25 from brucehow/feature/ten-question-function
+|\ \ \ \  
+| |_|/ /  
+|/| | |   
+| * | |   719bc8b was Bryan Yeo, 4 days ago, message: Merge branch 'development' into feature/ten-question-function
+| |\ \ \  
+| |/ / /  
+|/| | |   
+* | | | 22e55c5 was ForsakenIdol, 4 days ago, message: README first draft
+* | | |   5b296e3 was Bruce How, 4 days ago, message: Merge pull request #24 from brucehow/feature/student-management
+|\ \ \ \  
+| * | | | e97af3c was Brucehow, 4 days ago, message: Add sample teacher account to test
+| * | | | 8946728 was ForsakenIdol, 4 days ago, message: Manage users not just manage students
+| * | | | 6711280 was ForsakenIdol, 4 days ago, message: Ability to add users implemented
+| * | | | 80e6514 was ForsakenIdol, 4 days ago, message: Condensify jinja on students.html
+| * | | | ebd60ad was ForsakenIdol, 4 days ago, message: You removed yourself. Oh wait - you can't.
+| * | | | 54f73d4 was ForsakenIdol, 4 days ago, message: Can now remove users; admin profile path updated
+| * | | | cf5c2d4 was ForsakenIdol, 4 days ago, message: Add user list and login checking
+| * | | | 42c8a2d was ForsakenIdol, 4 days ago, message: Student management page skeleton
+|/ / / /  
+* | | | cf654cb was ForsakenIdol, 5 days ago, message: General file structure refactor; remove example test path
+* | | | 476994f was ForsakenIdol, 5 days ago, message: Replace admin login sample text
+* | | | 1681f4b was ForsakenIdol, 5 days ago, message: Restore flashed messages for login, remove unecessary message flashes in some areas
+* | | | 26a71cb was ForsakenIdol, 5 days ago, message: Increase opacity of exit button for login screen
+| * | | 7601002 was Bryan Yeo, 4 days ago, message: Update app.db to match dev
+| * | | fda192c was Bryan Yeo, 4 days ago, message: Update template to be relevant
+| * | | d0713e8 was Bryan Yeo, 4 days ago, message: Add admin checking functionality
+| * | | bbeb808 was Bryan Yeo, 4 days ago, message: Standardize writing json file format
+| * | | fa936cf was Bryan Yeo, 4 days ago, message: Add marks to short q template
+| * | | fbed97d was Bryan Yeo, 4 days ago, message: Rename multiq template
+| * | | f9a0059 was Bryan Yeo, 4 days ago, message: Add openq html template
+| * | | d916645 was Bryan Yeo, 4 days ago, message: Add open questions functionality
+| * | | ef1e997 was Bryan Yeo, 4 days ago, message: Add totalmarks functionality
+| * | | c96ac36 was Bryan Yeo, 4 days ago, message: Add mark functionality to html
+| * | | de013a2 was Bryan Yeo, 4 days ago, message: Add marks functionality to forms
+| * | | 1b7a590 was Bryan Yeo, 5 days ago, message: update correct html template
+| * | | 58f6aa6 was Bryan Yeo, 5 days ago, message: Add short q html template
+| * | | b57026c was Bryan Yeo, 5 days ago, message: Add short q functionality for routes.py
+| * | | 213d8b9 was Bryan Yeo, 5 days ago, message: Add form functionality for short questions
+| * | | 620936a was Bryan Yeo, 5 days ago, message: Fix totalOptions having two brackets
+| * | | 77611d4 was Bryan Yeo, 5 days ago, message: Fix missing lines in multiquestion template
+| * | | d4c30f8 was Bryan Yeo, 5 days ago, message: Add manual additions for routes.py and test template
+| * | | 5e079f4 was Bryan Yeo, 5 days ago, message: Add import for forms
+| * | | c2bd3d9 was Bryan Yeo, 5 days ago, message: Add form support for short + open questions
+| | * | fc0c946 was Brucehow, 4 days ago, message: Add extra column structure for test attempts card
+| | * | bfd6fe8 was Brucehow, 4 days ago, message: Styling changes to exit button
+| | * |   0d37001 was Brucehow, 4 days ago, message: Merge branch 'feature/dashboard' of https://github.com/brucehow/cits3403 into feature/dashboard
+| | |\ \  
+| | | * | 5d26d86 was Brucehow, 5 days ago, message: Add content template and styling to previous attempts page
+| | | * | d67ae7d was Brucehow, 5 days ago, message: Add previous attempts html page
+| | * | | a41b2bd was Brucehow, 5 days ago, message: Add content template and styling to previous attempts page
+| | * | | f444a14 was Brucehow, 5 days ago, message: Add previous attempts html page
+| |/ / /  
+|/| | |   
+* | | | 00e2cee was Brucehow, 5 days ago, message: Add close button for login/register for navigation
+* | | | 17ef532 was Brucehow, 5 days ago, message: Fix bugged app.db file
+* | | |   b49f1d5 was Brucehow, 5 days ago, message: Rename temp site name to ExaminAid
+|\ \ \ \  
+| * \ \ \   d658c83 was Bruce How, 5 days ago, message: Merge pull request #23 from brucehow/feature/dashboard
+| |\ \ \ \  
+| | |/ / /  
+| |/| / /   
+| | |/ /    
+| | * | 8c804d8 was Brucehow, 5 days ago, message: Add styling for the test selection page
+* | | | 439bcc5 was Brucehow, 5 days ago, message: Rename temp site name to ExaminAid
+|/ / /  
+* | |   b97b719 was ForsakenIdol, 5 days ago, message: Merge pull request #22 from brucehow/feature/unit-tracking-file
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 87bbcac was ForsakenIdol, 5 days ago, message: Remove debug
+| * | 06ba032 was ForsakenIdol, 5 days ago, message: Add unit JSON file and functions for updating that file
+* | |   ec12ee9 was ForsakenIdol, 5 days ago, message: Merge pull request #21 from brucehow/feature/json-db
+|\ \ \  
+| |/ /  
+|/| |   
+| * |   4a51c32 was Bryan Yeo, 5 days ago, message: Merge branch 'feature/json-db' of https://github.com/brucehow/cits3403 into feature/json-db
+| |\ \  
+| | * \   29b12a5 was Bryan Yeo, 5 days ago, message: Merge branch 'development' into feature/json-db
+| | |\ \  
+| |_|/ /  
+|/| | |   
+* | | | e43f2be was ForsakenIdol, 5 days ago, message: Move test template html into same directory level as the other html templates
+* | | | 4ad7836 was ForsakenIdol, 5 days ago, message: url_for() now takes route handler arguments, cleaning up test render_template()
+* | | | 04b9396 was ForsakenIdol, 6 days ago, message: Add hidden input field for tracking questionset
+* | | | 150ab51 was Lachlan D Whang, 6 days ago, message: Test form submit route established
+| * | | 52a6425 was Bryan Yeo, 5 days ago, message: Remove answer validation
+| |/ /  
+| * | 831b7bf was Bryan Yeo, 5 days ago, message: Amend fix comments
+| * | 4d17a97 was Bryan Yeo, 5 days ago, message: Remove unneeded py script
+| * | 9a4b130 was Bryan Yeo, 5 days ago, message: Fix for form validation + redirect url
+| * |   00e9dac was Bryan Yeo, 6 days ago, message: Merge branch 'development' into feature/json-db
+| |\ \  
+| |/ /  
+|/| |   
+* | | 3922879 was ForsakenIdol, 6 days ago, message: Log serialized form inputs and add index.js script to login page
+* | | cefa741 was ForsakenIdol, 6 days ago, message: Upload button hover styling
+* | |   af97fd6 was ForsakenIdol, 6 days ago, message: Merge pull request #20 from brucehow/feature/general-test-page
+|\ \ \  
+| * | | 9997197 was ForsakenIdol, 6 days ago, message: Distinguishing comments
+| * | | eef32d6 was ForsakenIdol, 6 days ago, message: General path for all supported question sets
+|/ / /  
+* | | 38fa975 was ForsakenIdol, 6 days ago, message: Set first question in set 2 to multichoice for cits3403
+* | | 06acf9c was ForsakenIdol, 7 days ago, message: More question image support
+* | | 90f36a5 was ForsakenIdol, 7 days ago, message: Image support for questions, textarea styling changes
+* | |   398c43a was Paul, 8 days ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+|\ \ \  
+| * | | cd5b65e was Brucehow, 8 days ago, message: Add login_required to login protected pages
+| * | |   d19a654 was Brucehow, 8 days ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+| |\ \ \  
+| * | | | 8b9e8f9 was Brucehow, 8 days ago, message: Finish HTML and CSS code for about and add thumbnails
+| * | | | 5756056 was Brucehow, 8 days ago, message: Add CSS styling for about page
+| * | | | 8a9e2a2 was Brucehow, 8 days ago, message: Fix HTML format for About
+* | | | | 1e26aa9 was Paul, 8 days ago, message: update newtest
+|/ / / /  
+| | * | 1af459d was Bryan Yeo, 6 days ago, message: Working json implementation for 1 Question
+| | * | 756e90b was Bryan Yeo, 8 days ago, message: Temporary placeholder for json.py
+| | * | f280941 was Bryan Yeo, 8 days ago, message: Fix form field issue
+| | * | 89968d0 was Bryan Yeo, 8 days ago, message: Fix up bugs / change mcq to 4 entries
+| | * | feff435 was Bryan Yeo, 8 days ago, message: Add testing route (untested) + issue with write_json.py
+| | * | bcffbe9 was Bryan Yeo, 8 days ago, message: Create AddQuestion Template
+| | * | 46c7b0e was Bryan Yeo, 8 days ago, message: Add table along with route
+| | * | dc51554 was Bryan Yeo, 8 days ago, message: Add relative path functionality
+| | * | 3b4330e was Bryan Yeo, 8 days ago, message: Add json script
+| |/ /  
+| * | da041c1 was ForsakenIdol, 8 days ago, message: Merge pull request #19 from brucehow/feature/test-page
+|/| | 
+| * |   fb2f84c was ForsakenIdol, 8 days ago, message: Merge branch 'development' into feature/test-page
+| |\ \  
+| |/ /  
+|/| |   
+* | |   fcdcbbb was Paul, 8 days ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+|\ \ \  
+| * | | b59bf57 was ForsakenIdol, 8 days ago, message: Custom file upload button for tests
+| * | | 8e11977 was ForsakenIdol, 8 days ago, message: multiplechoice to multipleChoice camelcase, support for more question types
+* | | | 4b87611 was Paul, 8 days ago, message: change route to startnewtest
+|/ / /  
+| * | 63a3687 was Brucehow, 8 days ago, message: Fix typo in test-input
+| * | 90fc232 was Brucehow, 8 days ago, message: Fix labels not linking to radio ids
+| * | dec7823 was Brucehow, 8 days ago, message: Add small CSS changes to buttons and question boxes
+| * | f669077 was Brucehow, 8 days ago, message: Clean up CSS code, reuse existing classes
+| * | ee605d2 was Brucehow, 8 days ago, message: Change format, remove nav-bar and clean HTML code
+|/ /  
+* |   9540ffa was Brucehow, 8 days ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+|\ \  
+| * \   5a2fc56 was ForsakenIdol, 8 days ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+| |\ \  
+| * | | dcfc0a6 was ForsakenIdol, 8 days ago, message: Basic test styling, JSON character fixes
+* | | | 5d114a8 was Brucehow, 8 days ago, message: Add contact form redirect from index
+| |/ /  
+|/| |   
+* | | 88599ec was Brucehow, 8 days ago, message: Remove debug flash messages
+|/ /  
+* | 5a0d618 was Paul, 9 days ago, message: add placeholders for team member bios
+* | 3246c18 was Paul, 9 days ago, message: add cits1401 2nd test
+* | 785dd92 was Paul, 9 days ago, message: add cits1401_1 test questions
+* | 6ed220b was ForsakenIdol, 3 weeks ago, message: Temp rename endpoint function for newtest to prevent overlap
+* |   6f7a2d6 was Bruce How, 3 weeks ago, message: Merge pull request #18 from brucehow/feature/example-test-form
+|\ \  
+| * \   e9c2016 was Bruce How, 3 weeks ago, message: Merge branch 'development' into feature/example-test-form
+| |\ \  
+| |/ /  
+|/| |   
+* | | 8dd39b1 was Brucehow, 3 weeks ago, message: Fix centering for forms for smaller devices
+* | | b216d64 was Brucehow, 3 weeks ago, message: Add wave separator for index
+* | | 239bebd was Brucehow, 3 weeks ago, message: Change margins for waves for index and userprofile
+* | |   61a9e16 was Bryan Yeo, 3 weeks ago, message: Merge pull request #17 from brucehow/feature/user-profile
+|\ \ \  
+| * \ \   3a7b656 was Brucehow, 3 weeks ago, message: Merge branch 'testpage' of https://github.com/brucehow/cits3403 into testpage
+| |\ \ \  
+| | * | | 8edc09f was Paul, 3 weeks ago, message: Add form component
+| * | | | cf447d6 was Brucehow, 3 weeks ago, message: Add teacher dashboard features
+| * | | | 5a6efc1 was Brucehow, 3 weeks ago, message: Add teacher dashboard
+| * | | | 7a3f980 was Brucehow, 3 weeks ago, message: Add db instance and fix None value for bool
+| |/ / /  
+| * | | a0c02c8 was Brucehow, 3 weeks ago, message: Move stat to temp location
+| * | | d094575 was Brucehow, 3 weeks ago, message: Fix naming error in float anim
+| * | | 95a5096 was Brucehow, 3 weeks ago, message: Add responsive code for wave sep for smaller devices
+| * | | 27af189 was Brucehow, 3 weeks ago, message: Add statistics to user profile
+| * | | cb8cee8 was Brucehow, 3 weeks ago, message: Add wave design for user homepage
+| * | | 0e20760 was Brucehow, 3 weeks ago, message: Add dashboard icons
+| * | | 2bee812 was Brucehow, 3 weeks ago, message: Fix userprofile sections and change nav to boxshadow
+| * | | d09aaf5 was Brucehow, 3 weeks ago, message: Replce anchor styling with buttons
+| * | | aec0cf3 was Brucehow, 3 weeks ago, message: Fix HTML formatting
+| * | | c2780b0 was Paul, 3 weeks ago, message: Add new test form
+| * | | cd34ace was Paul, 3 weeks ago, message: Remove minor CSS styling
+| * | | 04cec56 was Paul, 4 weeks ago, message: Add start new test instead of unit choice
+| * | | 5687a9f was Paul, 4 weeks ago, message: fix css flexbox for start test buttons
+| * | | bc40b12 was Paul, 4 weeks ago, message: Cleaned up CSS
+| * | | f7f3360 was Paul, 4 weeks ago, message: Add Submit Button
+| * | | 5dd1f2f was Paul, 4 weeks ago, message: Update userprofile.css
+| * | | 474afb9 was Paul, 4 weeks ago, message: Remove button from css, add quiz page and route
+| * | | c208224 was Paul, 4 weeks ago, message: Small changes to the previous commit
+| * | | 5897896 was Paul, 4 weeks ago, message: Add horizontal menu for new tests
+| * | | 0955fcf was Paul, 4 weeks ago, message: Add dummy links to unit choices
+| * | | dfecb7b was Paul, 4 weeks ago, message: Add Lachlan's button test
+| * | | 748fe41 was Paul, 4 weeks ago, message: Add previous attempt windows
+|/ / /  
+| * | b63a225 was ForsakenIdol, 3 weeks ago, message: Add question set 2 for CITS3403
+| * | ff21435 was ForsakenIdol, 3 weeks ago, message: Remove empty question from top of first set
+| * | 9a15141 was ForsakenIdol, 3 weeks ago, message: JSON formatting for multichoice options
+| * | 4e29532 was ForsakenIdol, 3 weeks ago, message: Add question set 1 for CITS3403
+| * | b281643 was ForsakenIdol, 3 weeks ago, message: Add test number to example JSON
+| * | f89ce6f was ForsakenIdol, 4 weeks ago, message: Update input name for openanswer examples
+| * | 3101b8a was ForsakenIdol, 4 weeks ago, message: Generalize multichoice and open answer fields
+| * | e5b72db was ForsakenIdol, 4 weeks ago, message: Generalise form to added JSON example
+| * | 4cf852f was ForsakenIdol, 4 weeks ago, message: Created example form outline
+|/ /  
+* |   d55895a was Paul O'Sullivan, 4 weeks ago, message: Merge pull request #16 from brucehow/feature/small-nav-bar
+|\ \  
+| * | 74eab12 was Brucehow, 5 weeks ago, message: Replace poorly used CSS selectors accordingly
+| * | 0ce7b0f was Brucehow, 5 weeks ago, message: Change to col-md and hide images for small width sizes
+| * | 9cda993 was Brucehow, 5 weeks ago, message: Fix padding issues with toggler-btn
+| * | 586ea51 was Brucehow, 5 weeks ago, message: Add left side nav to nav-bar toggler menu
+| * | d54ff35 was Brucehow, 5 weeks ago, message: Add collapse icon for menu nav-bar/left
+| * | b942c0d was Brucehow, 5 weeks ago, message: Add icon toggler for small nav-bar width
+| * | 6f04eaf was Brucehow, 5 weeks ago, message: Remove duplicate title and change format
+|/ /  
+* |   b745555 was Paul, 5 weeks ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+|\ \  
+| * | 3a6ba39 was Brucehow, 5 weeks ago, message: Fix spacing on models.py
+* | | a5f2e38 was Paul, 5 weeks ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+|\| | 
+| * | b0b7d54 was ForsakenIdol, 6 weeks ago, message: Update script button with new ID name
+| * |   4203c83 was ForsakenIdol, 6 weeks ago, message: Merge pull request #15 from brucehow/feature/form-css
+| |\ \  
+| | * \   d11fb4e was ForsakenIdol, 6 weeks ago, message: Merge branch 'development' into feature/form-css
+| | |\ \  
+| | |/ /  
+| |/| |   
+| * | |   68ad058 was Brucehow, 6 weeks ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+| |\ \ \  
+| | * \ \   d6cb7da was Bruce How, 6 weeks ago, message: Merge pull request #14 from brucehow/feature/admin-accounts
+| | |\ \ \  
+| | | * | | d621582 was ForsakenIdol, 6 weeks ago, message: Add admin account functionality and command-line admin setting support, add relevant instructions to USEFUL
+| | | * | | a82cd58 was ForsakenIdol, 6 weeks ago, message: Upgrade database to admin columns
+| | * | | | 8096b9d was Bryan Yeo, 6 weeks ago, message: Add .vs related files to gitignore
+| | |/ / /  
+| * / / / b1fd059 was Brucehow, 6 weeks ago, message: Fix missing head tag and stray section tag
+| |/ / /  
+| * | | 47d2f6a was Brucehow, 6 weeks ago, message: Add vscode related files to gitignore
+| * | |   0a4870a was ForsakenIdol, 6 weeks ago, message: Merge pull request #13 from brucehow/feature/form-css
+| |\ \ \  
+| * | | | f2c535c was ForsakenIdol, 6 weeks ago, message: Modify response field behaviour to prevent initial red text flash
+| * | | | e064870 was ForsakenIdol, 6 weeks ago, message: Add javascript-side validation for contact form
+| | | * | 3008dff was Brucehow, 6 weeks ago, message: Add custom margins for login and contact forms
+| | | * | ca96b04 was Brucehow, 6 weeks ago, message: Add styling for the contact us forms
+| | | * | e400e2f was Brucehow, 6 weeks ago, message: Change placeholders and error messages for register input
+| | | * | ec80400 was Brucehow, 6 weeks ago, message: Change default form margin to fit generic large screen sizes
+| | | * | 5a1af4a was Brucehow, 6 weeks ago, message: Change input class to match form css selectors
+| | | * | 1e85d13 was Brucehow, 6 weeks ago, message: Change register html structure to implement css styling
+| | | * | 8afdc9c was Brucehow, 6 weeks ago, message: Remove nav bar from login
+| | |/ /  
+| | * | 7e66082 was Brucehow, 6 weeks ago, message: Add autofocus and set input hover color
+| | * | c799e12 was Brucehow, 6 weeks ago, message: Change placeholder text
+| | * | 785fe03 was Brucehow, 6 weeks ago, message: Change css for form error messages
+| | * | d66750a was Brucehow, 6 weeks ago, message: Change font size and alignment for small field
+| | * | a0e1ea7 was Brucehow, 6 weeks ago, message: Fix form button color and padding
+| | * | 1a044fb was Brucehow, 6 weeks ago, message: Add css selector to individual inputs
+| | * | 7efdfef was Brucehow, 6 weeks ago, message: Tweak css changes to the forms using generic css selectors
+| |/ /  
+| * | bc8eba3 was ForsakenIdol, 6 weeks ago, message: Remove html contact form validation
+| * | 41108a5 was Brucehow, 6 weeks ago, message: Change register form structure to be consistent with css
+* | | a9878a5 was Paul, 6 weeks ago, message: Add userprofile "Select Unit" button
+|/ /  
+* | 0492280 was ForsakenIdol, 6 weeks ago, message: Change userhomepage name to userprofile
+* | abf7daa was ForsakenIdol, 6 weeks ago, message: Formatting, remove newlines
+* |   ec51c9d was ForsakenIdol, 6 weeks ago, message: Merge pull request #11 from brucehow/feature/contact-form
+|\ \  
+| * \   dfe418b was ForsakenIdol, 6 weeks ago, message: Merge branch 'development' into feature/contact-form
+| |\ \  
+| |/ /  
+|/| |   
+* | | 40d3a42 was Bruce How, 7 weeks ago, message: Fix form error message indentation
+* | | c1ca08a was Bruce How, 7 weeks ago, message: Remove outline on input focus
+* | | 7abc2ef was Bruce How, 7 weeks ago, message: Add small padding changes to forms.css
+* | | 9f45019 was Bruce How, 7 weeks ago, message: Fix code in register to match new css selectors
+* | | 420cb81 was Bruce How, 7 weeks ago, message: Change selectors in forms.css to be more generic
+* | | 70e378d was Bruce How, 7 weeks ago, message: Tweak padding and font sizes for forms
+| * | aa2d78e was ForsakenIdol, 6 weeks ago, message: Change script to be more inline with jquery
+| * | 255ab8d was ForsakenIdol, 6 weeks ago, message: Add temporary contact message acknowledgement
+| * | 9161145 was ForsakenIdol, 6 weeks ago, message: Submit ID generalization
+| * | f50e4a1 was ForsakenIdol, 6 weeks ago, message: Add styling to contact form submit button
+| * | 49278f9 was ForsakenIdol, 7 weeks ago, message: Pad message textarea, resize input, animate border width on field focus
+| * | 4a756ae was ForsakenIdol, 7 weeks ago, message: Change element ids to be more descriptive and informative
+| * | b8730b9 was ForsakenIdol, 7 weeks ago, message: Add red asterisk to required fields, basic form styling, etc etc
+| * | 0f6234d was ForsakenIdol, 7 weeks ago, message: Remove unneeded div elements and add labels with 'for'
+| * | 171f110 was ForsakenIdol, 7 weeks ago, message: Remove sample text and add required name & msg
+| * | e6e0e7a was ForsakenIdol, 7 weeks ago, message: Add AJAX remote script fetch to Google Sheets for form submit
+| * | a4a0112 was ForsakenIdol, 7 weeks ago, message: Add contact form skeleton with page path
+|/ /  
+* | 8db1efa was ForsakenIdol, 7 weeks ago, message: Update about page with sample text and temporary inline styling
+* | 9fe2dce was ForsakenIdol, 7 weeks ago, message: Containerize text on profile page
+* | 8241899 was ForsakenIdol, 7 weeks ago, message: Containerize flashed messages, add placeholder 'New Test' link and shift profile link to right of navbar
+* | 526e55b was ForsakenIdol, 7 weeks ago, message: Added jinja conditional and relevant path in routes for site titles
+* | 779c4d8 was ForsakenIdol, 7 weeks ago, message: Remove list style from flashed messages
+* | 115d02b was ForsakenIdol, 7 weeks ago, message: Add user dashboard description and condition profile link to navbar
+* |   8c37ca0 was ForsakenIdol, 7 weeks ago, message: Merge pull request #10 from brucehow/feature/form-css-update
+|\ \  
+| * \   67fe6f7 was ForsakenIdol, 7 weeks ago, message: Merge branch 'development' into feature/form-css-update
+| |\ \  
+| |/ /  
+|/| |   
+* | | 9a622be was Brucehow, 7 weeks ago, message: Change illustration color and nav padding
+| * | 0916191 was ForsakenIdol, 7 weeks ago, message: Conflict changes updated
+| * | 6e8acfa was ForsakenIdol, 7 weeks ago, message: Add top padding especially for register form element
+| * | 0caadc7 was ForsakenIdol, 7 weeks ago, message: Update alternate login button to match style of form submit
+| * | 600cd15 was ForsakenIdol, 7 weeks ago, message: Add checkbox scaling, email field support
+| * | 288e481 was ForsakenIdol, 7 weeks ago, message: Remove size limits on WTForms declarations, size styling pushed to CSS
+| * | 3807b8b was ForsakenIdol, 7 weeks ago, message: Add center login elements, input styling, greater element padding for login page
+|/ /  
+* | 291c0ef was Bruce How, 7 weeks ago, message: Change landing padding
+* |   4ff5092 was Brucehow, 7 weeks ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+|\ \  
+| * | adbcdfb was ForsakenIdol, 7 weeks ago, message: Update sample Loren Ipsum text to more relevant text
+* | | b5cf0ae was Brucehow, 7 weeks ago, message: Add landing section size
+|/ /  
+* | ccd35ee was Brucehow, 7 weeks ago, message: Add contact illustration and text
+* | faf2252 was Brucehow, 7 weeks ago, message: Add changes to index section structure
+* | cb7e018 was Brucehow, 7 weeks ago, message: Add floating anim to illustrations
+* | 73bea94 was Brucehow, 7 weeks ago, message: Add img-md for accompanying images
+* | e9b6026 was Brucehow, 7 weeks ago, message: Add custom styling for lg button
+* | 5581b87 was Brucehow, 7 weeks ago, message: Change second section to white
+* | 79bfebf was Brucehow, 7 weeks ago, message: Add index base structure and illustrations
+* | 918df6b was Bryan Yeo, 7 weeks ago, message: Update Flask-sqlalchemy/Flask-migrate/Flask-login
+* | bd48d17 was Bryan Yeo, 7 weeks ago, message: Add personal credentials
+* |   ff3c23a was ForsakenIdol, 7 weeks ago, message: Merge pull request #9 from brucehow/userhomepage
+|\ \  
+| * | 9330e66 was Paul, 7 weeks ago, message: add userhomepage route & html page
+* | | f2a5283 was Brucehow, 7 weeks ago, message: Remove unnecessary break
+* | | 4f6570c was Brucehow, 7 weeks ago, message: Hide Get Started button when logged in
+* | |   d49bb25 was Brucehow, 7 weeks ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+|\ \ \  
+| * | | 5e00e25 was ForsakenIdol, 7 weeks ago, message: Add logout button to nav, flash login/logout messages
+| |/ /  
+| * |   7d695db was ForsakenIdol, 7 weeks ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+| |\ \  
+| * | | e04e6fa was ForsakenIdol, 7 weeks ago, message: Add SQLAlchemy terminal processing to USEFUL
+* | | | e63b37f was Brucehow, 7 weeks ago, message: Add sample illustration and padding in index
+| |/ /  
+|/| |   
+* | | 5c46cf0 was Brucehow, 7 weeks ago, message: Remove landing page
+|/ /  
+* |   fa3d805 was ForsakenIdol, 7 weeks ago, message: Merge branch 'development' of https://github.com/brucehow/cits3403 into development
+|\ \  
+| * | 6b6d71f was Brucehow, 7 weeks ago, message: Fix login/register links
+* | | 48aa917 was ForsakenIdol, 7 weeks ago, message: Add flask shell context
+|/ /  
+* |   6f185e9 was Brucehow, 7 weeks ago, message: Add responsive design to the nav-bar
+|\ \  
+| * \   47cc09e was Bryan Yeo, 7 weeks ago, message: Merge pull request #8 from brucehow/feature/account-functionality
+| |\ \  
+| | * | 9e0233d was ForsakenIdol, 7 weeks ago, message: Add logout button temporarily to about page
+| | * | 0caff58 was ForsakenIdol, 7 weeks ago, message: Update login and registration logic, add logout path which has not yet been implemented in HTML
+| | * | 94abcbd was ForsakenIdol, 7 weeks ago, message: Add Alembic users table database upgrade script
+| | * | a03bcfe was ForsakenIdol, 7 weeks ago, message: Add database migration script, disable SQLAlchemy modification tracking, update __init__.py with new packages
+| | * | b4ff233 was ForsakenIdol, 7 weeks ago, message: Add User object and user ID loader, update RegisterForm with repeat password field and username + email validation
+| |/ /  
+| * | fd63bbf was ForsakenIdol, 7 weeks ago, message: Add url_for() function links to replace relative links
+* | | a806a7b was Brucehow, 7 weeks ago, message: Add responsive design to the nav-bar
+* | | 24903a1 was Brucehow, 7 weeks ago, message: Add responsive design to the nav-bar
+|/ /  
+* |   9173035 was ForsakenIdol, 8 weeks ago, message: Merge pull request #7 from brucehow/issue/#6-register-form-cannot-redirect
+|\ \  
+| * | 3f201a9 was ForsakenIdol, 8 weeks ago, message: Change universal register 'name' to consistent 'username'
+| * | 41b054a was ForsakenIdol, 8 weeks ago, message: Add backslash '/' to register href path
+|/ /  
+* | ba57ed4 was Paul, 8 weeks ago, message: Delete Sign In tag. Add alternate-login class to Register tag.
+* |   d4bcd71 was ForsakenIdol, 8 weeks ago, message: Merge pull request #5 from brucehow/Styling-update-proposal-and-link-redirects
+|\ \  
+| * | 561d78f was ForsakenIdol, 8 weeks ago, message: Remove alternate login from sign in page to avoid pull conflicts
+| * | ff39037 was ForsakenIdol, 8 weeks ago, message: Styling changes for alternate login links
+| * | 38efa74 was ForsakenIdol, 8 weeks ago, message: Add alternate login redirect buttons between Sign In / Sign Up pages
+| * | a722282 was ForsakenIdol, 8 weeks ago, message: Link 'Learn More' button to 'About' page on index
+| * | dab45d5 was ForsakenIdol, 8 weeks ago, message: Change link hover and button hover to grey for 250ms
+* | | d93e113 was Paul, 8 weeks ago, message: Add "New User? Register Now" to Sign In pag
+|/ /  
+* | bf5fbad was ForsakenIdol, 8 weeks ago, message: Change anchor onclick to href attribute for 'Sign In', thus mouse pointer is invoked
+* | 036258e was Paul, 8 weeks ago, message: Add Sign In button. Add registration page.
+* | 5fb9c9d was Bryan Yeo, 8 weeks ago, message: Updated Instruction Answers
+* | 117f730 was Brucehow, 8 weeks ago, message: Add nav bar styling
+* | 77c0a1d was Brucehow, 8 weeks ago, message: Fix anchor link issue and style sheet
+* | aa07ad7 was Brucehow, 8 weeks ago, message: Change main in routes to landing
+* | 9c87c32 was Brucehow, 8 weeks ago, message: Change styling and css file structure
+* | 6208cd9 was Bryan Yeo, 8 weeks ago, message: Added Flask-WTF to instructions
+* | 9ad36bf was Paul O'Sullivan, 8 weeks ago, message: Update USEFUL.md
+* | e4509da was Paul O'Sullivan, 8 weeks ago, message: Update USEFUL.md
+* | 2d5252d was ForsakenIdol, 8 weeks ago, message: Add basic form validation, flash message in place of login submit
+* | 7c8c60d was Brucehow, 8 weeks ago, message: Change index.js to 2 spaces tab
+* | ea41f80 was Brucehow, 8 weeks ago, message: Change file spacing to 2 spaces tab
+* | efdbaa8 was ForsakenIdol, 8 weeks ago, message: Add basic environ security and login form template
+* | 2097a6e was Brucehow, 8 weeks ago, message: Move static files into structured folders
+* | d01c322 was ForsakenIdol, 8 weeks ago, message: Add style for main page
+* | c20ade6 was Bruce How, 8 weeks ago, message: Remove __pycache__ dir from app
+* | 4a08158 was Bruce How, 8 weeks ago, message: Add __pycache__ to gitignore
+* | 2138162 was ForsakenIdol, 8 weeks ago, message: Merge pull request #4 from brucehow/master
+|\| 
+| *   fa68594 was Bruce How, 8 weeks ago, message: Merge pull request #3 from brucehow/development
+| |\  
+| |/  
+|/|   
+* | 3065faf was ForsakenIdol, 8 weeks ago, message: Add base style template
+* | 74a6a34 was ForsakenIdol, 8 weeks ago, message: Add navbar logo, separate elements
+* | 9ce5d33 was ForsakenIdol, 8 weeks ago, message: Add script outline, bootstrap + jQuery imports, containerise index.html
+* | 7f55d26 was ForsakenIdol, 8 weeks ago, message: Add website flowchart
+* | bb59170 was ForsakenIdol, 8 weeks ago, message: Remove changelog version tracking, add 27-03 changes
+| * cb5b415 was Bruce How, 8 weeks ago, message: Add env and OS files
+| *   ec1d48b was Paul O'Sullivan, 8 weeks ago, message: Merge pull request #2 from brucehow/development
+| |\  
+| |/  
+|/|   
+* | 254496f was ForsakenIdol, 8 weeks ago, message: Updated binary, readded untracked venv
+* | 30bcd54 was ForsakenIdol, 8 weeks ago, message: Remove tracked venv, reapply .gitignore for venv
+|/  
+* 75a977c was ForsakenIdol, 8 weeks ago, message: Temp track venv for removal
+* ca2755c was ForsakenIdol, 8 weeks ago, message: Update USEFUL with info to create venv on clone
+* 17dcac0 was ForsakenIdol, 8 weeks ago, message: Add gitignore for venv, removal soon
+*   0b919a1 was Bruce How, 9 weeks ago, message: Merge pull request #1 from brucehow/test-branch-1
+|\  
+| * 08cb818 was ForsakenIdol, 9 weeks ago, message: Add main body styling and test font import
+| * 4a6ae19 was ForsakenIdol, 9 weeks ago, message: Add some styling and 'About' page path 2
+|/  
+* 23b2a79 was ForsakenIdol, 9 weeks ago, message: Add changelog (track version-date), add useful (stepwise)
+* 59d099a was ForsakenIdol, 9 weeks ago, message: Add Flask application folder and file outlines
+* 29a26c8 was ForsakenIdol, 9 weeks ago, message: Add virtual environment files, include Flask install
+* e5afac8 was ForsakenIdol, 10 weeks ago, message: Add Bryan's GitHub link to his name in the README
+* 4c987c8 was ForsakenIdol, 10 weeks ago, message: First commit, added README
